@@ -8,8 +8,8 @@ df -h /; nproc; free -g
 git clone --depth 1 https://github.com/RVC-Boss/GPT-SoVITS.git gsv
 (cd gsv && git log -1 --format=%H) > logs/gsv_commit.txt
 export PIP_NO_CACHE_DIR=1
-pip install -q torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -3
-printf "torch==2.5.1+cpu\ntorchaudio==2.5.1+cpu\n" > /tmp/cons.txt
+pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -3
+printf "torch==2.6.0+cpu\ntorchaudio==2.6.0+cpu\n" > /tmp/cons.txt
 pip install -q -r gsv/requirements.txt -c /tmp/cons.txt --extra-index-url https://download.pytorch.org/whl/cpu > logs/pip.txt 2>&1 || tail -40 logs/pip.txt
 pip install -q huggingface_hub soundfile librosa
 python -c "import torch,torchaudio;print(torch.__version__,torchaudio.__version__)"

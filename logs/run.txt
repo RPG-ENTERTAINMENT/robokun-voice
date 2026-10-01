@@ -10,39 +10,73 @@ No containers need to be restarted.
 No user sessions are running outdated binaries.
 
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
++ sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
++ df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        72G   41G   31G  57% /
 + nproc
 2
 + free -g
                total        used        free      shared  buff/cache   available
-Mem:               7           1           3           0           3           6
+Mem:               7           0           3           0           3           6
 Swap:              2           0           2
 + git clone --depth 1 https://github.com/RVC-Boss/GPT-SoVITS.git gsv
 Cloning into 'gsv'...
 + cd gsv
 + git log -1 --format=%H
-+ pip install -q -r gsv/requirements.txt
-+ tail -40 logs/pip.txt
-ERROR: Could not install packages due to an OSError: [Errno 28] No space left on device
-
-+ pip install -q --force-reinstall --no-deps torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
++ export PIP_NO_CACHE_DIR=1
++ PIP_NO_CACHE_DIR=1
++ pip install -q torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 + tail -3
-+ pip install -q huggingface_hub soundfile
++ printf 'torch==2.5.1+cpu\ntorchaudio==2.5.1+cpu\n'
++ pip install -q -r gsv/requirements.txt -c /tmp/cons.txt --extra-index-url https://download.pytorch.org/whl/cpu
++ pip install -q huggingface_hub soundfile librosa
 + python -c 'import torch,torchaudio;print(torch.__version__,torchaudio.__version__)'
 2.5.1+cpu 2.5.1+cpu
++ df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        72G   44G   29G  61% /
 + cd gsv
 + python -c 'from huggingface_hub import snapshot_download; snapshot_download('\''lj1995/GPT-SoVITS'\'', local_dir='\''GPT_SoVITS/pretrained_models'\'', allow_patterns=['\''gsv-v2final-pretrained/*'\'','\''chinese-hubert-base/*'\'','\''chinese-roberta-wwm-ext-large/*'\''])'
-Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Fetching 9 files:  22%|██▏       | 2/9 [00:00<00:00, 19.71it/s]Fetching 9 files:  56%|█████▌    | 5/9 [00:01<00:01,  3.67it/s]Fetching 9 files:  67%|██████▋   | 6/9 [00:02<00:01,  2.26it/s]Fetching 9 files:  78%|███████▊  | 7/9 [00:03<00:01,  1.60it/s]Fetching 9 files:  89%|████████▉ | 8/9 [00:04<00:00,  1.16it/s]Fetching 9 files: 100%|██████████| 9/9 [00:07<00:00,  1.33s/it]Fetching 9 files: 100%|██████████| 9/9 [00:07<00:00,  1.22it/s]
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files:  89%|████████▉ | 8/9 [00:07<00:00,  1.04it/s]Fetching 9 files: 100%|██████████| 9/9 [00:08<00:00,  1.11it/s]
 + ls -R GPT_SoVITS/pretrained_models
 + python scripts/prep.py
 prepared 20
 + cd gsv
 + python ../scripts/infer.py
+---------------------------------------------TTS Config---------------------------------------------
+device              : cpu
+is_half             : False
+version             : v2
+t2s_weights_path    : GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt
+vits_weights_path   : GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth
+bert_base_path      : GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+cnhuhbert_base_path : GPT_SoVITS/pretrained_models/chinese-hubert-base
+----------------------------------------------------------------------------------------------------
+
+Loading Text2Semantic weights from GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt
+Loading VITS weights from GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth. <All keys matched successfully>
+Loading BERT weights from GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
 Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/gsv/../scripts/infer.py", line 4, in <module>
-    from GPT_SoVITS.TTS_infer_pack.TTS import TTS, TTS_Config
-  File "/home/runner/work/robokun-voice/robokun-voice/gsv/GPT_SoVITS/TTS_infer_pack/__init__.py", line 1, in <module>
-    from . import TTS, text_segmentation_method
-  File "/home/runner/work/robokun-voice/robokun-voice/gsv/GPT_SoVITS/TTS_infer_pack/TTS.py", line 19, in <module>
-    import librosa
-ModuleNotFoundError: No module named 'librosa'
+  File "/home/runner/work/robokun-voice/robokun-voice/gsv/../scripts/infer.py", line 7, in <module>
+    tts = TTS(cfg)
+  File "/home/runner/work/robokun-voice/robokun-voice/gsv/GPT_SoVITS/TTS_infer_pack/TTS.py", line 446, in __init__
+    self._init_models()
+  File "/home/runner/work/robokun-voice/robokun-voice/gsv/GPT_SoVITS/TTS_infer_pack/TTS.py", line 472, in _init_models
+    self.init_bert_weights(self.configs.bert_base_path)
+  File "/home/runner/work/robokun-voice/robokun-voice/gsv/GPT_SoVITS/TTS_infer_pack/TTS.py", line 487, in init_bert_weights
+    self.bert_model = AutoModelForMaskedLM.from_pretrained(base_path)
+  File "/opt/hostedtoolcache/Python/3.10.21/x64/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+  File "/opt/hostedtoolcache/Python/3.10.21/x64/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.21/x64/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5048, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/opt/hostedtoolcache/Python/3.10.21/x64/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5316, in _load_pretrained_model
+    load_state_dict(checkpoint_files[0], map_location="meta", weights_only=weights_only).keys()
+  File "/opt/hostedtoolcache/Python/3.10.21/x64/lib/python3.10/site-packages/transformers/modeling_utils.py", line 508, in load_state_dict
+    check_torch_load_is_safe()
+  File "/opt/hostedtoolcache/Python/3.10.21/x64/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1647, in check_torch_load_is_safe
+    raise ValueError(
+ValueError: Due to a serious vulnerability issue in `torch.load`, even with `weights_only=True`, we now require users to upgrade torch to at least v2.6 in order to use the function. This version restriction does not apply when loading files with safetensors.
+See the vulnerability report here https://nvd.nist.gov/vuln/detail/CVE-2025-32434

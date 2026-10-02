@@ -1,0 +1,47 @@
+name: daily
+on:
+  schedule:
+    - cron: '0 16 * * *'
+    - cron: '0 3 * * *'
+    - cron: '0 10 * * *'
+  push:
+    paths: ['jobs/daily_*']
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'test / make / postA / postB'
+        default: 'test'
+permissions:
+  contents: write
+concurrency:
+  group: daily
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      GH_TOKEN: ${{ github.token }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      TT_CLIENT_KEY: ${{ secrets.TT_CLIENT_KEY }}
+      TT_CLIENT_SECRET: ${{ secrets.TT_CLIENT_SECRET }}
+      TT_REFRESH_TOKEN: ${{ secrets.TT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/venv
+            gsv
+            vv
+          key: robokun-env-v1
+      - run: bash scripts/daily.sh "${{ github.event.schedule }}" "${{ inputs.task }}"
+      - if: always()
+        run: bash scripts/save.sh

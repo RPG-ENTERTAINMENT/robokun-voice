@@ -5,6 +5,7 @@ ffmpeg -hide_banner -filters 2>/dev/null | grep -q rubberband && echo "rubberban
 # ---- assets (zip uploaded once; repo files take precedence)
 if [ -f robokun_assets.zip ]; then unzip -q -n robokun_assets.zip -d . ; fi
 mkdir -p assets && cp -rn robokun_assets/* assets/ 2>/dev/null
+python3 scripts/patches.py
 # ---- python deps (venv cached by workflow)
 export PIP_NO_CACHE_DIR=1
 if [ ! -f ~/venv/ok ]; then

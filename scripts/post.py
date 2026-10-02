@@ -7,7 +7,7 @@ subprocess.run(['gh', 'release', 'download', tag, '-D', 'dl', '--clobber'], chec
 meta = json.load(open('dl/meta.json')); epid = meta[g.slot]
 vid = glob.glob(f'dl/*_{g.slot}_{epid}.mp4')[0]
 ep = json.load(open(f'episodes/{epid}.json'))
-title = f"{ep['title']}｜ロボくん #shorts"
+title = f"{ep['title']}｜ロボしず #shorts"
 st_path = 'state/posted.json'; os.makedirs('state', exist_ok=True)
 posted = json.load(open(st_path)) if os.path.exists(st_path) else {}
 key = f'{day}{g.slot}'; posted.setdefault(key, {})

@@ -6,7 +6,7 @@ case "$SCHED" in
   "0 3 * * *") TASK=postA;;
   "0 10 * * *") TASK=postB;;
 esac
-[ -z "$TASK" ] && TASK=make
+[ -z "$TASK" ] && TASK=test
 echo "TASK=$TASK"
 mkdir -p logs
 set -o pipefail

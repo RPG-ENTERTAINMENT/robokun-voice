@@ -52,6 +52,7 @@ patched eng/engine.py 'ロボしず', t, 360, a)
 assets ready
 + '[' -d gsv ']'
 + '[' -f gsv/GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth ']'
++ mkdir -p gsv/GPT_SoVITS/pretrained_models/fast_langdetect
 + mkdir -p vv
 + cd vv
 + G=https://github.com/VOICEVOX

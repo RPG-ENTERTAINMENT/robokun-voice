@@ -6,6 +6,7 @@ case "$SCHED" in
   "0 3 * * *") TASK=postA;;
   "0 10 * * *") TASK=postB;;
 esac
+[ -z "$TASK" ] && [ -f jobs/daily_task ] && TASK=$(tr -d " \n" < jobs/daily_task)
 [ -z "$TASK" ] && TASK=test
 echo "TASK=$TASK"
 mkdir -p logs

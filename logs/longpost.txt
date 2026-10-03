@@ -1,0 +1,18 @@
+duration 490.0 frames 14700
+done out/long001.mp4
+490.000000
+thumb out/long001.png 460.71163655532973
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.21) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+duration 490.0
+upload 10 %
+upload 21 %
+upload 32 %
+upload 42 %
+upload 53 %
+upload 64 %
+upload 74 %
+upload 85 %
+upload 96 %
+youtube ok g5Yy6WiudaY {'uploadStatus': 'uploaded', 'privacyStatus': 'public', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': True}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=g5Yy6WiudaY&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h

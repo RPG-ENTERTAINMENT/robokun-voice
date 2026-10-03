@@ -15,7 +15,7 @@ for epid in g.eps:
         if not sp or sp['who'] != 'robo': continue
         best = None
         for seed in (42, 7, 123):
-            req = dict(text=sp['text'], text_lang='ja', ref_audio_path=REF, prompt_text=REF_T, prompt_lang='ja', aux_ref_audio_paths=aux,
+            req = dict(text=sp['text'], text_lang='all_ja', ref_audio_path=REF, prompt_text=REF_T, prompt_lang='all_ja', aux_ref_audio_paths=aux,
                        top_k=15, top_p=1.0, temperature=0.9, text_split_method='cut0', batch_size=1, speed_factor=1.0, seed=seed,
                        parallel_infer=False, repetition_penalty=1.35)
             try:

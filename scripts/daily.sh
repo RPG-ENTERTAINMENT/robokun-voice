@@ -11,7 +11,15 @@ esac
 echo "TASK=$TASK"
 mkdir -p logs
 set -o pipefail
-if [ "$TASK" = make ] || [ "$TASK" = test ]; then
+if [ "${TASK%%:*}" = longvoice ]; then
+  EP=${TASK#longvoice:}
+  bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
+  source ~/venv/bin/activate
+  python scripts/robo_tts.py $EP 2>&1 | tee logs/longvoice.txt
+  tar czf $EP-vo.tgz $(ls vo/$EP/*.wav | grep -v _raw)
+  gh release delete $EP-vo -y --cleanup-tag || true
+  gh release create $EP-vo $EP-vo.tgz --title "$EP voice" --notes robo --prerelease
+elif [ "$TASK" = make ] || [ "$TASK" = test ]; then
   bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
   source ~/venv/bin/activate
   python scripts/make_day.py $([ "$TASK" = test ] && echo --test) 2>&1 | tee logs/make.txt

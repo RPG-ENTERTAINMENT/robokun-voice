@@ -24,14 +24,14 @@ if os.environ.get('YT_REFRESH_TOKEN') and 'youtube' not in posted[key]:
                          scopes=['https://www.googleapis.com/auth/youtube.upload'])
         yt = build('youtube', 'v3', credentials=cr)
         body = {'snippet': {'title': title[:100], 'description': yc['description'], 'tags': yc['tags'], 'categoryId': yc['category'], 'defaultLanguage': 'ja'},
-                'status': {'privacyStatus': yc['privacy'], 'selfDeclaredMadeForKids': yc['made_for_kids'], 'containsSyntheticMedia': True}}
+                'status': {'privacyStatus': yc['privacy'], 'selfDeclaredMadeForKids': yc['made_for_kids'], 'containsSyntheticMedia': False}}
         req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(vid, mimetype='video/mp4', resumable=True))
         resp = None
         while resp is None: _, resp = req.next_chunk()
         posted[key]['youtube'] = resp['id']; print('youtube ok', resp['id'], resp.get('status'))
     except Exception as e:
         print('youtube FAILED', repr(e)); results['youtube_error'] = repr(e)
-# ---------------- Instagram (Reels, resumable upload)
+# ---------------- Instagram (Reels) -- needs a public video URL: use the release asset URL
 if os.environ.get('IG_TOKEN') and os.environ.get('IG_USER_ID') and 'instagram' not in posted[key]:
     try:
         import requests

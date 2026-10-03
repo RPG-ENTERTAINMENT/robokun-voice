@@ -6,7 +6,7 @@ case "$SCHED" in
   "0 3 * * *") TASK=postA;;
   "0 10 * * *") TASK=postB;;
 esac
-[ -z "$TASK" ] && [ -f jobs/daily_task ] && TASK=$(tr -d " \n" < jobs/daily_task)
+[ -z "$TASK" ] && [ -f jobs/daily_task ] && TASK=$(head -1 jobs/daily_task | tr -d " \r")
 [ -z "$TASK" ] && TASK=test
 echo "TASK=$TASK"
 mkdir -p logs
@@ -17,6 +17,7 @@ if [ "${TASK%%:*}" = longvoice ]; then
   source ~/venv/bin/activate
   python scripts/robo_tts.py $EP 2>&1 | tee logs/longvoice.txt
   tar czf $EP-vo.tgz $(ls vo/$EP/*.wav | grep -v _raw)
+  mkdir -p tests && cp $EP-vo.tgz tests/
   gh release delete $EP-vo -y --cleanup-tag || true
   gh release create $EP-vo $EP-vo.tgz --title "$EP voice" --notes robo --prerelease
 elif [ "$TASK" = make ] || [ "$TASK" = test ]; then

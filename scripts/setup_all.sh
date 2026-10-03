@@ -30,6 +30,7 @@ print('assets ready')
 PY
 [ -d gsv ] || git clone --depth 1 https://github.com/RVC-Boss/GPT-SoVITS.git gsv
 [ -f gsv/GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth ] || (cd gsv && python -c "from huggingface_hub import snapshot_download; snapshot_download('lj1995/GPT-SoVITS', local_dir='GPT_SoVITS/pretrained_models', allow_patterns=['gsv-v2final-pretrained/*','chinese-hubert-base/*','chinese-roberta-wwm-ext-large/*'])")
+mkdir -p gsv/GPT_SoVITS/pretrained_models/fast_langdetect
 # ---- VOICEVOX
 mkdir -p vv; cd vv
 G=https://github.com/VOICEVOX

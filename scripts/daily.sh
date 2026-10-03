@@ -20,6 +20,20 @@ if [ "${TASK%%:*}" = longvoice ]; then
   mkdir -p tests && cp $EP-vo.tgz tests/
   gh release delete $EP-vo -y --cleanup-tag || true
   gh release create $EP-vo $EP-vo.tgz --title "$EP voice" --notes robo --prerelease
+elif [ "${TASK%%:*}" = longpost ]; then
+  EP=${TASK#longpost:}
+  bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
+  source ~/venv/bin/activate
+  pip install -q google-api-python-client google-auth
+  tar xzf tests/$EP-vo.tgz
+  python eng/tts_vv.py episodes/$EP.json vo/$EP --vv vv --skip-robo
+  cp eng/engine.py eng/engine_l.py && patch -l eng/engine_l.py patches/engine_l.diff && patch -l eng/lib.py patches/lib.diff || exit 1
+  mkdir -p out
+  export ROBO_ASSETS=$(pwd)/assets/ ROBO_ASPECT=16x9
+  python eng/engine_l.py episodes/$EP.json vo/$EP out/$EP.mp4 --procs $(nproc) 2>&1 | tee logs/longpost.txt
+  ffprobe -v error -show_entries format=duration -of csv=p=0 out/$EP.mp4 | tee -a logs/longpost.txt
+  python scripts/long_thumb.py episodes/$EP.json vo/$EP out/$EP.png 2>&1 | tee -a logs/longpost.txt
+  python scripts/post_long.py out/$EP.mp4 out/$EP.png config/$EP.yt.json 2>&1 | tee -a logs/longpost.txt
 elif [ "$TASK" = make ] || [ "$TASK" = test ]; then
   bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
   source ~/venv/bin/activate

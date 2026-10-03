@@ -1,0 +1,19 @@
+--- a/lib.py
++++ b/lib.py
+@@ -2,3 +2,6 @@
+ from PIL import Image, ImageDraw, ImageFont, ImageFilter
+-W, H, FPS = 1080, 1920, 30
++LAND = os.environ.get('ROBO_ASPECT', '9x16') == '16x9'
++W, H, FPS = (1920, 1080, 30) if LAND else (1080, 1920, 30)
++CX, CY = W/2, H/2
++WORLD = 2100
+ A = os.environ.get('ROBO_ASSETS', '/home/claude/anim/') 
+@@ -47,2 +50,8 @@
+ def layer_M(lw, cx, cy, z, fac):
++    if LAND:
++        zl = 1+(z-1)*fac; S = max(zl, (W+40)/lw)
++        half = CX/z; cmin, cmax = half, WORLD-half
++        u = (cx-cmin)/(cmax-cmin) if cmax > cmin+1 else 0.5
++        L = -u*(lw*S-W); cyl = 960+(cy-960)*fac
++        return np.array([[S, 0, L], [0, S, CY-cyl*S]], np.float32)
+     off = (cx-540)*(lw-1080)/1020.

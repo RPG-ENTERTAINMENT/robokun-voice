@@ -16,6 +16,7 @@ yt = build('youtube', 'v3', credentials=cr)
 body = {'snippet': {'title': m['title'][:100], 'description': m['description'], 'tags': m['tags'], 'categoryId': m.get('category', '1'),
                     'defaultLanguage': 'ja', 'defaultAudioLanguage': 'ja'},
         'status': {'privacyStatus': m.get('privacy', 'public'), 'selfDeclaredMadeForKids': m.get('made_for_kids', False), 'containsSyntheticMedia': False}}
+if m.get('publish_at'): body['status'].update(privacyStatus='private', publishAt=m['publish_at']); print('scheduled for', m['publish_at'])
 req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(vid, mimetype='video/mp4', resumable=True, chunksize=16*1024*1024))
 resp = None
 while resp is None:

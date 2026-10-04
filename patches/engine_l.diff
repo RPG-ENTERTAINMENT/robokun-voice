@@ -9,12 +9,19 @@
  PAPER = np.asarray(Image.open(A+'bg/paper.png').convert('L')).astype(np.float32)[..., None]/255.
 +if LAND: PAPER = np.ascontiguousarray(PAPER.transpose(1, 0, 2))
  SP = {}
-@@ -23,3 +27,3 @@
+@@ -23,4 +27,10 @@
  yy, xx = np.mgrid[0:H, 0:W]
 -VIG = np.clip(1-0.22*(((xx-540)/760.)**2+((yy-960)/1250.)**2), 0, 1)[..., None].astype(np.float32)
 +VIG = np.clip(1-0.22*(((xx-CX)/(W*0.70))**2+((yy-CY)/(H*0.65))**2), 0, 1)[..., None].astype(np.float32)
  del yy, xx
-@@ -32,8 +36,9 @@
++# precomputed paper soft-light + vignette coefficients (same result as the per-frame np.where, ~2.5x faster)
++_lo = PAPER < 0.5
++PK_A = np.repeat((0.62+0.38*np.where(_lo, 2*PAPER, 2*(1-PAPER)))*VIG, 3, 2).astype(np.float32)
++PK_B = np.repeat(0.38*np.where(_lo, 1-2*PAPER, 0)*VIG, 3, 2).astype(np.float32)
++PK_C = np.repeat(0.38*np.where(_lo, 0, 2*PAPER-1)*VIG, 3, 2).astype(np.float32)
++del _lo
+ 
+@@ -32,8 +42,9 @@
      for _ in range(260):
 -        x, y = rng.randint(0, W), rng.randint(0, 1150); r = rng.choice([1, 1, 1, 2, 2, 3]); b = rng.uniform(0.5, 1)
 +        x, y = rng.randint(0, W), rng.randint(0, 1150 if not LAND else 700); r = rng.choice([1, 1, 1, 2, 2, 3]); b = rng.uniform(0.5, 1)
@@ -28,7 +35,7 @@
 +    cv2.circle(s, (mx+28, my-18), 66, tuple(float(v) for v in s[my-18, mx+100]), -1, cv2.LINE_AA)  # crescent
 +    glow = np.zeros_like(s); cv2.circle(glow, (mx, my), 160, (0.25, 0.25, 0.3), -1); glow = cv2.GaussianBlur(glow, (0, 0), 60)
      return np.clip(s+glow, 0, 1)
-@@ -77,2 +82,8 @@
+@@ -77,2 +88,8 @@
  SNOWF = make_glow(9, (255, 255, 255))
 +def _fleaf(col):
 +    S = 4; im = Image.new('RGBA', (40*S, 26*S), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
@@ -37,52 +44,52 @@
 +    return to_prem(im.resize((40, 26), Image.LANCZOS))
 +FLEAVES = [_fleaf((226, 120, 52)), _fleaf((236, 176, 60)), _fleaf((190, 80, 50)), _fleaf((214, 150, 70))]
  
-@@ -105,3 +116,3 @@
+@@ -105,3 +122,3 @@
      ax, ay = anchor; tx, ty = tip
 -    bx = min(max(ax-bw/2, 24), W-24-bw); by = max(ay-bh, 120)
 +    bx = min(max(ax-bw/2, 24), W-24-bw); by = max(ay-bh, 16 if LAND else 120)
      lay = Image.new('RGBA', (W, H), (0, 0, 0, 0)); dd = ImageDraw.Draw(lay)
-@@ -115,3 +126,3 @@
+@@ -115,3 +132,3 @@
  
 -def caption(C, text, prog, alpha, y=250):
 +def caption(C, text, prog, alpha, y=(78 if LAND else 250)):
      f = font(FONT_B, 46); lines = text.split('\n'); lh = 62
-@@ -124,3 +135,3 @@
+@@ -124,3 +141,3 @@
          d.text(((bw-f.getbbox(l)[2])//2, 16+i*lh), vis, font=f, fill=(88, 66, 50))
 -    blit(C, to_prem(im), Mx(540, y, 1, bw/2, bh/2), alpha)
 +    blit(C, to_prem(im), Mx(CX, y+(bh/2-50 if LAND else 0), 1, bw/2, bh/2), alpha)
  
-@@ -133,3 +144,3 @@
+@@ -133,3 +150,3 @@
          d.text((x, yy_), tx_, font=ff, fill=(255, 251, 240))
 -    blit(C, to_prem(im), Mx(540, y+math.sin(t*2.2)*8, 0.9+0.1*ease_out_back(min(1, t/0.6)), 530, 165), a)
 +    blit(C, to_prem(im), Mx(CX, y+math.sin(t*2.2)*8, 0.9+0.1*ease_out_back(min(1, t/0.6)), 530, 165), a)
  
-@@ -150,2 +161,5 @@
+@@ -150,2 +167,5 @@
  CAMZ = {'wide': (1.0, 960), 'mid': (1.2, 1085), 'close': (1.45, 1215)}
 +if LAND:
 +    def _cy(z, gy): return 1500-(gy-CY)/z
 +    CAMZ = {'wide': (1.0, _cy(1.0, 880)), 'mid': (1.15, _cy(1.15, 860)), 'close': (1.38, _cy(1.38, 860))}
  TIMES = ('morning', 'day', 'sunset', 'night')
-@@ -160,3 +174,3 @@
+@@ -160,3 +180,3 @@
          s.hkeys = [(0, float(hn.get('bloom', 1)), float(hn.get('droop', 0)))]; s.heyes = []
 -        s.tkeys = [(0, ep.get('time', 'day'))]; s.wkeys = [(0, ep.get('weather', 'clear'))]
 +        s.cards = []; s.tkeys = [(0, ep.get('time', 'day'))]; s.wkeys = [(0, ep.get('weather', 'clear'))]
          x = float(ep.get('robo_x', 520)); pose = ep.get('robo_pose', 'idle'); carry = None
-@@ -165,2 +179,3 @@
+@@ -165,2 +185,3 @@
              t0 = t; r = b.get('robo', {}) or {}
 +            if b.get('card'): s.cards.append((t0, b['card'], b.get('card_sub'))); s.sfx.append((t0+0.1, 'sting_title', 0.5))
              do = r.get('do'); a = 0.0
-@@ -198,3 +213,3 @@
+@@ -198,3 +219,3 @@
                  if sp['who'] != 'narr': s.sfx.append((st, 'pop', 0.15))
 -                te = max(te, st+dur+0.35)
 +                te = max(te, st+dur+float(ep.get('gap', 0.35)))
              te = max(te, t0+float(b.get('dur', 0)))
-@@ -298,2 +313,4 @@
+@@ -298,2 +319,4 @@
          snow = (1 if wc == 'snow' else 0)*wu+(1 if wp == 'snow' else 0)*(1-wu)
 +        s._pet = (1 if wc == 'petals' else 0)*wu+(1 if wp == 'petals' else 0)*(1-wu)
 +        s._lea = (1 if wc == 'leaves' else 0)*wu+(1 if wp == 'leaves' else 0)*(1-wu)
          return T, rain, snow
-@@ -308,6 +325,6 @@
+@@ -308,6 +331,6 @@
              if foc == 'hana' and s.hana_on: fx = s.FL_X-60
 -            elif foc == 'both' and s.hana_on and abs(rx-s.FL_X) < 700: fx = (rx+s.FL_X)/2
 +            elif foc == 'both' and s.hana_on and abs(rx-s.FL_X) < (1000 if LAND else 700): fx = (rx+s.FL_X)/2
@@ -91,12 +98,12 @@
 -            half = 540/z; fx = min(max(fx, half), 2100-half)
 +            half = CX/z; fx = min(max(fx, half), WORLD-half)
              tgt = np.array([fx, cy, z], np.float32)
-@@ -333,3 +350,3 @@
+@@ -333,3 +356,3 @@
          if rain > 0: sky = sky*(1-rain*0.9)+SKY_R*rain*0.9
 -        Ms = np.array([[zs, 0, 540-540*zs], [0, zs, 960-(960+(cy-960)*0.15)*zs]], np.float32)
 +        Ms = np.array([[zs, 0, CX-CX*zs], [0, zs, CY-(CY+(cy-960)*0.15)*zs]], np.float32)
          sky = cv2.warpAffine(sky, Ms, (W, H), borderMode=cv2.BORDER_REFLECT)
-@@ -435,3 +452,15 @@
+@@ -435,3 +458,15 @@
              gray = rgb.mean(axis=2, keepdims=True); rgb = (rgb*(1-0.35*rain)+gray*0.35*rain)*(1-0.15*rain)
 -        if snow > 0: rgb = rgb*(1-0.1*snow)+al*np.array([0.06, 0.07, 0.1], np.float32)*snow
 +        if snow > 0:
@@ -113,7 +120,7 @@
 +            warm = rgb[..., [1, 1, 2]]*np.array([1.18, 0.86, 0.7], np.float32)
 +            rgb = rgb*(1-gm*0.85)+warm*gm*0.85
          out = rgb+sky*(1-al)
-@@ -451,2 +480,9 @@
+@@ -451,2 +486,9 @@
                  blit(O, SNOWF, Mx(x, y, sz, 9, 9), 0.9); O[..., 3] = 1
 +        for kind, wv in (('p', s._pet), ('l', s._lea)):
 +            if wv < 0.02: continue
@@ -123,17 +130,24 @@
 +                y = (rng.uniform(0, H)+t*sp) % (H+60)-30; x = (x0-t*sp*0.6) % (W+300)-150+math.sin(t*1.3+ph)*40
 +                blit(O, spr[k_], Mx(x, y, sz, spr[k_].shape[1]/2, spr[k_].shape[0]/2, math.sin(t*2+ph)*1.2+ph), 0.95); O[..., 3] = 1
          if nig > 0.3:
-@@ -455,3 +491,3 @@
+@@ -455,8 +497,7 @@
                  x, y, ph, sp = rng.uniform(0, 2100), rng.uniform(1150, 1550), rng.uniform(0, 6.28), rng.uniform(0.3, 0.8)
 -                X = (x+math.sin(t*sp+ph)*60-cx)*z+540; Y = (y+math.cos(t*sp*1.3+ph)*40-cy)*z+960
 +                X = (x+math.sin(t*sp+ph)*60-cx)*z+CX; Y = (y+math.cos(t*sp*1.3+ph)*40-cy)*z+CY
                  blit(O, FIREFLY, Mx(X, Y, 1.0, 26, 26), nig*(0.5+0.5*math.sin(t*3+ph*3))); O[..., 3] = 1
-@@ -464,3 +500,3 @@
+         out = O[..., :3]
+-        p = PAPER
+-        sl = np.where(p < 0.5, 2*out*p+out*out*(1-2*p), 2*out*(1-p)+np.sqrt(np.clip(out, 0, 1))*(2*p-1))
+-        out = (out*0.62+sl*0.38)*VIG
++        out = np.ascontiguousarray(out, dtype=np.float32)
++        out = cv2.add(cv2.add(cv2.multiply(out, PK_A), cv2.multiply(cv2.multiply(out, out), PK_B)), cv2.multiply(cv2.sqrt(np.clip(out, 0, 1)), PK_C))
+         O = np.dstack([out, np.ones((H, W, 1), np.float32)])
+@@ -464,3 +505,3 @@
          if t < 3.0:
 -            a = ss((t-0.2)/0.5)*(1-ss((t-2.4)/0.5)); big_text(O, s.ep.get('title', ''), 'ロボしず', t, 600, a)
 +            a = ss((t-0.2)/0.5)*(1-ss((t-2.4)/0.5)); big_text(O, s.ep.get('title', ''), 'ロボしず', t, 380 if LAND else 600, a)
          for L in s.lines:
-@@ -480,4 +516,7 @@
+@@ -480,4 +521,7 @@
                  O[..., :3] = O[..., :3]*(1-Ob[..., 3:4]*fade)+Ob[..., :3]*fade
 +        for (c0, ct, csub) in s.cards:
 +            v = t-c0
@@ -142,7 +156,7 @@
 -            v = t-s.T_end-0.1; big_text(O, 'おしまい', None, v, 640, ss(v/0.5))
 +            v = t-s.T_end-0.1; big_text(O, 'おしまい', None, v, 400 if LAND else 640, ss(v/0.5))
          out = O[..., :3]
-@@ -525,9 +564,15 @@
+@@ -525,9 +569,15 @@
      # ambience
 -    T0, rain, snow = s.look(0)
 -    amb = 'rain_loop' if s.ep.get('weather') == 'rain' else 'snow_loop' if s.ep.get('weather') == 'snow' else 'crickets_loop' if s.ep.get('time') in ('night', 'sunset') else 'birds_loop'

@@ -46,6 +46,10 @@ elif [ "${TASK%%:*}" = longthumb ]; then
   export ROBO_ASSETS=$(pwd)/assets/ ROBO_ASPECT=16x9
   python scripts/long_thumb.py episodes/$EP.json vo/$EP out/$EP.png 2>&1 | tee logs/longthumb.txt
   python scripts/set_thumb.py $VID out/$EP.png 2>&1 | tee -a logs/longthumb.txt
+elif [ "$TASK" = longtest ]; then
+  bash scripts/long_run.sh --test
+elif [ "$TASK" = longnow ]; then
+  bash scripts/long_run.sh --now
 elif [ "$TASK" = make ] || [ "$TASK" = test ]; then
   bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
   source ~/venv/bin/activate
@@ -54,4 +58,5 @@ else
   [ -f robokun_assets.zip ] && unzip -q -n robokun_assets.zip 'episodes/*' -d .
   pip install -q google-api-python-client google-auth requests
   python scripts/post.py --slot ${TASK#post} 2>&1 | tee logs/post_${TASK}.txt
+  if [ "$TASK" = postA ]; then bash scripts/long_run.sh; fi
 fi

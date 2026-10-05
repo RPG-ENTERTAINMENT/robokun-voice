@@ -1,0 +1,75 @@
++ sudo apt-get update -qq
++ sudo apt-get install -y -qq ffmpeg rubberband-cli
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
++ ffmpeg -hide_banner -filters
++ grep -q rubberband
++ echo 'rubberband filter OK'
+rubberband filter OK
++ '[' -f robokun_assets.zip ']'
++ unzip -q -n robokun_assets.zip -d .
++ mkdir -p assets
++ cp -rn robokun_assets/audio robokun_assets/bg robokun_assets/fonts robokun_assets/sp assets/
++ '[' -f pets_assets.zip ']'
++ unzip -q -n pets_assets.zip -d .
++ cp -rn pets_assets/sp_inu pets_assets/sp_neko assets/
++ python3 scripts/patches.py
+patched eng/engine.py def caption(C, text, prog, alpha, y=1640
+patched eng/engine.py 'ロボしず', t, 360, a)
++ export PIP_NO_CACHE_DIR=1
++ PIP_NO_CACHE_DIR=1
++ '[' '!' -f /home/runner/venv/ok ']'
++ source /home/runner/venv/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ '[' -n /usr/bin/bash -o -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/home/runner/venv
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=/opt/hostedtoolcache/Python/3.10.21/x64/bin:/opt/hostedtoolcache/Python/3.10.21/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ PATH=/home/runner/venv/bin:/opt/hostedtoolcache/Python/3.10.21/x64/bin:/opt/hostedtoolcache/Python/3.10.21/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(venv) '
+++ export PS1
+++ VIRTUAL_ENV_PROMPT='(venv) '
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n /usr/bin/bash -o -n '' ']'
+++ hash -r
++ python -
+assets ready
++ '[' -d gsv ']'
++ '[' -f gsv/GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth ']'
++ mkdir -p gsv/GPT_SoVITS/pretrained_models/fast_langdetect
++ mkdir -p vv
++ cd vv
++ G=https://github.com/VOICEVOX
++ '[' -d voicevox_onnxruntime-linux-x64-1.17.3 ']'
++ '[' -d open_jtalk_dic_utf_8-1.11 ']'
++ for i in 0 6 9 13
++ '[' -f 0.vvm ']'
++ for i in 0 6 9 13
++ '[' -f 6.vvm ']'
++ for i in 0 6 9 13
++ '[' -f 9.vvm ']'
++ for i in 0 6 9 13
++ '[' -f 13.vvm ']'
++ curl -sSL -o 13.vvm https://github.com/VOICEVOX/voicevox_vvm/releases/download/0.16.1/13.vvm
++ cd ..
++ python scripts/prep.py
+prepared 20

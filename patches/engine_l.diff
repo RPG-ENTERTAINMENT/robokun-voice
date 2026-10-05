@@ -9,7 +9,20 @@
  PAPER = np.asarray(Image.open(A+'bg/paper.png').convert('L')).astype(np.float32)[..., None]/255.
 +if LAND: PAPER = np.ascontiguousarray(PAPER.transpose(1, 0, 2))
  SP = {}
-@@ -23,4 +27,10 @@
+@@ -20,2 +24,12 @@
+ RS = 0.61
++PETS = {}   # extra cast: いぬ / ねこ (same pose names as ロボしず)
++for _pk in ('inu', 'neko'):
++    _d = {}
++    for f in glob.glob(A+f'sp_{_pk}/*.png'):
++        k = os.path.basename(f)[:-4]; im = ld(f); a = im[..., 3]; h = a.shape[0]
++        bot = a[int(h*0.65):]; xs = np.arange(a.shape[1])
++        cx = (bot.sum(0)*xs).sum()/max(bot.sum(), 1); ys = np.where(a.max(1) > 0.3)[0]
++        _d[k] = (im, cx, ys.max())
++    if _d: PETS[_pk] = _d
++PS = {'inu': 0.64, 'neko': 0.62}
+ FONT_B = A+'fonts/mpr.ttf'; FONT_T = A+'fonts/hmp.ttf'
+@@ -23,4 +37,10 @@
  yy, xx = np.mgrid[0:H, 0:W]
 -VIG = np.clip(1-0.22*(((xx-540)/760.)**2+((yy-960)/1250.)**2), 0, 1)[..., None].astype(np.float32)
 +VIG = np.clip(1-0.22*(((xx-CX)/(W*0.70))**2+((yy-CY)/(H*0.65))**2), 0, 1)[..., None].astype(np.float32)
@@ -21,7 +34,7 @@
 +PK_C = np.repeat(0.38*np.where(_lo, 0, 2*PAPER-1)*VIG, 3, 2).astype(np.float32)
 +del _lo
  
-@@ -32,8 +42,9 @@
+@@ -32,8 +52,9 @@
      for _ in range(260):
 -        x, y = rng.randint(0, W), rng.randint(0, 1150); r = rng.choice([1, 1, 1, 2, 2, 3]); b = rng.uniform(0.5, 1)
 +        x, y = rng.randint(0, W), rng.randint(0, 1150 if not LAND else 700); r = rng.choice([1, 1, 1, 2, 2, 3]); b = rng.uniform(0.5, 1)
@@ -35,7 +48,7 @@
 +    cv2.circle(s, (mx+28, my-18), 66, tuple(float(v) for v in s[my-18, mx+100]), -1, cv2.LINE_AA)  # crescent
 +    glow = np.zeros_like(s); cv2.circle(glow, (mx, my), 160, (0.25, 0.25, 0.3), -1); glow = cv2.GaussianBlur(glow, (0, 0), 60)
      return np.clip(s+glow, 0, 1)
-@@ -77,2 +88,8 @@
+@@ -77,2 +98,8 @@
  SNOWF = make_glow(9, (255, 255, 255))
 +def _fleaf(col):
 +    S = 4; im = Image.new('RGBA', (40*S, 26*S), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
@@ -44,66 +57,192 @@
 +    return to_prem(im.resize((40, 26), Image.LANCZOS))
 +FLEAVES = [_fleaf((226, 120, 52)), _fleaf((236, 176, 60)), _fleaf((190, 80, 50)), _fleaf((214, 150, 70))]
  
-@@ -105,3 +122,3 @@
+@@ -105,3 +132,3 @@
      ax, ay = anchor; tx, ty = tip
 -    bx = min(max(ax-bw/2, 24), W-24-bw); by = max(ay-bh, 120)
 +    bx = min(max(ax-bw/2, 24), W-24-bw); by = max(ay-bh, 16 if LAND else 120)
      lay = Image.new('RGBA', (W, H), (0, 0, 0, 0)); dd = ImageDraw.Draw(lay)
-@@ -115,3 +132,3 @@
+@@ -115,3 +142,3 @@
  
 -def caption(C, text, prog, alpha, y=250):
 +def caption(C, text, prog, alpha, y=(78 if LAND else 250)):
      f = font(FONT_B, 46); lines = text.split('\n'); lh = 62
-@@ -124,3 +141,3 @@
+@@ -124,3 +151,3 @@
          d.text(((bw-f.getbbox(l)[2])//2, 16+i*lh), vis, font=f, fill=(88, 66, 50))
 -    blit(C, to_prem(im), Mx(540, y, 1, bw/2, bh/2), alpha)
 +    blit(C, to_prem(im), Mx(CX, y+(bh/2-50 if LAND else 0), 1, bw/2, bh/2), alpha)
  
-@@ -133,3 +150,3 @@
+@@ -133,3 +160,3 @@
          d.text((x, yy_), tx_, font=ff, fill=(255, 251, 240))
 -    blit(C, to_prem(im), Mx(540, y+math.sin(t*2.2)*8, 0.9+0.1*ease_out_back(min(1, t/0.6)), 530, 165), a)
 +    blit(C, to_prem(im), Mx(CX, y+math.sin(t*2.2)*8, 0.9+0.1*ease_out_back(min(1, t/0.6)), 530, 165), a)
  
-@@ -150,2 +167,5 @@
+@@ -150,2 +177,5 @@
  CAMZ = {'wide': (1.0, 960), 'mid': (1.2, 1085), 'close': (1.45, 1215)}
 +if LAND:
 +    def _cy(z, gy): return 1500-(gy-CY)/z
 +    CAMZ = {'wide': (1.0, _cy(1.0, 880)), 'mid': (1.15, _cy(1.15, 860)), 'close': (1.38, _cy(1.38, 860))}
  TIMES = ('morning', 'day', 'sunset', 'night')
-@@ -160,3 +180,3 @@
+@@ -160,4 +190,9 @@
          s.hkeys = [(0, float(hn.get('bloom', 1)), float(hn.get('droop', 0)))]; s.heyes = []
 -        s.tkeys = [(0, ep.get('time', 'day'))]; s.wkeys = [(0, ep.get('weather', 'clear'))]
 +        s.cards = []; s.tkeys = [(0, ep.get('time', 'day'))]; s.wkeys = [(0, ep.get('weather', 'clear'))]
          x = float(ep.get('robo_x', 520)); pose = ep.get('robo_pose', 'idle'); carry = None
-@@ -165,2 +185,3 @@
++        s.robo_on = ep.get('robo', True) is not False
++        cast = ep.get('cast') or {}
++        s.pets = [k for k in ('inu', 'neko') if k in cast and k in PETS]
++        s.pseg = {k: [] for k in s.pets}
++        pst = {k: dict(x=float(cast[k].get('x', 600)), pose=cast[k].get('pose', 'idle')) for k in s.pets}
+         s.robo = []  # segments (t0,t1,kind,dict)
+@@ -165,2 +200,3 @@
              t0 = t; r = b.get('robo', {}) or {}
 +            if b.get('card'): s.cards.append((t0, b['card'], b.get('card_sub'))); s.sfx.append((t0+0.1, 'sting_title', 0.5))
              do = r.get('do'); a = 0.0
-@@ -198,3 +219,3 @@
+@@ -187,2 +223,24 @@
+                 if 'pose' not in r: r = dict(r, pose='damage')
++            for k in s.pets:
++                pr = b.get(k) or {}; pd = pr.get('do'); pa = 0.0; px_ = pst[k]['x']
++                if pd in ('walk', 'dash', 'enter', 'exit'):
++                    to = float(pr.get('to', px_))
++                    if pd == 'exit': to = -250 if pr.get('side', 'right') == 'left' else 2350
++                    pa = max(0.35, abs(to-px_)/(DASH_V if pd == 'dash' else WALK_V))
++                    s.pseg[k].append((t0, t0+pa, 'dash' if pd == 'dash' else 'walk', dict(x0=px_, x1=to)))
++                    if pd == 'dash': s.sfx.append((t0, 'dash', 0.5))
++                    else:
++                        for q in np.arange(t0+0.05, t0+pa, 0.24): s.sfx.append((q, 'step' if int(q*10) % 2 else 'step2', 0.22))
++                    pst[k]['x'] = to
++                elif pd in ('jump', 'hop'):
++                    pa = 0.9 if pd == 'jump' else 0.55
++                    s.pseg[k].append((t0, t0+pa, pd, dict(x0=px_))); s.sfx.append((t0+0.08, 'boing', 0.5))
++                elif pd == 'trip':
++                    dd = 1 if pr.get('dir', 'right') == 'right' else -1; pa = 0.5
++                    s.pseg[k].append((t0, t0+pa, 'trip', dict(x0=px_, x1=px_+150*dd)))
++                    s.sfx.append((t0+0.42, 'bonk', 0.8)); s.fx.append((t0+0.42, 'puff', dict(x=px_+150*dd)))
++                    pst[k]['x'] = px_+150*dd
++                    if 'pose' not in pr: pr = dict(pr, pose='damage')
++                if 'pose' in pr: pst[k]['pose'] = pr['pose']
++                a = max(a, pa)
+             if 'pose' in r: pose = r['pose']
+@@ -198,7 +256,8 @@
                  if sp['who'] != 'narr': s.sfx.append((st, 'pop', 0.15))
 -                te = max(te, st+dur+0.35)
 +                te = max(te, st+dur+float(ep.get('gap', 0.35)))
              te = max(te, t0+float(b.get('dur', 0)))
-@@ -298,2 +319,4 @@
+             fx_t = t0+a
++            fon = b.get('fx_on') or ('robo' if s.robo_on or not s.pets else s.pets[0])
+             for f in b.get('fx', []):
+-                s.fx.append((fx_t, f, dict(x=x)))
++                s.fx.append((fx_t, f, dict(x=pst[fon]['x'] if fon in pst else x, who=fon)))
+                 auto = {'hearts': 'heart', 'sparkles': 'sparkle', 'tears': 'drip', 'tears_to_hana': 'drip', 'confetti': 'tada',
+@@ -218,3 +277,3 @@
+             s.beats.append(dict(t0=t0, t1=te, pose=pose, x=x, carry=carry, cam=b.get('cam', 'mid'), focus=b.get('focus'),
+-                                act_end=t0+a, rflip=bool(r.get('flip', False))))
++                                act_end=t0+a, rflip=bool(r.get('flip', False)), pets={k: dict(pst[k]) for k in s.pets}))
+             t = te
+@@ -272,2 +331,33 @@
+ 
++    def pet(s, k, t):
++        b = s.beat(t); bp = b['pets'][k]; SPk = PETS[k]
++        st = dict(spr=bp['pose'], x=bp['x'], flip=False, rot=0., sx=1., sy=1., hop=0., shadow=True)
++        if st['spr'] == 'back': st['spr'] = 'wb1'
++        for (t0, t1, kind, d) in s.pseg[k]:
++            if t0 <= t < t1:
++                u = (t-t0)/(t1-t0); right = d.get('x1', d['x0']) > d['x0']
++                if kind == 'walk':
++                    st.update(spr=['wl1', 'wl2', 'wl3', 'wl2'][int(t/0.12) % 4], flip=right, x=d['x0']+(d['x1']-d['x0'])*u)
++                    st['hop'] = abs(math.sin(t/0.12*math.pi/2))*8
++                elif kind == 'dash':
++                    st.update(spr=['d1', 'd2', 'd3', 'd4'][int(t/0.07) % 4], flip=right, x=d['x0']+(d['x1']-d['x0'])*u)
++                elif kind in ('jump', 'hop'):
++                    hmax = 240 if kind == 'jump' else 100
++                    if u < 0.12: st.update(spr='j1', x=d['x0'], sy=1-0.15*math.sin(u/0.12*math.pi), shadow=False)
++                    else: st.update(spr='j2' if kind == 'jump' else 'j1', x=d['x0'], shadow=False); st['hop'] = hmax*math.sin((u-0.12)/0.88*math.pi)
++                elif kind == 'trip':
++                    st.update(spr='fall', x=d['x0']+(d['x1']-d['x0'])*u, flip=right); st['hop'] = 100*math.sin(u*math.pi)
++                break
++        else:
++            dt = t-b['act_end']
++            if 0 <= dt < 0.3 and b['act_end'] > b['t0']:
++                q = math.exp(-dt*9)*math.sin(dt*28)*0.12; st['sy'] = 1-q; st['sx'] = 1+q*0.6
++            m = s.talk(k, t)
++            if st['spr'] == 'idle' and ((t+hash(k) % 7) % 3.7) < 0.13 and m < 0.05: st['spr'] = 'blink0'
++            br = math.sin(t*2.9+len(k))*0.014
++            if st['spr'] in ('sleep', 'tired', 'damage', 'sad', 'closed'): st['sy'] *= 1+math.sin(t*1.8)*0.02
++            else: st['sy'] *= 1+br+0.04*m; st['sx'] *= 1-br*0.5-0.02*m
++        if st['spr'] not in SPk: st['spr'] = 'idle'
++        return st
++
+     def hana(s, t):
+@@ -298,2 +388,4 @@
          snow = (1 if wc == 'snow' else 0)*wu+(1 if wp == 'snow' else 0)*(1-wu)
 +        s._pet = (1 if wc == 'petals' else 0)*wu+(1 if wp == 'petals' else 0)*(1-wu)
 +        s._lea = (1 if wc == 'leaves' else 0)*wu+(1 if wp == 'leaves' else 0)*(1-wu)
          return T, rain, snow
-@@ -308,6 +331,6 @@
-             if foc == 'hana' and s.hana_on: fx = s.FL_X-60
+@@ -306,8 +398,14 @@
+             rx = min(max(rs['x'], 200), 1900)
+-            foc = b['focus'] or ('both' if s.hana_on else 'robo')
+-            if foc == 'hana' and s.hana_on: fx = s.FL_X-60
 -            elif foc == 'both' and s.hana_on and abs(rx-s.FL_X) < 700: fx = (rx+s.FL_X)/2
++            pxs = {k: min(max(s.pet(k, t)['x'], 200), 1900) for k in s.pets}
++            xs_all = ([rx] if s.robo_on else []) + list(pxs.values())
++            if not s.robo_on and xs_all: rx = sum(xs_all)/len(xs_all)
++            foc = b['focus'] or ('both' if s.hana_on else ('all' if s.pets else 'robo'))
++            if foc == 'both' and s.pets and not s.hana_on: foc = 'all'
++            if foc in pxs: fx = pxs[foc]
++            elif foc == 'all' and xs_all: fx = (sum(xs_all)+(s.FL_X if s.hana_on else 0))/(len(xs_all)+(1 if s.hana_on else 0))
++            elif foc == 'hana' and s.hana_on: fx = s.FL_X-60
 +            elif foc == 'both' and s.hana_on and abs(rx-s.FL_X) < (1000 if LAND else 700): fx = (rx+s.FL_X)/2
              else: fx = rx
              if t > s.T_end: z, cy = z*0.95, cy-40*(t-s.T_end)
 -            half = 540/z; fx = min(max(fx, half), 2100-half)
 +            half = CX/z; fx = min(max(fx, half), WORLD-half)
              tgt = np.array([fx, cy, z], np.float32)
-@@ -333,3 +356,3 @@
+@@ -333,3 +431,3 @@
          if rain > 0: sky = sky*(1-rain*0.9)+SKY_R*rain*0.9
 -        Ms = np.array([[zs, 0, 540-540*zs], [0, zs, 960-(960+(cy-960)*0.15)*zs]], np.float32)
 +        Ms = np.array([[zs, 0, CX-CX*zs], [0, zs, CY-(CY+(cy-960)*0.15)*zs]], np.float32)
          sky = cv2.warpAffine(sky, Ms, (W, H), borderMode=cv2.BORDER_REFLECT)
-@@ -435,3 +458,15 @@
+@@ -341,4 +439,15 @@
+         rs = s.robot(t)
++        heads = {}
++        # extra cast (いぬ・ねこ)
++        for k in s.pets:
++            ps_ = s.pet(k, t); im_, ax_, ay_ = PETS[k][ps_['spr']]
++            if ps_['spr'] in ('j1', 'j2', 'd4'): ay_ = im_.shape[0]-1
++            if ps_['shadow']:
++                q = 1/(1+ps_['hop']/250); P = gs(ps_['x'], GROUND_Y+4)
++                blit(C, SHADOW, Mx(*P, zz*0.4*q*1.6, SHADOW.shape[1]/2, SHADOW.shape[0]/2, sy=zz*0.6*q), 0.4)
++            psc = PS[k]*zz; P = gs(ps_['x'], GROUND_Y-ps_['hop'])
++            blit(C, im_, Mx(*P, psc*ps_['sx'], ax_, ay_, ps_['rot'], ps_['flip'], sy=psc*ps_['sy']))
++            heads[k] = gs(ps_['x'], GROUND_Y-ps_['hop']-PS[k]*im_.shape[0]*0.95)
+         # shadows
+-        if rs['shadow'] or rs['spr'] == 'j2':
++        if s.robo_on and (rs['shadow'] or rs['spr'] == 'j2'):
+             k = 1/(1+rs['hop']/250); w_ = 0.85 if rs['spr'] in ('sleep', 'damage') else 0.45
+@@ -349,2 +458,3 @@
+         im, ax, ay = SP[rs['spr']]
++        if not s.robo_on: im = np.zeros((4, 4, 4), np.float32); ax, ay = 2, 3
+         if rs['spr'] in ('j1', 'j2', 'd4'): ay = im.shape[0]-1
+@@ -369,2 +479,4 @@
+             fh = gs(s.FL_X+(hxl-180)*1.5, s.FL_Y+(hyl-420)*1.5)
++        heads['robo'] = head
++        robo_head = head
+         # fx
+@@ -373,2 +485,3 @@
+             if v < 0 or v > 3.0: continue
++            head = heads.get(d.get('who', 'robo'), robo_head)
+             if f == 'hearts' and v < 1.6:
+@@ -385,3 +498,3 @@
+                     if 0 <= vv < 0.62:
+-                        x0 = rs['x']+60; y0 = GROUND_Y-RS*680*0.4
++                        x0 = d.get('x', rs['x'])+60; y0 = GROUND_Y-RS*680*0.4
+                         if f == 'tears_to_hana' and fh is not None:
+@@ -398,3 +511,3 @@
+                     if vv <= 0: continue
+-                    X = rs['x']+vx*vv*0.8+math.sin(vv*3+a0)*40; Y = min(950+vy*vv+700*vv*vv, GROUND_Y)
++                    X = d.get('x', rs['x'])+vx*vv*0.8+math.sin(vv*3+a0)*40; Y = min(950+vy*vv+700*vv*vv, GROUND_Y)
+                     blit(C, PETALS[k_], Mx(*gs(X, Y), zz*1.2, 15, 9, a0+sp_*vv), 1-ss((vv-2.2)/0.7))
+@@ -435,3 +548,15 @@
              gray = rgb.mean(axis=2, keepdims=True); rgb = (rgb*(1-0.35*rain)+gray*0.35*rain)*(1-0.15*rain)
 -        if snow > 0: rgb = rgb*(1-0.1*snow)+al*np.array([0.06, 0.07, 0.1], np.float32)*snow
 +        if snow > 0:
@@ -120,7 +259,7 @@
 +            warm = rgb[..., [1, 1, 2]]*np.array([1.18, 0.86, 0.7], np.float32)
 +            rgb = rgb*(1-gm*0.85)+warm*gm*0.85
          out = rgb+sky*(1-al)
-@@ -451,2 +486,9 @@
+@@ -451,2 +576,9 @@
                  blit(O, SNOWF, Mx(x, y, sz, 9, 9), 0.9); O[..., 3] = 1
 +        for kind, wv in (('p', s._pet), ('l', s._lea)):
 +            if wv < 0.02: continue
@@ -130,7 +269,7 @@
 +                y = (rng.uniform(0, H)+t*sp) % (H+60)-30; x = (x0-t*sp*0.6) % (W+300)-150+math.sin(t*1.3+ph)*40
 +                blit(O, spr[k_], Mx(x, y, sz, spr[k_].shape[1]/2, spr[k_].shape[0]/2, math.sin(t*2+ph)*1.2+ph), 0.95); O[..., 3] = 1
          if nig > 0.3:
-@@ -455,8 +497,7 @@
+@@ -455,8 +587,7 @@
                  x, y, ph, sp = rng.uniform(0, 2100), rng.uniform(1150, 1550), rng.uniform(0, 6.28), rng.uniform(0.3, 0.8)
 -                X = (x+math.sin(t*sp+ph)*60-cx)*z+540; Y = (y+math.cos(t*sp*1.3+ph)*40-cy)*z+960
 +                X = (x+math.sin(t*sp+ph)*60-cx)*z+CX; Y = (y+math.cos(t*sp*1.3+ph)*40-cy)*z+CY
@@ -142,12 +281,19 @@
 +        out = np.ascontiguousarray(out, dtype=np.float32)
 +        out = cv2.add(cv2.add(cv2.multiply(out, PK_A), cv2.multiply(cv2.multiply(out, out), PK_B)), cv2.multiply(cv2.sqrt(np.clip(out, 0, 1)), PK_C))
          O = np.dstack([out, np.ones((H, W, 1), np.float32)])
-@@ -464,3 +505,3 @@
+@@ -464,3 +595,3 @@
          if t < 3.0:
 -            a = ss((t-0.2)/0.5)*(1-ss((t-2.4)/0.5)); big_text(O, s.ep.get('title', ''), 'ロボしず', t, 600, a)
-+            a = ss((t-0.2)/0.5)*(1-ss((t-2.4)/0.5)); big_text(O, s.ep.get('title', ''), 'ロボしず', t, 380 if LAND else 600, a)
++            a = ss((t-0.2)/0.5)*(1-ss((t-2.4)/0.5)); big_text(O, s.ep.get('title', ''), s.ep.get('series', 'ロボしず'), t, 380 if LAND else 600, a)
          for L in s.lines:
-@@ -480,4 +521,7 @@
+@@ -473,4 +604,4 @@
+                 if fade <= 0: continue
+-                if L['who'] == 'robo':
+-                    tip = (head[0]-20*zz, head[1]-10); anchor = (head[0]-60, head[1]-40)
++                if L['who'] in heads and (L['who'] != 'robo' or s.robo_on):
++                    hd = heads[L['who']]; tip = (hd[0]-20*zz, hd[1]-10); anchor = (hd[0]-60, hd[1]-40)
+                 elif fh is not None:
+@@ -480,4 +611,7 @@
                  O[..., :3] = O[..., :3]*(1-Ob[..., 3:4]*fade)+Ob[..., :3]*fade
 +        for (c0, ct, csub) in s.cards:
 +            v = t-c0
@@ -156,7 +302,12 @@
 -            v = t-s.T_end-0.1; big_text(O, 'おしまい', None, v, 640, ss(v/0.5))
 +            v = t-s.T_end-0.1; big_text(O, 'おしまい', None, v, 400 if LAND else 640, ss(v/0.5))
          out = O[..., :3]
-@@ -525,9 +569,15 @@
+@@ -511,3 +645,3 @@
+             d = rdw(L['wav']); d = d/(np.abs(d).max()+1e-6)*0.8
+-            put(vox, d, L['t'], {'robo': 0.95, 'hana': 0.9, 'narr': 0.95}[L['who']], {'robo': -0.12, 'hana': 0.15, 'narr': 0}[L['who']])
++            put(vox, d, L['t'], {'robo': 0.95, 'hana': 0.9, 'narr': 0.95, 'inu': 0.92, 'neko': 0.92}[L['who']], {'robo': -0.12, 'hana': 0.15, 'narr': 0, 'inu': -0.2, 'neko': 0.05}[L['who']])
+     act = np.convolve(np.abs(vox).max(1), np.ones(2400)/2400, 'same'); duck = np.clip(np.convolve(np.clip(act*8, 0, 1), np.ones(12000)/12000, 'same')*1.3, 0, 1)
+@@ -525,9 +659,15 @@
      # ambience
 -    T0, rain, snow = s.look(0)
 -    amb = 'rain_loop' if s.ep.get('weather') == 'rain' else 'snow_loop' if s.ep.get('weather') == 'snow' else 'crickets_loop' if s.ep.get('time') in ('night', 'sunset') else 'birds_loop'

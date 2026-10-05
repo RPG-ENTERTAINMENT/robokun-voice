@@ -5,6 +5,7 @@ ffmpeg -hide_banner -filters 2>/dev/null | grep -q rubberband && echo "rubberban
 # ---- assets (zip uploaded once; repo files take precedence)
 if [ -f robokun_assets.zip ]; then unzip -q -n robokun_assets.zip -d . ; fi
 mkdir -p assets && cp -rn robokun_assets/* assets/ 2>/dev/null
+if [ -f pets_assets.zip ]; then unzip -q -n pets_assets.zip -d . ; cp -rn pets_assets/* assets/ 2>/dev/null; fi
 python3 scripts/patches.py
 # ---- python deps (venv cached by workflow)
 export PIP_NO_CACHE_DIR=1
@@ -36,7 +37,7 @@ mkdir -p vv; cd vv
 G=https://github.com/VOICEVOX
 [ -d voicevox_onnxruntime-linux-x64-1.17.3 ] || (curl -sSL -o o.tgz $G/onnxruntime-builder/releases/download/voicevox_onnxruntime-1.17.3/voicevox_onnxruntime-linux-x64-1.17.3.tgz && tar xzf o.tgz && rm o.tgz)
 [ -d open_jtalk_dic_utf_8-1.11 ] || (curl -sSL -o d.tgz https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz && tar xzf d.tgz && rm d.tgz)
-for i in 0 6 9; do [ -f $i.vvm ] || curl -sSL -o $i.vvm $G/voicevox_vvm/releases/download/0.16.1/$i.vvm; done
+for i in 0 6 9 13; do [ -f $i.vvm ] || curl -sSL -o $i.vvm $G/voicevox_vvm/releases/download/0.16.1/$i.vvm; done
 cd ..
 # ---- reference voice clips
 python scripts/prep.py

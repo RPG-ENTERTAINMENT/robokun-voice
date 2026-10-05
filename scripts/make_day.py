@@ -10,7 +10,12 @@ st_path = 'state/state.json'; os.makedirs('state', exist_ok=True)
 st = json.load(open(st_path)) if os.path.exists(st_path) else {'next': 0, 'days': {}}
 n = 1 if TEST else 2
 if not TEST and day in st.get('days', {}): print('already made', day, st['days'][day]); sys.exit(0)
-eps = [idx[(st['next']+k) % len(idx)]['id'] for k in range(n)]
+have_pets = os.path.isdir('assets/sp_inu') and os.path.isdir('assets/sp_neko')
+eps, pos = [], st['next']
+while len(eps) < n and pos < st['next'] + len(idx):
+    e = idx[pos % len(idx)]['id']; pos += 1
+    if not have_pets and json.load(open(f'episodes/{e}.json')).get('cast'): print('skip (pet sprites not uploaded yet)', e); continue
+    eps.append(e)
 print('episodes', eps)
 env = dict(os.environ, ROBO_ASSETS=os.path.abspath('assets')+'/')
 sh('python', 'scripts/robo_tts.py', *eps)
@@ -18,7 +23,7 @@ outs = []
 for k, e in enumerate(eps):
     sh('python', 'eng/tts_vv.py', f'episodes/{e}.json', f'vo/{e}', '--vv', 'vv', '--skip-robo')
     out = f'out/{day}_{"AB"[k]}_{e}.mp4'; os.makedirs('out', exist_ok=True)
-    sh('python', 'eng/engine.py', f'episodes/{e}.json', f'vo/{e}', out, '--procs', '2', env=env)
+    sh('python', 'eng/engine_l.py', f'episodes/{e}.json', f'vo/{e}', out, '--procs', '2', env=env)
     outs.append(out)
 if TEST:
     import shutil; os.makedirs('tests', exist_ok=True); shutil.copy(outs[0], 'tests/latest.mp4')
@@ -29,7 +34,7 @@ subprocess.run(['gh', 'release', 'delete', tag, '-y', '--cleanup-tag'])
 meta = {'A': eps[0], 'B': eps[1]}
 open('out/meta.json', 'w').write(json.dumps(meta))
 sh('gh', 'release', 'create', tag, *outs, 'out/meta.json', '--title', tag, '--notes', ' / '.join(eps))
-st['next'] = (st['next']+n) % len(idx); st['days'][day] = meta
+st['next'] = pos % len(idx); st['days'][day] = meta
 json.dump(st, open(st_path, 'w'), ensure_ascii=False, indent=1)
 # cleanup releases older than 14 days
 r = subprocess.run(['gh', 'release', 'list', '--limit', '100', '--json', 'tagName'], capture_output=True, text=True)

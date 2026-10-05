@@ -13,4 +13,5 @@ if [ $rc -ne 0 ]; then
   LONG_PROCS=1 python scripts/long_daily.py "$@" > logs/long_daily_retry.txt 2>&1
   rc=$?; cat logs/long_daily_retry.txt
 fi
+bash scripts/save.sh   # record today's upload right away
 exit $rc

@@ -9,6 +9,7 @@ idx = json.load(open('episodes/index.json'))
 st_path = 'state/state.json'; os.makedirs('state', exist_ok=True)
 st = json.load(open(st_path)) if os.path.exists(st_path) else {'next': 0, 'days': {}}
 n = 1 if TEST else 2
+if not TEST and day in st.get('days', {}): print('already made', day, st['days'][day]); sys.exit(0)
 eps = [idx[(st['next']+k) % len(idx)]['id'] for k in range(n)]
 print('episodes', eps)
 env = dict(os.environ, ROBO_ASSETS=os.path.abspath('assets')+'/')

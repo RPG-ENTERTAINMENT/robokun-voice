@@ -2,9 +2,9 @@
 # entry point for .github/workflows/daily.yml
 SCHED="$1"; TASK="$2"
 case "$SCHED" in
-  "0 16 * * *") TASK=make;;
-  "0 3 * * *") TASK=postA;;
-  "0 10 * * *") TASK=postB;;
+  "0 16 * * *"|"40 16 * * *") TASK=make;;
+  "0 3 * * *"|"30 3 * * *") TASK=postA;;
+  "0 10 * * *"|"30 10 * * *") TASK=postB;;
 esac
 [ -z "$TASK" ] && [ -f jobs/daily_task ] && TASK=$(head -1 jobs/daily_task | tr -d " \r")
 [ -z "$TASK" ] && TASK=test
@@ -57,6 +57,9 @@ elif [ "$TASK" = make ] || [ "$TASK" = test ]; then
 else
   [ -f robokun_assets.zip ] && unzip -q -n robokun_assets.zip 'episodes/*' -d .
   pip install -q google-api-python-client google-auth requests
+  # catch-up: if the 12:00 short was missed, post it before the 19:00 one (already-posted slots are skipped)
+  if [ "$TASK" = postB ]; then python scripts/post.py --slot A 2>&1 | tee logs/post_catchupA.txt; fi
   python scripts/post.py --slot ${TASK#post} 2>&1 | tee logs/post_${TASK}.txt
-  if [ "$TASK" = postA ]; then bash scripts/long_run.sh; fi
+  # daily landscape episode (skips itself if today's is already uploaded)
+  bash scripts/long_run.sh
 fi

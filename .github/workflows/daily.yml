@@ -4,6 +4,9 @@ on:
     - cron: '0 16 * * *'
     - cron: '0 3 * * *'
     - cron: '0 10 * * *'
+    - cron: '30 3 * * *'
+    - cron: '30 10 * * *'
+    - cron: '40 16 * * *'
   push:
     paths: ['jobs/daily_*']
   workflow_dispatch:

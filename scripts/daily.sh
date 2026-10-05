@@ -61,6 +61,7 @@ else
   # catch-up: if the 12:00 short was missed, post it before the 19:00 one (already-posted slots are skipped)
   if [ "$TASK" = postB ]; then python scripts/post.py --slot A 2>&1 | tee logs/post_catchupA.txt; fi
   python scripts/post.py --slot ${TASK#post} 2>&1 | tee logs/post_${TASK}.txt
+  bash scripts/save.sh   # save posted state right away
   # daily landscape episode (skips itself if today's is already uploaded)
   bash scripts/long_run.sh
 fi

@@ -4,4 +4,4 @@ Traceback (most recent call last):
     subprocess.run(['gh', 'release', 'download', tag, '-D', 'dl', '--clobber'], check=True)
   File "/opt/hostedtoolcache/Python/3.10.21/x64/lib/python3.10/subprocess.py", line 526, in run
     raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '['gh', 'release', 'download', 'day-20261006', '-D', 'dl', '--clobber']' returned non-zero exit status 1.
+subprocess.CalledProcessError: Command '['gh', 'release', 'download', 'day-20261007', '-D', 'dl', '--clobber']' returned non-zero exit status 1.

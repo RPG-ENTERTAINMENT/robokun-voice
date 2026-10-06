@@ -1,9 +1,13 @@
 {
- "next": 1,
+ "next": 2,
  "days": {
   "20261006": {
    "ep": "l001",
    "video": "-w_74HEbtrc"
+  },
+  "20261007": {
+   "ep": "l002",
+   "video": "4SmnSW2pH5I"
   }
  }
 }

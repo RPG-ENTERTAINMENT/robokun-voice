@@ -9,7 +9,11 @@ if [ -f pets_assets.zip ]; then unzip -q -n pets_assets.zip -d . ; cp -rn pets_a
 python3 scripts/patches.py
 # ---- python deps (venv cached by workflow)
 export PIP_NO_CACHE_DIR=1
-if [ ! -f ~/venv/ok ]; then
+# The cached venv breaks when the runner's Python patch version changes (its python symlink
+# points at the old toolcache path). Check that it really works, not just that the marker exists.
+if [ ! -f ~/venv/ok ] || ! ~/venv/bin/python -c "import PIL, soundfile, torch, librosa" 2>/dev/null; then
+  echo "venv missing or broken -> rebuilding"
+  rm -rf ~/venv
   python -m venv ~/venv; source ~/venv/bin/activate
   pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
   [ -d gsv ] || git clone --depth 1 https://github.com/RVC-Boss/GPT-SoVITS.git gsv

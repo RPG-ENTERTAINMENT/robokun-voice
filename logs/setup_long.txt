@@ -27,6 +27,11 @@ patched eng/engine.py 'ロボしず', t, 360, a)
 + export PIP_NO_CACHE_DIR=1
 + PIP_NO_CACHE_DIR=1
 + '[' '!' -f /home/runner/venv/ok ']'
++ /home/runner/venv/bin/python -c 'import PIL, soundfile, torch, librosa'
++ echo 'venv missing or broken -> rebuilding'
+venv missing or broken -> rebuilding
++ rm -rf /home/runner/venv
++ python -m venv /home/runner/venv
 + source /home/runner/venv/bin/activate
 ++ deactivate nondestructive
 ++ '[' -n '' ']'
@@ -51,10 +56,78 @@ patched eng/engine.py 'ロボしず', t, 360, a)
 ++ export VIRTUAL_ENV_PROMPT
 ++ '[' -n /usr/bin/bash -o -n '' ']'
 ++ hash -r
++ pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+  error: subprocess-exited-with-error
+  
+  × pip subprocess to install build dependencies did not run successfully.
+  │ exit code: 1
+  ╰─> [3 lines of output]
+      Looking in indexes: https://download.pytorch.org/whl/cpu
+      ERROR: Could not find a version that satisfies the requirement flit_core<4,>=3.11 (from versions: none)
+      ERROR: No matching distribution found for flit_core<4,>=3.11
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× pip subprocess to install build dependencies did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
++ '[' -d gsv ']'
++ printf 'torch==2.6.0+cpu\ntorchaudio==2.6.0+cpu\n'
++ pip install -q -r gsv/requirements.txt -c /tmp/cons.txt --extra-index-url https://download.pytorch.org/whl/cpu
+DEPRECATION: --no-binary currently disables reading from the cache of locally built wheels. In the future --no-binary will not influence the wheel cache. pip 23.1 will enforce this behaviour change. A possible replacement is to use the --no-cache-dir option. You can use the flag --use-feature=no-binary-enable-wheel-cache to test the upcoming behaviour. Discussion can be found at https://github.com/pypa/pip/issues/11453
+  DEPRECATION: jieba_fast is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  DEPRECATION: jieba is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  DEPRECATION: distance is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  DEPRECATION: crcmod is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  DEPRECATION: antlr4-python3-runtime is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  DEPRECATION: oss2 is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+
+[notice] A new release of pip is available: 23.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
++ pip install -q huggingface_hub soundfile librosa opencv-python-headless pillow numpy fonttools
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchmetrics 1.5.0 requires numpy<2.0,>1.20.0, but you have numpy 2.2.6 which is incompatible.
+
+[notice] A new release of pip is available: 23.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
++ pip install -q https://github.com/VOICEVOX/voicevox_core/releases/download/0.16.2/voicevox_core-0.16.2-cp310-abi3-manylinux_2_34_x86_64.whl
+
+[notice] A new release of pip is available: 23.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
++ touch /home/runner/venv/ok
++ source /home/runner/venv/bin/activate
+++ deactivate nondestructive
+++ '[' -n /opt/hostedtoolcache/Python/3.10.22/x64/bin:/opt/hostedtoolcache/Python/3.10.22/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin ']'
+++ PATH=/opt/hostedtoolcache/Python/3.10.22/x64/bin:/opt/hostedtoolcache/Python/3.10.22/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export PATH
+++ unset _OLD_VIRTUAL_PATH
+++ '[' -n '' ']'
+++ '[' -n /usr/bin/bash -o -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/home/runner/venv
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=/opt/hostedtoolcache/Python/3.10.22/x64/bin:/opt/hostedtoolcache/Python/3.10.22/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ PATH=/home/runner/venv/bin:/opt/hostedtoolcache/Python/3.10.22/x64/bin:/opt/hostedtoolcache/Python/3.10.22/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1='(venv) '
+++ PS1='(venv) (venv) '
+++ export PS1
+++ VIRTUAL_ENV_PROMPT='(venv) '
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n /usr/bin/bash -o -n '' ']'
+++ hash -r
 + python -
-Traceback (most recent call last):
-  File "<stdin>", line 2, in <module>
-ModuleNotFoundError: No module named 'PIL'
+assets ready
 + '[' -d gsv ']'
 + '[' -f gsv/GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth ']'
 + mkdir -p gsv/GPT_SoVITS/pretrained_models/fast_langdetect

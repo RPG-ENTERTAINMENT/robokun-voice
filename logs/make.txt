@@ -1,14 +1,1 @@
-episodes ['ep009', 'ep063']
-+ python scripts/robo_tts.py ep009 ep063
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/scripts/robo_tts.py", line 5, in <module>
-    import soundfile as sf
-ModuleNotFoundError: No module named 'soundfile'
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/scripts/make_day.py", line 21, in <module>
-    sh('python', 'scripts/robo_tts.py', *eps)
-  File "/home/runner/work/robokun-voice/robokun-voice/scripts/make_day.py", line 4, in sh
-    def sh(*a, **k): print('+', ' '.join(a), flush=True); return subprocess.run(a, check=True, **k)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/subprocess.py", line 526, in run
-    raise CalledProcessError(retcode, process.args,
-subprocess.CalledProcessError: Command '('python', 'scripts/robo_tts.py', 'ep009', 'ep063')' returned non-zero exit status 1.
+already made 20261008 {'A': 'ep009', 'B': 'ep063'}

@@ -22,6 +22,9 @@ sh('python', 'scripts/robo_tts.py', *eps)
 outs = []
 for k, e in enumerate(eps):
     sh('python', 'eng/tts_vv.py', f'episodes/{e}.json', f'vo/{e}', '--vv', 'vv', '--skip-robo')
+    # shorts tempo: speak ~10% faster (pitch kept)
+    for w in glob.glob(f'vo/{e}/[0-9][0-9].wav'):
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', w, '-af', 'atempo=1.1', w+'.f.wav'], check=True); os.replace(w+'.f.wav', w)
     out = f'out/{day}_{"AB"[k]}_{e}.mp4'; os.makedirs('out', exist_ok=True)
     sh('python', 'eng/engine_l.py', f'episodes/{e}.json', f'vo/{e}', out, '--procs', '2', env=env)
     outs.append(out)

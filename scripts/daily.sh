@@ -54,6 +54,7 @@ elif [ "$TASK" = make ] || [ "$TASK" = test ]; then
   bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
   source ~/venv/bin/activate
   cp eng/engine.py eng/engine_l.py && patch -l eng/engine_l.py patches/engine_l.diff && patch -l eng/lib.py patches/lib.diff || exit 1
+  python scripts/shorts_tempo.py eng/engine_l.py
   python scripts/make_day.py $([ "$TASK" = test ] && echo --test) 2>&1 | tee logs/make.txt
 else
   [ -f robokun_assets.zip ] && unzip -q -n robokun_assets.zip 'episodes/*' -d .

@@ -13,7 +13,10 @@ if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; 
 echo "TASK=$TASK"
 mkdir -p logs
 set -o pipefail
-if [ "${TASK%%:*}" = longvoice ]; then
+if [ "${TASK%%:*}" = ttauth ]; then
+  pip install -q requests
+  python scripts/tiktok.py auth "${TASK#ttauth:}" 2>&1 | tee logs/ttauth.txt
+elif [ "${TASK%%:*}" = longvoice ]; then
   EP=${TASK#longvoice:}
   bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
   source ~/venv/bin/activate

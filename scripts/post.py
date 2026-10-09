@@ -52,4 +52,15 @@ if os.environ.get('IG_TOKEN') and os.environ.get('IG_USER_ID') and 'instagram' n
         posted[key]['instagram'] = p.get('id'); print('instagram', p)
     except Exception as e:
         print('instagram FAILED', repr(e))
+# ---------------- TikTok (Direct Post; private until the TikTok app passes its audit)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import tiktok
+if tiktok.configured() and not ({'tiktok', 'tiktok_private'} & set(posted[key])):
+    try:
+        tags = ' '.join('#' + t for t in json.load(open('config/youtube.json'))['tags'] if t != 'shorts')
+        r = tiktok.post(vid, f"{ep['title']}｜ロボしず {tags}")
+        if r.get('privacy') == 'PUBLIC_TO_EVERYONE': posted[key]['tiktok'] = r['publish_id']
+        else: posted[key]['tiktok_private'] = r['publish_id']
+    except Exception as e:
+        print('tiktok FAILED', repr(e))
 json.dump(posted, open(st_path, 'w'), ensure_ascii=False, indent=1)

@@ -261,10 +261,10 @@ def render_frame(S, T, fi):
         img = Image.fromarray(a)
     img = img.convert('RGBA')
     for o in T.ov:
-        if not (o['s'] - 0.05 <= t < o['e']): continue
+        if not (o['s'] <= t < o['e']): continue
         im2 = o['img']; anim = o.get('anim', 'none')
         if anim in ('pop', 'bigpop') and fi > 0:
-            k = min(1, (t - o['s'] + 0.05) / 0.15)
+            k = min(1, (t - o['s']) / 0.15 + 0.25)
             scl = (1.35 - 0.35 * k) if anim == 'bigpop' else (1.12 - 0.12 * k)
             if scl != 1: im2 = im2.resize((max(1, int(im2.width * scl)), max(1, int(im2.height * scl))), Image.BICUBIC)
             if k < 1:
@@ -281,7 +281,7 @@ def _work(args):
     a, b, out = args
     W, H = _S.W, _S.H
     p = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(_T.fps),
-                          '-i', '-', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
+                          '-i', '-', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-maxrate', '6M', '-bufsize', '12M', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
     for f in range(a, b): p.stdin.write(render_frame(_S, _T, f).tobytes())
     p.stdin.close(); p.wait(); return out
 

@@ -343,7 +343,12 @@ def upload(yt, path, title, desc, tags, publish_at=None, thumb=None):
                         'defaultLanguage': 'ja', 'defaultAudioLanguage': 'ja'}, 'status': status}
     req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(path, mimetype='video/mp4', resumable=True, chunksize=8 << 20))
     resp = None
-    while resp is None: _, resp = req.next_chunk()
+    while resp is None:
+        for k in range(6):   # the big long video sometimes gets its connection dropped mid-upload: resume instead of failing
+            try: _, resp = req.next_chunk(num_retries=5); break
+            except (OSError, ConnectionError) as e:
+                print('upload chunk retry', k, repr(e)[:120]); time.sleep(15 * (k + 1))
+        else: raise RuntimeError('upload failed after retries')
     vid = resp['id']; print('uploaded', vid, title, publish_at)
     if thumb:
         try:

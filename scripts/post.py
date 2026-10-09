@@ -1,7 +1,10 @@
 """Post today's slot (A=12:00, B=19:00 JST) to the configured SNS."""
 import os, sys, json, subprocess, datetime, argparse, glob, time
 ap = argparse.ArgumentParser(); ap.add_argument('--slot', required=True); g = ap.parse_args()
-JST = datetime.timezone(datetime.timedelta(hours=9)); day = datetime.datetime.now(JST).strftime('%Y%m%d')
+JST = datetime.timezone(datetime.timedelta(hours=9)); _now = datetime.datetime.now(JST)
+# GitHub's scheduled runs are often hours late: a 19:00 post can start after midnight JST.
+# Before 06:00 JST, the slot still belongs to the previous day.
+day = (_now - datetime.timedelta(hours=6)).strftime('%Y%m%d')
 tag = f'day-{day}'; os.makedirs('dl', exist_ok=True)
 subprocess.run(['gh', 'release', 'download', tag, '-D', 'dl', '--clobber'], check=True)
 meta = json.load(open('dl/meta.json')); epid = meta[g.slot]

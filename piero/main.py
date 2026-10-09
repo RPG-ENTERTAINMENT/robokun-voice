@@ -81,7 +81,7 @@ def photos_for(unit):
     return out, th
 
 # ======================================================================== SHORT
-def build_short(unit, out, faces):
+def build_short(unit, out, faces, thumb_out=None):
     W, H = 1080, 1920
     items = unit['items']
     texts = [unit['hook_v']] + [thin(it['v']) for it in items] + [unit['end_v']]
@@ -98,6 +98,7 @@ def build_short(unit, out, faces):
     f_sub, f_num, f_t1, f_t2 = E.font(104), E.font(150), E.font(124), E.font(66)
     title = unit['title']
     pics, thumb_pic = photos_for(unit)
+    if thumb_out: make_thumb_v(faces, unit, thumb_out, thumb_pic, next((x for x in pics[::-1] if x is not None), None))
     f_lab = E.font(34)
     ov.append(dict(s=0, e=1e9, img=E.text_img(title, f_t1, RED, (120, 0, 0), max_w=1040), xy=(540, 140), jitter=2))
     sub_img = E.text_img('知らないとヤバい10選', f_t2, WHITE, (90, 0, 0), stroke=8, max_w=1000)
@@ -269,6 +270,35 @@ def make_thumb(faces, unit, path, bg_pic=None, item_pic=None):
     img.alpha_composite(t2, (60, H - t2.height + 10))
     img.convert('RGB').resize((1280, 720), Image.LANCZOS).save(path, quality=93)
 
+def make_thumb_v(faces, unit, path, bg_pic=None, item_pic=None):
+    """1080x1920 vertical thumbnail for Shorts: badge, huge title, 10選, evidence photo, laughing clown at the bottom"""
+    from PIL import ImageFilter, ImageDraw
+    W, H = 1080, 1920
+    img = I.background(bg_pic, W, H, seed=5).convert('RGBA') if bg_pic is not None else Image.new('RGBA', (W, H), (25, 12, 10, 255))
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    shade = np.clip(0.75 - yy / H * 0.5, 0.2, 0.75)[..., None]
+    glow = np.exp(-(((xx - 540) / 520) ** 2 + ((yy - 1500) / 460) ** 2))[..., None]
+    a = np.asarray(img).astype(np.float32)
+    a[..., :3] = a[..., :3] * (1 - shade) + np.array([160, 0, 0]) * glow * 0.6
+    img = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
+    f = (np.clip(faces[6], 0, 1) * 255).astype(np.uint8)
+    cl = Image.fromarray(f).crop((20, 0, 440, 400))
+    sc = 2.3; cl = cl.resize((int(cl.width * sc), int(cl.height * sc)), Image.LANCZOS).rotate(-4, expand=True, resample=Image.BICUBIC)
+    ca = np.asarray(cl).astype(np.float32); ca[..., :3] *= np.array([1.05, 0.9, 0.82]); cl = Image.fromarray(np.clip(ca, 0, 255).astype(np.uint8))
+    rim = Image.new('RGBA', cl.size, (255, 20, 20, 0)); rim.putalpha(cl.split()[3].filter(ImageFilter.GaussianBlur(26)).point(lambda v: min(255, v * 2)))
+    pos = (int(W / 2 - cl.width / 2), H - cl.height + 40)
+    img.alpha_composite(rim, pos); img.alpha_composite(cl, pos)
+    badge = Image.new('RGBA', (430, 120), (210, 0, 0, 255)); d = ImageDraw.Draw(badge)
+    tw = d.textlength('閲覧注意', font=E.font(92)); d.text(((430 - tw) / 2, 4), '閲覧注意', font=E.font(92), fill=(255, 255, 255))
+    badge = badge.rotate(4, expand=True, resample=Image.BICUBIC)
+    img.alpha_composite(badge, (int(W / 2 - badge.width / 2), 60))
+    lines = title_lines(unit['title'])
+    t1 = E.text_img('\n'.join(lines), E.font(190 if len(lines) <= 2 else 150), (255, 255, 255), (200, 0, 0), stroke=18, spacing=6, max_w=1000, grunge=False)
+    img.alpha_composite(t1, (int(W / 2 - t1.width / 2), 220))
+    t2 = E.text_img('10選', E.font(260), (255, 226, 60), (200, 40, 0), stroke=20, max_w=700, grunge=False)
+    img.alpha_composite(t2, (int(W / 2 - t2.width / 2), 230 + t1.height - 20))
+    img.convert('RGB').save(path, quality=92)
+
 # ======================================================================== YouTube
 def yt_client():
     from cryptography.fernet import Fernet
@@ -345,7 +375,7 @@ def release(tag, files, notes):
 def task_daily():
     now = datetime.datetime.now(JST); day = now.strftime('%Y%m%d')
     st = load_state(); dd = st['days'].setdefault(day, {})
-    yt = yt_client(); F = faces()
+    yt = yt_client(); F = faces(); thumbs = []
     shorts, longs = units('s'), units('l')
     for slot, kind, hh in (('A', 's', 12), ('L', 'l', 16), ('B', 's', 20)):
         if dd.get(slot, {}).get('video'): print('done', slot, dd[slot]); continue
@@ -355,7 +385,7 @@ def task_daily():
         when = now.replace(hour=hh, minute=0, second=0, microsecond=0)
         out = os.path.join(WORK, f'{day}_{slot}_{u["id"]}.mp4')
         if kind == 's':
-            build_short(u, out, F); t, d, tags = meta_short(u); thumb = None
+            thumb = out[:-4] + '.jpg'; build_short(u, out, F, thumb); t, d, tags = meta_short(u)
         else:
             thumb = out[:-4] + '.jpg'; build_long(u, out, F, thumb); t, d, tags = meta_long(u)
         # schedule for the slot; if the slot is already (almost) past (late retry), publish right away
@@ -366,6 +396,23 @@ def task_daily():
         st[key] = st[key] + 1
         save_state(st)
         os.remove(out)
+        if thumb and os.path.exists(thumb): thumbs.append(thumb)
+    if thumbs:
+        try: release(f'piero-thumbs-{day}', thumbs, 'thumbnails ' + day)
+        except Exception as e: print('thumb release failed', repr(e)[:200])
+
+def task_thumbs(ids, tag):
+    """thumbnails only (no voice / video). ids like s001,l001,s002 or 'today' (= today's posted units)"""
+    F = faces(); outs = []
+    if ids == ['today']:
+        day = datetime.datetime.now(JST).strftime('%Y%m%d'); dd = load_state()['days'].get(day, {})
+        ids = [dd[k]['id'] for k in ('A', 'L', 'B') if k in dd]
+    for n, i in enumerate(ids):
+        u = unit(i); pics, th = photos_for(u)
+        item = next((x for x in pics[::-1] if x is not None), None)
+        p = os.path.join(WORK, f'thumb_{n + 1}_{i}.jpg')
+        (make_thumb_v if i.startswith('s') else make_thumb)(F, u, p, th, item); outs.append(p)
+    release(tag, outs, ' '.join(ids))
 
 def task_render(ids, tag):
     F = faces(); outs = []
@@ -385,5 +432,6 @@ if __name__ == '__main__':
     elif task == 'test': task_render(['s001', 'l001'], f'piero-test-{stamp}')
     elif task == 'test_short': task_render(['s001'], f'piero-test-{stamp}')
     elif task.startswith('one:'): task_render([task[4:]], f'piero-{task[4:]}-{stamp}')
+    elif task.startswith('thumbs:'): task_thumbs(task[7:].split(','), f'piero-thumbs-{stamp}')
     elif task == 'whoami': yt_client(); print('channel ok')
     print('elapsed', round(time.time() - t0), 's')

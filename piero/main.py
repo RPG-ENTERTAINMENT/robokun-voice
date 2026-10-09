@@ -100,8 +100,10 @@ def build_short(unit, out, faces):
     pics, thumb_pic = photos_for(unit)
     f_lab = E.font(34)
     ov.append(dict(s=0, e=1e9, img=E.text_img(title, f_t1, RED, (120, 0, 0), max_w=1040), xy=(540, 140), jitter=2))
-    ov.append(dict(s=0, e=1e9, img=E.text_img('知らないとヤバい10選', f_t2, WHITE, (90, 0, 0), stroke=8, max_w=1000), xy=(540, 272)))
-    YN, YP, YC = 395, 740, 1705     # number / photo / caption
+    sub_img = E.text_img('知らないとヤバい10選', f_t2, WHITE, (90, 0, 0), stroke=8, max_w=1000)
+    ov.append(dict(s=0, e=segs[1][0], img=sub_img, xy=(540, 272)))           # intro only; the item number takes this spot later
+    ov.append(dict(s=segs[-1][0], e=1e9, img=sub_img, xy=(540, 272)))
+    YN, YP, YC = 300, 676, 1730     # number / photo / caption (clown face stays fully visible below the photo)
     photo_t = []
     for i, (s, e) in enumerate(segs):
         nxt = segs[i + 1][0] if i + 1 < len(segs) else total
@@ -109,29 +111,30 @@ def build_short(unit, out, faces):
         if i == 0:
             cues.append(dict(s=s0, e=e, expr=1, mood='intro'))
             if thumb_pic is not None:
-                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 720, 440, seed=11), xy=(540, YP), jitter=1))
+                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 740, 420, seed=11), xy=(540, YP), jitter=1))
             for ps, pe, p in assign_pages(s0, nxt, e, ['ククク……', f'{title}\n10選']):
                 ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
         elif i <= 10:
             it = items[i - 1]
             last = i == 10
             cues.append(dict(s=s, e=e, expr=[0, 3, 5, 2, 8, 0, 3, 5, 2, 4][i - 1], mood='scare' if last else 'head'))
-            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', f_num, RED, (150, 0, 0), max_w=900), xy=(540, YN), anim='bigpop', jitter=2))
+            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', E.font(118), RED, (150, 0, 0), max_w=900), xy=(540, YN), anim='bigpop', jitter=2))
             if pics[i - 1] is not None:
-                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 720, 440, seed=i), xy=(540, YP), anim='pop', jitter=1))
+                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 740, 420, seed=i), xy=(540, YP), anim='pop', jitter=1))
                 photo_t.append(s)
-            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_sub, max_w=1040), xy=(540, YC if pics[i - 1] is not None else 760), anim='pop', jitter=3))
+            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_sub, max_w=1040), xy=(540, YC if pics[i - 1] is not None else 680), anim='pop', jitter=3))
         else:
             cues.append(dict(s=s, e=e, expr=6, mood='outro'))
             for ps, pe, p in assign_pages(s, nxt, e, [pg for sent in split_sent(unit['end_v']) for pg in pages(sent, 9)]):
-                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, 760), anim='pop', jitter=3))
+                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, 680), anim='pop', jitter=3))
     heads = [s for (s, e), c in zip(segs, cues) if c['mood'] in ('head', 'scare')]
     scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
     track = A.musicbox(w('musicbox.wav'))
     A.bgm_for(total, w('bgm.wav'), track)
     A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(segs[8][0], segs[10][1]))
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'))
-    S = E.Scene('short', faces); T = E.Timeline(cues, env, ov, total, FPS_SHORT)
+    S = E.Scene('short', faces); S.g = dict(S.g, nose=(540, 1250), SC=1.8)   # smaller, lower clown
+    T = E.Timeline(cues, env, ov, total, FPS_SHORT)
     if os.environ.get('PIERO_FRAMES'):
         for f in map(int, os.environ['PIERO_FRAMES'].split(',')): E.render_frame(S, T, f).save(f'{out}.{f}.jpg', quality=85)
         return None

@@ -321,7 +321,7 @@ DESC_TAIL = ('\n\n暗い部屋から、ピエロが囁く。知らないとヤ�
 
 def upload(yt, path, title, desc, tags, publish_at=None, thumb=None):
     from googleapiclient.http import MediaFileUpload
-    status = {'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': True}
+    status = {'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
     if publish_at: status.update(privacyStatus='private', publishAt=publish_at)
     else: status.update(privacyStatus='public')
     body = {'snippet': {'title': title[:100], 'description': desc[:4900], 'tags': tags[:15], 'categoryId': '24',

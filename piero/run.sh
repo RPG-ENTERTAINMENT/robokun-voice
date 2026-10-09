@@ -3,8 +3,12 @@
 #   bash piero/run.sh <task>     task = daily | test | auth_url | auth_code | ...
 TASK="${1:-test}"
 echo "PIERO TASK=$TASK"; mkdir -p piero/logs piero/state
-( sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-cjk-extra ffmpeg ) > piero/logs/apt.txt 2>&1
-python -m pip install -q cryptography numpy scipy pillow pyopenjtalk google-api-python-client google-auth > piero/logs/pip.txt 2>&1
+if [ "${TASK%%_*}" = auth ]; then   # auth tasks: be quick (codes expire)
+  python -m pip install -q cryptography > piero/logs/pip.txt 2>&1
+else
+  ( sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-cjk-extra ffmpeg ) > piero/logs/apt.txt 2>&1
+  python -m pip install -q cryptography numpy scipy pillow pyopenjtalk google-api-python-client google-auth > piero/logs/pip.txt 2>&1
+fi
 set -o pipefail
 case "$TASK" in
   auth_url)  python piero/auth.py url 2>&1 | tee piero/logs/auth.txt ;;

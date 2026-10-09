@@ -104,7 +104,7 @@ def build_short(unit, out, faces, thumb_out=None):
     sub_img = E.text_img('知らないとヤバい10選', f_t2, WHITE, (90, 0, 0), stroke=8, max_w=1000)
     ov.append(dict(s=0, e=segs[1][0], img=sub_img, xy=(540, 272)))           # intro only; the item number takes this spot later
     ov.append(dict(s=segs[-1][0], e=1e9, img=sub_img, xy=(540, 272)))
-    YN, YP, YC = 272, 528, 905      # number / photo / caption — all above the clown's face (face never covered)
+    YN, YP, YC = 250, 520, 870      # number / photo / caption — all above the clown's face (face never covered)
     f_cap = E.font(96)
     photo_t = []
     for i, (s, e) in enumerate(segs):
@@ -113,7 +113,7 @@ def build_short(unit, out, faces, thumb_out=None):
         if i == 0:
             cues.append(dict(s=s0, e=e, expr=1, mood='intro'))
             if thumb_pic is not None:
-                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 700, 380, seed=11), xy=(540, YP), jitter=1))
+                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 620, 330, seed=11), xy=(540, YP), jitter=1))
             for ps, pe, p in assign_pages(s0, nxt, e, ['ククク……', f'{title}\n10選']):
                 ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_cap, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
         elif i <= 10:
@@ -122,13 +122,13 @@ def build_short(unit, out, faces, thumb_out=None):
             cues.append(dict(s=s, e=e, expr=[0, 3, 5, 2, 8, 0, 3, 5, 2, 4][i - 1], mood='scare' if last else 'head'))
             ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', E.font(104), RED, (150, 0, 0), max_w=900), xy=(540, YN), anim='bigpop', jitter=2))
             if pics[i - 1] is not None:
-                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 700, 380, seed=i), xy=(540, YP), anim='pop', jitter=1))
+                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 620, 330, seed=i), xy=(540, YP), anim='pop', jitter=1))
                 photo_t.append(s)
-            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_cap, max_w=1040), xy=(540, YC if pics[i - 1] is not None else 700), anim='pop', jitter=3))
+            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_cap, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
         else:
             cues.append(dict(s=s, e=e, expr=6, mood='outro'))
             for ps, pe, p in assign_pages(s, nxt, e, [pg for sent in split_sent(unit['end_v']) for pg in pages(sent, 9)]):
-                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, 700), anim='pop', jitter=3))
+                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
     heads = [s for (s, e), c in zip(segs, cues) if c['mood'] in ('head', 'scare')]
     scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
     track = A.musicbox(w('musicbox.wav'))
@@ -136,8 +136,8 @@ def build_short(unit, out, faces, thumb_out=None):
     A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(segs[8][0], segs[10][1]))
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'))
     # the whole room (desk, candle, door, clown) sits lower so photo + caption fit above the face
-    E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1420, door=(30, 280, 790, 1700), knob=(225, 1270), frame=(790, 1040),
-                               table=1700, candle=(150, 1660), under=1110, nose=(540, 1380), SC=1.8)
+    E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1500, door=(30, 360, 870, 1850), knob=(225, 1350), frame=(830, 1110),
+                               table=1850, candle=(110, 1810), under=1190, nose=(540, 1470), SC=2.45)
     S = E.Scene('short_low', faces)
     T = E.Timeline(cues, env, ov, total, FPS_SHORT)
     if os.environ.get('PIERO_FRAMES'):

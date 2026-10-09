@@ -1,0 +1,33 @@
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 41%|████      | 9.14M/22.6M [00:00<00:00, 95.8MB/s] 95%|█████████▍| 21.4M/22.6M [00:00<00:00, 115MB/s] 100%|██████████| 22.6M/22.6M [00:00<00:00, 112MB/s]
+Extracting tar file
+short s001 total 53.9 speed 1.05
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+photos s001 10 / 10 thumb True
+Created autostash: 0f20c35
+Applied autostash.
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+uploaded encUB_359Jo 【閲覧注意】生活の闇知識10選｜ピエロ君 #shorts None
+long l001 total 322.8
+image download failed <HTTPError 403: 'Forbidden'>
+image search failed _openverse nail clippers TimeoutError('The read operation timed out')
+image download failed <HTTPError 403: 'Forbidden'>
+photos l001 10 / 10 thumb True
+Created autostash: 4cd7f2d
+Applied autostash.
+uploaded 7O4oCxkPDFU 【ゾッとする】知らないとヤバい日本のタブー10選【ピエロの闇知識】 None
+thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=7O4oCxkPDFU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+short s002 total 53.2 speed 1.05
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+photos s002 10 / 10 thumb True
+Created autostash: f28f349
+Applied autostash.
+uploaded UdcrBsaWZoY 【閲覧注意】コンビニの裏知識10選｜ピエロ君 #shorts None
+elapsed 2356 s

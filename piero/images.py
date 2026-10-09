@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps, ImageEnhance
 UA = 'piero-channel-bot/1.0 (https://github.com/RPG-ENTERTAINMENT/robokun-voice; rpgentertainment2014@gmail.com)'
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'piero_work', 'img')
 os.makedirs(CACHE, exist_ok=True)
+PEOPLE = re.compile(r'\b(person|people|man|men|woman|women|girl|boy|child|children|kid|kids|baby|babies|toddler|portrait|selfie|face|faces|family|couple|bride|groom|student|students|model|lady|guy|teen|teenager|human)\b', re.I)
 OK_LIC = re.compile(r'^(cc0|pdm|public domain|pd|cc by \d(\.\d)?|cc-by-\d(\.\d)?|cc by)$', re.I)
 
 def _get(url, timeout=20):
@@ -16,18 +17,20 @@ def _get(url, timeout=20):
 
 def _openverse(q):
     u = 'https://api.openverse.org/v1/images/?' + urllib.parse.urlencode(
-        {'q': q, 'license': 'cc0,pdm,by', 'page_size': 12, 'mature': 'false'})
+        {'q': q, 'license': 'cc0,pdm,by', 'page_size': 20, 'mature': 'false', 'category': 'photograph,illustration,digitized_artwork'})
     out = []
     for r in json.loads(_get(u)).get('results', []):
         w, h = r.get('width') or 0, r.get('height') or 0
         if w and w < 700: continue
+        words = ' '.join([r.get('title') or ''] + [t.get('name', '') for t in (r.get('tags') or [])])
+        if PEOPLE.search(words): continue      # no photos of (real) people
         out.append(dict(url=r['url'], w=w, h=h, credit=f"{r.get('title') or 'photo'} / {r.get('creator') or 'unknown'} ({(r.get('license') or '').upper()} {r.get('license_version') or ''}) {r.get('foreign_landing_url') or ''}".strip()))
     return out
 
 def _commons(q):
     u = 'https://commons.wikimedia.org/w/api.php?' + urllib.parse.urlencode({
         'action': 'query', 'format': 'json', 'generator': 'search', 'gsrsearch': f'filetype:bitmap {q}', 'gsrnamespace': 6,
-        'gsrlimit': 15, 'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'iiurlwidth': 1400})
+        'gsrlimit': 20, 'prop': 'imageinfo', 'iiprop': 'url|size|extmetadata', 'iiurlwidth': 1400})
     pages = json.loads(_get(u)).get('query', {}).get('pages', {})
     out = []
     for p in sorted(pages.values(), key=lambda p: p.get('index', 99)):
@@ -35,6 +38,8 @@ def _commons(q):
         lic = (md.get('LicenseShortName', {}).get('value') or '').strip()
         if not OK_LIC.match(lic) or 'sa' in lic.lower(): continue
         if (ii.get('width') or 0) < 700: continue
+        desc = re.sub('<[^>]+>', ' ', md.get('ImageDescription', {}).get('value', '') or '')
+        if PEOPLE.search(p.get('title', '') + ' ' + desc + ' ' + (md.get('Categories', {}).get('value') or '')): continue
         artist = re.sub('<[^>]+>', '', md.get('Artist', {}).get('value', '') or 'unknown').strip()[:60]
         out.append(dict(url=ii.get('thumburl') or ii.get('url'), w=ii.get('width'), h=ii.get('height'),
                         credit=f"{p.get('title', '').replace('File:', '')} / {artist} ({lic}) {ii.get('descriptionurl', '')}"))
@@ -54,9 +59,10 @@ def fetch(queries, seed=0, used=None):
                 print('image search failed', src.__name__, q, repr(e)[:120]); continue
             cands = [c for c in cands if c['url'] not in used]
             if not cands: continue
-            # prefer landscape-ish pictures, rotate the choice a little so repeats differ
-            cands.sort(key=lambda c: abs((c['w'] or 1) / max(1, c['h'] or 1) - 1.5))
-            for c in cands[seed % 3:] + cands[:seed % 3]:
+            # keep the search engine's relevance order; only drop very tall / very wide pictures
+            ratio = lambda c: (c['w'] or 3) / max(1, c['h'] or 2)
+            cands = [c for c in cands if 0.95 <= ratio(c) <= 2.4] or cands
+            for c in cands:
                 f = os.path.join(CACHE, hashlib.md5(c['url'].encode()).hexdigest() + '.img')
                 try:
                     if not os.path.exists(f): open(f, 'wb').write(_get(c['url'], 40))

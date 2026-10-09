@@ -8,6 +8,8 @@ case "$SCHED" in
 esac
 [ -z "$TASK" ] && [ -f jobs/daily_task ] && TASK=$(head -1 jobs/daily_task | tr -d " \r")
 [ -z "$TASK" ] && TASK=test
+# --- piero channel (ピエロ君のやばい噂、知識): on-demand tasks via jobs/daily_task = piero:<task>
+if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; fi
 echo "TASK=$TASK"
 mkdir -p logs
 set -o pipefail
@@ -66,3 +68,7 @@ else
   # daily landscape episode (skips itself if today's is already uploaded)
   bash scripts/long_run.sh
 fi
+rc=$?
+# --- piero channel: render today's 3 videos and schedule them (12:00 / 16:00 / 20:00 JST). 12:30 run = retry if missed.
+case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash piero/run.sh daily || true;; esac
+exit $rc

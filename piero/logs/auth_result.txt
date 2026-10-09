@@ -1,4 +1,1 @@
-TOKEN ERROR {
-  "error": "invalid_grant",
-  "error_description": "Bad Request"
-}
+{"refresh_token": true, "channels": [["UCiQrLGBmriz6p2NACHI33eg", "ピエロ君のやばい噂、知識"]]}

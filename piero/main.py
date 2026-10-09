@@ -6,7 +6,8 @@
 import os, sys, json, glob, re, datetime, subprocess, base64, hashlib, time, unicodedata
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
-import engine as E, audio as A
+import engine as E, audio as A, images as I
+from PIL import Image
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 JST = datetime.timezone(datetime.timedelta(hours=9))
@@ -56,6 +57,29 @@ def assign_pages(s, nxt_s, e, page_list):
         out.append((t, (t + d) if j < len(page_list) - 1 else nxt_s, p)); t += d
     return out
 
+KW = None
+def keywords(uid):
+    global KW
+    if KW is None:
+        try: KW = json.load(open(os.path.join(ROOT, 'bank', 'keywords.json')))
+        except Exception: KW = {}
+    return KW.get(uid, [[]] * 10), KW.get(uid + '_thumb', [])
+
+def photos_for(unit):
+    """[(PIL image or None)] * 10, thumb image, credits"""
+    qs, tq = keywords(unit['id'])
+    used, credits, out = set(), [], []
+    for i in range(10):
+        im, cr = I.fetch(qs[i] if i < len(qs) else [], seed=i, used=used)
+        out.append(im)
+        if cr: credits.append(cr)
+    th, cr = I.fetch(tq, seed=3, used=used)
+    if cr: credits.append(cr)
+    if th is None: th = next((x for x in out if x is not None), None)
+    print('photos', unit['id'], sum(x is not None for x in out), '/ 10', 'thumb', th is not None)
+    unit['_credits'] = credits
+    return out, th
+
 # ======================================================================== SHORT
 def build_short(unit, out, faces):
     W, H = 1080, 1920
@@ -73,30 +97,39 @@ def build_short(unit, out, faces):
     cues, ov = [], []
     f_sub, f_num, f_t1, f_t2 = E.font(104), E.font(150), E.font(124), E.font(66)
     title = unit['title']
+    pics, thumb_pic = photos_for(unit)
+    f_lab = E.font(34)
     ov.append(dict(s=0, e=1e9, img=E.text_img(title, f_t1, RED, (120, 0, 0), max_w=1040), xy=(540, 140), jitter=2))
     ov.append(dict(s=0, e=1e9, img=E.text_img('知らないとヤバい10選', f_t2, WHITE, (90, 0, 0), stroke=8, max_w=1000), xy=(540, 272)))
-    YC = 640
+    YN, YP, YC = 395, 740, 1705     # number / photo / caption
+    photo_t = []
     for i, (s, e) in enumerate(segs):
         nxt = segs[i + 1][0] if i + 1 < len(segs) else total
         s0 = 0 if i == 0 else s
         if i == 0:
             cues.append(dict(s=s0, e=e, expr=1, mood='intro'))
+            if thumb_pic is not None:
+                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 720, 440, seed=11), xy=(540, YP), jitter=1))
             for ps, pe, p in assign_pages(s0, nxt, e, ['ククク……', f'{title}\n10選']):
                 ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
         elif i <= 10:
             it = items[i - 1]
             last = i == 10
             cues.append(dict(s=s, e=e, expr=[0, 3, 5, 2, 8, 0, 3, 5, 2, 4][i - 1], mood='scare' if last else 'head'))
-            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', f_num, RED, (150, 0, 0), max_w=900), xy=(540, YC - 190), anim='bigpop', jitter=2))
-            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_sub, max_w=1040), xy=(540, YC + 40), anim='pop', jitter=3))
+            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', f_num, RED, (150, 0, 0), max_w=900), xy=(540, YN), anim='bigpop', jitter=2))
+            if pics[i - 1] is not None:
+                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 720, 440, seed=i), xy=(540, YP), anim='pop', jitter=1))
+                photo_t.append(s)
+            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_sub, max_w=1040), xy=(540, YC if pics[i - 1] is not None else 760), anim='pop', jitter=3))
         else:
             cues.append(dict(s=s, e=e, expr=6, mood='outro'))
             for ps, pe, p in assign_pages(s, nxt, e, [pg for sent in split_sent(unit['end_v']) for pg in pages(sent, 9)]):
-                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
-    heads = [s for (s, e), c in zip(segs, cues) if c['mood'] == 'head']
+                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, 760), anim='pop', jitter=3))
+    heads = [s for (s, e), c in zip(segs, cues) if c['mood'] in ('head', 'scare')]
     scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
     track = A.musicbox(w('musicbox.wav'))
-    A.bgm_for(total, w('bgm.wav'), track); A.sfx_for(total, heads, scares, w('sfx.wav'))
+    A.bgm_for(total, w('bgm.wav'), track)
+    A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(segs[8][0], segs[10][1]))
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'))
     S = E.Scene('short', faces); T = E.Timeline(cues, env, ov, total, FPS_SHORT)
     if os.environ.get('PIERO_FRAMES'):
@@ -125,6 +158,7 @@ def build_long(unit, out, faces, thumb_out=None):
     env = A.envelope(v, FPS_LONG, nf)
     f_t, f_num, f_head, f_sub, f_big = E.font(64), E.font(120), E.font(100), E.font(70), E.font(120)
     PX = 1440   # right panel centre
+    pics, thumb_pic = photos_for(unit)
     ov = [dict(s=0, e=1e9, img=E.text_img(f"{unit['title']} 10選", f_t, RED, (120, 0, 0), stroke=8, max_w=920), xy=(PX, 80), jitter=1)]
     cues = []
     n = len(segs)
@@ -144,37 +178,89 @@ def build_long(unit, out, faces, thumb_out=None):
             ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, stroke=7, spacing=10, max_w=1820), xy=(960, 990), anim='pop', jitter=2))
     # right panel: intro title / item number + head / outro
     intro_end = segs[len(unit['intro'])][0]
-    ov.append(dict(s=0, e=intro_end, img=E.text_img(f"{unit['title']}\n10選", f_big, RED, (150, 0, 0), max_w=900), xy=(PX, 440), anim='none', jitter=3))
+    ov.append(dict(s=0, e=intro_end, img=E.text_img(f"{unit['title']}\n10選", f_big, RED, (150, 0, 0), max_w=900), xy=(PX, 300), anim='none', jitter=3))
+    if thumb_pic is not None:
+        ov.append(dict(s=0, e=intro_end, img=I.evidence_card(thumb_pic, 600, 340, seed=11), xy=(PX, 650), jitter=1))
+    photo_t = []
     for ii, (s, e) in sorted(item_span.items()):
-        ov.append(dict(s=s, e=e, img=E.text_img(f'その{ii + 1}', f_num, RED, (150, 0, 0), max_w=800), xy=(PX, 300), anim='bigpop', jitter=2))
-        hd = '\n'.join(wrap(unit['items'][ii]['head'], 7))
-        ov.append(dict(s=s, e=e, img=E.text_img(hd, f_head, max_w=900), xy=(PX, 540), anim='pop', jitter=2))
+        p = pics[ii]
+        ov.append(dict(s=s, e=e, img=E.text_img(f'その{ii + 1}', E.font(96), RED, (150, 0, 0), max_w=800), xy=(PX, 178 if p is not None else 300), anim='bigpop', jitter=2))
+        if p is not None:
+            ov.append(dict(s=s, e=e, img=E.text_img(unit['items'][ii]['head'], E.font(80), max_w=900), xy=(PX, 292), anim='pop', jitter=2))
+            ov.append(dict(s=s, e=e, img=I.evidence_card(p, 700, 400, seed=ii), xy=(PX, 610), anim='pop', jitter=1))
+            photo_t.append(s)
+        else:
+            hd = '\n'.join(wrap(unit['items'][ii]['head'], 7))
+            ov.append(dict(s=s, e=e, img=E.text_img(hd, f_head, max_w=900), xy=(PX, 540), anim='pop', jitter=2))
     out_s = segs[-len(unit['outro'])][0]
     ov.append(dict(s=out_s, e=1e9, img=E.text_img('チャンネル登録\nしてくれよ……', f_head, max_w=900), xy=(PX, 470), anim='pop', jitter=3))
     heads = [s for (s, e), (kd, _) in zip(segs, kinds) if kd == 'head']
     scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
     track = A.musicbox(w('musicbox.wav'))
-    A.bgm_for(total, w('bgm.wav'), track); A.sfx_for(total, heads, scares, w('sfx.wav'))
+    A.bgm_for(total, w('bgm.wav'), track)
+    A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(item_span[9][0], item_span[9][1]) if 9 in item_span else None)
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'), bgm_vol=0.26)
     S = E.Scene('long', faces); T = E.Timeline(cues, env, ov, total, FPS_LONG)
-    if thumb_out: make_thumb(S, unit, thumb_out)
+    if thumb_out: make_thumb(faces, unit, thumb_out, thumb_pic, next((x for x in pics[::-1] if x is not None), None))
     if os.environ.get('PIERO_FRAMES'):
         for f in map(int, os.environ['PIERO_FRAMES'].split(',')): E.render_frame(S, T, f).save(f'{out}.{f}.jpg', quality=85)
         return None
     E.render_video(S, T, w('mix.wav'), out, tmp=w('tmp'))
     return out
 
-def make_thumb(S, unit, path):
-    T = E.Timeline([dict(s=0, e=1, expr=6, mood='')], np.zeros(10), [], 1, 24)
-    g0 = S.g; S.g = dict(g0, SC=2.5, nose=(560, 620))
-    img = E.render_frame(S, T, 0).convert('RGBA'); S.g = g0
-    t1 = E.text_img('\n'.join(wrap(unit['title'], 6)), E.font(190), RED, (160, 0, 0), stroke=14, max_w=1060)
-    t2 = E.text_img('10選', E.font(230), (255, 236, 120), (150, 60, 0), stroke=14, max_w=700)
-    tag = E.text_img('知らないとヤバい', E.font(88), WHITE, (100, 0, 0), stroke=9, max_w=900)
-    img.alpha_composite(tag, (1430 - tag.width // 2, 110 - tag.height // 2))
-    img.alpha_composite(t1, (1430 - t1.width // 2, 470 - t1.height // 2))
-    img.alpha_composite(t2, (1430 - t2.width // 2, 860 - t2.height // 2))
-    img.convert('RGB').resize((1280, 720), E.Image.LANCZOS).save(path, quality=92)
+def title_lines(t):
+    """split a title into 1-2 lines at a natural point (after の/と/は/が) near the middle"""
+    if len(t) <= 5: return [t]
+    best = None
+    for i in range(2, len(t) - 1):
+        kata = lambda c: '゠' <= c <= 'ヿ'
+        if t[i - 1] in 'のとはがなに' or (kata(t[i]) and not kata(t[i - 1])):
+            sc = abs(i - len(t) / 2)
+            if best is None or sc < best[0]: best = (sc, i)
+    k = best[1] if best and best[0] <= 2.5 else (len(t) + 1) // 2
+    return [t[:k], t[k:]]
+
+def make_thumb(faces, unit, path, bg_pic=None, item_pic=None):
+    """1280x720 thumbnail: dark photo background, huge laughing clown with red rim light, bold title"""
+    from PIL import ImageFilter, ImageDraw
+    W, H = 1920, 1080
+    if bg_pic is not None:
+        img = I.background(bg_pic, W, H, seed=5).convert('RGBA')
+    else:
+        img = Image.new('RGBA', (W, H), (25, 12, 10, 255))
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    # darken the text side, red glow behind the clown
+    shade = np.clip(1.1 - xx / W * 1.1, 0, 0.85)[..., None]
+    glow = np.exp(-(((xx - 1450) / 520) ** 2 + ((yy - 520) / 460) ** 2))[..., None]
+    a = np.asarray(img).astype(np.float32)
+    a[..., :3] = a[..., :3] * (1 - shade) + np.array([150, 0, 0]) * glow * 0.55
+    img = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
+    # clown (laughing face) with red rim light
+    f = (np.clip(faces[6], 0, 1) * 255).astype(np.uint8)
+    cl = Image.fromarray(f).crop((20, 0, 440, 400))
+    sc = 2.75; cl = cl.resize((int(cl.width * sc), int(cl.height * sc)), Image.LANCZOS).rotate(-4, expand=True, resample=Image.BICUBIC)
+    ca = np.asarray(cl).astype(np.float32); ca[..., :3] *= np.array([1.05, 0.9, 0.82]); cl = Image.fromarray(np.clip(ca, 0, 255).astype(np.uint8))
+    rim = Image.new('RGBA', cl.size, (255, 20, 20, 0)); rim.putalpha(cl.split()[3].filter(ImageFilter.GaussianBlur(26)).point(lambda v: min(255, v * 2)))
+    cx, cy = 1460, 600
+    img.alpha_composite(rim, (int(cx - cl.width / 2), int(cy - cl.height / 2)))
+    img.alpha_composite(cl, (int(cx - cl.width / 2), int(cy - cl.height / 2)))
+    # small evidence photo with red circle
+    if item_pic is not None:
+        card = I.evidence_card(item_pic, 440, 280, seed=2)
+        img.alpha_composite(card, (860, 660))
+        d = ImageDraw.Draw(img)
+        d.ellipse([930, 700, 1300, 990], outline=(240, 20, 20, 255), width=12)
+    # text
+    badge = Image.new('RGBA', (430, 120), (210, 0, 0, 255)); d = ImageDraw.Draw(badge)
+    tw = d.textlength('閲覧注意', font=E.font(92)); d.text(((430 - tw) / 2, 4), '閲覧注意', font=E.font(92), fill=(255, 255, 255))
+    badge = badge.rotate(4, expand=True, resample=Image.BICUBIC)
+    img.alpha_composite(badge, (60, 50))
+    lines = title_lines(unit['title'])
+    t1 = E.text_img('\n'.join(lines), E.font(200 if len(lines) <= 2 else 160), (255, 255, 255), (200, 0, 0), stroke=18, spacing=6, max_w=1000, grunge=False)
+    t2 = E.text_img('10選', E.font(300), (255, 226, 60), (200, 40, 0), stroke=20, max_w=760, grunge=False)
+    img.alpha_composite(t1, (40, 210))
+    img.alpha_composite(t2, (60, H - t2.height + 10))
+    img.convert('RGB').resize((1280, 720), Image.LANCZOS).save(path, quality=93)
 
 # ======================================================================== YouTube
 def yt_client():
@@ -213,14 +299,18 @@ def upload(yt, path, title, desc, tags, publish_at=None, thumb=None):
         except Exception as e: print('thumb failed (channel may need phone verification):', repr(e)[:300])
     return vid
 
+def credits(u):
+    c = u.get('_credits') or []
+    return ('\n\n画像クレジット:\n' + '\n'.join(c)) if c else ''
+
 def meta_short(u):
     title = f"【閲覧注意】{u['title']}10選｜ピエロ君 #shorts"
     lines = '\n'.join(f"{i + 1}. {it['t'].replace(chr(10), ' ')}" for i, it in enumerate(u['items']))
-    return title, f"{u['title']} 10選\n\n{lines}" + DESC_TAIL, u.get('tags', []) + ['ピエロ', '雑学', '闇', '都市伝説', '10選', 'shorts']
+    return title, f"{u['title']} 10選\n\n{lines}" + DESC_TAIL + credits(u), u.get('tags', []) + ['ピエロ', '雑学', '闇', '都市伝説', '10選', 'shorts']
 
 def meta_long(u):
     lines = '\n'.join(f"{i + 1}. {it['head']}" for i, it in enumerate(u['items']))
-    return u['yt_title'], f"{u['title']} 10選\n\n{lines}" + DESC_TAIL, u.get('tags', []) + ['ピエロ', '雑学', '闇', '都市伝説', '10選', '解説']
+    return u['yt_title'], f"{u['title']} 10選\n\n{lines}" + DESC_TAIL + credits(u), u.get('tags', []) + ['ピエロ', '雑学', '闇', '都市伝説', '10選', '解説']
 
 # ======================================================================== state / tasks
 ST = os.path.join(ROOT, 'state', 'state.json')

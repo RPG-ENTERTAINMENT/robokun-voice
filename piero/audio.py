@@ -114,17 +114,58 @@ def bgm_for(total, out, track):
     fo = int(min(2.5, total / 4) * SR); res[-fo:] *= np.linspace(1, 0, fo)
     write(out, res); return out
 
-def sfx_for(total, heads, scares, out):
+def _lp(x, a):   # one-pole low-pass
+    from scipy.signal import lfilter
+    return lfilter([1 - a], [1, -a], x)
+
+def sfx_for(total, heads, scares, out, photos=(), heart=None, thunder_at=(0.0,)):
+    """sound effects track: whoosh + low hit on every item, camera shutter when a photo appears,
+    heartbeat over `heart`=(start,end), thunder at start, boom after scares, quiet wind under everything"""
+    from scipy.signal import lfilter
     rng = np.random.default_rng(3); N = int(total * SR); s = np.zeros(N)
+    def put(t, x, g=1.0):
+        i = int(t * SR)
+        if i < 0: x = x[-i:]; i = 0
+        n = min(len(x), N - i)
+        if n > 0: s[i:i + n] += g * x[:n]
+    def whoosh(d=0.45):
+        n = int(d * SR); x = rng.standard_normal(n); tt = np.arange(n) / n
+        env = np.sin(np.pi * tt) ** 2
+        lo = _lp(x, 0.97); hi = x - _lp(x, 0.6)
+        return (lo * (1 - tt) + hi * tt * 0.5) * env * 0.9
+    def hit():
+        n = int(0.6 * SR); tt = np.arange(n) / SR
+        return (np.sin(2 * np.pi * (70 - 30 * tt) * tt) * np.exp(-tt * 7) + 0.25 * _lp(rng.standard_normal(n), 0.9) * np.exp(-tt * 18))
+    def shutter():
+        n = int(0.12 * SR); tt = np.arange(n) / SR; c = rng.standard_normal(n) * np.exp(-tt * 140)
+        x = np.zeros(int(0.2 * SR)); x[:n] += c; x[int(0.07 * SR):int(0.07 * SR) + n] += 0.7 * c
+        return x - _lp(x, 0.5)
+    def beat():
+        n = int(0.25 * SR); tt = np.arange(n) / SR
+        return np.sin(2 * np.pi * 52 * tt) * np.exp(-tt * 22)
+    def thunder():
+        n = int(3.5 * SR); tt = np.arange(n) / SR
+        x = _lp(rng.standard_normal(n), 0.995) * 25
+        return x * (np.exp(-tt * 1.4) * (1 + 0.6 * np.sin(2 * np.pi * 3.1 * tt)) * np.clip(tt / 0.05, 0, 1))
+    for t in thunder_at: put(t, thunder(), 0.55)
     for t in heads:
+        put(t - 0.25, whoosh(), 0.35); put(t, hit(), 0.45)
         i = max(0, int((t - 0.12) * SR)); n = min(int(0.22 * SR), N - i)
-        if n > 0: s[i:i + n] += 0.25 * rng.standard_normal(n) * np.exp(-np.arange(n) / SR * 12)
+        if n > 0: s[i:i + n] += 0.12 * rng.standard_normal(n) * np.exp(-np.arange(n) / SR * 12)
+    for t in photos: put(t + 0.05, shutter(), 0.5)
+    if heart:
+        t = heart[0]
+        while t < heart[1]:
+            put(t, beat(), 0.55); put(t + 0.24, beat(), 0.4); t += 0.9
     for t in scares:
-        i = int((t + 0.05) * SR); n = min(int(1.6 * SR), N - i)
-        if n > 0:
-            x = np.arange(n) / SR
-            s[i:i + n] += 0.9 * np.sin(2 * np.pi * (48 - 18 * x) * x) * np.exp(-x * 2.5) + 0.3 * rng.standard_normal(n) * np.exp(-x * 20)
-    write(out, s); return out
+        n = int(1.6 * SR); x = np.arange(n) / SR
+        put(t + 0.05, 0.9 * np.sin(2 * np.pi * (48 - 18 * x) * x) * np.exp(-x * 2.5) + 0.3 * rng.standard_normal(n) * np.exp(-x * 20))
+        sw = np.arange(int(0.9 * SR)) / SR
+        put(t + 0.05, 0.12 * np.sin(2 * np.pi * (900 + 1400 * sw) * sw) * np.exp(-sw * 3) * (1 + 0.5 * np.sin(2 * np.pi * 31 * sw)))
+    wind = _lp(rng.standard_normal(N), 0.995) * 6
+    wind *= 0.5 + 0.5 * np.sin(2 * np.pi * np.arange(N) / SR / 7.0) ** 2
+    s += 0.05 * wind
+    write(out, s * 0.9); return out
 
 def mix(voice, bgm, sfx, out, bgm_vol=0.32):
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', voice, '-i', bgm, '-i', sfx, '-filter_complex',

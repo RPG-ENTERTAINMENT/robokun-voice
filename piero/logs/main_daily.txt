@@ -1,33 +1,121 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
   warnings.warn(message, FutureWarning)
 Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 41%|████      | 9.14M/22.6M [00:00<00:00, 95.8MB/s] 95%|█████████▍| 21.4M/22.6M [00:00<00:00, 115MB/s] 100%|██████████| 22.6M/22.6M [00:00<00:00, 112MB/s]
+  0%|          | 0/23646843 [00:00<?, ?it/s] 44%|████▍     | 10.0M/22.6M [00:00<00:00, 99.7MB/s] 87%|████████▋ | 19.5M/22.6M [00:00<00:00, 99.5MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 94.8MB/s]
 Extracting tar file
-short s001 total 53.9 speed 1.05
+short s003 total 56.9 speed 1.05
 image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
-photos s001 10 / 10 thumb True
-Created autostash: 0f20c35
-Applied autostash.
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+photos s003 10 / 10 thumb True
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <runner@runnervmmprz5.vbq4hvxaldeu5es11s30ocsezg.bx.internal.cloudapp.net>) not allowed
 WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
 WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
 WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-uploaded encUB_359Jo 【閲覧注意】生活の闇知識10選｜ピエロ君 #shorts None
-long l001 total 322.8
-image download failed <HTTPError 403: 'Forbidden'>
-image search failed _openverse nail clippers TimeoutError('The read operation timed out')
-image download failed <HTTPError 403: 'Forbidden'>
-photos l001 10 / 10 thumb True
-Created autostash: 4cd7f2d
-Applied autostash.
-uploaded 7O4oCxkPDFU 【ゾッとする】知らないとヤバい日本のタブー10選【ピエロの闇知識】 None
-thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=7O4oCxkPDFU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
-short s002 total 53.2 speed 1.05
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+uploaded 5IlyCFes2sI 【閲覧注意】怖い言い伝え10選｜ピエロ君 #shorts 2026-10-10T03:00:00Z
+thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=5IlyCFes2sI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+long l002 total 336.1
 image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
-photos s002 10 / 10 thumb True
-Created autostash: f28f349
-Applied autostash.
-uploaded UdcrBsaWZoY 【閲覧注意】コンビニの裏知識10選｜ピエロ君 #shorts None
-elapsed 2356 s
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+photos l002 10 / 10 thumb True
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/piero/main.py", line 446, in <module>
+    if task == 'daily': task_daily()
+  File "/home/runner/work/robokun-voice/robokun-voice/piero/main.py", line 409, in task_daily
+    vid = upload(yt, out, t, d, tags, pub, thumb)
+  File "/home/runner/work/robokun-voice/robokun-voice/piero/main.py", line 346, in upload
+    while resp is None: _, resp = req.next_chunk()
+  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/http.py", line 1087, in next_chunk
+    resp, content = _retry_request(
+  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/http.py", line 222, in _retry_request
+    raise exception
+  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+  File "/home/runner/venv/lib/python3.10/site-packages/google_auth_httplib2.py", line 214, in request
+    response, content = self.http.request(
+  File "/home/runner/venv/lib/python3.10/site-packages/httplib2/__init__.py", line 1755, in request
+    (response, content) = self._request(
+  File "/home/runner/venv/lib/python3.10/site-packages/httplib2/__init__.py", line 1475, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "/home/runner/venv/lib/python3.10/site-packages/httplib2/__init__.py", line 1398, in _conn_request
+    conn.request(method, request_uri, body, headers)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1331, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1377, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1326, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1086, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1047, in send
+    self.sock.sendall(data)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/ssl.py", line 1283, in sendall
+    v = self.send(byte_view[count:])
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/ssl.py", line 1252, in send
+    return self._sslobj.write(data)
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2436)

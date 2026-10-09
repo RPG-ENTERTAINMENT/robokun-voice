@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps, ImageEnhance
 UA = 'piero-channel-bot/1.0 (https://github.com/RPG-ENTERTAINMENT/robokun-voice; rpgentertainment2014@gmail.com)'
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'piero_work', 'img')
 os.makedirs(CACHE, exist_ok=True)
-PEOPLE = re.compile(r'\b(person|people|man|men|woman|women|girl|boy|child|children|kid|kids|baby|babies|toddler|portrait|selfie|face|faces|family|couple|bride|groom|student|students|model|lady|guy|teen|teenager|human)\b', re.I)
+PEOPLE = re.compile(r'\b(person|people|man|men|woman|women|girl|boy|child|children|kid|kids|baby|babies|toddler|portrait|selfie|face|faces|family|couple|bride|groom|student|students|model|lady|guy|teen|teenager|human|cartoon|anime|manga|character|drawing|illustration|clipart|clip art|vector)\b', re.I)
 OK_LIC = re.compile(r'^(cc0|pdm|public domain|pd|cc by \d(\.\d)?|cc-by-\d(\.\d)?|cc by)$', re.I)
 
 def _get(url, timeout=20):
@@ -17,7 +17,7 @@ def _get(url, timeout=20):
 
 def _openverse(q):
     u = 'https://api.openverse.org/v1/images/?' + urllib.parse.urlencode(
-        {'q': q, 'license': 'cc0,pdm,by', 'page_size': 20, 'mature': 'false', 'category': 'photograph,illustration,digitized_artwork'})
+        {'q': q, 'license': 'cc0,pdm,by', 'page_size': 20, 'mature': 'false', 'category': 'photograph,digitized_artwork'})
     out = []
     for r in json.loads(_get(u)).get('results', []):
         w, h = r.get('width') or 0, r.get('height') or 0

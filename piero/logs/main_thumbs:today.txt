@@ -1,0 +1,106 @@
+https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/piero-thumbs-10092100
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed <HTTPError 403: 'Forbidden'>
+photos s001 10 / 10 thumb True
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+photos l001 10 / 10 thumb True
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+photos s002 10 / 10 thumb True
+elapsed 205 s

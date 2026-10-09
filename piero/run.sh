@@ -15,7 +15,8 @@ rc=$?
 # put the trigger file back so later pushes run robokun's normal task
 [ "$(head -1 jobs/daily_task 2>/dev/null | cut -d: -f1)" = piero ] && echo make > jobs/daily_task
 git config user.name piero-bot; git config user.email bot@users.noreply.github.com
-git add -A piero/state piero/logs piero/jobs jobs/daily_task 2>/dev/null; [ -f piero/rt.enc ] && git add piero/rt.enc
+for p in piero/state piero/logs piero/jobs piero/rt.enc jobs/daily_task; do [ -e "$p" ] && git add -A "$p"; done
+git add -u piero 2>/dev/null
 git commit -qm "piero: $TASK [skip ci]" || true
 for i in 1 2 3 4 5; do git pull -q --rebase --autostash && git push -q && break; git rebase --abort 2>/dev/null; sleep $((i*5)); done
 exit $rc

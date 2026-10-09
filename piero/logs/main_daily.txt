@@ -1,41 +1,43 @@
-/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
   warnings.warn(message, FutureWarning)
+done A {'id': 's003', 'video': '5IlyCFes2sI', 'at': '12:00'}
 Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 44%|████▍     | 10.0M/22.6M [00:00<00:00, 99.7MB/s] 87%|████████▋ | 19.5M/22.6M [00:00<00:00, 99.5MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 94.8MB/s]
+  0%|          | 0/23646843 [00:00<?, ?it/s] 69%|██████▊   | 15.5M/22.6M [00:00<00:00, 163MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 163MB/s]
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
 Extracting tar file
-short s003 total 56.9 speed 1.05
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-photos s003 10 / 10 thumb True
-Author identity unknown
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: empty ident name (for <runner@runnervmmprz5.vbq4hvxaldeu5es11s30ocsezg.bx.internal.cloudapp.net>) not allowed
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-uploaded 5IlyCFes2sI 【閲覧注意】怖い言い伝え10選｜ピエロ君 #shorts 2026-10-10T03:00:00Z
-thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=5IlyCFes2sI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
 long l002 total 336.1
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
@@ -88,21 +90,21 @@ Traceback (most recent call last):
     vid = upload(yt, out, t, d, tags, pub, thumb)
   File "/home/runner/work/robokun-voice/robokun-voice/piero/main.py", line 346, in upload
     while resp is None: _, resp = req.next_chunk()
-  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
     return wrapped(*args, **kwargs)
-  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/http.py", line 1087, in next_chunk
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1087, in next_chunk
     resp, content = _retry_request(
-  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/http.py", line 222, in _retry_request
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 222, in _retry_request
     raise exception
-  File "/home/runner/venv/lib/python3.10/site-packages/googleapiclient/http.py", line 191, in _retry_request
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 191, in _retry_request
     resp, content = http.request(uri, method, *args, **kwargs)
-  File "/home/runner/venv/lib/python3.10/site-packages/google_auth_httplib2.py", line 214, in request
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google_auth_httplib2.py", line 214, in request
     response, content = self.http.request(
-  File "/home/runner/venv/lib/python3.10/site-packages/httplib2/__init__.py", line 1755, in request
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/httplib2/__init__.py", line 1755, in request
     (response, content) = self._request(
-  File "/home/runner/venv/lib/python3.10/site-packages/httplib2/__init__.py", line 1475, in _request
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/httplib2/__init__.py", line 1475, in _request
     (response, content) = self._conn_request(conn, request_uri, method, body, headers)
-  File "/home/runner/venv/lib/python3.10/site-packages/httplib2/__init__.py", line 1398, in _conn_request
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/httplib2/__init__.py", line 1398, in _conn_request
     conn.request(method, request_uri, body, headers)
   File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1331, in request
     self._send_request(method, url, body, headers, encode_chunked)

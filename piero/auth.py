@@ -5,7 +5,7 @@
 import os, sys, json, base64, hashlib, urllib.parse, urllib.request
 from cryptography.fernet import Fernet
 CID, CSEC = os.environ['YT_CLIENT_ID'], os.environ['YT_CLIENT_SECRET']
-REDIR = 'http://localhost'
+REDIR = 'https://developers.google.com/oauthplayground'
 SCOPES = 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly'
 os.makedirs('piero/logs', exist_ok=True)
 def fernet(): return Fernet(base64.urlsafe_b64encode(hashlib.sha256(CSEC.encode()).digest()))

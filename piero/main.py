@@ -100,11 +100,13 @@ def build_short(unit, out, faces, thumb_out=None):
     pics, thumb_pic = photos_for(unit)
     if thumb_out: make_thumb_v(faces, unit, thumb_out, thumb_pic, next((x for x in pics[::-1] if x is not None), None))
     f_lab = E.font(34)
-    ov.append(dict(s=0, e=1e9, img=E.text_img(title, f_t1, RED, (120, 0, 0), max_w=1040), xy=(540, 140), jitter=2))
+    t_img = E.text_img('\n'.join(title_split2(title)), E.font(165), RED, (120, 0, 0), stroke=12, spacing=0, max_w=1080)
+    ov.append(dict(s=0, e=1e9, img=t_img, xy=(540, t_img.height // 2 - 40), jitter=2))   # title: top of the screen, biggest text
+    YN = t_img.height - 40 - 60 + 62                 # just under the title (60 = text_img padding)
     sub_img = E.text_img('知らないとヤバい10選', f_t2, WHITE, (90, 0, 0), stroke=8, max_w=1000)
-    ov.append(dict(s=0, e=segs[1][0], img=sub_img, xy=(540, 272)))           # intro only; the item number takes this spot later
-    ov.append(dict(s=segs[-1][0], e=1e9, img=sub_img, xy=(540, 272)))
-    YN, YP, YC = 250, 520, 870      # number / photo / caption — all above the clown's face (face never covered)
+    ov.append(dict(s=0, e=segs[1][0], img=sub_img, xy=(540, YN)))           # intro only; the item number takes this spot later
+    ov.append(dict(s=segs[-1][0], e=1e9, img=sub_img, xy=(540, YN)))
+    YP = YN + 215; YC = (YP + 175 + 1170) // 2      # caption sits between the photo and the clown's head (face never covered)
     f_cap = E.font(96)
     photo_t = []
     for i, (s, e) in enumerate(segs):
@@ -113,16 +115,16 @@ def build_short(unit, out, faces, thumb_out=None):
         if i == 0:
             cues.append(dict(s=s0, e=e, expr=1, mood='intro'))
             if thumb_pic is not None:
-                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 620, 330, seed=11), xy=(540, YP), jitter=1))
+                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 540, 290, seed=11), xy=(540, YP), jitter=1))
             for ps, pe, p in assign_pages(s0, nxt, e, ['ククク……', f'{title}\n10選']):
                 ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_cap, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
         elif i <= 10:
             it = items[i - 1]
             last = i == 10
             cues.append(dict(s=s, e=e, expr=[0, 3, 5, 2, 8, 0, 3, 5, 2, 4][i - 1], mood='scare' if last else 'head'))
-            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', E.font(104), RED, (150, 0, 0), max_w=900), xy=(540, YN), anim='bigpop', jitter=2))
+            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', E.font(90), RED, (150, 0, 0), max_w=900), xy=(540, YN), anim='bigpop', jitter=2))
             if pics[i - 1] is not None:
-                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 620, 330, seed=i), xy=(540, YP), anim='pop', jitter=1))
+                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 540, 290, seed=i), xy=(540, YP), anim='pop', jitter=1))
                 photo_t.append(s)
             ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_cap, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
         else:
@@ -136,8 +138,8 @@ def build_short(unit, out, faces, thumb_out=None):
     A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(segs[8][0], segs[10][1]))
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'))
     # the whole room (desk, candle, door, clown) sits lower so photo + caption fit above the face
-    E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1500, door=(30, 360, 870, 1850), knob=(225, 1350), frame=(830, 1110),
-                               table=1850, candle=(110, 1810), under=1190, nose=(540, 1470), SC=2.45)
+    E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1630, door=(30, 490, 1000, 1980), knob=(225, 1480), frame=(830, 1240),
+                               table=1980, candle=(110, 1940), under=1320, nose=(540, 1600), SC=2.45)
     S = E.Scene('short_low', faces)
     T = E.Timeline(cues, env, ov, total, FPS_SHORT)
     if os.environ.get('PIERO_FRAMES'):
@@ -215,6 +217,19 @@ def build_long(unit, out, faces, thumb_out=None):
         return None
     E.render_video(S, T, w('mix.wav'), out, tmp=w('tmp'))
     return out
+
+def title_split2(t):
+    """big short title: up to 5 chars one line; else two lines split after の/と (else after an い-adjective, else a katakana edge), never leaving 1 char alone"""
+    if len(t) <= 5: return [t]
+    ok = lambda i: 2 <= i <= len(t) - 2
+    cands = [i for i in range(2, len(t) - 1) if t[i - 1] in 'のと' and ok(i)]
+    if not cands: cands = [i for i in range(2, len(t) - 1) if t[i - 1] == 'い' and t[i] != 'い' and ok(i)]
+    if not cands:
+        kata = lambda c: '゠' <= c <= 'ヿ'
+        cands = [i for i in range(2, len(t) - 1) if kata(t[i]) != kata(t[i - 1]) and ok(i)]
+    if not cands: return [t]
+    k = min(cands, key=lambda i: abs(i - len(t) / 2))
+    return [t[:k], t[k:]]
 
 def title_lines(t):
     """split a title into 1-2 lines at a natural point (after の/と/は/が) near the middle"""

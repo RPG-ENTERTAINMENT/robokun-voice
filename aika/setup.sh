@@ -4,6 +4,15 @@
 python -m pip install -q numpy scipy pillow cryptography google-api-python-client google-auth > logs/pip.txt 2>&1
 # assets (sprites + backgrounds) are stored as base64 chunks
 if [ ! -d assets ]; then cat assets_b64/p_* | base64 -d | tar xz; fi
+# sharper character sprites: Real-ESRGAN anime x4 (ncnn, CPU) -> assets_hd/*.png (render.py uses them when present)
+if [ ! -d assets_hd ]; then
+  python -m pip install -q ncnn >> logs/pip.txt 2>&1
+  curl -sSL -o /tmp/rr.zip https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip \
+    && mkdir -p /tmp/rrm && unzip -q -o -j /tmp/rr.zip '*realesrgan-x4plus-anime.*' -d /tmp/rrm
+  mkdir -p assets_hd
+  for f in assets/b*_[0-9][0-9].webp; do echo "$f assets_hd/$(basename "$f" .webp).png"; done \
+    | xargs -n 22 python upscale.py /tmp/rrm > logs/upscale.txt 2>&1 || { echo 'upscale failed, using normal sprites'; rm -rf assets_hd; }
+fi
 # fonts
 if [ ! -d fonts/package ]; then mkdir -p fonts && (cd fonts && npm pack -q @expo-google-fonts/m-plus-rounded-1c@0.4.4 >/dev/null && tar xzf *.tgz); fi
 # VOICEVOX core 0.17 + models

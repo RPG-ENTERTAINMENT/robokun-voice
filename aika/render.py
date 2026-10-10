@@ -107,6 +107,8 @@ del _yy, _xx
 
 # ---------------- sprites ----------------
 K = dict(getattr(EP, 'K', {}))
+for _k in ('bwave', 'bwalk'):          # standing poses slightly smaller (2026-10-11)
+    if _k in K: K[_k] *= 0.92
 SPRITE_DIR = getattr(EP, 'SPRITE_DIR', 'sprites')
 HEAD_ANCHOR = getattr(EP, 'HEAD_ANCHOR', {'wave'})
 SIT = getattr(EP, 'SIT', {'fork', 'spoon', 'chop'})
@@ -117,6 +119,9 @@ def load_sprite(name):
     sheet = name.rsplit('_', 1)[0]
     im = Image.open(f'{ASSETS}/{name}.webp').convert('RGBA')
     k = K[sheet]
+    hd = f'{ASSETS}_hd/{name}.png'          # Real-ESRGAN x4 version made by upscale.py (sharper)
+    if os.path.exists(hd):
+        h0 = im.height; im = Image.open(hd).convert('RGBA'); k = k * h0 / im.height
     im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
     if k > 2: im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
     a = np.asarray(im)[..., 3] > 128
@@ -341,7 +346,49 @@ def draw_endcard(canvas, t):
     f = text_img(ENDC[2], 50, '#ffffff', '#ff7aa2', 10)
     paste_scaled(canvas, f, CX, 1810, ease_out_back((a - 0.5) / 0.4) * (1 + 0.04 * math.sin(t * 6)))
 
+def clock_img(hm):
+    key = ('CLK', hm)
+    if key in _TC: return _TC[key]
+    fo = font(66)
+    d0 = ImageDraw.Draw(Image.new('RGBA', (10, 10)))
+    bb = d0.textbbox((0, 0), hm, font=fo); tw = int(bb[2] - bb[0])
+    w, h = tw + 150, 104
+    im = Image.new('RGBA', (w + 24, h + 28), (0, 0, 0, 0))
+    sh = Image.new('RGBA', im.size, (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rounded_rectangle([12, 18, w + 12, h + 18], radius=52, fill=(110, 50, 70, 90))
+    im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(6)))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([12, 8, w + 12, h + 8], radius=52, fill=(255, 255, 255, 245), outline=(255, 140, 170, 255), width=6)
+    cx, cy, r = 12 + 58, 8 + h / 2, 36          # icon: sun by day, moon at night
+    hh = int(hm.split(':')[0])
+    if 6 <= hh < 18:
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(255, 200, 90))
+        for k in range(8):
+            a_ = math.radians(k * 45)
+            d.line([cx + 17 * math.cos(a_), cy + 17 * math.sin(a_), cx + 28 * math.cos(a_), cy + 28 * math.sin(a_)], fill=(255, 255, 255), width=5)
+        d.ellipse([cx - 12, cy - 12, cx + 12, cy + 12], fill=(255, 255, 255))
+    else:
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(95, 90, 160))
+        d.ellipse([cx - 20, cy - 20, cx + 20, cy + 20], fill=(255, 225, 110))
+        d.ellipse([cx - 9, cy - 26, cx + 27, cy + 10], fill=(95, 90, 160))
+        d.ellipse([cx + 14, cy + 10, cx + 20, cy + 16], fill=(255, 255, 255))
+    d.text((12 + 112 - bb[0], 8 + h / 2 - (bb[1] + bb[3]) / 2), hm, font=fo, fill=(92, 52, 58))
+    _TC[key] = im
+    return im
+
+TIMES = [sc.get('time') for sc in EP.SPEC['scenes']] if hasattr(EP, 'SPEC') else None   # clock badge per scene, e.g. '21:00'
+def draw_clock(canvas, t):
+    if not TIMES: return
+    for i, (s0, s1, bgk, ch) in enumerate(SCENES):
+        hm = TIMES[i]
+        if hm and s0 <= t < s1:
+            a = t - (s0 + (0.6 if i else 0.9))
+            if a > 0:
+                y = 640 if i == 0 or i == len(SCENES) - 1 else 395
+                paste_scaled(canvas, clock_img(hm), CX, y + 4 * math.sin(t * 2.1 + 1), ease_out_back(min(1, a / 0.35)))
+
 def draw_overlays(canvas, t):
+    draw_clock(canvas, t)
     # chapter
     for s0, s1, bgk, ch in SCENES:
         if ch and s0 <= t < s1:

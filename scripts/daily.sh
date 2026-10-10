@@ -1,5 +1,7 @@
 #!/bin/bash
 # entry point for .github/workflows/daily.yml
+# run from a copy, then pull the latest main (queued runs can start from an old commit; keeps aika state current)
+if [ -z "$DAILY_COPY" ]; then git pull -q --rebase --autostash 2>/dev/null || true; cp "$0" /tmp/daily_run.sh; DAILY_COPY=1 exec bash /tmp/daily_run.sh "$@"; fi
 SCHED="$1"; TASK="$2"
 case "$SCHED" in
   "0 16 * * *"|"40 16 * * *") TASK=make;;
@@ -8,6 +10,10 @@ case "$SCHED" in
 esac
 [ -z "$TASK" ] && [ -f jobs/daily_task ] && TASK=$(head -1 jobs/daily_task | tr -d " \r")
 [ -z "$TASK" ] && TASK=test
+# --- OLあいか immediate post: aika/jobs/task = now:<n>  (checked by every run, so a cancelled run doesn't lose it)
+AT=$(head -1 aika/jobs/task 2>/dev/null | tr -d ' \r')
+if [ "${AT%%:*}" = now ]; then echo "done $AT" > aika/jobs/task; bash aika/run.sh "$AT" || true; fi
+[ "$TASK" = aika:kick ] && { echo make > jobs/daily_task; git add jobs/daily_task; git commit -qm "reset task [skip ci]"; git pull -q --rebase && git push -q; exit 0; }
 # --- piero channel (ピエロ君のやばい噂、知識): on-demand tasks via jobs/daily_task = piero:<task>
 if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; fi
 # --- OLあいか channel: on-demand tasks via jobs/daily_task = aika:<task>

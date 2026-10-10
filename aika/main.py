@@ -89,6 +89,25 @@ def daily():
         shutil.rmtree(f'voice/{ep}', ignore_errors=True); os.remove(path)
     print('left in stock:', len(idx) - st['next'])
 
+def now(n=2):
+    # post n episodes immediately (public), continuing the stock order
+    st_path = 'state/state.json'; os.makedirs('state', exist_ok=True)
+    st = json.load(open(st_path)) if os.path.exists(st_path) else {'next': 0, 'posted': {}}
+    idx = json.load(open('episodes/index.json'))
+    yt = youtube()
+    for _ in range(n):
+        if st['next'] >= len(idx): print('NO MORE EPISODES'); break
+        ep = idx[st['next']]
+        path = build(ep)
+        t = datetime.datetime.now(JST)
+        vid = upload(yt, path, ep, t)
+        st['posted'].setdefault('now-' + t.date().isoformat(), {})[t.strftime('%H%M%S')] = {'ep': ep, 'video': vid, 'at': t.isoformat()}
+        st['next'] += 1
+        json.dump(st, open(st_path, 'w'), ensure_ascii=False, indent=1)
+        print('URL https://youtube.com/shorts/' + vid, flush=True)
+        shutil.rmtree(f'voice/{ep}', ignore_errors=True); os.remove(path)
+    print('left in stock:', len(idx) - st['next'])
+
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'smoke'
     if cmd == 'daily': daily()
@@ -96,3 +115,4 @@ if __name__ == '__main__':
         p = build('ep01', seconds=3); print('smoke ok', os.path.getsize(p))
         if os.environ.get('YT_CLIENT_SECRET') and os.path.exists('rt.enc'): youtube(); print('channel ok')
     elif cmd == 'render': print(build(sys.argv[2]))
+    elif cmd == 'now': now(int(sys.argv[2]) if len(sys.argv) > 2 else 2)

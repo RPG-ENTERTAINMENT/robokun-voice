@@ -118,7 +118,7 @@ def _lp(x, a):   # one-pole low-pass
     from scipy.signal import lfilter
     return lfilter([1 - a], [1, -a], x)
 
-def sfx_for(total, heads, scares, out, photos=(), heart=None, thunder_at=(0.0,)):
+def sfx_for(total, heads, scares, out, photos=(), heart=None, thunder_at=()):   # no opening thunder (too loud)
     """sound effects track: whoosh + low hit on every item, camera shutter when a photo appears,
     heartbeat over `heart`=(start,end), thunder at start, boom after scares, quiet wind under everything"""
     from scipy.signal import lfilter

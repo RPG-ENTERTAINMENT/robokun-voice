@@ -2,7 +2,7 @@
   warnings.warn(message, FutureWarning)
 done A {'id': 's003', 'video': '5IlyCFes2sI', 'at': '12:00'}
 Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 69%|██████▊   | 15.5M/22.6M [00:00<00:00, 163MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 163MB/s]
+  0%|          | 0/23646843 [00:00<?, ?it/s] 23%|██▎       | 5.28M/22.6M [00:00<00:00, 55.4MB/s] 85%|████████▍ | 19.2M/22.6M [00:00<00:00, 108MB/s] 100%|██████████| 22.6M/22.6M [00:00<00:00, 104MB/s]
 WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
 WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
 WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
@@ -83,41 +83,101 @@ image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
 photos l002 10 / 10 thumb True
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/piero/main.py", line 446, in <module>
-    if task == 'daily': task_daily()
-  File "/home/runner/work/robokun-voice/robokun-voice/piero/main.py", line 409, in task_daily
-    vid = upload(yt, out, t, d, tags, pub, thumb)
-  File "/home/runner/work/robokun-voice/robokun-voice/piero/main.py", line 346, in upload
-    while resp is None: _, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1087, in next_chunk
-    resp, content = _retry_request(
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 222, in _retry_request
-    raise exception
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 191, in _retry_request
-    resp, content = http.request(uri, method, *args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google_auth_httplib2.py", line 214, in request
-    response, content = self.http.request(
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/httplib2/__init__.py", line 1755, in request
-    (response, content) = self._request(
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/httplib2/__init__.py", line 1475, in _request
-    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/httplib2/__init__.py", line 1398, in _conn_request
-    conn.request(method, request_uri, body, headers)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1331, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1377, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1326, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1086, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/http/client.py", line 1047, in send
-    self.sock.sendall(data)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/ssl.py", line 1283, in sendall
-    v = self.send(byte_view[count:])
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/ssl.py", line 1252, in send
-    return self._sslobj.write(data)
-ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2436)
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <runner@runnervmmprz5.sj4etpwor4vuhlgevtwkpoierg.phxx.internal.cloudapp.net>) not allowed
+uploaded DeGEHUcbRcs 【閲覧注意】お前の脳はもう騙されている…脳がだまされる心理10選【ピエロの闇知識】 2026-10-10T07:00:00Z
+thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=DeGEHUcbRcs&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+short s004 total 57.0 speed 1.05
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero/../piero_work/im
+photos s004 10 / 10 thumb True
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <runner@runnervmmprz5.sj4etpwor4vuhlgevtwkpoierg.phxx.internal.cloudapp.net>) not allowed
+https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/piero-thumbs-20261010
+uploaded la44fdQswro 【閲覧注意】人体のやばい知識10選｜ピエロ君 #shorts 2026-10-10T11:00:00Z
+thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=la44fdQswro&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+elapsed 1981 s

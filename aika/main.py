@@ -11,7 +11,19 @@ NPROC = os.cpu_count() or 2
 def sh(*a, env=None):
     print('+', ' '.join(a), flush=True); subprocess.run(a, check=True, env=env)
 
+OUT_BRANCH = 'origin/aika-out'     # prebuilt mp4s, rendered in the voice queue (prerender)
+def out_name(ep):
+    return f"{ep}-{hashlib.sha256(open(f'episodes/{ep}.json', 'rb').read()).hexdigest()[:8]}.mp4"
+def prebuilt(ep):
+    return subprocess.run(['git', 'cat-file', '-e', f'{OUT_BRANCH}:{out_name(ep)}'], capture_output=True).returncode == 0
+
 def build(ep, seconds=None):
+    if seconds is None and prebuilt(ep):
+        os.makedirs('out', exist_ok=True)
+        with open(f'out/{ep}.mp4', 'wb') as f:
+            subprocess.run(['git', 'show', f'{OUT_BRANCH}:{out_name(ep)}'], stdout=f, check=True)
+        print('using prebuilt', out_name(ep), os.path.getsize(f'out/{ep}.mp4'), flush=True)
+        return f'out/{ep}.mp4'
     spec, vdir = f'episodes/{ep}.json', f'voice/{ep}'
     sh(sys.executable, 'voice.py', spec, vdir)
     env = dict(os.environ, EP='ep_engine', AIKA_SPEC=spec, AIKA_VOICE=vdir, AIKA_AUDIO_OUT=f'out/{ep}.wav')
@@ -108,6 +120,41 @@ def now(n=2):
         shutil.rmtree(f'voice/{ep}', ignore_errors=True); os.remove(path)
     print('left in stock:', len(idx) - st['next'])
 
+def load_state():
+    p = 'state/state.json'
+    return json.load(open(p)) if os.path.exists(p) else {'next': 0, 'posted': {}}
+
+def need(cmd, n=2):
+    # prints 0 when every episode this run would post is already prebuilt (no heavy setup needed)
+    st, idx = load_state(), json.load(open('episodes/index.json'))
+    if cmd == 'daily':
+        day = (datetime.datetime.now(JST) + datetime.timedelta(hours=4)).date().isoformat()
+        n = sum(1 for i in range(len(SLOTS)) if str(i) not in st['posted'].get(day, {}))
+    eps = idx[st['next']:st['next'] + n]
+    print(0 if all(prebuilt(e) for e in eps) else 1)
+
+def prerender():
+    # voice queue: render every remaining episode not yet on the aika-out branch, push each one as soon as it is done
+    st, idx = load_state(), json.load(open('episodes/index.json'))
+    wt = '/tmp/aika-out'
+    G = ['git', '-c', 'user.name=aika-bot', '-c', 'user.email=bot@users.noreply.github.com']
+    if not os.path.exists(wt):
+        if subprocess.run(['git', 'rev-parse', '-q', '--verify', OUT_BRANCH], capture_output=True).returncode == 0:
+            sh('git', 'worktree', 'add', '-q', '-B', 'aika-out', wt, OUT_BRANCH)
+        else:
+            sh('git', 'worktree', 'add', '-q', '--orphan', '-b', 'aika-out', wt)
+    for ep in idx[st['next']:]:
+        if prebuilt(ep): print('already prebuilt', ep); continue
+        path = build(ep)
+        name = out_name(ep); shutil.copy(path, f'{wt}/{name}')
+        sh(*G, '-C', wt, 'add', name); sh(*G, '-C', wt, 'commit', '-qm', f'aika prebuilt {name}')
+        for i in range(5):
+            if subprocess.run(['git', '-C', wt, 'push', '-q', 'origin', 'HEAD:aika-out']).returncode == 0: break
+            subprocess.run([*G, '-C', wt, 'pull', '-q', '--rebase', 'origin', 'aika-out'])
+        sh('git', 'fetch', '-q', '--depth=1', 'origin', '+aika-out:refs/remotes/origin/aika-out')
+        shutil.rmtree(f'voice/{ep}', ignore_errors=True); os.remove(path)
+        print('prebuilt', ep, name, flush=True)
+
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'smoke'
     if cmd == 'daily': daily()
@@ -115,4 +162,6 @@ if __name__ == '__main__':
         p = build('ep01', seconds=3); print('smoke ok', os.path.getsize(p))
         if os.environ.get('YT_CLIENT_SECRET') and os.path.exists('rt.enc'): youtube(); print('channel ok')
     elif cmd == 'render': print(build(sys.argv[2]))
+    elif cmd == 'need': need(sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 2)
+    elif cmd == 'prerender': prerender()
     elif cmd == 'now': now(int(sys.argv[2]) if len(sys.argv) > 2 else 2)

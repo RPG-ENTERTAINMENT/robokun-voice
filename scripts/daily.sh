@@ -12,7 +12,9 @@ esac
 [ -z "$TASK" ] && TASK=test
 # --- OLあいか immediate post: aika/jobs/task = now:<n>  (checked by every run, so a cancelled run doesn't lose it)
 AT=$(head -1 aika/jobs/task 2>/dev/null | tr -d ' \r')
-if [ "${AT%%:*}" = now ]; then echo "done $AT" > aika/jobs/task; bash aika/run.sh "$AT" || true; fi
+if [ "${AT%%:*}" = now ]; then bash aika/run.sh "$AT" || true; fi   # marks itself done; waits (no render here) until prebuilt
+# OLあいか scheduled post first (upload only — videos are prebuilt in the voice queue). 12:30 run = retry if missed.
+case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash aika/run.sh daily || true;; esac
 [ "$TASK" = aika:kick ] && { echo make > jobs/daily_task; git add jobs/daily_task; git commit -qm "reset task [skip ci]"; git pull -q --rebase && git push -q; exit 0; }
 # --- piero channel (ピエロ君のやばい噂、知識): on-demand tasks via jobs/daily_task = piero:<task>
 if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; fi
@@ -82,6 +84,4 @@ fi
 rc=$?
 # --- piero channel: render today's 3 videos and schedule them (12:00 / 16:00 / 20:00 JST). 12:30 run = retry if missed.
 case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash piero/run.sh daily || true;; esac
-# --- OLあいか channel: render today's 2 shorts and schedule them (12:00 / 19:00 JST). 12:30 run = retry if missed.
-case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash aika/run.sh daily || true;; esac
 exit $rc

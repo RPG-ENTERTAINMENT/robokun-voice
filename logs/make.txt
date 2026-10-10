@@ -1,1 +1,208 @@
-already made 20261010 {'A': 'ep011', 'B': 'ep064'}
+episodes ['ep012', 'ep074']
++ python scripts/robo_tts.py ep012 ep074
+Loading Text2Semantic weights from GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt
+Loading VITS weights from GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth. <All keys matched successfully>
+Loading BERT weights from GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large
+Loading CNHuBERT weights from GPT_SoVITS/pretrained_models/chinese-hubert-base
+Set seed to 42
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 34%|███▍      | 7.78M/22.6M [00:00<00:00, 81.6MB/s] 85%|████████▍ | 19.1M/22.6M [00:00<00:00, 103MB/s] 100%|██████████| 22.6M/22.6M [00:00<00:00, 97.6MB/s]
+Extracting tar file
+############ Segment Text ############
+Actual Input Target Text:
+くちぶえ？
+Actual Input Target Text (after sentence segmentation):
+['くちぶえ？']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 1974.72it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['くちぶえ？']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:01,  4.97it/s]  0%|          | 5/1500 [00:00<01:17, 19.32it/s]  1%|          | 9/1500 [00:00<00:56, 26.36it/s]  1%|          | 13/1500 [00:00<00:48, 30.65it/s]  1%|          | 17/1500 [00:00<00:44, 32.98it/s]  1%|▏         | 20/1500 [00:00<00:53, 27.58it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+14.234	0.002	0.727	0.923
+robo ep012 1 1.1 score 0.16
+Set seed to 42
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+やってみる。ふーっ…
+Actual Input Target Text (after sentence segmentation):
+['やってみる。ふーっ…']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 981.12it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['やってみる。ふーっ…']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:16,  4.74it/s]  0%|          | 5/1500 [00:00<01:21, 18.46it/s]  1%|          | 9/1500 [00:00<00:58, 25.61it/s]  1%|          | 13/1500 [00:00<00:49, 29.97it/s]  1%|          | 17/1500 [00:00<00:45, 32.61it/s]  1%|▏         | 21/1500 [00:00<00:42, 34.43it/s]  2%|▏         | 25/1500 [00:00<00:41, 35.66it/s]  2%|▏         | 29/1500 [00:00<00:40, 36.41it/s]  2%|▏         | 33/1500 [00:01<00:39, 36.94it/s]  2%|▏         | 37/1500 [00:01<00:39, 37.36it/s]  3%|▎         | 41/1500 [00:01<00:38, 37.55it/s]  3%|▎         | 45/1500 [00:01<00:38, 37.80it/s]  3%|▎         | 49/1500 [00:01<00:38, 37.98it/s]  4%|▎         | 53/1500 [00:01<00:38, 38.07it/s]  4%|▎         | 54/1500 [00:01<00:43, 33.17it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	0.002	1.630	2.700
+Set seed to 7
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+やってみる。ふーっ…
+Actual Input Target Text (after sentence segmentation):
+['やってみる。ふーっ…']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 1109.02it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['やってみる。ふーっ…']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:21,  4.67it/s]  0%|          | 5/1500 [00:00<01:21, 18.28it/s]  1%|          | 9/1500 [00:00<00:57, 25.78it/s]  1%|          | 13/1500 [00:00<00:49, 30.25it/s]  1%|          | 17/1500 [00:00<00:44, 33.05it/s]  1%|▏         | 21/1500 [00:00<00:42, 34.91it/s]  2%|▏         | 25/1500 [00:00<00:40, 36.05it/s]  2%|▏         | 29/1500 [00:00<00:39, 36.99it/s]  2%|▏         | 33/1500 [00:01<00:38, 37.65it/s]  2%|▏         | 37/1500 [00:01<00:38, 37.93it/s]  3%|▎         | 40/1500 [00:01<00:45, 32.05it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	0.002	1.250	2.038
+robo ep012 3 1.9 score 0.19
+Set seed to 42
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+。ふーっ！ ふーっ！
+Actual Input Target Text (after sentence segmentation):
+['。ふーっ！ ふーっ！']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 1155.14it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['。ふーっ！ ふーっ！']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:07,  4.87it/s]  0%|          | 5/1500 [00:00<01:20, 18.69it/s]  1%|          | 9/1500 [00:00<00:57, 25.81it/s]  1%|          | 13/1500 [00:00<00:49, 29.99it/s]  1%|          | 17/1500 [00:00<00:45, 32.60it/s]  1%|▏         | 21/1500 [00:00<00:43, 33.84it/s]  2%|▏         | 25/1500 [00:00<00:42, 35.09it/s]  2%|▏         | 29/1500 [00:00<00:40, 35.96it/s]  2%|▏         | 33/1500 [00:01<00:40, 36.53it/s]  2%|▏         | 37/1500 [00:01<00:39, 36.89it/s]  3%|▎         | 41/1500 [00:01<00:39, 37.25it/s]  3%|▎         | 45/1500 [00:01<00:38, 37.65it/s]  3%|▎         | 49/1500 [00:01<00:38, 37.98it/s]  4%|▎         | 53/1500 [00:01<00:37, 38.13it/s]  4%|▎         | 56/1500 [00:01<00:43, 33.23it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	0.001	1.687	2.810
+Set seed to 7
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+。ふーっ！ ふーっ！
+Actual Input Target Text (after sentence segmentation):
+['。ふーっ！ ふーっ！']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 1058.90it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['。ふーっ！ ふーっ！']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:06,  4.89it/s]  0%|          | 5/1500 [00:00<01:18, 19.04it/s]  1%|          | 9/1500 [00:00<00:57, 26.13it/s]  1%|          | 13/1500 [00:00<00:49, 30.25it/s]  1%|          | 17/1500 [00:00<00:45, 32.37it/s]  1%|▏         | 21/1500 [00:00<00:43, 34.02it/s]  2%|▏         | 25/1500 [00:00<00:42, 34.94it/s]  2%|▏         | 29/1500 [00:00<00:41, 35.82it/s]  2%|▏         | 33/1500 [00:01<00:40, 36.48it/s]  2%|▏         | 37/1500 [00:01<00:39, 36.78it/s]  3%|▎         | 38/1500 [00:01<00:46, 31.26it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	0.002	1.217	1.933
+robo ep012 5 1.82 score 0.24
+Set seed to 42
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+ぼく、くちぶえ むいてない…
+Actual Input Target Text (after sentence segmentation):
+['ぼく、くちぶえ むいてない…']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 923.45it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['ぼく、くちぶえ むいてない…']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:29,  4.55it/s]  0%|          | 5/1500 [00:00<01:22, 18.22it/s]  1%|          | 9/1500 [00:00<00:58, 25.60it/s]  1%|          | 13/1500 [00:00<00:49, 30.03it/s]  1%|          | 17/1500 [00:00<00:45, 32.75it/s]  1%|▏         | 21/1500 [00:00<00:42, 34.78it/s]  2%|▏         | 25/1500 [00:00<00:40, 36.01it/s]  2%|▏         | 29/1500 [00:00<00:40, 36.73it/s]  2%|▏         | 33/1500 [00:01<00:39, 37.00it/s]  2%|▏         | 37/1500 [00:01<00:39, 37.06it/s]  3%|▎         | 41/1500 [00:01<00:39, 36.91it/s]  3%|▎         | 45/1500 [00:01<00:39, 37.10it/s]  3%|▎         | 49/1500 [00:01<00:39, 36.78it/s]  4%|▎         | 53/1500 [00:01<00:39, 37.02it/s]  4%|▍         | 57/1500 [00:01<00:38, 37.17it/s]  4%|▍         | 61/1500 [00:01<00:38, 37.11it/s]  4%|▍         | 65/1500 [00:01<00:38, 36.98it/s]  4%|▍         | 65/1500 [00:01<00:42, 33.42it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	0.002	1.946	3.259
+robo ep012 7 2.9 score 0.37
+Set seed to 42
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+。さかな！ ぼくに？
+Actual Input Target Text (after sentence segmentation):
+['。さかな！ ぼくに？']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 1052.52it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['。さかな！ ぼくに？']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:08,  4.86it/s]  0%|          | 5/1500 [00:00<01:19, 18.76it/s]  1%|          | 9/1500 [00:00<00:57, 26.08it/s]  1%|          | 13/1500 [00:00<00:48, 30.38it/s]  1%|          | 17/1500 [00:00<00:44, 33.10it/s]  1%|▏         | 21/1500 [00:00<00:42, 34.86it/s]  2%|▏         | 25/1500 [00:00<00:40, 36.02it/s]  2%|▏         | 29/1500 [00:00<00:40, 36.69it/s]  2%|▏         | 33/1500 [00:01<00:39, 37.08it/s]  2%|▏         | 37/1500 [00:01<00:39, 37.39it/s]  3%|▎         | 41/1500 [00:01<00:38, 37.59it/s]  3%|▎         | 43/1500 [00:01<00:45, 32.28it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	0.002	1.334	2.161
+robo ep074 2 2.02 score 0.37
+Set seed to 42
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+。えっと… ぼく、たべられないんだ。
+Actual Input Target Text (after sentence segmentation):
+['。えっと… ぼく、たべられないんだ。']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 840.04it/s]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['。えっと… ぼく、たべられないんだ。']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:57,  4.20it/s]  0%|          | 5/1500 [00:00<01:26, 17.34it/s]  1%|          | 9/1500 [00:00<00:59, 24.88it/s]  1%|          | 13/1500 [00:00<00:50, 29.47it/s]  1%|          | 17/1500 [00:00<00:45, 32.51it/s]  1%|▏         | 21/1500 [00:00<00:42, 34.50it/s]  2%|▏         | 25/1500 [00:00<00:41, 35.88it/s]  2%|▏         | 29/1500 [00:00<00:39, 36.78it/s]  2%|▏         | 33/1500 [00:01<00:39, 37.35it/s]  2%|▏         | 37/1500 [00:01<00:38, 37.80it/s]  3%|▎         | 41/1500 [00:01<00:38, 38.04it/s]  3%|▎         | 45/1500 [00:01<00:37, 38.37it/s]  3%|▎         | 49/1500 [00:01<00:37, 38.54it/s]  4%|▎         | 53/1500 [00:01<00:37, 38.76it/s]  4%|▍         | 57/1500 [00:01<00:37, 38.81it/s]  4%|▍         | 61/1500 [00:01<00:37, 38.87it/s]  4%|▍         | 65/1500 [00:01<00:36, 38.94it/s]  5%|▍         | 69/1500 [00:01<00:36, 38.91it/s]  5%|▍         | 73/1500 [00:02<00:36, 39.04it/s]  5%|▌         | 77/1500 [00:02<00:36, 38.95it/s]  5%|▌         | 81/1500 [00:02<00:39, 35.69it/s]  5%|▌         | 82/1500 [00:02<00:41, 34.34it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	0.002	2.390	4.113
+robo ep074 4 3.58 score 0.43
+Set seed to 42
+朴素推理模式已开启
+Bucket Processing Mode Enabled
+Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
+############ Segment Text ############
+Actual Input Target Text:
+でも、きもちで おなか いっぱい。
+Actual Input Target Text (after sentence segmentation):
+['でも、きもちで おなか いっぱい。']
+############ Extract Text BERT Features ############
+  0%|          | 0/1 [00:00<?, ?it/s]INFO:fast_langdetect.infer:fast-langdetect: Downloading model from https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
+[[36m2026-10-10 19:57:44,700[0m][[32mINFO[0m] - Downloading https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin to lid.176.bin (125.2M)[0m
+INFO:robust_downloader.downloader:Downloading https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin to lid.176.bin (125.2M)
+
+  0%|          | 0.00/125M [00:00<?, ?B/s][A
+ 10%|▉         | 11.9M/125M [00:00<00:00, 125MB/s][A
+ 20%|█▉        | 24.7M/125M [00:00<00:00, 130MB/s][A
+ 30%|██▉       | 37.5M/125M [00:00<00:00, 132MB/s][A
+ 40%|████      | 50.4M/125M [00:00<00:00, 133MB/s][A
+ 50%|█████     | 63.1M/125M [00:00<00:00, 130MB/s][A
+ 60%|██████    | 75.7M/125M [00:00<00:00, 131MB/s][A
+ 71%|███████   | 88.3M/125M [00:00<00:00, 131MB/s][A
+ 81%|████████  | 101M/125M [00:00<00:00, 131MB/s] [A
+ 91%|█████████ | 113M/125M [00:00<00:00, 132MB/s][A100%|██████████| 125M/125M [00:00<00:00, 131MB/s]
+100%|██████████| 1/1 [00:01<00:00,  1.46s/it]100%|██████████| 1/1 [00:01<00:00,  1.46s/it]
+############ 推理 ############
+Processed text from the frontend (per sentence): ['でも、きもちで おなか いっぱい。']
+############ Predict Semantic Token ############
+  0%|          | 0/1500 [00:00<?, ?it/s]  0%|          | 1/1500 [00:00<05:42,  4.37it/s]  0%|          | 5/1500 [00:00<01:24, 17.69it/s]  1%|          | 9/1500 [00:00<00:59, 25.02it/s]  1%|          | 13/1500 [00:00<00:50, 29.67it/s]  1%|          | 17/1500 [00:00<00:45, 32.66it/s]  1%|▏         | 21/1500 [00:00<00:42, 34.65it/s]  2%|▏         | 25/1500 [00:00<00:41, 35.93it/s]  2%|▏         | 29/1500 [00:00<00:40, 36.72it/s]  2%|▏         | 33/1500 [00:01<00:39, 37.26it/s]  2%|▏         | 37/1500 [00:01<00:39, 37.34it/s]  3%|▎         | 41/1500 [00:01<00:38, 37.46it/s]  3%|▎         | 45/1500 [00:01<00:38, 37.60it/s]  3%|▎         | 49/1500 [00:01<00:38, 37.51it/s]  4%|▎         | 53/1500 [00:01<00:38, 37.71it/s]  4%|▍         | 57/1500 [00:01<00:38, 37.87it/s]  4%|▍         | 61/1500 [00:01<00:37, 37.89it/s]  4%|▍         | 65/1500 [00:01<00:37, 37.85it/s]  5%|▍         | 69/1500 [00:02<00:37, 37.87it/s]  5%|▍         | 70/1500 [00:02<00:42, 33.92it/s]
+############ Synthesize Audio ############
+Parallel Synthesis in Progress...
+0.000	1.465	2.065	3.504
+robo ep074 6 3.1 score 0.24
++ python eng/tts_vv.py episodes/ep012.json vo/ep012 --vv vv --skip-robo
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+tts ok
++ python eng/engine_l.py episodes/ep012.json vo/ep012 out/20261011_A_ep012.mp4 --procs 2
+duration 18.07 frames 543
+done out/20261011_A_ep012.mp4
++ python eng/tts_vv.py episodes/ep074.json vo/ep074 --vv vv --skip-robo
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+tts ok
++ python eng/engine_l.py episodes/ep074.json vo/ep074 out/20261011_B_ep074.mp4 --procs 2
+duration 22.59 frames 678
+done out/20261011_B_ep074.mp4
+release not found
++ gh release create day-20261011 out/20261011_A_ep012.mp4 out/20261011_B_ep074.mp4 out/meta.json --title day-20261011 --notes ep012 / ep074
+https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/day-20261011

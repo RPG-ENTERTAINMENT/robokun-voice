@@ -147,7 +147,7 @@ def sfx_for(total, heads, scares, out, photos=(), heart=None, thunder_at=(0.0,))
         n = int(3.5 * SR); tt = np.arange(n) / SR
         x = _lp(rng.standard_normal(n), 0.995) * 25
         return x * (np.exp(-tt * 1.4) * (1 + 0.6 * np.sin(2 * np.pi * 3.1 * tt)) * np.clip(tt / 0.05, 0, 1))
-    for t in thunder_at: put(t, thunder(), 0.55)
+    for t in thunder_at: put(t, thunder(), 0.2)   # opening thunder kept soft (was 0.55 = clipping)
     for t in heads:
         put(t - 0.25, whoosh(), 0.35); put(t, hit(), 0.45)
         i = max(0, int((t - 0.12) * SR)); n = min(int(0.22 * SR), N - i)

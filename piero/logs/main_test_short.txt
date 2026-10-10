@@ -1,9 +1,9 @@
 Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 44%|████▍     | 10.0M/22.6M [00:00<00:00, 97.0MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 117MB/s] 
+  0%|          | 0/23646843 [00:00<?, ?it/s] 50%|████▉     | 11.2M/22.6M [00:00<00:00, 117MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 127MB/s]
 Extracting tar file
 short s001 total 53.9 speed 1.05
 image download failed <HTTPError 403: 'Forbidden'>
 image download failed <HTTPError 403: 'Forbidden'>
 photos s001 10 / 10 thumb True
-https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/piero-test-10092348
-elapsed 353 s
+https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/piero-test-10101833
+elapsed 347 s

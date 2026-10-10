@@ -1,1 +1,1 @@
-written
+channels [('UCCA5tGpsDI7Nh1360ie3TqA', 'OLあいかの車中泊ライフ')] rt True

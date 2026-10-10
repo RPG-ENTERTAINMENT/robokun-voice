@@ -1,6 +1,14 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
   warnings.warn(message, FutureWarning)
-done A {'id': 's003', 'video': '5IlyCFes2sI', 'at': '12:00'}
-done L {'id': 'l002', 'video': 'DeGEHUcbRcs', 'at': '16:00'}
-done B {'id': 's004', 'video': 'la44fdQswro', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 40%|████      | 9.04M/22.6M [00:00<00:00, 94.8MB/s] 94%|█████████▎| 21.1M/22.6M [00:00<00:00, 113MB/s] 100%|██████████| 22.6M/22.6M [00:00<00:00, 111MB/s]
+Extracting tar file
+short s005 total 56.4 speed 1.1
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+photos s005 10 / 10 thumb True

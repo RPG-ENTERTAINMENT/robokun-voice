@@ -1,0 +1,9 @@
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:254: FutureWarning: You are using a Python version (3.10.22) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+using prebuilt ep01-7d41ca53.mp4 27827603
+uploaded ep01 fL-obaghL-c {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+URL https://youtube.com/shorts/fL-obaghL-c
+using prebuilt ep02-cc962583.mp4 18124963
+uploaded ep02 lJgqq-fD3yg {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+URL https://youtube.com/shorts/lJgqq-fD3yg
+left in stock: 9

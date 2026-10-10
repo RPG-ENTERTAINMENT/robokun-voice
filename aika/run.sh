@@ -16,7 +16,7 @@ else
   ( sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg ) > logs/apt.txt 2>&1
   python -m pip install -q numpy scipy pillow cryptography google-api-python-client google-auth > logs/pip.txt 2>&1
   # assets (sprites + backgrounds) are stored as base64 chunks
-  if [ ! -d assets ]; then cat assets_b64/part_* | base64 -d | tar x; fi
+  if [ ! -d assets ]; then cat assets_b64/p_* | base64 -d | tar xz; fi
   # fonts
   if [ ! -d fonts/package ]; then mkdir -p fonts && (cd fonts && npm pack -q @expo-google-fonts/m-plus-rounded-1c@0.4.4 >/dev/null && tar xzf *.tgz); fi
   # VOICEVOX core 0.17 + models

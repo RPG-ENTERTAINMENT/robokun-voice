@@ -128,6 +128,8 @@ torchmetrics 1.5.0 requires numpy<2.0,>1.20.0, but you have numpy 2.2.6 which is
 ++ hash -r
 + python -
 assets ready
++ python scripts/hq_sprites.py
+hq_sprites: sheet not uploaded yet -> fallback poses
 + '[' -d gsv ']'
 + '[' -f gsv/GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth ']'
 + mkdir -p gsv/GPT_SoVITS/pretrained_models/fast_langdetect

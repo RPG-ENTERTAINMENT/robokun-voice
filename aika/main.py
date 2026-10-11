@@ -13,7 +13,10 @@ def sh(*a, env=None):
 
 OUT_BRANCH = 'origin/aika-out'     # prebuilt mp4s, rendered in the voice queue (prerender)
 def out_name(ep):
-    return f"{ep}-{hashlib.sha256(open(f'episodes/{ep}.json', 'rb').read()).hexdigest()[:8]}.mp4"
+    # name changes when the script or the render code changes -> stale prebuilt videos are re-rendered
+    h = hashlib.sha256()
+    for f in (f'episodes/{ep}.json', 'render.py', 'ep_engine.py', 'audio.py'): h.update(open(f, 'rb').read())
+    return f"{ep}-{h.hexdigest()[:8]}.mp4"
 def prebuilt(ep):
     return subprocess.run(['git', 'cat-file', '-e', f'{OUT_BRANCH}:{out_name(ep)}'], capture_output=True).returncode == 0
 

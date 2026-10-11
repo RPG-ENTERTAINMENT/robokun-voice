@@ -1,6 +1,36 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:239: FutureWarning: You are using a Python version (3.10.22) past its end of life. Google will update google.api_core with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:239: FutureWarning: You are using a Python version (3.10.22) past its end of life. Google will update google.api_core with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-done A {'id': 's005', 'video': 'CJHShd64KLY', 'at': '12:00'}
-done L {'id': 'l003', 'video': 'nDqgg9_KRx8', 'at': '16:00'}
-done B {'id': 's006', 'video': 'nDu7hgKGgBU', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 44%|████▍     | 10.0M/22.6M [00:00<00:00, 73.0MB/s] 89%|████████▊ | 20.0M/22.6M [00:00<00:00, 73.8MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 76.6MB/s]
+Extracting tar file
+short s007 total 55.7 speed 1.05
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero_work/img/cdd7dfe
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero_work/img/133e897
+photos s007 10 / 10 thumb True

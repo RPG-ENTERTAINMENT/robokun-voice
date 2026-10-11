@@ -475,18 +475,7 @@ def render(t):
         base = base.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + cw, y0 + chh))
     draw_overlays(base, t)
     if hasattr(EP, 'draw_top'): EP.draw_top(base, t, R)
-    # transitions
-    for T in TRANS:
-        if T - TW <= t < T + TW:
-            p = abs(t - T) / TW
-            r = 1250 * (p ** 1.6)
-            m = Image.new('L', (W, H), 0)
-            ImageDraw.Draw(m).ellipse([CX - r, 880 - r, CX + r, 880 + r], fill=255)
-            base = Image.composite(base, PAT, m)
-    for T in FLASH:
-        if T <= t < T + 0.3:
-            a = 1 - (t - T) / 0.3
-            base = Image.blend(base, Image.new('RGBA', (W, H), (255, 255, 255, 255)), a * 0.85)
+    # (no transitions between scenes: hard cut — 2026-10-11)
     return base.convert('RGB')
 
 if __name__ == '__main__':

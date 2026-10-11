@@ -4,113 +4,37 @@ s0_0 コンバンワ'、ア'イカデ_ス
 s0_1 キョ'オワ、ホシガ'/トッテモ'/キ'レイナ/ヨ'ル
 s1_0 ホシオ'/ミナ'ガラ、ギ'タアノ/レンシュウ'
 s1_2 ダレ'モ/イナイ'カラ、オモイッキリ'/ハジケ'ルノ
-s2_0 ソレデ'ワ/キイテ'/クダサ'イ
-s2_1 song ホシガキラキラヨゾラニトドケヨ
-s3_0 ラ'イブノ/ア'トワ、ゴホオビプ'リン
-s4_0 ホシゾララ'イブ、ダイセ'エコオ、マタ'ネ
+s2_0 ア'ッ、ナガレ'ボシ、ミ_ツケタ'
+s2_2 ライシュウモ'、イ'イ/シュ'ウニ/ナリマ'_ス/ヨ'オニ
+s3_0 ヨ'ルノ/オ'ヤツワ、ゴホオビプ'リン
+s4_0 ホシゾラノ'/ヨ'ル、サイコオ'、マタ'ネ
 voice done 8
 + /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
 ok 0.7586686690476118
 0
+780
+540
 300
-600
-900
 60
+600
 360
-960
+840
+120
 660
 420
-120
-1020
+900
 180
 720
 480
-1080
 240
-780
-540
-840
+960
 + ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep05_list.txt -i out/ep05.wav -map 0:v -map 1:a -c:v libx264 -preset medium -b:v 3200k -maxrate 3800k -bufsize 7000k -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep05.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep05-0c0b1f1c.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep05-0c0b1f1c.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep05-0a387d0c.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep05-0a387d0c.mp4
 + git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
-prebuilt ep05 ep05-0c0b1f1c.mp4
-+ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep06.json voice/ep06
-s0_0 オハヨオ'、ア'イカデ_ス
-s0_1 キョ'オワ、シャチュウ'ハクノ/アサゴ'ハンオ/ショオカイ'/スルネ'
-s1_0 マ'ドオ/アケルト'、モリノ'/イ'イ/ニオ'イ
-s1_2 トリノ'/コ'エデ/メ'ガ/サメ'ルッテ、ゼイタ'クデショ？
-s2_0 アサゴ'ハンワ、フ'ワフワノ/パンケ'エキ
-s2_2 ソ'トデ/タベ'ルト、イ'ツモノ/サン'バイ/オイシ'イ
-s3_0 タベ'タラ、チョ'ット/オサ'ンポ
-s3_1 キョ'オワ、ド'コマデ/イコオ'カナ？
-s4_0 アサゴ'ハンデ、ゲンキイ'ッパイ、マタ'ネ
-voice done 9
-+ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
-ok 0.7586686690476118
-0
-300
-600
-900
-60
-360
-660
-960
-420
-120
-720
-1020
-480
-180
-780
-1080
-540
-240
-840
-1140
-+ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep06_list.txt -i out/ep06.wav -map 0:v -map 1:a -c:v libx264 -preset medium -b:v 3200k -maxrate 3800k -bufsize 7000k -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep06.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep06-ea6776b9.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep06-ea6776b9.mp4
-+ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
-prebuilt ep06 ep06-ea6776b9.mp4
-+ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep07.json voice/ep07
-s0_0 コンニチワ'、ア'イカデ_ス
-s0_1 キョ'オワ、オオエルノ'/ア'イカノ、セツヤクノ'/オハナシ'
-s1_0 ホ'テルニ/トマラナイ'カラ、ヤド'ダイワ、ナ'ント/ゼロ'エン
-s1_2 ウイタ'/オカネデ'、イケル'/バショガ'/フエ'ルノ
-s2_0 ゴ'ハンワ、クルマデ'/カンタンジ'スイ
-s2_2 オウ'ドンナラ、イッパイ'/ヒャクエンク'ライ
-s3_0 ヨ'ルノ/アソビワ'、ギ'タア
-s3_2 オカネオ'/カケ'ナ_クテモ、タノシ'イ/ジカンワ'/_ツクレ'ルヨ
-s4_0 カ_シコ'ク、タノシ'ク、シャチュウ'ハク、マタ'ネ
-voice done 9
-+ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
-ok 0.7586686690476118
-0
-300
-600
-900
-60
-360
-660
-960
-420
-120
-720
-1020
-480
-780
-180
-1080
-540
-840
-240
-1140
-+ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep07_list.txt -i out/ep07.wav -map 0:v -map 1:a -c:v libx264 -preset medium -b:v 3200k -maxrate 3800k -bufsize 7000k -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep07.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep07-206aa37c.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep07-206aa37c.mp4
-+ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
-prebuilt ep07 ep07-206aa37c.mp4
+prebuilt ep05 ep05-0a387d0c.mp4
+already prebuilt ep06
+already prebuilt ep07
 + /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep08.json voice/ep08
 s0_0 コンニチワ'、ア'イカデ_ス
 s0_1 キョ'オワ、ワタシノ'/イッシュ'ウカンオ/ミセチャウ'ネ
@@ -118,78 +42,39 @@ s1_0 ゲツヨ'オビカラ/キンヨ'オビマデワ、カイシャデ'/オシ'
 s1_1 ヨ'ルワ/ク'タ_クタ、デ'モ、シュウマツノ'/タメ'ニ、ガンバ'ルノ
 s2_0 ソ_シテ'、キンヨ'オビノ/ヨ'ル
 s2_2 サ'ア、ド'コニ/イコオ'カナ
-s3_0 シュウマツワ'、_スキ'ナ/バショデ'、_スキ'ナダケ/ウタウ'ノ
-s3_1 song オシゴトオワリシュウマツタビダツ
+s3_0 シュウマツワ'、_スキ'ナ/バショデ'、_スキ'ナ/コト'オ/スル'ノ
+s3_2 コレガ'/ア'ルカラ、ヘエジツモ'/ガンバレ'ル/ン'ダ
 s4_0 ミンナ'モ、シュウマツワ'/タビ'ニ/デ'ヨオ、マタ'ネ
 voice done 9
 + /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
 ok 0.7586686690476118
 0
 360
-720
-1080
+660
+960
 60
 420
-780
+720
+1020
+120
 480
+780
+1080
+180
+540
+840
+240
 1140
-120
-840
-540
-180
+600
+900
+300
 1200
-900
-600
-240
-1260
-660
-960
-300
-1320
-1020
-1380
 + ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep08_list.txt -i out/ep08.wav -map 0:v -map 1:a -c:v libx264 -preset medium -b:v 3200k -maxrate 3800k -bufsize 7000k -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep08.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep08-5154b057.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep08-5154b057.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep08-b00926b1.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep08-b00926b1.mp4
 + git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
-prebuilt ep08 ep08-5154b057.mp4
-+ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep09.json voice/ep09
-s0_0 コンニチワ'、ア'イカデ_ス
-s0_1 キョ'オワ、シャチュウ'ハクノ/モチ'モノ、ベ_スト'サンオ/ハッピョオ'/スルネ'
-s1_0 ダ'イ/サンイ'ワ、ラ'ンタン
-s1_1 アッタカ'イ/_ヒカリ'デ、クルマノ'/ナ'カガ、イ'ッキニ/オ'ヘヤニ/ナ'ルノ
-s2_0 ダ'イ/ニイ'ワ、ギ'タア
-s2_1 ア'メノ/ヒデ'モ、タイ_クツ'/シナイヨ'
-s3_0 ソ_シテ'/ダ'イ/イチイ'ワ、スウ_プセ'ット
-s3_2 ド'コデモ、アッタカ'イ/ゴ'ハンガ/タベラレ'ルノ
-s4_0 ミンナ'ノ/モチ'モノモ、コメントデ'/オシエテネ'、マタ'ネ
-voice done 9
-+ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
-ok 0.7586686690476118
-0
-840
-300
-600
-60
-900
-360
-660
-120
-420
-960
-720
-480
-180
-780
-1020
-540
-240
-1080
-+ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep09_list.txt -i out/ep09.wav -map 0:v -map 1:a -c:v libx264 -preset medium -b:v 3200k -maxrate 3800k -bufsize 7000k -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep09.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep09-7ddc7230.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep09-7ddc7230.mp4
-+ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
-prebuilt ep09 ep09-7ddc7230.mp4
+prebuilt ep08 ep08-b00926b1.mp4
+already prebuilt ep09
 + /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep10.json voice/ep10
 s0_0 コンニチワ'、ア'イカデ_ス
 s0_1 キノ'オノ/ヨ'ルワ、ズット'/ア'メダッタ/ン'ダ
@@ -197,45 +82,43 @@ s1_0 ア'メノ/ヨ'ルワ、ハヤメニ'/ネチャウ'
 s1_2 ア'メノ/オト'ッテ、ナ'ンダカ/オ_チツク'ノ
 s2_0 ア'サ/オキ'タラ、ハレテ'ル
 s2_2 ク'ウキガ/キ'レイデ、モリガ'/キ'ラキラ/_シテ'ルヨ
-s3_0 ウレシ'_クテ、ウタッチャウ'
-s3_1 song アメアガリノモリハレタソラニネ
+s3_0 ハレ'タ/ア'サワ、パンケ'エキ
+s3_2 アメア'ガリノ/ク'ウキデ、モ'ット/オイシ'イ
 s4_0 アメア'ガリワ、イ'イ/コト'/ア'ルネ、マタ'ネ
 voice done 9
 + /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
 ok 0.7586686690476118
 0
-960
-660
-360
+300
+840
+600
 60
-420
-720
+360
+900
 120
-1020
-480
+660
+420
+960
 180
-1080
+720
+480
+240
+1020
 780
 540
-240
-1140
-840
-300
-600
-1200
-900
+1080
 + ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep10_list.txt -i out/ep10.wav -map 0:v -map 1:a -c:v libx264 -preset medium -b:v 3200k -maxrate 3800k -bufsize 7000k -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep10.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep10-23e633c9.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep10-23e633c9.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep10-a18aef38.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep10-a18aef38.mp4
 + git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
-prebuilt ep10 ep10-23e633c9.mp4
+prebuilt ep10 ep10-a18aef38.mp4
 + /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep11.json voice/ep11
 s0_0 コンバンワ'、ア'イカデ_ス
 s0_1 キョ'オワ、ワタシノ'/イチバン_スキナ'/ヨ'ルノ/スゴシ'カタ
 s1_0 アマイ'/プ'リント、アッタカ'イ/コ'コア
 s1_2 イチニチ'ノ/_ツカレガ'、トケ'テ/イクウ'
 s2_0 オナカガ'/イ'ッパイニ/ナ'ッタラ、ギ'タアオ/_ヒク'ノ
-s2_1 song プリントココアデシアワセヨゾラ
+s2_2 ヤサシイ'/オト'デ、ココ'ロガ/ホット'/スル'/ン'ダ
 s3_0 ソ'トワ、シ'ズカニ/ユキ'ガ/フ'ッテ/キ'タ
 s3_2 _フトンニ'/モグ'ッテ、オヤスミナサイ'
 s4_0 コ'ンヤモ/シアワセ'、マタ'ネ
@@ -243,27 +126,24 @@ voice done 9
 + /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
 ok 0.7586686690476118
 0
-900
+780
+540
 300
-600
-960
-360
-660
+840
 60
-1020
+600
+360
+120
+660
+900
 420
 720
-120
-1080
-480
-780
 180
-1140
-540
-840
+960
+480
 240
 + ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep11_list.txt -i out/ep11.wav -map 0:v -map 1:a -c:v libx264 -preset medium -b:v 3200k -maxrate 3800k -bufsize 7000k -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep11.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep11-6f27feb2.mp4
-+ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep11-6f27feb2.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep11-9ba9e974.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep11-9ba9e974.mp4
 + git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
-prebuilt ep11 ep11-6f27feb2.mp4
+prebuilt ep11 ep11-9ba9e974.mp4

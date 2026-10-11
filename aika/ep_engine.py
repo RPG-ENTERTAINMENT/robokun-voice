@@ -213,7 +213,6 @@ CHORDS = {'A': ['C', 'F', 'C', 'G', 'C', 'C', 'G', 'C', 'G', 'C', 'C', 'C'],
 def sfx_events(A):
     import numpy as np
     add, sfx = A.add, A.sfx
-    for T0 in TRANS: add(sfx, A.whoosh(0.6), T0 - 0.35, 0.35)
     for S in SCN:
         if S['chapter']: add(sfx, A.pop(500, 1500), S['s0'] + 0.35, 0.35); add(sfx, A.sparkle(), S['s0'] + 0.4, 0.18)
         if S['pose'] == 'walk':

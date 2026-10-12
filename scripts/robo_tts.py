@@ -29,6 +29,8 @@ for epid in g.eps:
         raw = f'{out}/{i:02d}_raw.wav'; sf.write(raw, best[2], best[1])
         af = cfg['filter']
         r = subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', raw, '-af', af, '-ar', '48000', '-ac', '1', f'{out}/{i:02d}.wav'])
+        if r.returncode != 0 and cfg.get('filter_safe'):  # older ffmpeg: simpler chain with the same voice
+            r = subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', raw, '-af', cfg['filter_safe'], '-ar', '48000', '-ac', '1', f'{out}/{i:02d}.wav'])
         if r.returncode != 0:  # no rubberband in ffmpeg: resample-based pitch shift
             af2 = af.replace('rubberband=pitch=1.33', 'aresample=48000,asetrate=63840,aresample=48000,atempo=0.7519')
             subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', raw, '-af', af2, '-ar', '48000', '-ac', '1', f'{out}/{i:02d}.wav'], check=True)

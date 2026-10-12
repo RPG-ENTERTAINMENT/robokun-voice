@@ -1,7 +1,7 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:239: FutureWarning: You are using a Python version (3.10.22) past its end of life. Google will update google.api_core with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-using prebuilt ep05-18d0f6ed.mp4 14054398
-uploaded ep05 ZBNuNlma_Fs {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False, 'publishAt': '2026-10-12T03:00:00Z'}
-using prebuilt ep06-23f77d16.mp4 16308047
-uploaded ep06 CjlkPf5_tFA {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False, 'publishAt': '2026-10-12T10:00:00Z'}
-left in stock: 5
+using prebuilt ep07-429df46a.mp4 16468549
+uploaded ep07 QxeJ-2bPveo {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False, 'publishAt': '2026-10-13T03:00:00Z'}
+using prebuilt ep08-c571b3f4.mp4 17202018
+uploaded ep08 mDYiyRfmlLw {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False, 'publishAt': '2026-10-13T10:00:00Z'}
+left in stock: 3

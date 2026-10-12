@@ -1,0 +1,10 @@
+{
+ "hook": ["smartphone social media apps", "smartphone screen hand"],
+ "p1": ["stopwatch", "hourglass"],
+ "p1b": ["hand holding smartphone scrolling", "person using smartphone"],
+ "p2": ["archery target arrow bullseye", "light bulb idea"],
+ "p2b": ["messy desk clutter", "tangled cables"],
+ "p3": ["dominoes row", "identical cups row"],
+ "p3b": ["analytics graph laptop", "stock chart screen"],
+ "end": ["laptop online class", "video call laptop"]
+}

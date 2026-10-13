@@ -124,6 +124,7 @@ def load_sprite(name):
         h0 = im.height; im = Image.open(hd).convert('RGBA'); k = k * h0 / im.height
     im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
     if k > 2: im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
+    else: im = im.filter(ImageFilter.UnsharpMask(radius=1.2, percent=45, threshold=1))   # crisp lines after downscale
     a = np.asarray(im)[..., 3] > 128
     hgt = a.shape[0]
     if sheet in HEAD_ANCHOR:
@@ -191,7 +192,7 @@ def draw_char(canvas, t):
     if sitting: sy = 1 + (sy - 1) * 0.5
     if shake: dx += 9 * math.sin(t * 70)
     w2, h2 = max(1, round(im.width * sx)), max(1, round(im.height * sy))
-    im2 = im.resize((w2, h2), Image.BILINEAR)
+    im2 = im if (w2, h2) == im.size else im.resize((w2, h2), Image.LANCZOS)
     x = round(CX + dx - ax * sx); y = round(FEET_Y + dy - h2)
     tn = EP.tint(t) if hasattr(EP, 'tint') else None
     if tn:
@@ -472,7 +473,7 @@ def render(t):
         x0 = fx - cw * (fx / W); y0 = fy - chh * (fy / H)
         if hasattr(EP, 'cam_shake'):
             sx_, sy_ = EP.cam_shake(t); x0 += sx_; y0 += sy_
-        base = base.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + cw, y0 + chh))
+        base = base.resize((W, H), Image.LANCZOS, box=(x0, y0, x0 + cw, y0 + chh))
     draw_overlays(base, t)
     if hasattr(EP, 'draw_top'): EP.draw_top(base, t, R)
     # (no transitions between scenes: hard cut — 2026-10-11)
@@ -486,7 +487,7 @@ if __name__ == '__main__':
     else:
         a, b, out = int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
         p = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
-                              '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
+                              '-c:v', 'libx264', '-preset', 'fast', '-crf', '8', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
         for i in range(a, b):
             p.stdin.write(render(i / FPS).tobytes())
             if i % 60 == 0: print(i, flush=True)

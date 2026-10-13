@@ -22,6 +22,8 @@ if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; 
 if [ "${TASK%%:*}" = aika ]; then bash aika/run.sh "${TASK#aika:}"; exit $?; fi
 # --- free-licence photo fetch for SNS lesson videos: jobs/daily_task = fetchimg:<job>
 if [ "${TASK%%:*}" = fetchimg ]; then python3 scripts/fetch_imgs.py "${TASK#fetchimg:}" 2>&1 | tee logs/fetchimg.txt; bash scripts/save.sh; exit 0; fi
+# --- インスタ講座 lesson videos (RPGクリエイタースクール教材): jobs/daily_task = igc:<episodes>
+if [ "${TASK%%:*}" = igc ]; then bash igc/run.sh "${TASK#igc:}"; exit $?; fi
 echo "TASK=$TASK"
 mkdir -p logs
 set -o pipefail

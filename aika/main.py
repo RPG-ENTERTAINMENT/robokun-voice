@@ -45,7 +45,8 @@ def build(ep, seconds=None):
     with open(f'out/{ep}_list.txt', 'w') as f:
         for i in range(len(procs)): f.write(f"file '{ep}_p{i}.mp4'\n")
     sh('ffmpeg', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', f'out/{ep}_list.txt', '-i', f'out/{ep}.wav',
-       '-map', '0:v', '-map', '1:a', '-c:v', 'libx264', '-preset', 'medium', '-b:v', '3200k', '-maxrate', '3800k', '-bufsize', '7000k',
+       '-map', '0:v', '-map', '1:a', '-vf', 'scale=1440:2560:flags=lanczos',     # 1440p upload -> YouTube keeps more detail
+       '-c:v', 'libx264', '-preset', 'slow', '-tune', 'animation', '-crf', '16', '-maxrate', '10M', '-bufsize', '20M',
        '-pix_fmt', 'yuv420p', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
        '-movflags', '+faststart', '-shortest', f'out/{ep}.mp4')
     for p in glob.glob(f'out/{ep}_p*.mp4'): os.remove(p)

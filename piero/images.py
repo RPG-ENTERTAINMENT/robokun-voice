@@ -3,6 +3,7 @@ then turn them into creepy 'evidence photos'. Only CC0 / public domain / CC BY a
 for the video description. Any failure just returns None (the video is still made, without that photo)."""
 import os, io, json, re, hashlib, urllib.parse, urllib.request
 import numpy as np
+from scipy.ndimage import gaussian_filter
 from PIL import Image, ImageDraw, ImageFilter, ImageOps, ImageEnhance
 
 UA = 'piero-channel-bot/1.0 (https://github.com/RPG-ENTERTAINMENT/robokun-voice; rpgentertainment2014@gmail.com)'
@@ -128,3 +129,68 @@ def background(im, w, h, seed=0):
     ph = creepy(im, w, h, seed, tint=(1.0, 0.7, 0.65))
     ph = ImageEnhance.Brightness(ph).enhance(0.8)
     return ph
+
+def horror_border(W, H, b=62, seed=0):
+    """full-screen RGBA overlay: an old carved, tarnished gilt picture frame around the edges of the video
+    (transparent in the middle), with cracks, cobwebs in the top corners and blood running in from the top rail"""
+    rng = np.random.default_rng(seed + 21)
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    dist = np.minimum(np.minimum(xx, W - 1 - xx), np.minimum(yy, H - 1 - yy))
+    d = dist / b
+    hm = (0.9 * np.exp(-((d - 0.12) / 0.10) ** 2) + 0.55 * np.exp(-((d - 0.82) / 0.09) ** 2) + 0.25 * np.clip(1 - d, 0, 1))
+    orn = np.tanh(gaussian_filter(rng.normal(0, 1, (H, W)), 3.2) * 6)
+    cx = np.minimum(xx, W - 1 - xx); cy = np.minimum(yy, H - 1 - yy)
+    corner = np.exp(-((cx / (b * 2.2)) ** 2 + (cy / (b * 2.2)) ** 2))
+    band = np.exp(-((d - 0.47) / 0.17) ** 2)
+    hm = gaussian_filter(hm + 0.32 * orn * band * (0.6 + 0.9 * corner) + 0.5 * corner * band, 1.0)
+    gy, gx = np.gradient(hm * 40)
+    nz = 1.0 / np.sqrt(gx ** 2 + gy ** 2 + 1)
+    L = np.array([-0.55, -0.6, 0.58]); L /= np.linalg.norm(L)
+    shade = np.clip((-gx * L[0] - gy * L[1] + L[2]) * nz, 0, 1)
+    grime = np.clip(0.55 + 0.35 * (gaussian_filter(rng.normal(0, 1, (H, W)), 6) * 3 + gaussian_filter(rng.normal(0, 1, (H, W)), 1.2) * 0.6), 0, 1)
+    dark = np.array([34, 22, 11], np.float32); gold = np.array([138, 98, 44], np.float32); hi = np.array([205, 165, 95], np.float32)
+    t = np.clip(shade * (0.35 + 0.65 * grime) * (0.6 + 0.6 * hm), 0, 1)[..., None]
+    rgb = dark + (gold - dark) * np.clip(t * 1.4, 0, 1) + (hi - gold) * np.clip((t - 0.72) * 3, 0, 1)
+    rgb *= (0.35 + 0.65 * grime[..., None])
+    alpha = np.where(dist < b, 255.0, 0.0)
+    # inner shadow falling onto the video
+    inner = np.clip((dist - b) / 55.0, 0, 1)
+    sh_a = np.where(dist >= b, (1 - inner) ** 2 * 150, 0)
+    alpha = np.maximum(alpha, sh_a)
+    rgb = np.where((dist >= b)[..., None], 0, rgb)
+    img = Image.fromarray(np.dstack([np.clip(rgb, 0, 255), alpha]).astype(np.uint8), 'RGBA')
+    dr = ImageDraw.Draw(img)
+    # cracks in the wood
+    for _ in range(16):
+        side = rng.integers(4)
+        x, y = (rng.uniform(0, W), rng.uniform(0, b)) if side < 2 else (rng.uniform(0, b), rng.uniform(0, H))
+        if side == 1: y = H - y
+        if side == 3: x = W - x
+        pts = [(x, y)]
+        for _ in range(10): x += rng.normal(0, 8); y += rng.normal(0, 8); pts.append((x, y))
+        dr.line(pts, fill=(8, 4, 2, 255), width=2)
+    # cobwebs in the two top corners
+    for cx0, sx in ((b - 4, 1), (W - b + 4, -1)):
+        R = 170
+        for k in range(7):
+            ang = np.pi / 2 * k / 6
+            dr.line([(cx0, b - 4), (cx0 + sx * R * np.cos(ang), b - 4 + R * np.sin(ang))], fill=(200, 200, 195, 110), width=1)
+        for r in range(30, R, 28):
+            pts = [(cx0 + sx * r * np.cos(np.pi / 2 * k / 12) * (0.92 + 0.08 * (k % 2)), b - 4 + r * np.sin(np.pi / 2 * k / 12) * (0.92 + 0.08 * (k % 2))) for k in range(13)]
+            dr.line(pts, fill=(200, 200, 195, 90), width=1)
+    # blood seeping from the top rail down over the picture, and from the side rails
+    blood = Image.new('RGBA', (W, H), (0, 0, 0, 0)); db = ImageDraw.Draw(blood)
+    for k in range(7):
+        x0 = rng.uniform(b, W - b); Ln = rng.uniform(b + 40, b + 260); wd = rng.uniform(6, 13)
+        xs = x0 + np.cumsum(rng.normal(0, 0.7, 50)); ys = np.linspace(rng.uniform(4, b * 0.5), Ln, 50)
+        for i in range(49): db.line([(xs[i], ys[i]), (xs[i + 1], ys[i + 1])], fill=(62, 0, 0, 255), width=max(2, int(wd * (1 - 0.55 * i / 50))))
+        db.ellipse([xs[-1] - wd * 0.6, ys[-1] - wd * 0.3, xs[-1] + wd * 0.6, ys[-1] + wd * 1.1], fill=(62, 0, 0, 255))
+    for k in range(4):
+        side = rng.integers(2); x0 = b * 0.5 if side == 0 else W - b * 0.5
+        y0 = rng.uniform(H * 0.15, H * 0.75); Ln = rng.uniform(80, 220); wd = rng.uniform(5, 9)
+        db.line([(x0, y0), (x0 + rng.normal(0, 2), y0 + Ln)], fill=(58, 0, 0, 255), width=int(wd))
+        db.ellipse([x0 - wd * 0.6, y0 + Ln - wd * 0.3, x0 + wd * 0.6, y0 + Ln + wd], fill=(58, 0, 0, 255))
+    ba = np.asarray(blood).astype(np.float32); al = gaussian_filter(ba[..., 3], 0.8)
+    hl = np.clip(-np.gradient(gaussian_filter(al, 2.0), axis=1) * 0.08, 0, 1)
+    img.alpha_composite(Image.fromarray(np.clip(np.dstack([62 + 70 * hl, 2 + 14 * hl, 2 + 14 * hl, al * 0.93]), 0, 255).astype(np.uint8), 'RGBA'))
+    return img

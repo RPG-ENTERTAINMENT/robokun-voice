@@ -100,14 +100,17 @@ def build_short(unit, out, faces, thumb_out=None):
     pics, thumb_pic = photos_for(unit)
     if thumb_out: make_thumb_v(faces, unit, thumb_out, thumb_pic, next((x for x in pics[::-1] if x is not None), None))
     f_lab = E.font(34)
-    t_img = E.text_img('\n'.join(title_split2(title)), E.font(165), RED, (120, 0, 0), stroke=12, spacing=0, max_w=1080)
-    ov.append(dict(s=0, e=1e9, img=t_img, xy=(540, t_img.height // 2 - 40), jitter=2))   # title: top of the screen, biggest text
-    YN = t_img.height - 40 - 60 + 62                 # just under the title (60 = text_img padding)
-    sub_img = E.text_img('知らないとヤバい10選', f_t2, WHITE, (90, 0, 0), stroke=8, max_w=1000)
-    ov.append(dict(s=0, e=segs[1][0], img=sub_img, xy=(540, YN)))           # intro only; the item number takes this spot later
-    ov.append(dict(s=segs[-1][0], e=1e9, img=sub_img, xy=(540, YN)))
-    YP = YN + 215; YC = (YP + 175 + 1170) // 2      # caption sits between the photo and the clown's head (face never covered)
-    f_cap = E.font(96)
+    # YouTube Shorts covers the top ~240px (status bar / search / menu) and the bottom ~380px (channel, title, share button):
+    # everything important sits inside y 245..1540
+    SAFE_TOP = 245
+    t_img = E.text_img(title, E.font(150), RED, (120, 0, 0), stroke=11, max_w=900)   # one line; long titles shrink to fit
+    ov.append(dict(s=0, e=1e9, img=t_img, xy=(540, SAFE_TOP - 60 + t_img.height // 2), jitter=2))   # title: biggest text, just under the app's top bar
+    t_bot = SAFE_TOP + t_img.height - 120             # bottom of the title glyphs
+    YP = t_bot + 185                                   # photo (card is ~300px tall incl. border)
+    YN = YP - 112                                      # "その○" badge, drawn on top of the photo's top-left corner
+    HEAD_TOP = 990
+    YC = (YP + 140 + HEAD_TOP) // 2 + 5                    # caption between the photo and the clown's head
+    f_cap = E.font(82)
     photo_t = []
     for i, (s, e) in enumerate(segs):
         nxt = segs[i + 1][0] if i + 1 < len(segs) else total
@@ -115,22 +118,22 @@ def build_short(unit, out, faces, thumb_out=None):
         if i == 0:
             cues.append(dict(s=s0, e=e, expr=1, mood='intro'))
             if thumb_pic is not None:
-                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 540, 290, seed=11), xy=(540, YP), jitter=1))
+                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 500, 265, seed=11), xy=(540, YP), jitter=1))
             for ps, pe, p in assign_pages(s0, nxt, e, ['ククク……', f'{title}\n10選']):
-                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_cap, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
+                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
         elif i <= 10:
             it = items[i - 1]
             last = i == 10
             cues.append(dict(s=s, e=e, expr=[0, 3, 5, 2, 8, 0, 3, 5, 2, 4][i - 1], mood='scare' if last else 'head'))
-            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', E.font(90), RED, (150, 0, 0), max_w=900), xy=(540, YN), anim='bigpop', jitter=2))
             if pics[i - 1] is not None:
-                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 540, 290, seed=i), xy=(540, YP), anim='pop', jitter=1))
+                ov.append(dict(s=s, e=nxt, img=I.evidence_card(pics[i - 1], 500, 265, seed=i), xy=(540, YP), anim='pop', jitter=1))
                 photo_t.append(s)
-            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_cap, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
+            ov.append(dict(s=s, e=nxt, img=E.text_img(f'その{i}', E.font(78), RED, (150, 0, 0), stroke=9, max_w=600), xy=(300, YN), anim='bigpop', jitter=2))
+            ov.append(dict(s=s, e=nxt, img=E.text_img(it['t'], f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
         else:
             cues.append(dict(s=s, e=e, expr=6, mood='outro'))
             for ps, pe, p in assign_pages(s, nxt, e, [pg for sent in split_sent(unit['end_v']) for pg in pages(sent, 9)]):
-                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, max_w=1040), xy=(540, YC), anim='pop', jitter=3))
+                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
     heads = [s for (s, e), c in zip(segs, cues) if c['mood'] in ('head', 'scare')]
     scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
     track = A.musicbox(w('musicbox.wav'))
@@ -138,8 +141,9 @@ def build_short(unit, out, faces, thumb_out=None):
     A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(segs[8][0], segs[10][1]))
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'))
     # the whole room (desk, candle, door, clown) sits lower so photo + caption fit above the face
-    E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1630, door=(30, 490, 1000, 1980), knob=(225, 1480), frame=(830, 1240),
-                               table=1980, candle=(110, 1940), under=1320, nose=(540, 1600), SC=2.45)
+    E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1480, door=(30, 300, 820, 1845), knob=(225, 1300), frame=(820, 1060),
+                               table=1845, candle=(150, 1805), under=1150, nose=(540, 1410), SC=2.5)
+    ov.append(dict(s=0, e=1e9, img=I.horror_border(W, H, 80, seed=3), xy=(W // 2, H // 2)))   # old horror picture frame around the whole video (drawn last = on top)
     S = E.Scene('short_low', faces)
     T = E.Timeline(cues, env, ov, total, FPS_SHORT)
     if os.environ.get('PIERO_FRAMES'):

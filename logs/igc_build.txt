@@ -1,0 +1,258 @@
+done 80.9
+total 80.9
+built 1 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig01/insta_01.mp4
+duration 80.9
+youtube ok cZw0yKY9GkU {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 77.29
+total 77.29
+built 2 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig02/insta_02.mp4
+duration 77.266667
+youtube ok _OoR5nNncfI {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 76.09
+total 76.09
+built 3 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig03/insta_03.mp4
+duration 76.066667
+youtube ok bTNIXITFpio {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 73.61
+total 73.61
+built 4 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig04/insta_04.mp4
+duration 73.6
+youtube ok bu9Ki71LSpM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 68.57
+total 68.57
+built 5 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig05/insta_05.mp4
+duration 68.566667
+youtube ok GJOjzy7GvtM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 97.68
+total 97.68
+built 6 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig06/insta_06.mp4
+duration 97.666667
+youtube ok ePi4s_voQ7o {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 70.31
+total 70.31
+built 7 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig07/insta_07.mp4
+duration 70.3
+youtube ok rugkpUgbaYI {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 76.18
+total 76.18
+built 8 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig08/insta_08.mp4
+duration 76.166667
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 73.95
+total 73.95
+built 9 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig09/insta_09.mp4
+duration 73.933333
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 80.26
+total 80.26
+built 10 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig10/insta_10.mp4
+duration 80.233333
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 72.88
+total 72.88
+built 11 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig11/insta_11.mp4
+duration 72.866667
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 77.87
+total 77.87
+built 12 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig12/insta_12.mp4
+duration 77.866667
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 77.6
+total 77.6
+built 13 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig13/insta_13.mp4
+duration 77.566667
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 78.08
+total 78.08
+built 14 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig14/insta_14.mp4
+duration 78.066667
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 83.81
+total 83.81
+built 15 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig15/insta_15.mp4
+duration 83.8
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 73.25
+total 73.25
+built 16 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig16/insta_16.mp4
+duration 73.233333
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 74.29
+total 74.29
+built 17 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig17/insta_17.mp4
+duration 74.266667
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 68.43
+total 68.43
+built 18 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig18/insta_18.mp4
+duration 68.4
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 85.42
+total 85.42
+built 19 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig19/insta_19.mp4
+duration 85.4
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+
+done 97.73
+total 97.73
+built 20 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig20/insta_20.mp4
+duration 97.7
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
+    st, resp = req.next_chunk()
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
+    raise ResumableUploadError(resp, content)
+googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
+

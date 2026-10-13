@@ -1,4 +1,110 @@
 + git worktree add -q -B aika-out /tmp/aika-out origin/aika-out
-already prebuilt ep09
-already prebuilt ep10
-already prebuilt ep11
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep09.json voice/ep09
+s0_0 コンニチワ'、ア'イカデ_ス
+s0_1 キョ'オワ、シャチュウ'ハクノ/モチ'モノ、ベ_スト'サンオ/ハッピョオ'/スルネ'
+s1_0 ダ'イ/サンイ'ワ、ラ'ンタン
+s1_1 アッタカ'イ/_ヒカリ'デ、クルマノ'/ナ'カガ、イ'ッキニ/オ'ヘヤニ/ナ'ルノ
+s2_0 ダ'イ/ニイ'ワ、ギ'タア
+s2_1 ア'メノ/ヒデ'モ、タイ_クツ'/シナイヨ'
+s3_0 ソ_シテ'/ダ'イ/イチイ'ワ、スウ_プセ'ット
+s3_2 ド'コデモ、アッタカ'イ/ゴ'ハンガ/タベラレ'ルノ
+s4_0 ミンナ'ノ/モチ'モノモ、コメントデ'/オシエテネ'、マタ'ネ
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+840
+300
+600
+60
+360
+900
+660
+420
+120
+960
+720
+480
+780
+180
+1020
+540
+240
+1080
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep09_list.txt -i out/ep09.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep09.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep09-f54a84d5.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep09-f54a84d5.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep09 ep09-f54a84d5.mp4
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep10.json voice/ep10
+s0_0 コンニチワ'、ア'イカデ_ス
+s0_1 キノ'オノ/ヨ'ルワ、ズット'/ア'メダッタ/ン'ダ
+s1_0 ア'メノ/ヨ'ルワ、ハヤメニ'/ネチャウ'
+s1_2 ア'メノ/オト'ッテ、ナ'ンダカ/オ_チツク'ノ
+s2_0 ア'サ/オキ'タラ、ハレテ'ル
+s2_2 ク'ウキガ/キ'レイデ、モリガ'/キ'ラキラ/_シテ'ルヨ
+s3_0 ハレ'タ/ア'サワ、パンケ'エキ
+s3_2 アメア'ガリノ/ク'ウキデ、モ'ット/オイシ'イ
+s4_0 アメア'ガリワ、イ'イ/コト'/ア'ルネ、マタ'ネ
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+300
+840
+60
+600
+360
+900
+120
+660
+420
+180
+960
+720
+480
+240
+1020
+780
+540
+1080
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep10_list.txt -i out/ep10.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep10.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep10-8fdbd3bc.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep10-8fdbd3bc.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep10 ep10-8fdbd3bc.mp4
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep11.json voice/ep11
+s0_0 コンバンワ'、ア'イカデ_ス
+s0_1 キョ'オワ、ワタシノ'/イチバン_スキナ'/ヨ'ルノ/スゴシ'カタ
+s1_0 アマイ'/プ'リント、アッタカ'イ/コ'コア
+s1_2 イチニチ'ノ/_ツカレガ'、トケ'テ/イクウ'
+s2_0 オナカガ'/イ'ッパイニ/ナ'ッタラ、ギ'タアオ/_ヒク'ノ
+s2_2 ヤサシイ'/オト'デ、ココ'ロガ/ホット'/スル'/ン'ダ
+s3_0 ソ'トワ、シ'ズカニ/ユキ'ガ/フ'ッテ/キ'タ
+s3_2 _フトンニ'/モグ'ッテ、オヤスミナサイ'
+s4_0 コ'ンヤモ/シアワセ'、マタ'ネ
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+780
+540
+300
+840
+60
+600
+360
+120
+900
+660
+420
+720
+180
+960
+480
+240
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep11_list.txt -i out/ep11.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep11.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep11-c85eb0b6.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep11-c85eb0b6.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep11 ep11-c85eb0b6.mp4

@@ -1,6 +1,5 @@
 /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-using prebuilt ep11-c85eb0b6.mp4 30385215
-uploaded ep11 HgQ4thGjZ7o {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False, 'publishAt': '2026-10-15T03:00:00Z'}
+slot already posted 2026-10-15 0
 NO MORE EPISODES — add new ones to episodes/
 left in stock: 0

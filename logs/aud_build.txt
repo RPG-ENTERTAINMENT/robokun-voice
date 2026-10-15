@@ -1,8 +1,80 @@
-done 103.79
-total 103.79
-built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud01/audition_01.mp4
-duration 103.766667
-youtube ok wTy1OzWye2Q {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+done 98.81
+total 98.81
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud02/audition_02.mp4
+duration 98.8
+youtube ok Ch4rmvQ5JNw {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 103.34
+total 103.34
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud03/audition_03.mp4
+duration 103.333333
+youtube ok lSU5n5xpowo {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 91.75
+total 91.75
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud04/audition_04.mp4
+duration 91.733333
+youtube ok T1PVg1oV9kQ {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 92.55
+total 92.55
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud05/audition_05.mp4
+duration 92.533333
+youtube ok p9WtfjGAPqo {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 95.83
+total 95.83
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud06/audition_06.mp4
+duration 95.8
+youtube ok fG3FuWDyO-E {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 99.4
+total 99.4
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud07/audition_07.mp4
+duration 99.4
+youtube ok y7SBbmyyNEQ {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 101.68
+total 101.68
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud08/audition_08.mp4
+duration 101.666667
+youtube ok 7pzrjibqh9k {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 96.98
+total 96.98
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud09/audition_09.mp4
+duration 96.966667
+youtube ok glakxwuS46E {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail ok
+ /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+
+done 96.98
+total 96.98
+built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud10/audition_10.mp4
+duration 96.966667
+youtube ok 7NY-oWgoARQ {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
 thumbnail ok
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)

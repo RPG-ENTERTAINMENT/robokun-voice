@@ -9,7 +9,12 @@ from episodes import EPS
 WORK = os.environ.get('AUD_WORK', os.path.join(HERE, '..', 'aud_work')); os.makedirs(WORK, exist_ok=True)
 STILL = '--still' in sys.argv; UPLOAD = '--upload' in sys.argv
 STATE = os.path.join(HERE, 'state', 'videos.json')
-nums = [int(a) for a in sys.argv[1:] if not a.startswith('--')] or [1]
+nums = []
+for a in [a for a in sys.argv[1:] if not a.startswith('--')]:
+    for part in a.split(','):
+        if '-' in part: x, y = map(int, part.split('-')); nums += list(range(x, y + 1))
+        else: nums.append(int(part))
+nums = nums or [1]
 sys.path.insert(0, IGC)
 sys.argv = [sys.argv[0]]  # igc/build の関数だけ借りる
 import importlib.util
@@ -41,6 +46,7 @@ def make(sl, path, seed):
 bg = os.path.join(WORK, 'classroom.png'); bgm = os.path.join(WORK, 'lofi.wav')
 if not os.path.exists(bg): slides.classroom(bg)
 if not os.path.exists(bgm): slides.lofi(bgm)
+FAILED = []
 for n in nums:
     e = [x for x in EPS if x['n'] == n][0]; d = os.path.join(WORK, f'aud{n:02d}'); os.makedirs(d, exist_ok=True)
     beats, screen = [], {}
@@ -76,4 +82,5 @@ for n in nums:
         m = re.search(r'youtube ok (\S+)', r.stdout)
         if m:
             state[str(n)] = m.group(1); os.makedirs(os.path.dirname(STATE), exist_ok=True); json.dump(state, open(STATE, 'w'), indent=1)
-        else: sys.exit('upload failed')
+        else: FAILED.append(n)
+if FAILED: print('upload failed for', FAILED); sys.exit(1)

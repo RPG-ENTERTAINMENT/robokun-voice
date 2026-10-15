@@ -7,8 +7,10 @@ import slides
 from PIL import Image, ImageDraw
 from episodes import EPS
 WORK = os.environ.get('AUD_WORK', os.path.join(HERE, '..', 'aud_work')); os.makedirs(WORK, exist_ok=True)
-STILL = '--still' in sys.argv
+STILL = '--still' in sys.argv; UPLOAD = '--upload' in sys.argv
+STATE = os.path.join(HERE, 'state', 'videos.json')
 nums = [int(a) for a in sys.argv[1:] if not a.startswith('--')] or [1]
+sys.path.insert(0, IGC)
 sys.argv = [sys.argv[0]]  # igc/build の関数だけ借りる
 import importlib.util
 spec_ = importlib.util.spec_from_file_location('igcb_funcs', os.path.join(IGC, 'build.py'))
@@ -61,4 +63,17 @@ for n in nums:
         subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out, '--still', '0', '12', '20', '40'], check=True); continue
     subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out], check=True)
     subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out, '--still', '0'], check=True)
-    os.replace(out + '.still_0.png', out[:-4] + '_thumb.png'); print('built', out)
+    thumb = out[:-4] + '_thumb.png'; os.replace(out + '.still_0.png', thumb); print('built', out, flush=True)
+    if UPLOAD:
+        state = json.load(open(STATE)) if os.path.exists(STATE) else {}
+        if str(n) in state: print('already uploaded', n, state[str(n)]); continue
+        import re
+        meta = dict(title=f'オーディション講座 第{n}回｜{short}'[:100], privacy='unlisted', category='27',
+                    description=f'タイムオーディション 有料プラン会員限定 オーディション講座 第{n}回\n{e["desc"]}\n\n▼芸能オーディション・キャスティング募集まとめ\nhttps://japannetnews.com/audition/\n\nロボしずの声：VOICEVOX:ずんだもん\nBGM：オリジナル',
+                    tags=['オーディション', 'オーディション講座', '芸能', 'タイムオーディション'])
+        mp = os.path.join(d, 'meta.json'); json.dump(meta, open(mp, 'w'), ensure_ascii=False)
+        r = subprocess.run([sys.executable, os.path.join(IGC, 'upload.py'), out, thumb, mp], capture_output=True, text=True); print(r.stdout, r.stderr[-2000:], flush=True)
+        m = re.search(r'youtube ok (\S+)', r.stdout)
+        if m:
+            state[str(n)] = m.group(1); os.makedirs(os.path.dirname(STATE), exist_ok=True); json.dump(state, open(STATE, 'w'), indent=1)
+        else: sys.exit('upload failed')

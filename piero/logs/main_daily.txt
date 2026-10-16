@@ -1,27 +1,6 @@
-/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s]  6%|▌         | 1.36M/22.6M [00:00<00:01, 14.2MB/s] 63%|██████▎   | 14.2M/22.6M [00:00<00:00, 85.0MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 90.6MB/s]
-Extracting tar file
-short s015 total 56.0 speed 1.05
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image search failed _openverse dream clouds TimeoutError('The read operation timed out')
-image search failed _openverse closed eyes TimeoutError('The read operation timed out')
-image search failed _openverse bed sleep TimeoutError('The read operation timed out')
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image search failed _openverse surreal dream landscape TimeoutError('The read operation timed out')
-image search failed _openverse crowd faces TimeoutError('The read operation timed out')
-image search failed _openverse faces TimeoutError('The read operation timed out')
-image search failed _openverse fuseli the nightmare TimeoutError('The read operation timed out')
-image search failed _openverse sleepless night TimeoutError('The read operation timed out')
-image search failed _openverse dark bedroom doorway TimeoutError('The read operation timed out')
-image search failed _openverse bedroom night TimeoutError('The read operation timed out')
-photos s015 10 / 10 thumb True
+done A {'id': 's015', 'video': 'ugOh4l8OZ8g', 'at': '12:00'}
+done L {'id': 'l008', 'video': 'ZGobtep-shY', 'at': '16:00'}
+done B {'id': 's016', 'video': '6WLjigzbtEw', 'at': '20:00'}
+elapsed 1 s

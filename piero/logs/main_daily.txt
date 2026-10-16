@@ -1,6 +1,38 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-done A {'id': 's015', 'video': 'ugOh4l8OZ8g', 'at': '12:00'}
-done L {'id': 'l008', 'video': 'ZGobtep-shY', 'at': '16:00'}
-done B {'id': 's016', 'video': '6WLjigzbtEw', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 29%|██▉       | 6.48M/22.6M [00:00<00:00, 68.0MB/s] 69%|██████▉   | 15.6M/22.6M [00:00<00:00, 84.2MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 91.4MB/s]
+Extracting tar file
+short s017 total 54.4 speed 1.05
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image search failed _openverse glass slipper TimeoutError('The read operation timed out')
+image search failed _openverse iron shoes TimeoutError('The read operation timed out')
+image search failed _openverse grimm fairy tales book TimeoutError('The read operation timed out')
+image search failed _openverse old book TimeoutError('The read operation timed out')
+image search failed _openverse dark forest path TimeoutError('The read operation timed out')
+image search failed _openverse soap bubbles TimeoutError('The read operation timed out')
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image search failed _openverse torii tunnel TimeoutError('The read operation timed out')
+photos s017 10 / 10 thumb True

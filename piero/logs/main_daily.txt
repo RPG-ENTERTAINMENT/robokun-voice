@@ -1,6 +1,102 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-done A {'id': 's017', 'video': 'iiKDOFzlzNg', 'at': '12:00'}
-done L {'id': 'l009', 'video': 'd7cMV2ZfBlI', 'at': '16:00'}
-done B {'id': 's018', 'video': 'YLRla2eckH4', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 55%|█████▍    | 12.3M/22.6M [00:00<00:00, 129MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 130MB/s]
+Extracting tar file
+short s019 total 56.5 speed 1.1
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero_work/img/3f7855d
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed UnidentifiedImageError("cannot identify image file '/home/runner/work/robokun-voice/robokun-voice/piero_work/img/4db53f8
+image download failed <HTTPError 403: 'Forbidden'>
+photos s019 10 / 10 thumb True

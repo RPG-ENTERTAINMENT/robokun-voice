@@ -26,7 +26,7 @@ os.makedirs('out', exist_ok=True); epf = f'out/{epid}.json'; json.dump(ep, open(
 inf = info(epf); print('length', round(inf['T'], 1), flush=True)
 mp4, png = f'out/{epid}.mp4', f'out/{epid}.png'
 sh('python', 'eng/engine_l.py', epf, vo, mp4, '--procs', os.environ.get('LONG_PROCS') or str(min(4, os.cpu_count() or 2)), env=env)
-sh('python', 'scripts/thumb_long.py', epf, vo, png, str(no), env=env)
+sh('python', 'scripts/thumb_full.py', epf, vo, png, str(no), env=env)
 # ---- metadata
 def mmss(t): t = int(t); return f'{t // 60}:{t % 60:02d}'
 ch = ['0:00 プロローグ'] + [f"{mmss(c0)} {ct}" + (f"「{cs}」" if cs else '') for (c0, ct, cs) in inf['cards']]

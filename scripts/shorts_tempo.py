@@ -1,6 +1,7 @@
 """Shorts-only tweaks applied to eng/engine_l.py after patches/engine_l.diff (landscape output is unchanged).
 - hook: frame 1 already shows the title + the first speech bubble (no fade-in from black)
 - tempo: tighter gaps between lines, faster walking, shorter held beats
+- bubbles: Hana's bubble is lifted above ロボしず's head when they stand close
 - loop: no 'おしまい' card / fade-out; the last 0.45s dissolves back into frame 1
 """
 import sys
@@ -44,6 +45,10 @@ P = [
   "            k = ss((t-(s.T-0.45))/0.45); out = out*(1-k)+s._f0*k\n"),
  ("cues = s.music+[(s.T_end+0.1, None)]",
   "cues = s.music+[(s.T_end+0.1 if LAND else s.T+1, None)]"),
+ # Hana's bubble (esp. when she droops) must not cover ロボしず: lift it above his head when they stand close
+ ("                    tip = (fh[0]+10, fh[1]-50*zz); anchor = (fh[0]+40, fh[1]-60*zz-30)\n",
+  "                    tip = (fh[0]+10, fh[1]-50*zz); anchor = (fh[0]+40, fh[1]-60*zz-30)\n"
+  "                    if s.robo_on and abs(robo_head[0]-fh[0]) < 560: anchor = (anchor[0], min(anchor[1], robo_head[1]-30*zz))\n"),
 ]
 s = open(f, encoding='utf-8').read(); bad = 0
 for a, b in P:

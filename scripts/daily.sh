@@ -71,6 +71,21 @@ elif [ "$TASK" = longtest ]; then
   bash scripts/long_run.sh --test
 elif [ "$TASK" = longnow ]; then
   bash scripts/long_run.sh --now
+elif [ "${TASK%%:*}" = one ]; then
+  # test render of one short episode: one:<ep>[:<voice variant in config/voice_test.json>] -> release one-<ep>
+  R=${TASK#one:}; EP=${R%%:*}; VAR=""; [ "$R" != "$EP" ] && VAR=${R#*:}
+  bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
+  source ~/venv/bin/activate
+  cp eng/engine.py eng/engine_l.py && patch -l eng/engine_l.py patches/engine_l.diff && patch -l eng/lib.py patches/lib.diff || exit 1
+  python scripts/shorts_tempo.py eng/engine_l.py
+  if [ -n "$VAR" ]; then python3 -c "import json;c=json.load(open('config/voice.json'));c['filter']=json.load(open('config/voice_test.json'))['$VAR'];json.dump(c,open('config/voice.json','w'),ensure_ascii=False)"; fi
+  python scripts/robo_tts.py $EP 2>&1 | tee logs/one.txt
+  python eng/tts_vv.py episodes/$EP.json vo/$EP --vv vv --skip-robo 2>&1 | tee -a logs/one.txt
+  for w in vo/$EP/[0-9][0-9].wav; do ffmpeg -y -loglevel error -i $w -af atempo=1.1 $w.f.wav && mv $w.f.wav $w; done
+  mkdir -p out
+  ROBO_ASSETS=$(pwd)/assets/ python eng/engine_l.py episodes/$EP.json vo/$EP out/$EP.mp4 --procs 2 2>&1 | tail -5 | tee -a logs/one.txt
+  gh release delete one-$EP -y --cleanup-tag || true
+  gh release create one-$EP out/$EP.mp4 --title "test $EP" --notes "$TASK" --prerelease
 elif [ "$TASK" = make ] || [ "$TASK" = test ]; then
   bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
   source ~/venv/bin/activate

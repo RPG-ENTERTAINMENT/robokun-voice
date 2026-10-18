@@ -1,0 +1,18 @@
+{"id":"ep082","title":"いつか けっこん","summary":"「わたし、いつか けっこん できるかな」と悩むハナに、ロボしずが「さかなかった はなは いっぽんも なかった」と励ます。でもロボしず自身は…こけと100年いっしょ。","time":"sunset","weather":"clear","music":"calm","robo_x":940,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたし、いつか けっこん できるかな。"},"cam":"mid"},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"けっこん？"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"みんな さきに いっちゃう きが して。"},"music":"sad","cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ぼくね、ここで たくさんの はなを みてきたよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"はやく さく こも、ゆっくり さく こも いた。"}},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"でもね、さかなかった はなは いなかったよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"だいじょうぶ。あせらなくて いいんだよ。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"say":{"who":"hana","text":"…うん。ありがとう。"},"music":"lullaby"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"じゃあ、ロボしずは けっこん しないの？"},"music":"playful"},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"say":{"who":"robo","text":"ぼくは もう、こけと ずっと いっしょだから。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"それ、けっこんって いうの？"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"love"},"fx":["hearts"],"say":{"who":"robo","text":"こけはね、ぜったい はなれないんだ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの きせつも、ちゃんと きます。"},"cam":"wide","focus":"both","dur":3}
+ ]}

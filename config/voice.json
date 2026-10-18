@@ -1,4 +1,10 @@
-{"ref": "12", "ref_text": "ぼくのからだはいしでできているけど、こころはやわらかいよ。",
- "aux_refs": ["02", "03", "05", "07", "14", "16"],
- "filter": "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aresample=48000,afftdn=nr=18:nf=-38:tn=1,asetrate=57600,aresample=48000,rubberband=tempo=0.75:pitch=2.083:formant=preserved:pitchq=quality:transients=smooth:detector=soft:phase=laminar:window=long:smoothing=on,highpass=f=170,equalizer=f=250:t=q:w=1:g=-3,equalizer=f=600:t=q:w=1:g=-3,aexciter=amount=2:drive=4:blend=0:freq=3000:ceil=12000,equalizer=f=3000:t=q:w=1:g=6,equalizer=f=5500:t=q:w=1:g=6,highshelf=f=8000:g=3,deesser=i=0.3,acompressor=threshold=-22dB:ratio=3:attack=10:release=250:makeup=3,agate=threshold=0.006:ratio=3:attack=10:release=400:range=0.015,alimiter=limit=0.9,adelay=50,apad=pad_dur=0.1",
+{"ref": "12",
+ "ref_text": "ぼくのからだはいしでできているけど、こころはやわらかいよ。",
+ "aux_refs": ["02",
+ "03",
+ "05",
+ "07",
+ "14",
+ "16"],
+ "filter": "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aresample=48000,afftdn=nr=8:nf=-42:tn=1,asetrate=57600,aresample=48000,rubberband=tempo=0.72:pitch=2.2:formant=preserved:pitchq=quality:transients=crisp:detector=compound:phase=laminar:window=standard:smoothing=off,highpass=f=230,equalizer=f=300:t=q:w=1:g=-7,equalizer=f=550:t=q:w=1:g=-5,equalizer=f=900:t=q:w=1:g=-2,equalizer=f=2200:t=q:w=1:g=6,equalizer=f=3300:t=q:w=1:g=8,equalizer=f=5000:t=q:w=1:g=5,aexciter=amount=3:drive=6:blend=0:freq=2500:ceil=14000,highshelf=f=9000:g=3,deesser=i=0.5:m=0.6,acompressor=threshold=-28dB:ratio=5:attack=3:release=120:makeup=6,dynaudnorm=f=150:g=5:p=0.9,loudnorm=I=-13:TP=-1.2:LRA=5,aresample=48000,adelay=50,apad=pad_dur=0.1",
  "filter_safe": "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aresample=48000,afftdn=nr=18:nf=-38,asetrate=57600,aresample=48000,rubberband=tempo=0.75:pitch=2.083:formant=preserved,highpass=f=170,equalizer=f=250:t=q:w=1:g=-3,equalizer=f=600:t=q:w=1:g=-3,equalizer=f=3000:t=q:w=1:g=6,equalizer=f=5500:t=q:w=1:g=6,highshelf=f=8000:g=3,acompressor=threshold=-22dB:ratio=3:attack=10:release=250:makeup=3,agate=threshold=0.006:ratio=3:attack=10:release=400:range=0.015,alimiter=limit=0.9,adelay=50,apad=pad_dur=0.1"}

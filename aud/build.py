@@ -8,7 +8,8 @@ from PIL import Image, ImageDraw
 from episodes import EPS
 WORK = os.environ.get('AUD_WORK', os.path.join(HERE, '..', 'aud_work')); os.makedirs(WORK, exist_ok=True)
 STILL = '--still' in sys.argv; UPLOAD = '--upload' in sys.argv
-STATE = os.path.join(HERE, 'state', 'videos.json')
+PREVIEW = '--preview' in sys.argv  # 最初の30秒だけの「おためし」動画を作ってアップする（サイトの無料おためし用）
+STATE = os.path.join(HERE, 'state', 'previews.json' if PREVIEW else 'videos.json')
 nums = []
 for a in [a for a in sys.argv[1:] if not a.startswith('--')]:
     for part in a.split(','):
@@ -70,12 +71,18 @@ for n in nums:
     subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out], check=True)
     subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out, '--still', '0'], check=True)
     thumb = out[:-4] + '_thumb.png'; os.replace(out + '.still_0.png', thumb); print('built', out, flush=True)
+    if PREVIEW:  # 最初の30秒＋最後の1秒でフェードアウト
+        pv = out[:-4] + '_p30.mp4'
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', out, '-t', '30', '-vf', 'fade=t=out:st=29:d=1', '-af', 'afade=t=out:st=29:d=1',
+                        '-c:v', 'libx264', '-crf', '21', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', pv], check=True)
+        out = pv; print('preview', out, flush=True)
     if UPLOAD:
         state = json.load(open(STATE)) if os.path.exists(STATE) else {}
         if str(n) in state: print('already uploaded', n, state[str(n)]); continue
         import re
-        meta = dict(title=f'オーディション講座 第{n}回｜{short}'[:100], privacy='unlisted', category='27',
-                    description=f'タイムオーディション 有料プラン会員限定 オーディション講座 第{n}回\n{e["desc"]}\n\n▼芸能オーディション・キャスティング募集まとめ\nhttps://japannetnews.com/audition/\n\nロボしずの声：VOICEVOX:ずんだもん\nBGM：オリジナル',
+        pre = '【30秒おためし】' if PREVIEW else ''
+        meta = dict(title=f'{pre}オーディション講座 第{n}回｜{short}'[:100], privacy='unlisted', category='27',
+                    description=(f'【30秒おためし】続きは タイムオーディション有料プランの会員ページで見られます。\nhttps://japannetnews.com/audition/plan/\n\n' if PREVIEW else '') + f'タイムオーディション 有料プラン会員限定 オーディション講座 第{n}回\n{e["desc"]}\n\n▼芸能オーディション・キャスティング募集まとめ\nhttps://japannetnews.com/audition/\n\nロボしずの声：VOICEVOX:ずんだもん\nBGM：オリジナル',
                     tags=['オーディション', 'オーディション講座', '芸能', 'タイムオーディション'])
         mp = os.path.join(d, 'meta.json'); json.dump(meta, open(mp, 'w'), ensure_ascii=False)
         r = subprocess.run([sys.executable, os.path.join(IGC, 'upload.py'), out, thumb, mp], capture_output=True, text=True); print(r.stdout, r.stderr[-2000:], flush=True)

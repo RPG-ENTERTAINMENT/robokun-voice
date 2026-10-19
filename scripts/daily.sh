@@ -23,6 +23,7 @@ if [ "${TASK%%:*}" = aika ]; then bash aika/run.sh "${TASK#aika:}"; exit $?; fi
 # --- インスタ講座 lesson videos (RPGクリエイタースクール教材): jobs/daily_task = igc:<episodes>
 if [ "${TASK%%:*}" = igc ]; then bash igc/run.sh "${TASK#igc:}"; exit $?; fi
 # --- オーディション講座 (タイムオーディション有料プラン会員向け): jobs/daily_task = aud:<episodes>
+if [ "${TASK%%:*}" = audp ]; then AUD_PREVIEW=1 bash aud/run.sh "${TASK#audp:}"; exit $?; fi
 if [ "${TASK%%:*}" = aud ]; then bash aud/run.sh "${TASK#aud:}"; exit $?; fi
 # --- free-licence photo fetch for SNS lesson videos: jobs/daily_task = fetchimg:<job>
 if [ "${TASK%%:*}" = fetchimg ]; then python3 scripts/fetch_imgs.py "${TASK#fetchimg:}" 2>&1 | tee logs/fetchimg.txt; bash scripts/save.sh; exit 0; fi

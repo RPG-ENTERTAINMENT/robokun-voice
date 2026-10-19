@@ -15,9 +15,9 @@ curl -sSL -o /tmp/voicevox_core-0.16.2-cp310-abi3-manylinux_2_34_x86_64.whl $G/v
 python -m pip install -q /tmp/voicevox_core-0.16.2-cp310-abi3-manylinux_2_34_x86_64.whl >> logs/igc_pip.txt 2>&1
 export VV_DIR=$(pwd)/vv IGC_ASSETS=$(pwd)/assets IGC_SPRITES=$(pwd)/assets/sp IGC_PHOTOS=$(pwd)/tests/img/edu001 AUD_WORK=$(pwd)/aud_work
 set -o pipefail
-python aud/build.py $EPS --upload 2>&1 | grep -v '^upload ' | tee logs/aud_build.txt
+python aud/build.py $EPS --upload ${AUD_PREVIEW:+--preview} 2>&1 | grep -v '^upload ' | tee logs/aud_build.txt
 rc=$?
-[ "$(head -1 jobs/daily_task 2>/dev/null | cut -d: -f1)" = aud ] && echo make > jobs/daily_task
+case "$(head -1 jobs/daily_task 2>/dev/null | cut -d: -f1)" in aud|audp) echo make > jobs/daily_task;; esac
 git config user.name aud-bot; git config user.email bot@users.noreply.github.com
 git add aud/state logs/aud_build.txt jobs/daily_task 2>/dev/null
 git commit -qm "aud: $EPS [skip ci]" || true

@@ -18,6 +18,8 @@ case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash aika/run.sh daily || true;; es
 [ "$TASK" = aika:kick ] && { echo make > jobs/daily_task; git add jobs/daily_task; git commit -qm "reset task [skip ci]"; git pull -q --rebase && git push -q; exit 0; }
 # --- piero channel (ピエロ君のやばい噂、知識): on-demand tasks via jobs/daily_task = piero:<task>
 if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; fi
+# --- スゴ技スクールRPG東京校 channel (@sugowazaschool): jobs/daily_task = sugo:<task>  (auth_url / auth_code / ...)
+if [ "${TASK%%:*}" = sugo ]; then bash sugo/run.sh "${TASK#sugo:}"; exit $?; fi
 # --- OLあいか channel: on-demand tasks via jobs/daily_task = aika:<task>
 if [ "${TASK%%:*}" = aika ]; then bash aika/run.sh "${TASK#aika:}"; exit $?; fi
 # --- インスタ講座 lesson videos (RPGクリエイタースクール教材): jobs/daily_task = igc:<episodes>

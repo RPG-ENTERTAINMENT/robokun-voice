@@ -27,7 +27,7 @@ def say(t):  # reading fixes for the TTS
                  ('1枚', 'いちまい'), ('1行目', 'いちぎょうめ'), ('1秒', 'いちびょう'), ('1つ', 'ひとつ'), ('1杯', 'いっぱい'), ('10本', 'じゅっぽん'), ('5本', 'ごほん'),
                  ('3枚', 'さんまい'), ('10枚', 'じゅうまい'), ('5選', 'ごせん'), ('5つ', 'いつつ'), ('4つ', 'よっつ'), ('3つ', 'みっつ'), ('2つ', 'ふたつ'),
                  ('20代', 'にじゅうだい'), ('2択', 'にたく'), ('2本', 'にほん'), ('30秒', 'さんじゅうびょう'), ('3行', 'さんぎょう'), ('4行', 'よんぎょう'), ('1回', 'いっかい'),
-                 ('週に1回', 'しゅうにいっかい'), ('何々', 'なになに'), ('名前', 'なまえ'), ('第1回', '第いっかい'), ('全10回', 'ぜんじゅっかい'), ('10回', 'じゅっかい'), ('TikTok', 'ティックトック'), ('Instagram', 'インスタグラム'), ('YouTube', 'ユーチューブ'), ('15秒', 'じゅうごびょう'), ('10秒', 'じゅうびょう'), ('5秒', 'ごびょう'), ('5回', 'ごかい'), ('10回', 'じゅっかい'), ('3回', 'さんかい'), ('1人', 'ひとり'), ('8つ', 'やっつ'), ('8カウント', 'エイトカウント'), ('全身', 'ぜんしん'), ('宣材', 'せんざい'), ('伸びしろ', 'のびしろ'), ('口角', 'こうかく')]:
+                 ('週に1回', 'しゅうにいっかい'), ('何々', 'なになに'), ('名前', 'なまえ'), ('第1回', '第いっかい'), ('全10回', 'ぜんじゅっかい'), ('10回', 'じゅっかい'), ('TikTok', 'ティックトック'), ('Instagram', 'インスタグラム'), ('YouTube', 'ユーチューブ'), ('15秒', 'じゅうごびょう'), ('10秒', 'じゅうびょう'), ('5秒', 'ごびょう'), ('5回', 'ごかい'), ('10回', 'じゅっかい'), ('3回', 'さんかい'), ('1人', 'ひとり'), ('8つ', 'やっつ'), ('8カウント', 'エイトカウント'), ('全身', 'ぜんしん'), ('宣材', 'せんざい'), ('伸びしろ', 'のびしろ'), ('口角', 'こうかく'), ('1年分', 'いちねんぶん'), ('1年間', 'いちねんかん'), ('1年', 'いちねん'), ('1週間', 'いっしゅうかん'), ('1日', 'いちにち'), ('5万円', 'ごまんえん'), ('LINE', 'ライン'), ('ボイトレ', 'ボイトレ')]:
         t = t.replace(a, b)
     return t
 
@@ -71,10 +71,10 @@ for n in nums:
         if kw: sc['kw'] = kw.replace('{', '').replace('}', '')
         if sfx: sc['sfx'] = sfx
         if sl['t'] in ('cards',) and sl.get('hi') is not None: sc['fade'] = True
-        if i == 0: sc.update(title=e['kt'], kicker=(f'アイドル講座 第{n}回' if n < 10 else 'アイドル講座 最終回'))
+        if i == 0: sc.update(title=e['kt'], kicker=e.get('kicker') or (f'アイドル講座 第{n}回' if n < 10 else 'アイドル講座 最終回'))
         if sl['t'] == 'hw': sc['pause'] = 0.6
         screen[key] = sc
-    spec = dict(id=f'id{n:02d}', tag=f'東京アイドルスクール アイドル講座 第{n}回', bg=bg, bgm=bgm, bgm_vol=0.11, credit='VOICEVOX:ずんだもん', brand='東京アイドルスクール', beats=beats, screen=screen)
+    spec = dict(id=f'id{n:02d}', tag=e.get('tag') or f'東京アイドルスクール アイドル講座 第{n}回', bg=bg, bgm=bgm, bgm_vol=0.11, credit='VOICEVOX:ずんだもん', brand='東京アイドルスクール', beats=beats, screen=screen)
     sp = os.path.join(d, 'spec.json'); json.dump(spec, open(sp, 'w'), ensure_ascii=False, indent=1)
     out = os.path.join(d, f'idol_{n:02d}.mp4')
     if STILL:
@@ -86,8 +86,8 @@ for n in nums:
     print('built', n, out, flush=True)
     if UPLOAD:
         if str(n) in state: print('already uploaded', n, state[str(n)]); continue
-        meta = dict(title=f'アイドル講座 第{n}回｜{e["title"]}'[:100], privacy='unlisted', category='27',
-                    description=f'東京アイドルスクール アイドル講座 第{n}回\n{e["desc"]}\n\n▼東京アイドルスクール\nhttps://www.rpgtokyo.com/idol/\n\nロボしずの声：VOICEVOX:ずんだもん\nBGM：オリジナル',
+        meta = dict(title=(e.get('ytitle') or f'アイドル講座 第{n}回｜{e["title"]}')[:100], privacy='unlisted', category='27',
+                    description=f'{e.get("tag") or "東京アイドルスクール アイドル講座 第" + str(n) + "回"}\n{e["desc"]}\n\n▼東京アイドルスクール\nhttps://www.rpgtokyo.com/idol/\n\nロボしずの声：VOICEVOX:ずんだもん\nBGM：オリジナル',
                     tags=['アイドル', 'アイドル講座', '東京アイドルスクール', 'ダンス', 'ボイトレ', 'ロボしず'])
         mp = os.path.join(d, 'meta.json'); json.dump(meta, open(mp, 'w'), ensure_ascii=False)
         r = subprocess.run([sys.executable, os.path.join(IGC, 'upload.py'), out, thumb, mp], capture_output=True, text=True); print(r.stdout, r.stderr[-2000:], flush=True)

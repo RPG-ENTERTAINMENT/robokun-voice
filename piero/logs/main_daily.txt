@@ -1,19 +1,6 @@
-/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 44%|████▍     | 10.0M/22.6M [00:00<00:00, 68.0MB/s] 89%|████████▊ | 20.0M/22.6M [00:00<00:00, 62.6MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 66.7MB/s]
-Extracting tar file
-short s023 total 57.7 speed 1.16
-image search failed _openverse mirror reflection TimeoutError('The read operation timed out')
-image search failed _openverse photograph TimeoutError('The read operation timed out')
-image search failed _openverse spirit photograph TimeoutError('The read operation timed out')
-image search failed _openverse antique camera TimeoutError('The read operation timed out')
-image search failed _openverse broken mirror TimeoutError('The read operation timed out')
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image search failed _openverse covered mirror TimeoutError('The read operation timed out')
-image search failed _openverse bathroom mirror dark TimeoutError('The read operation timed out')
-image search failed _openverse mirror TimeoutError('The read operation timed out')
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-photos s023 10 / 10 thumb True
+done A {'id': 's023', 'video': 'X45Gi9Goajg', 'at': '12:00'}
+done L {'id': 'l012', 'video': 'Dwld2qeiX2w', 'at': '16:00'}
+done B {'id': 's024', 'video': 'o2B21FXKvU8', 'at': '20:00'}
+elapsed 1 s

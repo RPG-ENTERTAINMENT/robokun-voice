@@ -15,11 +15,13 @@ curl -sSL -o /tmp/voicevox_core-0.16.2-cp310-abi3-manylinux_2_34_x86_64.whl $G/v
 python -m pip install -q /tmp/voicevox_core-0.16.2-cp310-abi3-manylinux_2_34_x86_64.whl >> logs/igc_pip.txt 2>&1
 export VV_DIR=$(pwd)/vv IGC_ASSETS=$(pwd)/assets IGC_SPRITES=$(pwd)/assets/sp IGC_PHOTOS=$(pwd)/tests/img/edu001 IDL_WORK=$(pwd)/idl_work
 set -o pipefail
-python idl/build.py $EPS --upload 2>&1 | grep -v '^upload ' | tee logs/idl_build.txt
+UP=--upload; [ "$EPS" = 0 ] && UP=   # 第0回（入会前の動画）はYouTubeに上げず、サイト用のファイルにする
+python idl/build.py $EPS $UP 2>&1 | grep -v '^upload ' | tee logs/idl_build.txt
 rc=$?
+if [ -f idl_work/id00/idol_00.mp4 ]; then mkdir -p idl/media; ffmpeg -y -loglevel error -i idl_work/id00/idol_00.mp4 -vf scale=1280:-2 -c:v libx264 -crf 27 -preset slow -c:a aac -b:a 96k -movflags +faststart idl/media/intro.mp4; fi
 [ "$(head -1 jobs/daily_task 2>/dev/null | cut -d: -f1)" = idl ] && echo make > jobs/daily_task
 git config user.name idl-bot; git config user.email bot@users.noreply.github.com
-git add idl/state logs/idl_build.txt jobs/daily_task 2>/dev/null
+git add idl/state idl/media logs/idl_build.txt jobs/daily_task 2>/dev/null
 git commit -qm "idl: $EPS [skip ci]" || true
 for i in 1 2 3 4 5; do git pull -q --rebase --autostash && git push -q && break; git rebase --abort 2>/dev/null; sleep $((i*5)); done
 exit $rc

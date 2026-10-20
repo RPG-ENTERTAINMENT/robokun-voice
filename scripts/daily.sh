@@ -22,6 +22,8 @@ if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; 
 if [ "${TASK%%:*}" = aika ]; then bash aika/run.sh "${TASK#aika:}"; exit $?; fi
 # --- インスタ講座 lesson videos (RPGクリエイタースクール教材): jobs/daily_task = igc:<episodes>
 if [ "${TASK%%:*}" = igc ]; then bash igc/run.sh "${TASK#igc:}"; exit $?; fi
+# --- 東京アイドルスクール アイドル講座 (会員ページ用): jobs/daily_task = idl:<episodes>
+if [ "${TASK%%:*}" = idl ]; then bash idl/run.sh "${TASK#idl:}"; exit $?; fi
 # --- オーディション講座 (タイムオーディション有料プラン会員向け): jobs/daily_task = aud:<episodes>
 if [ "${TASK%%:*}" = audp ]; then AUD_PREVIEW=1 bash aud/run.sh "${TASK#audp:}"; exit $?; fi
 if [ "${TASK%%:*}" = aud ]; then bash aud/run.sh "${TASK#aud:}"; exit $?; fi

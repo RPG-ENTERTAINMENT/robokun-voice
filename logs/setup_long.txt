@@ -27,6 +27,7 @@ patched eng/engine.py 'ロボしず', t, 360, a)
 + export PIP_NO_CACHE_DIR=1
 + PIP_NO_CACHE_DIR=1
 + '[' '!' -f /home/runner/venv/ok ']'
++ /home/runner/venv/bin/python -c 'import PIL, soundfile, torch, librosa'
 + echo 'venv missing or broken -> rebuilding'
 venv missing or broken -> rebuilding
 + rm -rf /home/runner/venv
@@ -56,10 +57,6 @@ venv missing or broken -> rebuilding
 ++ '[' -n /usr/bin/bash -o -n '' ']'
 ++ hash -r
 + pip install -q torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torch-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl.metadata
-  WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: INVALID_SESSION_ID] invalid session id (_ssl.c:1017)'))': /whl/cpu/torch-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl.metadata
-  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl.metadata
-  WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl.metadata
   error: subprocess-exited-with-error
   
   × pip subprocess to install build dependencies did not run successfully.
@@ -79,32 +76,9 @@ error: subprocess-exited-with-error
 
 note: This error originates from a subprocess, and is likely not a problem with pip.
 + '[' -d gsv ']'
-+ git clone --depth 1 https://github.com/RVC-Boss/GPT-SoVITS.git gsv
-Cloning into 'gsv'...
 + printf 'torch==2.6.0+cpu\ntorchaudio==2.6.0+cpu\n'
 + pip install -q -r gsv/requirements.txt -c /tmp/cons.txt --extra-index-url https://download.pytorch.org/whl/cpu
 DEPRECATION: --no-binary currently disables reading from the cache of locally built wheels. In the future --no-binary will not influence the wheel cache. pip 23.1 will enforce this behaviour change. A possible replacement is to use the --no-cache-dir option. You can use the flag --use-feature=no-binary-enable-wheel-cache to test the upcoming behaviour. Discussion can be found at https://github.com/pypa/pip/issues/11453
-  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1017)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl.metadata
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/llvmlite/
-  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torch-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl.metadata
-  WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: INVALID_SESSION_ID] invalid session id (_ssl.c:1017)'))': /whl/cpu/torch-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl.metadata
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='download.pytorch.org', port=443): Read timed out. (read timeout=15)")': /whl/cpu/markupsafe/
-  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out. (read timeout=15)")': /packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='download.pytorch.org', port=443): Read timed out. (read timeout=15)")': /whl/cpu/tiktoken/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/omegaconf/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='download.pytorch.org', port=443): Read timed out. (read timeout=15)")': /whl/cpu/email-validator/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/fonttools/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='download.pytorch.org', port=443): Read timed out. (read timeout=15)")': /whl/cpu/crcmod/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='download.pytorch.org', port=443): Read timed out. (read timeout=15)")': /whl/cpu/propcache/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='download.pytorch.org', port=443): Read timed out. (read timeout=15)")': /whl/cpu/markdown-it-py/
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
-WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
-WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
-WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
-WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torch-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
-WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
-WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError(1, '[SSL: SSLV3_ALERT_BAD_RECORD_MAC] sslv3 alert bad record mac (_ssl.c:2588)'))': /whl/cpu/torchaudio-2.6.0%2Bcpu-cp310-cp310-linux_x86_64.whl
   DEPRECATION: jieba_fast is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
   DEPRECATION: jieba is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
   DEPRECATION: distance is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
@@ -158,30 +132,18 @@ assets ready
 hq_sprites: sheet not uploaded yet -> fallback poses
 + '[' -d gsv ']'
 + '[' -f gsv/GPT_SoVITS/pretrained_models/gsv-v2final-pretrained/s2G2333k.pth ']'
-+ cd gsv
-+ python -c 'from huggingface_hub import snapshot_download; snapshot_download('\''lj1995/GPT-SoVITS'\'', local_dir='\''GPT_SoVITS/pretrained_models'\'', allow_patterns=['\''gsv-v2final-pretrained/*'\'','\''chinese-hubert-base/*'\'','\''chinese-roberta-wwm-ext-large/*'\''])'
-Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files:  89%|████████▉ | 8/9 [00:09<00:01,  1.22s/it]Fetching 9 files: 100%|██████████| 9/9 [00:10<00:00,  1.13s/it]
 + mkdir -p gsv/GPT_SoVITS/pretrained_models/fast_langdetect
 + mkdir -p vv
 + cd vv
 + G=https://github.com/VOICEVOX
 + '[' -d voicevox_onnxruntime-linux-x64-1.17.3 ']'
-+ curl -sSL -o o.tgz https://github.com/VOICEVOX/onnxruntime-builder/releases/download/voicevox_onnxruntime-1.17.3/voicevox_onnxruntime-linux-x64-1.17.3.tgz
-+ tar xzf o.tgz
-+ rm o.tgz
 + '[' -d open_jtalk_dic_utf_8-1.11 ']'
-+ curl -sSL -o d.tgz https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz
-+ tar xzf d.tgz
-+ rm d.tgz
 + for i in 0 6 9 13
 + '[' -f 0.vvm ']'
-+ curl -sSL -o 0.vvm https://github.com/VOICEVOX/voicevox_vvm/releases/download/0.16.1/0.vvm
 + for i in 0 6 9 13
 + '[' -f 6.vvm ']'
-+ curl -sSL -o 6.vvm https://github.com/VOICEVOX/voicevox_vvm/releases/download/0.16.1/6.vvm
 + for i in 0 6 9 13
 + '[' -f 9.vvm ']'
-+ curl -sSL -o 9.vvm https://github.com/VOICEVOX/voicevox_vvm/releases/download/0.16.1/9.vvm
 + for i in 0 6 9 13
 + '[' -f 13.vvm ']'
 + curl -sSL -o 13.vvm https://github.com/VOICEVOX/voicevox_vvm/releases/download/0.16.1/13.vvm

@@ -20,6 +20,8 @@ case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash aika/run.sh daily || true;; es
 if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; fi
 # --- スゴ技スクールRPG東京校 channel (@sugowazaschool): jobs/daily_task = sugo:<task>  (auth_url / auth_code / ...)
 if [ "${TASK%%:*}" = sugo ]; then bash sugo/run.sh "${TASK#sugo:}"; exit $?; fi
+# --- move lesson videos to @sugowazaschool: jobs/daily_task = tosugo:igc,aud,idl
+if [ "${TASK%%:*}" = tosugo ]; then bash scripts/tosugo.sh "${TASK#tosugo:}"; exit $?; fi
 # --- OLあいか channel: on-demand tasks via jobs/daily_task = aika:<task>
 if [ "${TASK%%:*}" = aika ]; then bash aika/run.sh "${TASK#aika:}"; exit $?; fi
 # --- インスタ講座 lesson videos (RPGクリエイタースクール教材): jobs/daily_task = igc:<episodes>

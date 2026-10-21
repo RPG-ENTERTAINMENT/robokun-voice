@@ -86,17 +86,17 @@ DEPRECATION: --no-binary currently disables reading from the cache of locally bu
   DEPRECATION: antlr4-python3-runtime is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
   DEPRECATION: oss2 is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
 
-[notice] A new release of pip is available: 23.0.1 -> 26.2.1
+[notice] A new release of pip is available: 23.0.1 -> 26.2.2
 [notice] To update, run: pip install --upgrade pip
 + pip install -q huggingface_hub soundfile librosa opencv-python-headless pillow numpy fonttools
 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 torchmetrics 1.5.0 requires numpy<2.0,>1.20.0, but you have numpy 2.2.6 which is incompatible.
 
-[notice] A new release of pip is available: 23.0.1 -> 26.2.1
+[notice] A new release of pip is available: 23.0.1 -> 26.2.2
 [notice] To update, run: pip install --upgrade pip
 + pip install -q https://github.com/VOICEVOX/voicevox_core/releases/download/0.16.2/voicevox_core-0.16.2-cp310-abi3-manylinux_2_34_x86_64.whl
 
-[notice] A new release of pip is available: 23.0.1 -> 26.2.1
+[notice] A new release of pip is available: 23.0.1 -> 26.2.2
 [notice] To update, run: pip install --upgrade pip
 + touch /home/runner/venv/ok
 + source /home/runner/venv/bin/activate

@@ -1,240 +1,130 @@
 done 80.9
 total 80.9
 built 1 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig01/insta_01.mp4
-duration 80.9
-youtube ok FMB2T-qnRGo {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=FMB2T-qnRGo&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 77.29
 total 77.29
+already uploaded 1 FMB2T-qnRGo
 built 2 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig02/insta_02.mp4
-duration 77.266667
-youtube ok rGIjUpGovp4 {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=rGIjUpGovp4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 76.09
 total 76.09
+already uploaded 2 rGIjUpGovp4
 built 3 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig03/insta_03.mp4
-duration 76.066667
-youtube ok y-dELak8Fwo {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=y-dELak8Fwo&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 73.61
 total 73.61
+already uploaded 3 y-dELak8Fwo
 built 4 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig04/insta_04.mp4
-duration 73.6
-youtube ok V2yv2JkK2ds {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=V2yv2JkK2ds&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 68.57
 total 68.57
+already uploaded 4 V2yv2JkK2ds
 built 5 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig05/insta_05.mp4
-duration 68.566667
-youtube ok 1X226s2amvI {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=1X226s2amvI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 97.68
 total 97.68
+already uploaded 5 1X226s2amvI
 built 6 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig06/insta_06.mp4
-duration 97.666667
-youtube ok ml7YPlA73vM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=ml7YPlA73vM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 70.31
 total 70.31
+already uploaded 6 ml7YPlA73vM
 built 7 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig07/insta_07.mp4
-duration 70.3
-youtube ok IbATpGKm7oQ {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=IbATpGKm7oQ&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 76.18
 total 76.18
+already uploaded 7 IbATpGKm7oQ
 built 8 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig08/insta_08.mp4
-duration 76.166667
-youtube ok 0YXBGXK1sJA {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=0YXBGXK1sJA&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 73.95
 total 73.95
+already uploaded 8 0YXBGXK1sJA
 built 9 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig09/insta_09.mp4
-duration 73.933333
-youtube ok AYNgnUelEro {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=AYNgnUelEro&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 80.26
 total 80.26
+already uploaded 9 AYNgnUelEro
 built 10 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig10/insta_10.mp4
-duration 80.233333
-youtube ok HTD33X9-AKM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=HTD33X9-AKM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
- /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
-  warnings.warn(message, FutureWarning)
-
 done 72.88
 total 72.88
+already uploaded 10 HTD33X9-AKM
 built 11 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig11/insta_11.mp4
 duration 72.866667
+youtube ok 7t4fnwrNKs0 {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=7t4fnwrNKs0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 77.87
 total 77.87
 built 12 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig12/insta_12.mp4
 duration 77.866667
+youtube ok TpG_AzbcxiM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=TpG_AzbcxiM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 77.6
 total 77.6
 built 13 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig13/insta_13.mp4
 duration 77.566667
+youtube ok bhPP8cw4SPY {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=bhPP8cw4SPY&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 78.08
 total 78.08
 built 14 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig14/insta_14.mp4
 duration 78.066667
+youtube ok aSfe2tjWi7M {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=aSfe2tjWi7M&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 83.81
 total 83.81
 built 15 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig15/insta_15.mp4
 duration 83.8
+youtube ok iTEd12hwnKA {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=iTEd12hwnKA&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 73.25
 total 73.25
 built 16 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig16/insta_16.mp4
 duration 73.233333
+youtube ok K8sDTniV_hI {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=K8sDTniV_hI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 74.29
 total 74.29
 built 17 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig17/insta_17.mp4
 duration 74.266667
+youtube ok jP2aU9Sxejo {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=jP2aU9Sxejo&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 68.43
 total 68.43
 built 18 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig18/insta_18.mp4
 duration 68.4
+youtube ok TtHnxvdRhFM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=TtHnxvdRhFM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 85.42
 total 85.42
 built 19 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig19/insta_19.mp4
 duration 85.4
+youtube ok Yg7I7MoN65Y {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=Yg7I7MoN65Y&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 
 done 97.73
 total 97.73
 built 20 /home/runner/work/robokun-voice/robokun-voice/igc_work/ig20/insta_20.mp4
 duration 97.7
+youtube ok qoyT0TEsT08 {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=qoyT0TEsT08&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Traceback (most recent call last):
-  File "/home/runner/work/robokun-voice/robokun-voice/igc/upload.py", line 23, in <module>
-    st, resp = req.next_chunk()
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
-    return wrapped(*args, **kwargs)
-  File "/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/googleapiclient/http.py", line 1102, in next_chunk
-    raise ResumableUploadError(resp, content)
-googleapiclient.errors.ResumableUploadError: <HttpError 400 when requesting None returned "The user has exceeded the number of videos they may upload.". Details: "[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]">
 

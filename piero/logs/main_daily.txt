@@ -1,6 +1,17 @@
 /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-done A {'id': 's027', 'video': 'XgcpcbCWyqM', 'at': '12:00'}
-done L {'id': 'l014', 'video': 'Z0APtf0L4nE', 'at': '16:00'}
-done B {'id': 's028', 'video': 'CtiZgPlQdyA', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s]  6%|▌         | 1.31M/22.6M [00:00<00:01, 13.7MB/s] 66%|██████▌   | 14.9M/22.6M [00:00<00:00, 89.5MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 99.9MB/s]
+Extracting tar file
+short s001 total 53.9 speed 1.05
+image search failed _openverse refrigerator door shelf TimeoutError('The read operation timed out')
+image search failed _openverse bed sheets TimeoutError('The read operation timed out')
+image search failed _openverse old pillow TimeoutError('The read operation timed out')
+image search failed _openverse kitchen sponge TimeoutError('The read operation timed out')
+image search failed _openverse toilet lid TimeoutError('The read operation timed out')
+image search failed _openverse dust bunny TimeoutError('The read operation timed out')
+image search failed _openverse washing machine drum TimeoutError('The read operation timed out')
+image download failed <HTTPError 403: 'Forbidden'>
+image search failed _openverse old house night TimeoutError('The read operation timed out')
+image search failed _openverse old house night TimeoutError('The read operation timed out')
+photos s001 10 / 10 thumb True

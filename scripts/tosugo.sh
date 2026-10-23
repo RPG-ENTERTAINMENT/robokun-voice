@@ -1,7 +1,7 @@
 #!/bin/bash
 # Re-upload the lesson videos (インスタ講座 igc / オーディション講座 aud / アイドル講座 idl) to the
 # スゴ技スクールRPG東京校 channel (@sugowazaschool) instead of ロボしず.
-#   jobs/daily_task = tosugo:<list>   e.g. tosugo:igc,aud,idl
+#   jobs/daily_task = tosugo:<list>   e.g. tosugo:igc,aud,idl  (audp = 30秒おためし版)
 # The old ロボしず ids are kept in <x>/state/videos_robo.json; new ids go to <x>/state/videos.json.
 LIST="${1:-igc,aud,idl}"
 python -m pip install -q cryptography > /dev/null 2>&1
@@ -16,13 +16,14 @@ P
 echo "::add-mask::$YT_REFRESH_TOKEN"
 rc=0
 for x in ${LIST//,/ }; do
-  case $x in igc) EPS=1-20;; aud) EPS=1-10;; idl) EPS=1-10;; *) continue;; esac
-  if [ -f $x/state/videos.json ] && [ ! -f $x/state/videos_robo.json ]; then
-    mv $x/state/videos.json $x/state/videos_robo.json
-    git add -A $x/state; git -c user.name=sugo-bot -c user.email=bot@users.noreply.github.com commit -qm "$x: keep ロボしず ids [skip ci]" || true
+  case $x in igc) EPS=1-20;; aud) EPS=1-10;; audp) EPS=1-10;; idl) EPS=1-10;; *) continue;; esac
+  d=${x%p}; f=videos; pre=""; [ $x = audp ] && { f=previews; pre=AUD_PREVIEW=1; }
+  if [ -f $d/state/$f.json ] && [ ! -f $d/state/${f}_robo.json ]; then
+    mv $d/state/$f.json $d/state/${f}_robo.json
+    git add -A $d/state; git -c user.name=sugo-bot -c user.email=bot@users.noreply.github.com commit -qm "$x: keep ロボしず ids [skip ci]" || true
   fi
   echo "=== $x $EPS -> sugowazaschool"
-  bash $x/run.sh $EPS || rc=1
+  env $pre bash $d/run.sh $EPS || rc=1
 done
 echo make > jobs/daily_task
 git add jobs/daily_task; git -c user.name=sugo-bot -c user.email=bot@users.noreply.github.com commit -qm "tosugo done [skip ci]" || true

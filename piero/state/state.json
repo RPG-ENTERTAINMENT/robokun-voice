@@ -1,5 +1,5 @@
 {
- "next_short": 33,
+ "next_short": 34,
  "next_long": 17,
  "days": {
   "20261009": {
@@ -284,6 +284,11 @@
     "id": "l003",
     "video": "nZng3Agt9oE",
     "at": "16:00"
+   },
+   "B": {
+    "id": "s006",
+    "video": "H0UaITPA7RA",
+    "at": "20:00"
    }
   }
  }

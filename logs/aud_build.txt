@@ -1,90 +1,100 @@
 done 103.79
 total 103.79
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud01/audition_01.mp4
-duration 103.766667
-youtube ok FaqwWGWQCo4 {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=FaqwWGWQCo4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud01/audition_01_p30.mp4
+duration 30.0
+youtube ok -MJ3om-GX24 {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=-MJ3om-GX24&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 98.81
 total 98.81
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud02/audition_02.mp4
-duration 98.8
-youtube ok zCjOXziVrqI {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=zCjOXziVrqI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud02/audition_02_p30.mp4
+duration 30.0
+youtube ok GCcaF7nTP-I {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=GCcaF7nTP-I&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 103.34
 total 103.34
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud03/audition_03.mp4
-duration 103.333333
-youtube ok 5sTlUfkgpjQ {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=5sTlUfkgpjQ&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud03/audition_03_p30.mp4
+duration 30.0
+youtube ok Va0lWnaCH9E {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=Va0lWnaCH9E&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 91.75
 total 91.75
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud04/audition_04.mp4
-duration 91.733333
-youtube ok B5UOeGEIAVM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=B5UOeGEIAVM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud04/audition_04_p30.mp4
+duration 30.0
+youtube ok 5lB1M9EYjdM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=5lB1M9EYjdM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 92.55
 total 92.55
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud05/audition_05.mp4
-duration 92.533333
-youtube ok BwWb1wtLvF4 {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=BwWb1wtLvF4&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud05/audition_05_p30.mp4
+duration 30.0
+youtube ok kK9244ywkq0 {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=kK9244ywkq0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 95.83
 total 95.83
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud06/audition_06.mp4
-duration 95.8
-youtube ok DWpPZWSL0cc {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=DWpPZWSL0cc&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud06/audition_06_p30.mp4
+duration 30.0
+youtube ok 8Jhyt99EpGo {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=8Jhyt99EpGo&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 99.4
 total 99.4
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud07/audition_07.mp4
-duration 99.4
-youtube ok 05gKn7p9lLI {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=05gKn7p9lLI&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud07/audition_07_p30.mp4
+duration 30.0
+youtube ok 29YYUmjw94Q {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=29YYUmjw94Q&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 101.68
 total 101.68
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud08/audition_08.mp4
-duration 101.666667
-youtube ok 3SHHc-Aesgs {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=3SHHc-Aesgs&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud08/audition_08_p30.mp4
+duration 30.0
+youtube ok e8npMV8ZLvA {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=e8npMV8ZLvA&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 96.98
 total 96.98
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud09/audition_09.mp4
-duration 96.966667
-youtube ok wez68IYvkGM {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=wez68IYvkGM&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud09/audition_09_p30.mp4
+duration 30.0
+youtube ok -5yd7MK4jlU {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=-5yd7MK4jlU&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 
 done 96.98
 total 96.98
 built /home/runner/work/robokun-voice/robokun-voice/aud_work/aud10/audition_10.mp4
-duration 96.966667
-youtube ok lpuGnjewV2U {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
-thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=lpuGnjewV2U&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
+preview /home/runner/work/robokun-voice/robokun-voice/aud_work/aud10/audition_10_p30.mp4
+duration 30.0
+youtube ok RNUbmVH-IhE {'uploadStatus': 'uploaded', 'privacyStatus': 'unlisted', 'license': 'youtube', 'embeddable': True, 'publicStatsViewable': True, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+thumbnail FAILED (channel may need phone verification) <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=RNUbmVH-IhE&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
  /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
 

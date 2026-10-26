@@ -1,88 +1,6 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 75%|███████▌  | 17.0M/22.6M [00:00<00:00, 178MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 154MB/s]
-Extracting tar file
-short s029 total 56.3 speed 1.1
-image search failed _openverse airplane food TimeoutError('The read operation timed out')
-image search failed _openverse airplane window closeup TimeoutError('The read operation timed out')
-image search failed _openverse airplane window TimeoutError('The read operation timed out')
-image search failed _openverse airplane landing runway TimeoutError('The read operation timed out')
-image search failed _openverse cockpit airplane TimeoutError('The read operation timed out')
-image search failed _openverse empty airplane seats TimeoutError('The read operation timed out')
-image search failed _openverse airplane seats TimeoutError('The read operation timed out')
-photos s029 10 / 10 thumb True
-Author identity unknown
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: empty ident name (for <runner@runnervmtai0g.fsb2nnhucx3edoh05eqojvbz1b.bx.internal.cloudapp.net>) not allowed
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
-uploaded HF2tcM6dl58 【閲覧注意】乗る前に知りたくなかった…飛行機の裏知識10選 #shorts 2026-10-27T03:00:00Z
-thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=HF2tcM6dl58&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
-long l015 total 376.0
-image search failed _openverse vintage electrical control panel TimeoutError('The read operation timed out')
-image search failed _openverse white lab rat TimeoutError('The read operation timed out')
-image search failed _openverse baby rhesus macaque TimeoutError('The read operation timed out')
-image search failed _openverse monkey TimeoutError('The read operation timed out')
-image search failed _openverse vintage surgical instruments TimeoutError('The read operation timed out')
-image search failed _openverse surgical tools TimeoutError('The read operation timed out')
-image search failed _openverse old hospital ward beds TimeoutError('The read operation timed out')
-image search failed _openverse steel door TimeoutError('The read operation timed out')
-photos l015 10 / 10 thumb True
-Author identity unknown
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: empty ident name (for <runner@runnervmtai0g.fsb2nnhucx3edoh05eqojvbz1b.bx.internal.cloudapp.net>) not allowed
-uploaded XUiZCbyldu0 【閲覧注意】科学の名のもとに…人類が封印した禁断の人体実験10選【ピエロの闇知識】 2026-10-27T07:00:00Z
-thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=XUiZCbyldu0&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
-short s030 total 56.6 speed 1.1
-image search failed _openverse prison food TimeoutError('The read operation timed out')
-image search failed _openverse prison workshop TimeoutError('The read operation timed out')
-image search failed _openverse handmade wooden furniture TimeoutError('The read operation timed out')
-image search failed _openverse factory sewing machines TimeoutError('The read operation timed out')
-image search failed _openverse prison corridor TimeoutError('The read operation timed out')
-image search failed _openverse red buttons panel TimeoutError('The read operation timed out')
-image search failed _openverse snowy road hokkaido TimeoutError('The read operation timed out')
-image search failed _openverse prison bars dark TimeoutError('The read operation timed out')
-photos s030 10 / 10 thumb True
-Author identity unknown
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: empty ident name (for <runner@runnervmtai0g.fsb2nnhucx3edoh05eqojvbz1b.bx.internal.cloudapp.net>) not allowed
-https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/piero-thumbs-20261027
-uploaded fHCREhW6-CY 【閲覧注意】塀の中の本当の姿…刑務所の裏知識10選 #shorts 2026-10-27T11:00:00Z
-thumb failed (channel may need phone verification): <HttpError 403 when requesting https://youtube.googleapis.com/upload/youtube/v3/thumbnails/set?videoId=fHCREhW6-CY&alt=json&uploadType=media returned "The authenticated user doesn't have permissions to upload and set custom video thumbnails.". Details: "[{'message': "The authenticated user doesn't h
-elapsed 2650 s
+done A {'id': 's029', 'video': 'HF2tcM6dl58', 'at': '12:00'}
+done L {'id': 'l015', 'video': 'XUiZCbyldu0', 'at': '16:00'}
+done B {'id': 's030', 'video': 'fHCREhW6-CY', 'at': '20:00'}
+elapsed 1 s

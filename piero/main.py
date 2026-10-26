@@ -84,8 +84,9 @@ def photos_for(unit):
 def build_short(unit, out, faces, thumb_out=None):
     W, H = 1080, 1920
     items = unit['items']
-    texts = [unit['hook_v']] + [thin(it['v']) for it in items] + [unit['end_v']]
-    gaps = [0.3] + [0.22] * 9 + [0.45] + [0]
+    off = 1 if unit.get('scare_v') else 0          # new scripts open with one scary line BEFORE the ククク hook
+    texts = ([unit['scare_v']] if off else []) + [unit['hook_v']] + [thin(it['v']) for it in items] + [unit['end_v']]
+    gaps = ([0.35] if off else []) + [0.3] + [0.22] * 9 + [0.45] + [0]
     for speed in (1.05, 1.1, 1.16, 1.22, 1.3):
         v, segs, total = A.build_voice(texts, gaps, lead=0.5, tail=1.3, speed=speed)
         if total <= 58.5: break
@@ -112,12 +113,18 @@ def build_short(unit, out, faces, thumb_out=None):
     YC = (YP + 140 + HEAD_TOP) // 2 + 5                    # caption between the photo and the clown's head
     f_cap = E.font(82)
     photo_t = []
-    for i, (s, e) in enumerate(segs):
-        nxt = segs[i + 1][0] if i + 1 < len(segs) else total
-        s0 = 0 if i == 0 else s
-        if i == 0:
-            cues.append(dict(s=s0, e=e, expr=1, mood='intro'))
+    for j, (s, e) in enumerate(segs):
+        nxt = segs[j + 1][0] if j + 1 < len(segs) else total
+        i = j - off
+        s0 = 0 if j == 0 else s
+        if i < 0:   # the scary opening line (first thing seen and heard)
+            cues.append(dict(s=s0, e=e, expr=2, mood='intro'))
             if thumb_pic is not None:
+                ov.append(dict(s=0, e=segs[j + 2][0], img=I.evidence_card(thumb_pic, 500, 265, seed=11), xy=(540, YP), jitter=1))
+            ov.append(dict(s=s0, e=nxt, img=E.text_img(unit.get('scare_t') or unit['scare_v'], E.font(88), RED, (150, 0, 0), stroke=10, max_w=900), xy=(540, YC), jitter=4))
+        elif i == 0:
+            cues.append(dict(s=s0, e=e, expr=1, mood='intro' if not off else ''))
+            if thumb_pic is not None and not off:
                 ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 500, 265, seed=11), xy=(540, YP), jitter=1))
             for ps, pe, p in assign_pages(s0, nxt, e, ['ククク……', f'{title}\n10選']):
                 ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
@@ -138,7 +145,7 @@ def build_short(unit, out, faces, thumb_out=None):
     scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
     track = A.musicbox(w('musicbox.wav'))
     A.bgm_for(total, w('bgm.wav'), track)
-    A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(segs[8][0], segs[10][1]))
+    A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(segs[8 + off][0], segs[10 + off][1]))
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'))
     # the whole room (desk, candle, door, clown) sits lower so photo + caption fit above the face
     E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1480, door=(30, 300, 820, 1845), knob=(225, 1300), frame=(820, 1060),
@@ -274,19 +281,36 @@ def make_thumb(faces, unit, path, bg_pic=None, item_pic=None):
     # small evidence photo with red circle
     if item_pic is not None:
         card = I.evidence_card(item_pic, 440, 280, seed=2)
-        img.alpha_composite(card, (860, 660))
+        cx0, cy0 = (1260, 720) if unit.get('thumb_text') else (860, 660)
+        img.alpha_composite(card, (cx0, cy0))
         d = ImageDraw.Draw(img)
-        d.ellipse([930, 700, 1300, 990], outline=(240, 20, 20, 255), width=12)
+        d.ellipse([cx0 + 70, cy0 + 40, cx0 + 440, cy0 + 330], outline=(240, 20, 20, 255), width=12)
     # text
     badge = Image.new('RGBA', (430, 120), (210, 0, 0, 255)); d = ImageDraw.Draw(badge)
     tw = d.textlength('閲覧注意', font=E.font(92)); d.text(((430 - tw) / 2, 4), '閲覧注意', font=E.font(92), fill=(255, 255, 255))
     badge = badge.rotate(4, expand=True, resample=Image.BICUBIC)
     img.alpha_composite(badge, (60, 50))
-    lines = title_lines(unit['title'])
-    t1 = E.text_img('\n'.join(lines), E.font(200 if len(lines) <= 2 else 160), (255, 255, 255), (200, 0, 0), stroke=18, spacing=6, max_w=1000, grunge=False)
-    t2 = E.text_img('10選', E.font(300), (255, 226, 60), (200, 40, 0), stroke=20, max_w=760, grunge=False)
-    img.alpha_composite(t1, (40, 210))
-    img.alpha_composite(t2, (60, H - t2.height + 10))
+    if unit.get('thumb_text'):
+        # the hook words, as big as possible: white line + yellow line, thick black edge and red glow
+        l1, l2 = (unit['thumb_text'] + [''])[:2]
+        t1 = E.text_img(l1, E.font(245), (255, 255, 255), (190, 0, 0), stroke=22, max_w=1060, grunge=False)
+        t2 = E.text_img(l2, E.font(245), (255, 228, 40), (190, 0, 0), stroke=22, max_w=1060, grunge=False) if l2 else None
+        img.alpha_composite(t1, (10, 170))
+        if t2: img.alpha_composite(t2, (10, 170 + t1.height - 105))
+        # topic band at the bottom-left
+        band_t = f"{unit['title']}10選"
+        f_b = E.font(84); d = ImageDraw.Draw(img); tw = d.textlength(band_t, font=f_b)
+        bw = int(min(1180, tw + 90))
+        band = Image.new('RGBA', (bw, 140), (0, 0, 0, 0)); db = ImageDraw.Draw(band)
+        db.polygon([(0, 0), (bw, 0), (bw - 30, 140), (0, 140)], fill=(200, 0, 0, 240))
+        db.text((34, 22), band_t, font=f_b, fill=(255, 255, 255), stroke_width=4, stroke_fill=(60, 0, 0))
+        img.alpha_composite(band, (0, H - 190))
+    else:
+        lines = title_lines(unit['title'])
+        t1 = E.text_img('\n'.join(lines), E.font(200 if len(lines) <= 2 else 160), (255, 255, 255), (200, 0, 0), stroke=18, spacing=6, max_w=1000, grunge=False)
+        t2 = E.text_img('10選', E.font(300), (255, 226, 60), (200, 40, 0), stroke=20, max_w=760, grunge=False)
+        img.alpha_composite(t1, (40, 210))
+        img.alpha_composite(t2, (60, H - t2.height + 10))
     img.convert('RGB').resize((1280, 720), Image.LANCZOS).save(path, quality=93)
 
 def make_thumb_v(faces, unit, path, bg_pic=None, item_pic=None):
@@ -365,7 +389,7 @@ def credits(u):
     return ('\n\n画像クレジット:\n' + '\n'.join(c)) if c else ''
 
 def meta_short(u):
-    title = f"【閲覧注意】{u['title']}10選｜ピエロ君 #shorts"
+    title = u.get('yt_title') or f"【閲覧注意】{u['title']}10選｜ピエロ君 #shorts"
     lines = '\n'.join(f"{i + 1}. {it['t'].replace(chr(10), ' ')}" for i, it in enumerate(u['items']))
     return title, f"{u['title']} 10選\n\n{lines}" + DESC_TAIL + credits(u), u.get('tags', []) + ['ピエロ', '雑学', '闇', '都市伝説', '10選', 'shorts']
 
@@ -405,7 +429,11 @@ def task_daily():
         if dd.get(slot, {}).get('video'): print('done', slot, dd[slot]); continue
         lst = shorts if kind == 's' else longs
         key = 'next_short' if kind == 's' else 'next_long'
-        u = lst[st[key] % len(lst)]
+        posted = {v['id'] for d in st['days'].values() for v in d.values() if v.get('id')}
+        fresh = [x for x in lst if x['id'] not in posted]
+        if not fresh:   # never re-upload an old script (duplicate videos hurt the channel) — wait for new scripts instead
+            print('no new script left for', kind); continue
+        u = fresh[0]
         when = now.replace(hour=hh, minute=0, second=0, microsecond=0)
         out = os.path.join(WORK, f'{day}_{slot}_{u["id"]}.mp4')
         if kind == 's':

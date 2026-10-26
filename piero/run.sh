@@ -15,6 +15,7 @@ case "$TASK" in
   auth_code) python piero/auth.py code 2>&1 | tee piero/logs/auth.txt; rm -f piero/jobs/auth_code.txt ;;
   auth_keygen) python piero/auth.py keygen 2>&1 | tee piero/logs/auth.txt ;;
   auth_import) python piero/auth.py import 2>&1 | tee piero/logs/auth.txt; rm -f piero/jobs/rt_in.b64 ;;
+  py:*)      python piero/${TASK#py:}.py 2>&1 | tee piero/logs/py_${TASK#py:}.txt ;;
   *)         python piero/main.py "$TASK" 2>&1 | tee piero/logs/main_$TASK.txt ;;
 esac
 rc=$?

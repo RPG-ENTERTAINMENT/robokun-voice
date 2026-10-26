@@ -1,6 +1,6 @@
 {
- "next_short": 36,
- "next_long": 18,
+ "next_short": 38,
+ "next_long": 19,
  "days": {
   "20261009": {
    "A": {
@@ -305,6 +305,23 @@
    "B": {
     "id": "s008",
     "video": "88PNFiLIsFo",
+    "at": "20:00"
+   }
+  },
+  "20261027": {
+   "A": {
+    "id": "s029",
+    "video": "HF2tcM6dl58",
+    "at": "12:00"
+   },
+   "L": {
+    "id": "l015",
+    "video": "XUiZCbyldu0",
+    "at": "16:00"
+   },
+   "B": {
+    "id": "s030",
+    "video": "fHCREhW6-CY",
     "at": "20:00"
    }
   }

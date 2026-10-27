@@ -50,7 +50,7 @@ for si, sc in enumerate(SPEC['scenes']):
     if sc.get('chapter'):
         chap += 1; ch = (str(chap), sc['chapter'])
         BURST.append((s0 + 0.4, 540, 300, 'star', 8))
-    S = {'s0': s0, 'bg': sc.get('bg', 'sun'), 'pose': pose, 'food': sc.get('food'), 'chapter': ch, 'items': []}
+    S = {'s0': s0, 'bg': sc.get('bg', 'sun'), 'pose': pose, 'food': sc.get('food'), 'chapter': ch, 'curtain': sc.get('curtain', False), 'items': []}
     for j, it in enumerate(sc['lines']):
         if isinstance(it, str): it = {'say': it}
         if 'say' in it:
@@ -80,6 +80,14 @@ for si, sc in enumerate(SPEC['scenes']):
         elif it.get('act') == 'drive':
             S['items'].append((cur, cur + 2.2, 'drive', it))
             ONO.append((cur, cur + 2.1, 'ブルルン♪', 540, 560, '#ff7a3d', 88)); EV.append(('drive', cur)); cur += 2.3
+        elif it.get('act') == 'doki':          # ドキッ♡ pop + hearts
+            ONO.append((cur, cur + 1.6, it.get('ono', 'ドキッ♡'), it.get('x', 540), it.get('y', 560), '#ff4f8f', 96))
+            BURST.append((cur + 0.1, 540, 760, 'heart', 12)); EV.append(('sparkle', cur)); cur += 1.5
+        elif it.get('act') == 'button':        # suit button pops off -> shake + きゃっ
+            S['items'].append((cur, cur + 1.4, 'button', it))
+            ONO.append((cur, cur + 1.0, 'ぷちっ！', 700, 900, '#ff7a3d', 80))
+            ONO.append((cur + 0.5, cur + 1.9, 'きゃっ！', 380, 640, '#ff4f8f', 92))
+            BURST.append((cur + 0.6, 540, 820, 'heart', 8)); EV.append(('sparkle', cur)); cur += 1.6
         elif 'ono' in it:
             ONO.append((cur, cur + 2.0, it['ono'], it.get('x', 270), it.get('y', 560), it.get('c', PINK), it.get('size', 64)))
             EV.append(('pop', cur))
@@ -121,6 +129,8 @@ def char_state(t, mouth, cyc):
         if pose == 'mic': return 'bmic_04', 0, -30 * abs(math.sin(a * math.pi * 1.6)) * max(0, 1 - a / 1.6), pk, 0
         n = 'bwave_%02d' % cyc([12, 13, 14, 15], 6, t, it[0])
         return n, 0, -70 * abs(math.sin(a * math.pi * 1.5)), pk, 0
+    if kind == 'button':
+        return ('bwave_02' if int(a * 8) % 2 else 'bwave_00'), 0, 0, pk, 1 if a < 0.8 else 0
     if kind == 'drive':
         return 'bwave_%02d' % cyc([8, 9, 10, 11], 4, t, it[0]), 0, -12 * abs(math.sin(a * math.pi * 2)), pk, 0
     if pose == 'open':
@@ -169,6 +179,29 @@ def draw_back(canvas, t, R):
             d.polygon([(sx - 14, 300), (sx + 14, 300), (ex + 150, 1440), (ex - 150, 1440)], fill=c + (int(60 * k),))
             d.ellipse([ex - 170, 1380, ex + 170, 1460], fill=c + (int(80 * k),))
         canvas.alpha_composite(lay.filter(ImageFilter.GaussianBlur(18)))
+
+def silhouette(t):
+    return scene_at(t)['curtain']
+
+_CURT = None
+def _curtain():
+    # translucent cream curtain on a rod, with soft vertical folds
+    global _CURT
+    if _CURT is None:
+        W_, H_ = 1080, 1920; x0, x1, y0, y1 = 170, 910, 560, 1470
+        im = Image.new('RGBA', (W_, H_), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+        for i, x in enumerate(range(x0, x1, 37)):
+            sh = 18 * math.sin(i * 1.7)
+            d.rectangle([x, y0, x + 37, y1], fill=(255 - int(sh), 240 - int(sh), 225 - int(sh), 150))
+        im = im.filter(ImageFilter.GaussianBlur(5)); d = ImageDraw.Draw(im)
+        d.rounded_rectangle([x0 - 30, y0 - 22, x1 + 30, y0 - 6], radius=8, fill=(150, 110, 80, 255))
+        for x in range(x0, x1 + 1, 74): d.ellipse([x - 9, y0 - 26, x + 9, y0 - 8], fill=(190, 150, 110, 255))
+        d.rectangle([x0, y1 - 26, x1, y1], fill=(255, 190, 205, 160))
+        _CURT = im
+    return _CURT
+
+def draw_front(canvas, t, R):
+    if scene_at(t)['curtain']: canvas.alpha_composite(_curtain())
 
 def draw_top(canvas, t, R):
     S = scene_at(t); it = item_at(S, t)

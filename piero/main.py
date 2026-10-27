@@ -81,7 +81,89 @@ def photos_for(unit):
     return out, th
 
 # ======================================================================== SHORT
+def build_short_rank(unit, out, faces, thumb_out=None):
+    """TOP-3 ranking short: title → scary line → ククク → 第3位 / 第2位 / 第1位 (2–3 sentences each) → closing line"""
+    W, H = 1080, 1920
+    tv, tdisp = title_voice(unit)
+    texts, gaps, roles = [], [], []          # roles: ('title'|'scare'|'hook'|'rhead'|'rbody'|'end', rank index)
+    def add(t, g, r): texts.append(t); gaps.append(g); roles.append(r)
+    add(tv, 0.3, ('title', -1))
+    if unit.get('scare_v'): add(unit['scare_v'], 0.3, ('scare', -1))
+    add('ククク……。', 0.3, ('hook', -1))
+    for r, rk in enumerate(unit['rank']):
+        add(f"第{'三二一'[r]}位。", 0.35, ('rhead', r))
+        for k, sx in enumerate(rk['v']): add(sx, 0.55 if k == len(rk['v']) - 1 else 0.25, ('rbody', r))
+    add(unit['end_v'], 0, ('end', -1))
+    for speed in (1.0, 1.05, 1.1, 1.16, 1.22, 1.3):
+        v, segs, total = A.build_voice(texts, gaps, lead=0.5, tail=1.3, speed=speed)
+        if total <= 58.5: break
+    print('short(rank)', unit['id'], 'total', round(total, 1), 'speed', speed)
+    w = lambda n: os.path.join(WORK, n)
+    A.write(w('dry.wav'), v); A.voice_fx(w('dry.wav'), w('fx.wav'))
+    env = A.envelope(v, FPS_SHORT, int(total * FPS_SHORT))
+    pics, thumb_pic = photos_for(unit)
+    if thumb_out: make_thumb_v(faces, unit, thumb_out, thumb_pic, next((x for x in pics[::-1] if x is not None), None))
+    ov, cues = [], []
+    SAFE_TOP = 245
+    t_img = E.text_img(unit['title'], E.font(150), RED, (120, 0, 0), stroke=11, max_w=900)
+    ov.append(dict(s=0, e=1e9, img=t_img, xy=(540, SAFE_TOP - 60 + t_img.height // 2), jitter=2))
+    t_bot = SAFE_TOP + t_img.height - 120
+    YP = t_bot + 185; YN = YP - 112; HEAD_TOP = 990; YC = (YP + 140 + HEAD_TOP) // 2 + 5
+    f_cap = E.font(82)
+    first_rank = roles.index(('rhead', 0))
+    if thumb_pic is not None:
+        ov.append(dict(s=0, e=segs[first_rank][0], img=I.evidence_card(thumb_pic, 500, 265, seed=11), xy=(540, YP), jitter=1))
+    starts = {r: segs[roles.index(('rhead', r))][0] for r in range(3)}
+    end_s = segs[-1][0]
+    MEDAL = [(205, 127, 50), (200, 200, 210), (255, 210, 40)]          # bronze / silver / gold for 3rd / 2nd / 1st
+    photo_t = []
+    for r, rk in enumerate(unit['rank']):
+        s, e = starts[r], (starts[r + 1] if r < 2 else end_s)
+        p = pics[rk.get('src', 0)] if 0 <= rk.get('src', 0) < len(pics) else None
+        if p is not None:
+            ov.append(dict(s=s, e=e, img=I.evidence_card(p, 500, 265, seed=r + 3), xy=(540, YP), anim='pop', jitter=1)); photo_t.append(s)
+        ov.append(dict(s=s, e=e, img=E.text_img(f'第{3 - r}位', E.font(96 if r < 2 else 112), MEDAL[r], (150, 0, 0), stroke=10, max_w=600), xy=(300, YN), anim='bigpop', jitter=2))
+        ov.append(dict(s=s, e=e, img=E.text_img(rk['t'], f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
+    for j, ((s, e), (role, r)) in enumerate(zip(segs, roles)):
+        nxt = segs[j + 1][0] if j + 1 < len(segs) else total
+        s0 = 0 if j == 0 else s
+        if role == 'title':
+            cues.append(dict(s=s0, e=e, expr=1, mood='intro'))
+            ov.append(dict(s=s0, e=nxt, img=E.text_img(tdisp, E.font(84), (255, 228, 40), (150, 0, 0), stroke=10, max_w=900), xy=(540, YC), jitter=2))
+        elif role == 'scare':
+            cues.append(dict(s=s0, e=e, expr=2, mood=''))
+            ov.append(dict(s=s0, e=nxt, img=E.text_img(unit.get('scare_t') or unit['scare_v'], E.font(88), RED, (150, 0, 0), stroke=10, max_w=900), xy=(540, YC), anim='pop', jitter=4))
+        elif role == 'hook':
+            cues.append(dict(s=s0, e=e, expr=1, mood=''))
+            ov.append(dict(s=s0, e=nxt, img=E.text_img('ククク……', f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
+        elif role == 'rhead':
+            cues.append(dict(s=s, e=e, expr=3, mood='head'))
+        elif role == 'rbody':
+            last = r == 2 and (j + 1 >= len(roles) or roles[j + 1][0] != 'rbody')
+            cues.append(dict(s=s, e=e, expr=[0, 5, 8, 2, 4][j % 5], mood='scare' if last else ''))
+        else:
+            cues.append(dict(s=s, e=e, expr=6, mood='outro'))
+            for ps, pe, pg in assign_pages(s, nxt, e, [pg for sent in split_sent(unit['end_v']) for pg in pages(sent, 9)]):
+                ov.append(dict(s=ps, e=pe, img=E.text_img(pg, f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
+    heads = [s for (s, e), c in zip(segs, cues) if c['mood'] in ('head', 'scare')]
+    scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
+    track = A.musicbox(w('musicbox.wav'))
+    A.bgm_for(total, w('bgm.wav'), track)
+    A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(starts[2], end_s))
+    A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'))
+    E.GEOM['short_low'] = dict(E.GEOM['short'], wain=1480, door=(30, 300, 820, 1845), knob=(225, 1300), frame=(820, 1060),
+                               table=1845, candle=(150, 1805), under=1150, nose=(540, 1410), SC=2.5)
+    ov.append(dict(s=0, e=1e9, img=I.horror_border(W, H, 80, seed=3), xy=(W // 2, H // 2)))
+    S = E.Scene('short_low', faces)
+    T = E.Timeline(cues, env, ov, total, FPS_SHORT)
+    if os.environ.get('PIERO_FRAMES'):
+        for f in map(int, os.environ['PIERO_FRAMES'].split(',')): E.render_frame(S, T, f).save(f'{out}.{f}.jpg', quality=85)
+        return None
+    E.render_video(S, T, w('mix.wav'), out, tmp=w('tmp'))
+    return out
+
 def build_short(unit, out, faces, thumb_out=None):
+    if unit.get('rank'): return build_short_rank(unit, out, faces, thumb_out)
     W, H = 1080, 1920
     items = unit['items']
     # opening: 1) the title is spoken first, 2) (new scripts) one scary line, 3) ククク hook — then the 10 items
@@ -266,6 +348,9 @@ def title_voice(u):
     t = re.sub(r'【[^】]*】', '', t).replace('#shorts', '').replace('｜ピエロ君', '').strip()
     head, _, rest = t.partition('…')
     if not rest: head, rest = '', head
+    if u.get('rank'):
+        rest = re.sub(r'ランキング.*$', '', rest.replace('10選', '')).strip()
+        return (head + '、' if head else '') + rest + '、ランキング。', (head + '\n' if head else '') + rest + 'ランキング'
     rest = rest.replace('10選', '').strip()
     spoken = (head + '、' if head else '') + rest + '、十選。'
     disp = (head + '\n' if head else '') + rest + '10選'
@@ -432,6 +517,9 @@ def credits(u):
 
 def meta_short(u):
     title = u.get('yt_title') or f"【閲覧注意】{u['title']}10選｜ピエロ君 #shorts"
+    if u.get('rank'):
+        lines = '\n'.join(f"第{3 - r}位 {rk['t'].replace(chr(10), ' ')}" for r, rk in enumerate(u['rank']))
+        return title, f"{u['title']} ランキング\n\n{lines}" + DESC_TAIL + credits(u), u.get('tags', []) + ['ピエロ', '雑学', '闇', '都市伝説', 'ランキング', 'shorts']
     lines = '\n'.join(f"{i + 1}. {it['t'].replace(chr(10), ' ')}" for i, it in enumerate(u['items']))
     return title, f"{u['title']} 10選\n\n{lines}" + DESC_TAIL + credits(u), u.get('tags', []) + ['ピエロ', '雑学', '闇', '都市伝説', '10選', 'shorts']
 

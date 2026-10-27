@@ -35,7 +35,8 @@ if TEST:
 tag = f'day-{day}'
 subprocess.run(['gh', 'release', 'delete', tag, '-y', '--cleanup-tag'])
 meta = {'A': eps[0], 'B': eps[1]}
-open('out/meta.json', 'w').write(json.dumps(meta))
+# titles: the SNS admin (rpgtokyo.com/sns) uses them for the TikTok caption
+open('out/meta.json', 'w').write(json.dumps(dict(meta, titles={k: json.load(open(f'episodes/{v}.json')).get('title', '') for k, v in meta.items()}), ensure_ascii=False))
 sh('gh', 'release', 'create', tag, *outs, 'out/meta.json', '--title', tag, '--notes', ' / '.join(eps))
 st['next'] = pos % len(idx); st['days'][day] = meta
 json.dump(st, open(st_path, 'w'), ensure_ascii=False, indent=1)

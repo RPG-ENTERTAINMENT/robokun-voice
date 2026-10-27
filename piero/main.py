@@ -84,9 +84,13 @@ def photos_for(unit):
 def build_short(unit, out, faces, thumb_out=None):
     W, H = 1080, 1920
     items = unit['items']
-    off = 1 if unit.get('scare_v') else 0          # new scripts open with one scary line BEFORE the ククク hook
-    texts = ([unit['scare_v']] if off else []) + [unit['hook_v']] + [thin(it['v']) for it in items] + [unit['end_v']]
-    gaps = ([0.35] if off else []) + [0.3] + [0.22] * 9 + [0.45] + [0]
+    # opening: 1) the title is spoken first, 2) (new scripts) one scary line, 3) ククク hook — then the 10 items
+    tv, tdisp = title_voice(unit)
+    pre = [('title', tv, tdisp)] + ([('scare', unit['scare_v'], unit.get('scare_t') or unit['scare_v'])] if unit.get('scare_v') else [])
+    hook = 'ククク……。' if unit.get('scare_v') else unit['hook_v'].replace('知らないとヤバい、', '')
+    off = len(pre)
+    texts = [p[1] for p in pre] + [hook] + [thin(it['v']) for it in items] + [unit['end_v']]
+    gaps = [0.3] * off + [0.25] + [0.22] * 9 + [0.45] + [0]
     for speed in (1.05, 1.1, 1.16, 1.22, 1.3):
         v, segs, total = A.build_voice(texts, gaps, lead=0.5, tail=1.3, speed=speed)
         if total <= 58.5: break
@@ -117,17 +121,18 @@ def build_short(unit, out, faces, thumb_out=None):
         nxt = segs[j + 1][0] if j + 1 < len(segs) else total
         i = j - off
         s0 = 0 if j == 0 else s
-        if i < 0:   # the scary opening line (first thing seen and heard)
-            cues.append(dict(s=s0, e=e, expr=2, mood='intro'))
-            if thumb_pic is not None:
-                ov.append(dict(s=0, e=segs[j + 2][0], img=I.evidence_card(thumb_pic, 500, 265, seed=11), xy=(540, YP), jitter=1))
-            ov.append(dict(s=s0, e=nxt, img=E.text_img(unit.get('scare_t') or unit['scare_v'], E.font(88), RED, (150, 0, 0), stroke=10, max_w=900), xy=(540, YC), jitter=4))
+        if i < 0:   # opening lines: spoken title, then the scary line
+            role, _, disp = pre[j]
+            cues.append(dict(s=s0, e=e, expr=1 if role == 'title' else 2, mood='intro' if j == 0 else ''))
+            if j == 0 and thumb_pic is not None:
+                ov.append(dict(s=0, e=segs[off + 1][0], img=I.evidence_card(thumb_pic, 500, 265, seed=11), xy=(540, YP), jitter=1))
+            if role == 'title':
+                ov.append(dict(s=s0, e=nxt, img=E.text_img(disp, E.font(84), (255, 228, 40), (150, 0, 0), stroke=10, max_w=900), xy=(540, YC), jitter=2))
+            else:
+                ov.append(dict(s=s0, e=nxt, img=E.text_img(disp, E.font(88), RED, (150, 0, 0), stroke=10, max_w=900), xy=(540, YC), anim='pop', jitter=4))
         elif i == 0:
-            cues.append(dict(s=s0, e=e, expr=1, mood='intro' if not off else ''))
-            if thumb_pic is not None and not off:
-                ov.append(dict(s=0, e=nxt, img=I.evidence_card(thumb_pic, 500, 265, seed=11), xy=(540, YP), jitter=1))
-            for ps, pe, p in assign_pages(s0, nxt, e, ['ククク……', f'{title}\n10選']):
-                ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
+            cues.append(dict(s=s0, e=e, expr=1, mood=''))
+            ov.append(dict(s=s0, e=nxt, img=E.text_img('ククク……', f_cap, max_w=900), xy=(540, YC), anim='pop', jitter=3))
         elif i <= 10:
             it = items[i - 1]
             last = i == 10
@@ -163,6 +168,7 @@ def build_short(unit, out, faces, thumb_out=None):
 def build_long(unit, out, faces, thumb_out=None):
     W, H = 1920, 1080
     texts, gaps, kinds = [], [], []   # kinds: (kind, item_index)
+    texts.append(title_voice(unit)[0]); gaps.append(0.5); kinds.append(('intro', -1))     # the title is spoken first
     for sx in unit['intro']: texts.append(sx); gaps.append(0.4); kinds.append(('intro', -1))
     gaps[-1] = 0.8
     for i, it in enumerate(unit['items']):
@@ -223,7 +229,7 @@ def build_long(unit, out, faces, thumb_out=None):
         cues.append(dict(s=s0, e=e, expr=expr, mood=mood))
         for ps, pe, pg in assign_pages(s0, nxt, e, pages(texts[k], 17)):
             ov.append(dict(s=ps, e=pe, img=E.text_img(pg, f_sub, stroke=7, spacing=8, max_w=1180), xy=(600, 760), anim='pop', jitter=1))
-    intro_end = segs[len(unit['intro'])][0]
+    intro_end = segs[len(unit['intro']) + 1][0]
     out_s = segs[-len(unit['outro'])][0]
     bi = band(f"{unit['title']}10選")
     ov.append(dict(s=0, e=intro_end, img=bi, xy=(bi.width // 2, BY)))
@@ -253,6 +259,17 @@ def build_long(unit, out, faces, thumb_out=None):
         return None
     E.render_video(S, T, w('mix.wav'), out, tmp=w('tmp'))
     return out
+
+def title_voice(u):
+    """(spoken title, on-screen title) from the YouTube title, e.g. 「乗る前に知りたくなかった、飛行機の裏知識、十選。」"""
+    t = u.get('yt_title') or f"{u['title']}10選"
+    t = re.sub(r'【[^】]*】', '', t).replace('#shorts', '').replace('｜ピエロ君', '').strip()
+    head, _, rest = t.partition('…')
+    if not rest: head, rest = '', head
+    rest = rest.replace('10選', '').strip()
+    spoken = (head + '、' if head else '') + rest + '、十選。'
+    disp = (head + '\n' if head else '') + rest + '10選'
+    return spoken, disp
 
 def title_split2(t):
     """big short title: up to 5 chars one line; else two lines split after の/と (else after an い-adjective, else a katakana edge), never leaving 1 char alone"""

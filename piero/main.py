@@ -177,13 +177,40 @@ def build_long(unit, out, faces, thumb_out=None):
     A.write(w('dry.wav'), v); A.voice_fx(w('dry.wav'), w('fx.wav'))
     nf = int(total * FPS_LONG)
     env = A.envelope(v, FPS_LONG, nf)
-    f_t, f_num, f_head, f_sub, f_big = E.font(64), E.font(120), E.font(100), E.font(70), E.font(120)
-    PX = 1440   # right panel centre
+    # "every frame is a thumbnail" layout: huge hook words top-left, big clown on the right, evidence photo with a
+    # red circle on his chest, red band with the current item, subtitles in the left column
+    from PIL import ImageDraw
     pics, thumb_pic = photos_for(unit)
-    ov = [dict(s=0, e=1e9, img=E.text_img(f"{unit['title']} 10選", f_t, RED, (120, 0, 0), stroke=8, max_w=920), xy=(PX, 80), jitter=1)]
+    l1, l2 = ((unit.get('thumb_text') or title_lines(unit['title'])) + [''])[:2]
+    shade = np.zeros((H, W, 4), np.uint8)
+    xx = np.arange(W, dtype=np.float32)[None, :].repeat(H, 0)
+    shade[..., 3] = (np.clip(1.15 - xx / 1250, 0, 0.8) * 255).astype(np.uint8)        # darken the text side
+    ov = [dict(s=0, e=1e9, img=Image.fromarray(shade, 'RGBA'), xy=(W // 2, H // 2))]
+    badge = Image.new('RGBA', (360, 100), (210, 0, 0, 255)); db = ImageDraw.Draw(badge)
+    tw = db.textlength('閲覧注意', font=E.font(78)); db.text(((360 - tw) / 2, 2), '閲覧注意', font=E.font(78), fill=(255, 255, 255))
+    badge = badge.rotate(4, expand=True, resample=Image.BICUBIC)
+    ov.append(dict(s=0, e=1e9, img=badge, xy=(60 + badge.width // 2, 40 + badge.height // 2)))
+    t1 = E.text_img(l1, E.font(205), (255, 255, 255), (190, 0, 0), stroke=20, max_w=1150, grunge=False)
+    ov.append(dict(s=0, e=1e9, img=t1, xy=(20 + t1.width // 2, 130 + t1.height // 2), jitter=1))
+    if l2:
+        t2 = E.text_img(l2, E.font(205), (255, 228, 40), (190, 0, 0), stroke=20, max_w=1150, grunge=False)
+        ov.append(dict(s=0, e=1e9, img=t2, xy=(20 + t2.width // 2, 130 + t1.height - 95 + t2.height // 2), jitter=1))
+    def band(text):
+        f_b = E.font(74); tw = ImageDraw.Draw(Image.new('L', (1, 1))).textlength(text, font=f_b)
+        bw = int(min(1250, tw + 90)); im = Image.new('RGBA', (bw, 124), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+        d.polygon([(0, 0), (bw, 0), (bw - 30, 124), (0, 124)], fill=(200, 0, 0, 240))
+        d.text((32, 18), text, font=f_b, fill=(255, 255, 255), stroke_width=4, stroke_fill=(60, 0, 0))
+        return im
+    def photo(pic, seed):
+        card = I.evidence_card(pic, 440, 280, seed=seed)
+        im = Image.new('RGBA', (card.width + 40, card.height + 40), (0, 0, 0, 0)); im.alpha_composite(card, (20, 20))
+        ImageDraw.Draw(im).ellipse([90, 60, 460, 350], outline=(240, 20, 20, 255), width=12)
+        return im
+    PXY = (1500, 860); BY = H - 70 - 62                 # photo centre / band centre
     cues = []
     n = len(segs)
     item_span = {}
+    f_sub = E.font(60)
     for k, ((s, e), (kind, ii)) in enumerate(zip(segs, kinds)):
         nxt = segs[k + 1][0] if k + 1 < n else total
         s0 = 0 if k == 0 else s
@@ -194,34 +221,32 @@ def build_long(unit, out, faces, thumb_out=None):
         expr = {'intro': 1, 'head': 3, 'body': [0, 8, 5, 0, 2, 4, 8][k % 7], 'outro': 6}[kind]
         if kind == 'body' and ii == 9 and k + 1 < n and kinds[k + 1][0] == 'outro': mood = 'scare'
         cues.append(dict(s=s0, e=e, expr=expr, mood=mood))
-        sub = texts[k]
-        for ps, pe, p in assign_pages(s0, nxt, e, pages(sub, 21)):
-            ov.append(dict(s=ps, e=pe, img=E.text_img(p, f_sub, stroke=7, spacing=10, max_w=1820), xy=(960, 990), anim='pop', jitter=2))
-    # right panel: intro title / item number + head / outro
+        for ps, pe, pg in assign_pages(s0, nxt, e, pages(texts[k], 17)):
+            ov.append(dict(s=ps, e=pe, img=E.text_img(pg, f_sub, stroke=7, spacing=8, max_w=1180), xy=(600, 760), anim='pop', jitter=1))
     intro_end = segs[len(unit['intro'])][0]
-    ov.append(dict(s=0, e=intro_end, img=E.text_img(f"{unit['title']}\n10選", f_big, RED, (150, 0, 0), max_w=900), xy=(PX, 300), anim='none', jitter=3))
+    out_s = segs[-len(unit['outro'])][0]
+    bi = band(f"{unit['title']}10選")
+    ov.append(dict(s=0, e=intro_end, img=bi, xy=(bi.width // 2, BY)))
     if thumb_pic is not None:
-        ov.append(dict(s=0, e=intro_end, img=I.evidence_card(thumb_pic, 600, 340, seed=11), xy=(PX, 650), jitter=1))
+        ov.append(dict(s=0, e=intro_end, img=photo(thumb_pic, 11), xy=PXY, jitter=1))
     photo_t = []
     for ii, (s, e) in sorted(item_span.items()):
-        p = pics[ii]
-        ov.append(dict(s=s, e=e, img=E.text_img(f'その{ii + 1}', E.font(96), RED, (150, 0, 0), max_w=800), xy=(PX, 178 if p is not None else 300), anim='bigpop', jitter=2))
-        if p is not None:
-            ov.append(dict(s=s, e=e, img=E.text_img(unit['items'][ii]['head'], E.font(80), max_w=900), xy=(PX, 292), anim='pop', jitter=2))
-            ov.append(dict(s=s, e=e, img=I.evidence_card(p, 700, 400, seed=ii), xy=(PX, 610), anim='pop', jitter=1))
+        b = band(f"その{ii + 1}　{unit['items'][ii]['head']}")
+        ov.append(dict(s=s, e=e, img=b, xy=(b.width // 2, BY), anim='bigpop'))
+        if pics[ii] is not None:
+            ov.append(dict(s=s, e=e, img=photo(pics[ii], ii), xy=PXY, anim='pop', jitter=1))
             photo_t.append(s)
-        else:
-            hd = '\n'.join(wrap(unit['items'][ii]['head'], 7))
-            ov.append(dict(s=s, e=e, img=E.text_img(hd, f_head, max_w=900), xy=(PX, 540), anim='pop', jitter=2))
-    out_s = segs[-len(unit['outro'])][0]
-    ov.append(dict(s=out_s, e=1e9, img=E.text_img('チャンネル登録\nしてくれよ……', f_head, max_w=900), xy=(PX, 470), anim='pop', jitter=3))
+    bo = band('チャンネル登録してくれよ……')
+    ov.append(dict(s=out_s, e=1e9, img=bo, xy=(bo.width // 2, BY), anim='pop'))
     heads = [s for (s, e), (kd, _) in zip(segs, kinds) if kd == 'head']
     scares = [e for (s, e), c in zip(segs, cues) if c['mood'] == 'scare']
     track = A.musicbox(w('musicbox.wav'))
     A.bgm_for(total, w('bgm.wav'), track)
     A.sfx_for(total, heads, scares, w('sfx.wav'), photos=photo_t, heart=(item_span[9][0], item_span[9][1]) if 9 in item_span else None)
     A.mix(w('fx.wav'), w('bgm.wav'), w('sfx.wav'), w('mix.wav'), bgm_vol=0.26)
-    S = E.Scene('long', faces); T = E.Timeline(cues, env, ov, total, FPS_LONG)
+    E.GEOM['long_thumb'] = dict(E.GEOM['long'], wain=700, door=(1720, 180, 1900, 1080), knob=(1745, 620), table=1075, candle=(1110, 1040),
+                                bulb=(1020, 30), L1c=((1440, 260), 760), vig=(0.72, 0.5, 0.75, 0.9), nose=(1440, 560), SC=2.8, under=640)
+    S = E.Scene('long_thumb', faces); T = E.Timeline(cues, env, ov, total, FPS_LONG)
     if thumb_out: make_thumb(faces, unit, thumb_out, thumb_pic, next((x for x in pics[::-1] if x is not None), None))
     if os.environ.get('PIERO_FRAMES'):
         for f in map(int, os.environ['PIERO_FRAMES'].split(',')): E.render_frame(S, T, f).save(f'{out}.{f}.jpg', quality=85)

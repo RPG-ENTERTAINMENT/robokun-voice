@@ -10,7 +10,12 @@ st_path = 'state/long_state.json'; os.makedirs('state', exist_ok=True)
 st = json.load(open(st_path)) if os.path.exists(st_path) else {'next': 0, 'days': {}}
 if day in st['days'] and not TEST: print('already done today', st['days'][day]); sys.exit(0)
 if not eps: print('no long episodes'); sys.exit(0)
-idx = st['next'] % len(eps); epid = eps[idx]; no = idx + 1 + (len(eps) * (st['next'] // len(eps)))
+# priority queue (new episodes to air first, e.g. the women-oriented w### series): episodes/long/queue.json = ["w001", ...]
+qp = 'episodes/long/queue.json'; aired = {v.get('ep') for v in st['days'].values()}
+queue = [q for q in (json.load(open(qp)) if os.path.exists(qp) else []) if q not in aired and os.path.exists(f'episodes/long/{q}.json')]
+if queue: epid = queue[0]; no = len(st['days']) + 1
+else:
+    idx = st['next'] % len(eps); epid = eps[idx]; no = idx + 1 + (len(eps) * (st['next'] // len(eps)))
 print('long episode', epid, 'no', no, flush=True)
 env = dict(os.environ, ROBO_ASSETS=os.path.abspath('assets') + '/', ROBO_ASPECT='16x9')
 vo = f'vo/long/{epid}'
@@ -48,6 +53,7 @@ if TEST:
 r = subprocess.run(['python', 'scripts/post_long.py', mp4, png, mf], capture_output=True, text=True); print(r.stdout, r.stderr[-2000:])
 vid = next((l.split()[2] for l in r.stdout.splitlines() if l.startswith('youtube ok')), None)
 if vid:
-    st['days'][day] = {'ep': epid, 'video': vid}; st['next'] += 1
+    st['days'][day] = {'ep': epid, 'video': vid}
+    if not queue: st['next'] += 1
     json.dump(st, open(st_path, 'w'), ensure_ascii=False, indent=1)
 else: sys.exit('upload failed')

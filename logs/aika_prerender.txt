@@ -1,1 +1,188 @@
 + git worktree add -q -B aika-out /tmp/aika-out origin/aika-out
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep12.json voice/ep12
+s0_0 whisper
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+s0_1 
+s1_0 
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+s1_2 
+s2_0 
+s2_2 
+s3_0 whisper
+s3_2 
+s4_0 
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+540
+840
+300
+600
+60
+900
+360
+660
+120
+420
+960
+720
+180
+480
+1020
+780
+240
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep12_list.txt -i out/ep12.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep12.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep12-7e7236fe.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep12-7e7236fe.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep12 ep12-7e7236fe.mp4
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep13.json voice/ep13
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+s0_0 
+s0_1 
+s1_0 
+s1_2 
+s2_0 
+s2_2 
+s3_0 
+s3_2 
+s4_0 
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+780
+540
+300
+840
+60
+600
+360
+900
+120
+660
+420
+960
+180
+720
+480
+1020
+240
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep13_list.txt -i out/ep13.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep13.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep13-ef176e06.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep13-ef176e06.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep13 ep13-ef176e06.mp4
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep14.json voice/ep14
+s0_0 sexy
+s0_1 
+s1_0 
+s1_2 whisper
+s2_0 
+s2_2 
+s3_0 whisper
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+s3_1 whisper
+s4_0 
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+840
+300
+600
+60
+900
+360
+660
+120
+960
+420
+720
+480
+180
+1020
+780
+240
+540
+1080
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep14_list.txt -i out/ep14.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep14.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep14-bf4b864b.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep14-bf4b864b.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep14 ep14-bf4b864b.mp4
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep15.json voice/ep15
+s0_0 sexy
+s0_1 
+s1_0 
+s1_2 
+s2_0 
+s2_2 whisper
+s3_0 
+s3_2 
+s4_0 
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+840
+300
+600
+60
+360
+900
+660
+420
+120
+960
+720
+480
+180
+1020
+780
+540
+240
+1080
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep15_list.txt -i out/ep15.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep15.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep15-c660a24b.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep15-c660a24b.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep15 ep15-c660a24b.mp4
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python voice.py episodes/ep16.json voice/ep16
+s0_0 whisper
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+s0_1 
+s1_0 
+s1_1 
+s2_0 
+WARNING: JPCommonLabel_insert_pause() in jpcommon_label.c: First mora should not be short pause.
+s2_2 whisper
+s3_0 whisper
+s3_2 
+s4_0 
+voice done 9
++ /opt/hostedtoolcache/Python/3.10.22/x64/bin/python audio.py
+ok 0.7586686690476118
+0
+540
+780
+300
+60
+600
+360
+840
+120
+660
+420
+180
+900
+480
+720
+240
+960
++ ffmpeg -y -loglevel error -f concat -safe 0 -i out/ep16_list.txt -i out/ep16.wav -map 0:v -map 1:a -vf scale=1440:2560:flags=lanczos -c:v libx264 -preset slow -tune animation -crf 16 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest out/ep16.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out add ep16-86c4587e.mp4
++ git -c user.name=aika-bot -c user.email=bot@users.noreply.github.com -C /tmp/aika-out commit -qm aika prebuilt ep16-86c4587e.mp4
++ git fetch -q --depth=1 origin +aika-out:refs/remotes/origin/aika-out
+prebuilt ep16 ep16-86c4587e.mp4

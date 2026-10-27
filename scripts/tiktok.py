@@ -3,6 +3,7 @@
 The repo is public, so the TikTok refresh token is never written in clear text:
 it is kept in state/tt_token.enc, encrypted with the TT_CLIENT_SECRET secret.
 
+  python scripts/tiktok.py auth url         # prints the TikTok login URL (jobs/daily_task = ttauth:url)
   python scripts/tiktok.py auth <code>      # one-time: exchange the code from rpgtokyo.com/tiktok-auth/
   python scripts/tiktok.py post <mp4> <title>
 """
@@ -93,6 +94,17 @@ def post(mp4, title):
     return {'publish_id': pid, 'privacy': level, 'status': status}
 
 
+def auth_url():
+    import urllib.parse, secrets
+    ck = os.environ.get('TT_CLIENT_KEY', '')
+    if not ck: print('TT_CLIENT_KEY is not set'); return
+    q = urllib.parse.urlencode({'client_key': ck, 'scope': 'user.info.basic,video.publish', 'response_type': 'code',
+                                'redirect_uri': REDIRECT, 'state': secrets.token_hex(8)})
+    print('TIKTOK_AUTH_URL https://www.tiktok.com/v2/auth/authorize/?' + q)
+    print('key prefix', ck[:2], 'len', len(ck), '(sb = sandbox app)')
+
+
 if __name__ == '__main__':
-    if sys.argv[1] == 'auth': auth(sys.argv[2])
+    if sys.argv[1] == 'auth' and sys.argv[2] == 'url': auth_url()
+    elif sys.argv[1] == 'auth': auth(sys.argv[2])
     elif sys.argv[1] == 'post': print(post(sys.argv[2], sys.argv[3]))

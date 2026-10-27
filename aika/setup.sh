@@ -25,6 +25,8 @@ if [ ! -f vv/models/s0.vvm ]; then
   curl -sSL -o vv/models/0.vvm $R/voicevox_vvm/releases/download/0.16.0/0.vvm
   curl -sSL -o vv/models/s0.vvm $R/voicevox_vvm/releases/download/0.16.0/s0.vvm
 fi
+# whisper voices (四国めたん ささやき/ヒソヒソ)
+[ -f vv/models/5.vvm ] || curl -sSL -o vv/models/5.vvm https://github.com/VOICEVOX/voicevox_vvm/releases/download/0.16.0/5.vvm
 cp vv/core.whl /tmp/voicevox_core-0.17.0-cp310-abi3-manylinux_2_34_x86_64.whl
 python -m pip install -q /tmp/voicevox_core-0.17.0-cp310-abi3-manylinux_2_34_x86_64.whl >> logs/pip.txt 2>&1
 export VV_DIR=$(pwd)/vv

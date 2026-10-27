@@ -12,9 +12,13 @@ oj.use_user_dict(ud)
 s = Synthesizer(ort, oj)
 spec = json.load(open(sys.argv[1])); outd = sys.argv[2]; os.makedirs(outd, exist_ok=True)
 SID = 0          # 四国めたん あまあま
+STYLE = {'whisper': 36, 'hiso': 37, 'sexy': 4, 'tsun': 6, 'normal': 2, 'amaama': 0}   # per-line "voice"
+need_whisper = any(isinstance(it, dict) and it.get('voice') in ('whisper', 'hiso') for sc in spec['scenes'] for it in sc['lines'])
 SING_T, SINGER = 6000, 3000
 need_song = any(isinstance(it, dict) and it.get('act') == 'song' for sc in spec['scenes'] for it in sc['lines'])
 with VoiceModelFile.open(f'{VV}/models/0.vvm') as m: s.load_voice_model(m)
+if need_whisper:
+    with VoiceModelFile.open(f'{VV}/models/5.vvm') as m: s.load_voice_model(m)
 if need_song:
     with VoiceModelFile.open(f'{VV}/models/s0.vvm') as m: s.load_voice_model(m)
 TPL = {'A': [[76, 76, 79, 81, 79, 76, 74, 76], [74, 74, 76, 79, 76, 74, 72]],
@@ -34,11 +38,14 @@ for si, sc in enumerate(spec['scenes']):
         if isinstance(it, str): it = {'say': it}
         k = f's{si}_{j}'
         if 'say' in it:
-            q = s.create_audio_query_from_kana(it['kana'], SID) if it.get('kana') else s.create_audio_query(it['say'], SID)
-            q.speed_scale = 1.08; q.pitch_scale = 0.03; q.intonation_scale = 1.3
+            sid = STYLE.get(it.get('voice'), SID)
+            q = s.create_audio_query_from_kana(it['kana'], sid) if it.get('kana') else s.create_audio_query(it['say'], sid)
+            if sid in (36, 37): q.speed_scale = 0.98; q.volume_scale = 1.6; q.intonation_scale = 1.1
+            elif sid == 4: q.speed_scale = 1.0; q.intonation_scale = 1.15
+            else: q.speed_scale = 1.08; q.pitch_scale = 0.03; q.intonation_scale = 1.3
             q.pre_phoneme_length = 0.1; q.post_phoneme_length = 0.15
-            print(k, q.kana if hasattr(q, 'kana') else '', flush=True)
-            w = wave.open(io.BytesIO(s.synthesis(q, SID)))
+            print(k, it.get('voice', ''), flush=True)
+            w = wave.open(io.BytesIO(s.synthesis(q, sid)))
         elif it.get('act') == 'song':
             tpl = it['song']; notes = [Note(f(0.3), '')]
             for p, ly in enumerate(it['lyrics']):

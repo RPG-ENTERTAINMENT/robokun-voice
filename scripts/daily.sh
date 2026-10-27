@@ -93,6 +93,18 @@ elif [ "${TASK%%:*}" = one ]; then
   ROBO_ASSETS=$(pwd)/assets/ python eng/engine_l.py episodes/$EP.json vo/$EP out/$EP.mp4 --procs 2 2>&1 | tail -5 | tee -a logs/one.txt
   gh release delete one-$EP -y --cleanup-tag || true
   gh release create one-$EP out/$EP.mp4 --title "test $EP" --notes "$TASK" --prerelease
+elif [ "${TASK%%:*}" = remake ]; then
+  # remake:<A|B>[:HH:MM] -> replace today's slot with the next episode in the index, then post it now (TikTok via rpgtokyo.com/sns at HH:MM)
+  R=${TASK#remake:}; SLOT=${R%%:*}; AT=""; [ "$R" != "$SLOT" ] && AT=${R#*:}
+  echo make > jobs/daily_task; git add jobs/daily_task; git commit -qm "reset task [skip ci]"; git pull -q --rebase && git push -q
+  bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
+  source ~/venv/bin/activate
+  cp eng/engine.py eng/engine_l.py && patch -l eng/engine_l.py patches/engine_l.diff && patch -l eng/lib.py patches/lib.diff || exit 1
+  python scripts/shorts_tempo.py eng/engine_l.py
+  python scripts/remake_slot.py $SLOT $AT 2>&1 | tee logs/remake.txt
+  [ "${PIPESTATUS[0]}" = 0 ] || exit 1
+  pip install -q google-api-python-client google-auth requests
+  python scripts/post.py --slot $SLOT 2>&1 | tee logs/post_remake.txt
 elif [ "$TASK" = make ] || [ "$TASK" = test ]; then
   bash scripts/setup_all.sh 2>&1 | tee logs/setup.txt
   source ~/venv/bin/activate

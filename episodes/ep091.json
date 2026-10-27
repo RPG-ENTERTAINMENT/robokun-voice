@@ -1,0 +1,17 @@
+{"id":"ep091","title":"けっこんしき","summary":"友だちのちょうちょの結婚式で、うまく笑えなかったハナ。ロボしずは「うれしいとさみしいは、いっしょにくる」と励ます。ロボしずも式に出たことがあるらしい…飾りの石として。","time":"day","weather":"clear","music":"playful","robo_x":930,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":0},
+ "beats":[
+  {"hana":{"eyes":"happy"},"fx":["confetti"],"say":{"who":"narr","text":"きょうは ちょうちょさんの けっこんしき。"},"cam":"wide","focus":"both","dur":2.4},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"おめでとう！って、いったの。"},"cam":"mid"},
+  {"hana":{"droop":1,"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"でも ほんとは、うまく わらえなかった。"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたし、いやな こ かな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ううん。ぜんぜん。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"うれしいと さみしいは、いっしょに くるんだよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ちゃんと いわいに いった ハナは、すごいよ。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…そっか。わたし、えらかったね。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずは、けっこんしき いったこと ある？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"say":{"who":"robo","text":"あるよ。ぼく、かざりの いしに されてた。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"それ、しょうたい されてないよね？"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"win"},"say":{"who":"robo","text":"でも、いちばん まえの せき だったよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"わらえない ひも、あなたは やさしい。"},"cam":"wide","focus":"both","dur":3}
+ ]}

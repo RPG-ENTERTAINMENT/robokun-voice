@@ -1,0 +1,18 @@
+{"id":"ep096","title":"うんめいの ひと","summary":"「いつか運命の人が来る」と信じたいけれど、もう遅いかもと不安なハナ。ロボしずは「うんめいは、おそくきてもうんめい」と励ます。直後、ロボしずは道の石と運命的に出会う。","time":"morning","weather":"clear","music":"magic","robo_x":860,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、わらわないで きいてね。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"うんめいの ひとが くるって、しんじたいの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"でも、もう おそいかな って おもう。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"おそい？"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ぼく、ここで ずっと まってたら…"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ハナに あえたよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"うんめいは、おそく きても うんめいだよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"しんじてる ハナは、いちばん きれいだよ。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。しんじて みる。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずの うんめいの ひとは？"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ぼくの うんめいは、まだ みちで まってる。"}},
+  {"robo":{"do":"trip"},"fx":["puff"],"sfx":["oops"],"say":{"who":"narr","text":"…みちの いしに、つまずきました。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"いま、うんめいと であったね。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの うんめいも、ちゃんと むかってる。"},"cam":"wide","focus":"both","dur":3}
+ ]}

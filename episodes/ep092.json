@@ -1,0 +1,18 @@
+{"id":"ep092","title":"わたしだけ","summary":"まわりはみんなペアなのに、わたしだけひとり。落ち込むハナに、ロボしずは「ひとりでさけるはなは、つよいはな」と伝える。ロボしずのペアは…右足と左足。","time":"morning","weather":"clear","music":"calm","robo_x":920,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、まわり みんな ペア なの。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"はちさんも、ちょうちょさんも。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"わたしだけ、ひとりぼっち みたい。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"ひとりぼっち？"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ハナは あさ、いちばん さきに ひらくよね。"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ぼく、それを みるのが すきなんだ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"ひとりで さける はなは、つよい はなだよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"それに、ぼくが いるから ひとりじゃ ない。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ふふ。ありがとう。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずには、ペアの あいて いるの？"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"say":{"who":"robo","text":"いるよ。いつも いっしょの ふたり。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"win"},"say":{"who":"robo","text":"みぎあしと、ひだりあし。"}},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"それ、ぜんぶ ロボしず じゃない。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"ひとりの あさも、ちゃんと きれい。"},"cam":"wide","focus":"both","dur":3}
+ ]}

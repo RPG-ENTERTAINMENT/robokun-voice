@@ -1,0 +1,18 @@
+{"id":"ep094","title":"かたおもい","summary":"好きなはちさんの好きな花は、わたしじゃなかった。ロボしずは「えらばれなくても、ハナのかちはへらない」と励ます。ロボしずの好きな人はおひさま…でも、おひさまはみんなのところへ行っていた。","time":"sunset","weather":"clear","music":"calm","robo_x":940,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ロボしず、わたし きづいちゃった。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"すきな はちさんには、すきな はなが いるの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"それが、わたしじゃ なかった。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…そっか。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしの なにが、たりなかったのかな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"なにも、たりなく ないよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"えらばれなくても、ハナの かちは へらないよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ハナを えらぶ ひとは、ちゃんと いるから。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。もうすこし、さいてみる。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずの すきな ひとは？"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"say":{"who":"robo","text":"おひさま。まいにち あいに きてくれる。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"おひさまは、みんなの とこ いってるよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"surprise"},"fx":["sweat"],"sfx":["oops"],"say":{"who":"robo","text":"えっ。ぼくも、かたおもい？"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたを えらぶ ひとは、きっと いる。"},"cam":"wide","focus":"both","dur":3}
+ ]}

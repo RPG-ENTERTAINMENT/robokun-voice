@@ -1,0 +1,17 @@
+{"id":"ep090","title":"ほかの はな","summary":"好きな人には、もう他の花がいる。やめたいのに止められないハナに、ロボしずは「ハナのひかりは、ハナだけをみるひとへ」と寄り添う。でも本人はきのこの帰りをずっと待っていた。","time":"night","weather":"clear","music":"night","robo_x":940,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"すきな ひとが いるの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"でも あのひとには もう ほかの はなが いる。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…そっか。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"やめたいのに、こころが いうこと きかないの。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"ハナは わるい はなじゃ ないよ。"},"cam":"close","focus":"robo","dur":2.4},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ただ、やさしく したかった だけだよね。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ハナの ひかりは、ハナだけを みる ひとへ。"},"cam":"mid","focus":"both","dur":2.6},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。すこし、かるく なった。"}},
+  {"robo":{"pose":"shy"},"music":"playful","say":{"who":"robo","text":"ぼくの あたまにも、ときどき きのこが くるよ。"}},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"いつ くるか、ずっと まってるんだ。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"ロボしずも、まつの やめなさい。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの ひかりは、あなたの ために。"},"cam":"wide","focus":"both","dur":3}
+ ]}

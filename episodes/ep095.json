@@ -1,0 +1,17 @@
+{"id":"ep095","title":"たんじょうび","summary":"別れてから初めての誕生日。去年を思い出してしまうハナに、ロボしずは「ことしは、ハナがハナをいわうとし」と伝える。手作りケーキは雪製で、飾りはこけだった。","time":"night","weather":"snow","music":"calm","robo_x":930,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"narr","text":"ゆきの よる。きょうは ハナの たんじょうび。"},"cam":"wide","focus":"both","dur":2.6},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"きょねんは、あのひとが いわって くれたの。"},"cam":"mid"},
+  {"hana":{"eyes":"closed"},"music":"sad","say":{"who":"hana","text":"ことしは、だれも いないんだ。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…さみしいね。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わすれたいのに、おもいだしちゃう。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"おもいだすのは、だいじに してた しょうこだよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ことしは、ハナが ハナを いわう としだよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"それに、ぼくも いわうよ。おめでとう。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ありがとう。いちばん うれしい。"}},
+  {"robo":{"pose":"joy"},"fx":["sparkles"],"sfx":["tada"],"music":"playful","say":{"who":"robo","text":"ケーキも つくったんだ！"}},
+  {"robo":{"pose":"win"},"say":{"who":"narr","text":"ゆきの ケーキ。かざりは、こけ。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"…きもち だけ、いただくね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの うまれた ひは、あなたの もの。"},"cam":"wide","focus":"both","dur":3}
+ ]}

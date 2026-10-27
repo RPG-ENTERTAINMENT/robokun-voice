@@ -1,0 +1,18 @@
+{"id":"ep093","title":"かげぐち","summary":"自分の悪口を聞いてしまったハナ。ロボしずは「いじわるなことばは、ハナのせいじゃない」と寄り添う。ロボしずが言われた悪口は「頭に草が生えてる」…それは本当だった。","time":"day","weather":"rain","music":"rainy","robo_x":930,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"narr","text":"あめの ひ。ハナは しずかでした。"},"cam":"wide","focus":"both","dur":2.2},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ハナ、きょうは げんき ないね。"},"cam":"mid"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"きいちゃったの。わたしの わるくち。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"しろくて じみな はなだって。"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたし、なにか したのかな。"}},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…それは、いたかったね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"いじわるな ことばは、ハナの せいじゃ ないよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"weather":"clear","say":{"who":"robo","text":"しろい はなは、あめの ひに いちばん ひかる。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ほんとだ。すこし、はれてきた。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずは、わるくち いわれたこと ある？"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"あるよ。あたまに くさ はえてるって。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"それ、ほんとの ことだよね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"say":{"who":"robo","text":"…ほんと だった。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたは、なにも わるくない。"},"cam":"wide","focus":"both","dur":3}
+ ]}

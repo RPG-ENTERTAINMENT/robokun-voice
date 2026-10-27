@@ -1,6 +1,20 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-done A {'id': 's029', 'video': 'HF2tcM6dl58', 'at': '12:00'}
-done L {'id': 'l015', 'video': 'XUiZCbyldu0', 'at': '16:00'}
-done B {'id': 's030', 'video': 'fHCREhW6-CY', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s]  4%|▍         | 939k/22.6M [00:00<00:02, 9.51MB/s] 30%|██▉       | 6.73M/22.6M [00:00<00:00, 39.7MB/s] 82%|████████▏ | 18.6M/22.6M [00:00<00:00, 78.2MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 71.0MB/s]
+Extracting tar file
+short(rank) s031 total 57.6 speed 1.0
+image search failed _openverse funeral flowers white TimeoutError('The read operation timed out')
+image search failed _openverse cotton balls TimeoutError('The read operation timed out')
+image search failed _openverse dry ice smoke TimeoutError('The read operation timed out')
+image search failed _openverse funeral home room TimeoutError('The read operation timed out')
+image search failed _openverse japanese calendar TimeoutError('The read operation timed out')
+image search failed _openverse crematorium building TimeoutError('The read operation timed out')
+image search failed _openverse human vertebrae model TimeoutError('The read operation timed out')
+image search failed _openverse vertebrae TimeoutError('The read operation timed out')
+image search failed _openverse cremation urn TimeoutError('The read operation timed out')
+image search failed _openverse gold ring ash TimeoutError('The read operation timed out')
+image search failed _openverse gold ring TimeoutError('The read operation timed out')
+image search failed _openverse wooden coffin dark TimeoutError('The read operation timed out')
+image search failed _openverse coffin candles dark TimeoutError('The read operation timed out')
+photos s031 10 / 10 thumb True

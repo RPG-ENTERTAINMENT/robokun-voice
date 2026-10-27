@@ -193,6 +193,9 @@ def draw_char(canvas, t):
     if shake: dx += 9 * math.sin(t * 70)
     w2, h2 = max(1, round(im.width * sx)), max(1, round(im.height * sy))
     im2 = im if (w2, h2) == im.size else im.resize((w2, h2), Image.LANCZOS)
+    if hasattr(EP, 'silhouette') and EP.silhouette(t):      # changing behind the curtain: only a soft shadow shows
+        al = im2.getchannel('A').point(lambda v: int(v * 0.95))
+        im2 = Image.new('RGBA', im2.size, (55, 32, 42, 0)); im2.putalpha(al.filter(ImageFilter.GaussianBlur(4)))
     x = round(CX + dx - ax * sx); y = round(FEET_Y + dy - h2)
     tn = EP.tint(t) if hasattr(EP, 'tint') else None
     if tn:

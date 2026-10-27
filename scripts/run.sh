@@ -1,7 +1,7 @@
 #!/bin/bash
 # legacy zero-shot voice test (voice.yml). Runs only when jobs/RUN_VOICE exists.
 mkdir -p logs out
-# OLあいか: render upcoming episodes here (own queue, does not wait for / slow down the other channels; HD sprites, no songs, no transitions, 1440p)
+# OLあいか: render upcoming episodes here (own queue, does not wait for / slow down the other channels; HD, 1440p, ep12+ doki series)
 [ -f aika/prerender.sh ] && { bash aika/prerender.sh || true; }
 if [ ! -f jobs/RUN_VOICE ]; then echo "skip voice test"; exit 0; fi
 set -x

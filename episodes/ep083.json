@@ -1,0 +1,18 @@
+{"id": "ep083", "title": "すきって いえない", "summary": "好きな人に気持ちを言えないハナに、ロボしずは「すきって気持ちは、それだけできれい」と寄り添う。でもロボしずの好きな相手は…一度も見たことのない頭の苔。", "time": "night", "weather": "clear", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"すきな ひとが いるの。"},"cam":"mid"},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"すきな ひと？"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"でも、すきって いえないの。"},"music":"sad","cam":"close","focus":"hana"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"いったら、いまの ままで いられない。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"こわいのは、たいせつに してる しるしだね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"すきって きもちは、それだけで きれいだよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"いえる ひまで、だいじに そだてよう。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"say":{"who":"hana","text":"…うん。ありがとう。"},"music":"lullaby"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"ロボしずは、すきな ひと いる？"},"music":"playful"},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"say":{"who":"robo","text":"いるよ。まいにち いっしょ。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"fx":["hearts"],"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれ？"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"love"},"fx":["hearts"],"say":{"who":"robo","text":"あたまの こけ。いちども みたこと ない。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"その きもちは、ちゃんと たからもの です。"},"cam":"wide","focus":"both","dur":3}
+ ]}

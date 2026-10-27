@@ -1,0 +1,17 @@
+{"id": "ep087", "title": "おかあさんの こえ", "summary": "母の花から「早く結婚しなさい、このままじゃずっと一人よ」と手紙が届いて落ち込むハナに、ロボしずは「ハナの幸せはハナが決めていい」。ロボしずのお母さんは…たぶん、あの岩。", "time": "night", "weather": "snow", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"open"},"say":{"who":"narr","text":"ゆきの よる。かぜが てがみを はこんできた。"},"cam":"wide","focus":"both","dur":2.4},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"おかあさんから だ…"},"cam":"mid"},
+  {"robo":{"pose":"surprise"},"say":{"who":"robo","text":"なんて かいてあるの？"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"はやく けっこん しなさいって。"},"music":"sad","cam":"close","focus":"hana"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"このままじゃ、ずっと ひとりよって。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"おかあさんは、ハナが しんぱいなんだね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"でも、ハナの しあわせは ハナが きめていい。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ひとりでも、ハナは ちゃんと さいてるよ。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"say":{"who":"hana","text":"…そうだね。ありがとう。"},"music":"lullaby"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"ロボしずの おかあさんは？"},"music":"playful"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"たぶん、あそこの おおきな いわ。"}},
+  {"robo":{"pose":"smile"},"sfx":["boing"],"fx":["sweat"],"say":{"who":"robo","text":"いちども おこられた こと ないよ。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの しあわせの かたちは、あなたの もの。"},"cam":"wide","focus":"both","dur":3}
+ ]}

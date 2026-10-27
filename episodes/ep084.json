@@ -1,0 +1,18 @@
+{"id": "ep084", "title": "よその はなへ", "summary": "いつものみつばちが隣の花にとまっていたと落ち込むハナに、ロボしずは「ハナのやさしさは、わかる人にあげよう」と励ます。ところがみつばちはロボしずの苔の頭に…。", "time": "day", "weather": "rain", "music": "rainy", "robo_x": 930, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"narr","text":"あめの ひ。ハナは したを むいていた。"},"cam":"wide","focus":"both","dur":2.4},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"ハナ、どうしたの？"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"いつもの みつばちさんがね…"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"となりの はなに とまってたの。"},"music":"sad"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしだけって、いってたのに。"}},
+  {"robo":{"pose":"sad"},"fx":["tears"],"say":{"who":"robo","text":"それは、かなしかったね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"でも、ハナは なにも わるくないよ。"}},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"ハナの やさしさは、わかる ひとに あげよう。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"weather":"clear","say":{"who":"hana","text":"…うん。じぶんを だいじに する。"},"music":"lullaby","cam":"mid","focus":"both"},
+  {"robo":{"pose":"win"},"fx":["sparkles"],"say":{"who":"robo","text":"みつばちが きたら、ぼくが まもる！"},"music":"playful"},
+  {"robo":{"pose":"surprise"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"narr","text":"すると みつばちは、ロボしずの あたまに。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"ロボしず、もてるのね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"ぼく、はなじゃ なくて こけだよ…"}},
+  {"robo":{"pose":"shy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたを えらぶ ひとは、ちゃんと います。"},"cam":"wide","focus":"both","dur":3}
+ ]}

@@ -1,0 +1,18 @@
+{"id": "ep088", "title": "へんじが こない", "summary": "ちょうちょに出した手紙を読まれたのに三日も返事がないハナに、ロボしずは「待っている間もハナは素敵なまま」と励ます。ロボしずも手紙を出したことがある…石に、五年前に。", "time": "sunset", "weather": "clear", "music": "calm", "robo_x": 930, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ロボしず、てがみの へんじって…"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"なんにち くらい まつもの？"},"cam":"mid"},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"だれかに てがみ だしたの？"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ちょうちょさんに。もう みっか たつの。"},"music":"sad","cam":"close","focus":"hana"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"よんで くれたのは、しってるのに。"}},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"まつのって、すごく ながく かんじるよね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"へんじが ないのは、ハナの せいじゃない。"}},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"まってる あいだも、ハナは すてきな ままだよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"きょうは、じぶんに やさしく しよう。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"say":{"who":"hana","text":"…うん。まつの、すこし やすむね。"},"music":"lullaby"},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ぼくも てがみ、だした こと あるよ。"},"music":"playful"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"へんじ、きた？"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"まだ。あそこの いしに いれたんだ。ごねんまえ。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"trouble"},"hana":{"eyes":"happy"},"fx":["confetti"],"sfx":["boing"],"music":"happy","say":{"who":"hana","text":"それ、ポストじゃ ないよ！"},"cam":"wide","focus":"both","dur":2.6}
+ ]}

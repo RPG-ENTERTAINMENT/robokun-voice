@@ -1,0 +1,17 @@
+{"id": "ep086", "title": "おそざき", "summary": "まわりの花はみんな咲いたのに自分だけつぼみのハナ。ロボしずの「あとから咲く花は、いちばん目立つ」の言葉の後、夕方にハナが咲く。ロボしずの苔は百年つぼみかも…。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 0, "droop": 1},
+ "beats":[
+  {"say":{"who":"narr","text":"みちの はなたちは、もう みんな さいていた。"},"cam":"wide","focus":"both","dur":2.4},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしだけ、まだ つぼみの まま。"},"cam":"mid"},
+  {"robo":{"pose":"surprise"},"say":{"who":"robo","text":"ほんとだ。まだ ねむってるの？"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"みんなに おいていかれた きが するの。"},"music":"sad","cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"はやい おそいは、きにしなくて いい。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"あとから さく はなは、いちばん めだつよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"hana":{"bloom":1,"droop":0,"eyes":"happy"},"fx":["glow_hana","sparkles"],"sfx":["sparkle"],"time":"sunset","music":"lullaby","say":{"who":"narr","text":"ゆうがた、ハナが そっと ひらいた。"},"cam":"mid","focus":"hana","dur":2.6},
+  {"robo":{"pose":"joy"},"fx":["hearts"],"say":{"who":"robo","text":"さいた！ ハナ、きれいだよ！"},"focus":"both"},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"ありがとう、ロボしず。"}},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"ぼくも いつか、さくかな？"},"music":"playful"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"ロボしずは、さかないでしょ。"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"robo","text":"あたまの こけ、ひゃくねん つぼみかも。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"おそく さく はなほど、ながく かおります。"},"cam":"wide","focus":"both","dur":3}
+ ]}

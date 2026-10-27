@@ -1,0 +1,18 @@
+{"id": "ep085", "title": "ひとりぼっち", "summary": "となりの花たちにだけ挨拶してもらえないハナに、ロボしずは「ハナの世界はここだけじゃない」と寄り添う。張り切って他の花に挨拶したら、それは苔の生えた石だった。", "time": "morning", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ロボしず、おはよう…"},"cam":"wide","focus":"both"},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"げんき ないね。どうしたの？"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"となりの はなたちがね、"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたしにだけ、おはようって いわないの。"},"music":"sad"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたし、なにか しちゃったのかな。"}},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"それは、つらかったね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"でも、ハナは なにも わるくないよ。"}},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"ハナの せかいは、ここだけじゃ ないんだよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"まいあさ ぼくが、いちばんに いうね。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"say":{"who":"hana","text":"…ありがとう。すこし らくに なった。"},"music":"lullaby"},
+  {"robo":{"do":"walk","to":720,"pose":"smile","dir":"left"},"say":{"who":"robo","text":"よし、そこの はなさん、おはよう！"},"music":"playful"},
+  {"robo":{"pose":"surprise"},"sfx":["boing"],"fx":["sweat"],"say":{"who":"narr","text":"それは、こけの はえた いしでした。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"shy"},"say":{"who":"robo","text":"…なかまだと おもった。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy","dir":"right"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"hana","text":"ロボしずの しんせき かもね。"},"cam":"wide","focus":"both","dur":3}
+ ]}

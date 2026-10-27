@@ -1,0 +1,18 @@
+{"id": "ep089", "title": "わすれられない", "summary": "前に好きだったてんとうむしを忘れられず「前に進めていないのかな」と悩むハナに、ロボしずは「忘れられないのは本気だった印」と寄り添う。ロボしずの忘れられないことは…昨日何を忘れたか。", "time": "night", "weather": "rain", "music": "rainy", "robo_x": 930, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"narr","text":"あめの よる。ハナは ずっと だまっていた。"},"cam":"wide","focus":"both","dur":2.4},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"ハナ、なにを かんがえてるの？"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"まえに すきだった てんとうむしさん。"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"もう あえないのに、わすれられないの。"},"music":"sad"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたし、まえに すすめて ないのかな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"わすれられないのは、ほんきだった しるし。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"むりに わすれなくて いいんだよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"smile"},"weather":"clear","say":{"who":"robo","text":"ほら、あめも いつのまにか やんだ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"こころも ちゃんと、はれる ひが くるよ。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"say":{"who":"hana","text":"…ほんとだ。ほしが でてきた。"},"music":"lullaby"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"ロボしずも、わすれられない こと ある？"},"music":"playful"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ある。ずっと きになってるんだ。"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"robo","text":"きのう、なにを わすれたのか わすれた。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"おもいでは、いつか やさしい いろに なります。"},"cam":"wide","focus":"both","dur":3}
+ ]}

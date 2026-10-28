@@ -1,6 +1,16 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:223: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-done A {'id': 's031', 'video': 'a8wMU6BHjEc', 'at': '12:00'}
-done L {'id': 'l016', 'video': 'iosQpcdVnGg', 'at': '16:00'}
-done B {'id': 's032', 'video': 'JrVPeH3sTzc', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 60%|██████    | 13.6M/22.6M [00:00<00:00, 143MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 136MB/s]
+Extracting tar file
+short(rank) s033 total 58.0 speed 1.05
+image search failed _openverse empty apartment room TimeoutError('The read operation timed out')
+image search failed _openverse old apartment building TimeoutError('The read operation timed out')
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image search failed _openverse cleaning supplies bucket TimeoutError('The read operation timed out')
+image search failed _openverse new flooring renovation TimeoutError('The read operation timed out')
+image search failed _openverse apartment doors corridor TimeoutError('The read operation timed out')
+image search failed _openverse clock at night dark TimeoutError('The read operation timed out')
+image search failed _openverse empty room TimeoutError('The read operation timed out')
+photos s033 10 / 10 thumb True

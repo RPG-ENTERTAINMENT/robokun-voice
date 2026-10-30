@@ -1,17 +1,20 @@
 Selecting previously unselected package fonts-noto-cjk.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 216225 files and directories currently installed.)
-Preparing to unpack .../fonts-noto-cjk_1%3a20230817+repack1-3_all.deb ...
-Unpacking fonts-noto-cjk (1:20230817+repack1-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 213353 files and directories currently installed.)
+Preparing to unpack .../fonts-noto-cjk_1%3a20240730+repack1-1build1_all.deb ...
+Unpacking fonts-noto-cjk (1:20240730+repack1-1build1) ...
 Selecting previously unselected package fonts-noto-cjk-extra.
-Preparing to unpack .../fonts-noto-cjk-extra_1%3a20230817+repack1-3_all.deb ...
-Unpacking fonts-noto-cjk-extra (1:20230817+repack1-3) ...
-Setting up fonts-noto-cjk (1:20230817+repack1-3) ...
-Setting up fonts-noto-cjk-extra (1:20230817+repack1-3) ...
-Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+Preparing to unpack .../fonts-noto-cjk-extra_1%3a20240730+repack1-1build1_all.deb ...
+Unpacking fonts-noto-cjk-extra (1:20240730+repack1-1build1) ...
+Setting up fonts-noto-cjk (1:20240730+repack1-1build1) ...
+Setting up fonts-noto-cjk-extra (1:20240730+repack1-1build1) ...
+Processing triggers for fontconfig (2.17.1-3ubuntu1) ...
 
 Running kernel seems to be up-to-date.
 
-No services need to be restarted.
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart hosted-compute-agent.service
 
 No containers need to be restarted.
 

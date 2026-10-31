@@ -1,4 +1,1 @@
-TOKEN ERROR {
-  "error": "invalid_grant",
-  "error_description": "Bad Request"
-}
+{"refresh_token": true, "channels": [["UCQNJo_zXc3soTjygmyjwfNA", "大道芸専門アカデミー"]]}

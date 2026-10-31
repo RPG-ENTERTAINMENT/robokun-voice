@@ -1,10 +1,13 @@
 #!/bin/bash
 # 大道芸専門アカデミー channel entry point. Called from scripts/daily.sh (daily.yml): jobs/daily_task = daido:<task>, and daily after the 01:40 / 12:30 JST runs.
-#   bash daido/run.sh <task>   task = daily | test[:<id>] | auth_url | auth_code
+#   bash daido/run.sh <task>   task = daily | test[:<id>] | auth_url | auth_code | lesson:<n,n> | lessonup:<n,n>（横動画の大道芸講座）
 TASK="${1:-test}"
 echo "DAIDO TASK=$TASK"; mkdir -p daido/logs daido/state daido/jobs logs
 set -o pipefail
-if [ "${TASK%%_*}" = auth ]; then
+if [ "${TASK%%:*}" = lesson ] || [ "${TASK%%:*}" = lessonup ]; then
+  bash daido/lesson/run.sh "$TASK"
+  rc=$?
+elif [ "${TASK%%_*}" = auth ]; then
   python -m pip install -q cryptography > daido/logs/pip.txt 2>&1
   case "$TASK" in
     auth_url)  (cd daido && python auth.py url) 2>&1 | tee daido/logs/auth.txt ;;

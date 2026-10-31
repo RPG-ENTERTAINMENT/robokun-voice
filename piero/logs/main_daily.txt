@@ -1,23 +1,6 @@
-/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 66%|██████▋   | 14.9M/22.6M [00:00<00:00, 157MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 148MB/s]
-Extracting tar file
-short(rank) s037 total 57.9 speed 1.1
-image search failed _openverse japanese doll long hair TimeoutError('The read operation timed out')
-image search failed _openverse japanese doll TimeoutError('The read operation timed out')
-image search failed _openverse dolls temple offering TimeoutError('The read operation timed out')
-image search failed _openverse dolls TimeoutError('The read operation timed out')
-image search failed _openverse antique doll TimeoutError('The read operation timed out')
-image search failed _openverse rag doll old TimeoutError('The read operation timed out')
-image search failed _openverse dolls hanging trees TimeoutError('The read operation timed out')
-image search failed _openverse creepy dolls TimeoutError('The read operation timed out')
-image search failed _openverse porcelain doll face closeup TimeoutError('The read operation timed out')
-image search failed _openverse porcelain doll TimeoutError('The read operation timed out')
-image search failed _openverse hina dolls display TimeoutError('The read operation timed out')
-image search failed _openverse paper doll water TimeoutError('The read operation timed out')
-image search failed _openverse old doll on chair TimeoutError('The read operation timed out')
-image search failed _openverse creepy doll TimeoutError('The read operation timed out')
-image search failed _openverse creepy antique doll dark TimeoutError('The read operation timed out')
-image search failed _openverse creepy doll TimeoutError('The read operation timed out')
-photos s037 10 / 10 thumb True
+done A {'id': 's037', 'video': 'hIkfDZX1Z_E', 'at': '12:00'}
+done L {'id': 'l019', 'video': 'j1hv93O3Wgk', 'at': '16:00'}
+done B {'id': 's038', 'video': 'fOEZIxmn7xM', 'at': '20:00'}
+elapsed 1 s

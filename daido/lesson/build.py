@@ -44,6 +44,10 @@ def make(sl, path, seed):
     if sl['t'] == 'atitle': return atitle(sl, path, seed)
     return slides.make(sl, path, seed=seed)
 
+# 右上の名前を「大道芸専門アカデミー」にした render のコピー（igc/render.py はそのまま）
+RENDER = os.path.join(IGC, 'render_dg.py')
+_r = open(os.path.join(IGC, 'render.py')).read(); assert "t2 = 'RPGクリエイタースクール'" in _r
+open(RENDER, 'w').write(_r.replace("t2 = 'RPGクリエイタースクール'", "t2 = '大道芸専門アカデミー'"))
 bg = os.path.join(WORK, 'classroom.png'); bgm = os.path.join(WORK, 'lofi.wav')
 if not os.path.exists(bg): slides.classroom(bg)
 if not os.path.exists(bgm): slides.lofi(bgm)
@@ -69,13 +73,13 @@ for n in nums:
         if i == 0: sc.update(title=e['kt'], kicker=f'大道芸講座 第{n}回')
         if sl['t'] == 'hw': sc['pause'] = 0.6
         screen[key] = sc
-    spec = dict(id=f'dg{n:02d}', tag=f'大道芸講座 第{n}回｜大道芸専門アカデミー', bg=bg, bgm=bgm, bgm_vol=0.11, credit='VOICEVOX:ずんだもん', beats=beats, screen=screen)
+    spec = dict(id=f'dg{n:02d}', tag=f'大道芸講座 第{n}回', bg=bg, bgm=bgm, bgm_vol=0.11, credit='VOICEVOX:ずんだもん', beats=beats, screen=screen)
     sp = os.path.join(d, 'spec.json'); json.dump(spec, open(sp, 'w'), ensure_ascii=False, indent=1)
     out = os.path.join(d, f'daidogei_lesson_{n:02d}.mp4')
     if STILL:
-        subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out, '--still', '0', '12', '40', '90'], check=True); continue
-    subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out], check=True)
-    subprocess.run([sys.executable, os.path.join(IGC, 'render.py'), sp, d, out, '--still', '0'], check=True)
+        subprocess.run([sys.executable, RENDER, sp, d, out, '--still', '0', '12', '40', '90'], check=True); continue
+    subprocess.run([sys.executable, RENDER, sp, d, out], check=True)
+    subprocess.run([sys.executable, RENDER, sp, d, out, '--still', '0'], check=True)
     thumb = out[:-4] + '_thumb.png'; os.replace(out + '.still_0.png', thumb); built += [out, thumb]
     dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', out], capture_output=True, text=True).stdout or 0)
     print('built', out, f'{dur:.1f}s', flush=True)

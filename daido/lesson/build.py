@@ -40,8 +40,23 @@ def atitle(sp, path, seed):
         im.alpha_composite(e3, (int(cx + 250 * math.cos(a) - e3.width // 2), int(cy + 250 * math.sin(a) - e3.height // 2)))
     im.convert('RGB').save(path, quality=92)
 
+QR = os.path.join(HERE, 'line_qr.png')
+if not os.path.exists(QR):
+    import base64 as _b64; open(QR, 'wb').write(_b64.b64decode(open(QR + '.b64').read()))
+def cta(sp, path, seed):  # 無料相談：LINE の QR コード＋ホームページ
+    im = slides.pastel(seed); d = ImageDraw.Draw(im); PW, PH = slides.PW, slides.PH; F, BLK, BLD = slides.F, slides.BLK, slides.BLD
+    d.rounded_rectangle((40, 40, PW - 40, PH - 40), 40, fill='white', outline=(6, 199, 85), width=8)
+    slides.tag_pill(d, (90, 84), '大道芸専門アカデミー', slides.PINK, 40)
+    d.multiline_text((90, 190), 'LINEで\n無料相談', font=F(BLK, 112), fill=slides.NAVY, spacing=18)
+    d.text((92, 500), '入学・学費・特待生の\nご相談はこちら', font=F(BLD, 40), fill=(70, 70, 90), spacing=10)
+    d.text((92, 650), 'rpgtokyo.com/academy', font=F(BLD, 38), fill=slides.PINK)
+    q = Image.open(QR).convert('RGB').resize((470, 470), Image.NEAREST); im.paste(q, (PW - 560, 110))
+    d.text((PW - 325, 615), 'カメラで読み取ってね', font=F(BLK, 38), fill=(6, 160, 70), anchor='mm')
+    im.convert('RGB').save(path, quality=92)
+
 def make(sl, path, seed):
     if sl['t'] == 'atitle': return atitle(sl, path, seed)
+    if sl['t'] == 'cta': return cta(sl, path, seed)
     return slides.make(sl, path, seed=seed)
 
 # 右上の名前を「大道芸専門アカデミー」にした render のコピー（igc/render.py はそのまま）
@@ -49,11 +64,13 @@ RENDER = os.path.join(IGC, 'render_dg.py')
 _r = open(os.path.join(IGC, 'render.py')).read(); assert "t2 = 'RPGクリエイタースクール'" in _r
 open(RENDER, 'w').write(_r.replace("t2 = 'RPGクリエイタースクール'", "t2 = '大道芸専門アカデミー'"))
 bg = os.path.join(WORK, 'classroom.png'); bgm = os.path.join(WORK, 'lofi.wav')
+BGM = os.path.join(os.environ['IGC_ASSETS'], 'audio', 'moods', 'playful.ogg')  # 明るいBGM（ロボしずの素材）
+if not os.path.exists(BGM): BGM = bgm
 if not os.path.exists(bg): slides.classroom(bg)
 if not os.path.exists(bgm): slides.lofi(bgm)
 FAILED = []
 import re, base64, hashlib
-URL = 'https://rpgtokyo.com/daidogei/'; LINE = 'https://lin.ee/zuMn2H1'
+URL = 'https://www.rpgtokyo.com/academy/'; LINE = 'https://lin.ee/YneLvEy'
 def yt_token():
     from cryptography.fernet import Fernet
     csec = os.environ['YT_CLIENT_SECRET']
@@ -73,7 +90,7 @@ for n in nums:
         if i == 0: sc.update(title=e['kt'], kicker=f'大道芸講座 第{n}回')
         if sl['t'] == 'hw': sc['pause'] = 0.6
         screen[key] = sc
-    spec = dict(id=f'dg{n:02d}', tag=f'大道芸講座 第{n}回', bg=bg, bgm=bgm, bgm_vol=0.11, credit='VOICEVOX:ずんだもん', beats=beats, screen=screen)
+    spec = dict(id=f'dg{n:02d}', tag=f'大道芸講座 第{n}回', bg=bg, bgm=BGM, bgm_vol=0.2, credit='VOICEVOX:ずんだもん', beats=beats, screen=screen)
     sp = os.path.join(d, 'spec.json'); json.dump(spec, open(sp, 'w'), ensure_ascii=False, indent=1)
     out = os.path.join(d, f'daidogei_lesson_{n:02d}.mp4')
     if STILL:

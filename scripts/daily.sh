@@ -20,6 +20,8 @@ case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash aika/run.sh daily || true;; es
 if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; fi
 # --- スゴ技スクールRPG東京校 channel (@sugowazaschool): jobs/daily_task = sugo:<task>  (auth_url / auth_code / ...)
 if [ "${TASK%%:*}" = sugo ]; then bash sugo/run.sh "${TASK#sugo:}"; exit $?; fi
+# --- 大道芸専門アカデミー channel (@daidogeisenmon): jobs/daily_task = daido:<task>  (test / test:<id> / auth_url / auth_code / daily)
+if [ "${TASK%%:*}" = daido ]; then bash daido/run.sh "${TASK#daido:}"; exit $?; fi
 # --- move lesson videos to @sugowazaschool: jobs/daily_task = tosugo:igc,aud,idl
 if [ "${TASK%%:*}" = tosugo ]; then bash scripts/tosugo.sh "${TASK#tosugo:}"; exit $?; fi
 # --- OLあいか channel: on-demand tasks via jobs/daily_task = aika:<task>
@@ -124,4 +126,6 @@ fi
 rc=$?
 # --- piero channel: render today's 3 videos and schedule them (12:00 / 16:00 / 20:00 JST). 12:30 run = retry if missed.
 case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash piero/run.sh daily || true;; esac
+# --- 大道芸専門アカデミー: render today's 2 shorts and schedule them (12:00 / 20:00 JST). 12:30 run = retry if missed.
+case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash daido/run.sh daily || true;; esac
 exit $rc

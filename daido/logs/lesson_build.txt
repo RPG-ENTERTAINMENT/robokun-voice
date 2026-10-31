@@ -1,0 +1,8 @@
+done 188.66
+total 188.66
+built /home/runner/work/robokun-voice/robokun-voice/daido_lesson_work/dg01/daidogei_lesson_01.mp4 188.6s
+done 165.78
+total 165.78
+built /home/runner/work/robokun-voice/robokun-voice/daido_lesson_work/dg02/daidogei_lesson_02.mp4 165.8s
+release not found
+https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/daido-lesson

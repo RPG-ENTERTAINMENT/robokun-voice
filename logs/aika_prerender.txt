@@ -1,10 +1,2 @@
 + git worktree add -q -B aika-out /tmp/aika-out origin/aika-out
-already prebuilt ep14
-already prebuilt ep15
-already prebuilt ep16
-already prebuilt ep17
-already prebuilt ep18
-already prebuilt ep19
-already prebuilt ep20
-already prebuilt ep21
 already prebuilt ep22

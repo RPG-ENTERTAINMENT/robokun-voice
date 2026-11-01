@@ -1,0 +1,17 @@
+{"id":"ep109","title":"としの さ","summary":"好きな人が自分よりずっと若くて、年の差が気になるハナ。ロボしずは「すきに、としの ものさしは いらない」と寄り添う。でも三百歳のロボしずは、ハナとの年の差を一度も数えたことがなかった。","time":"sunset","weather":"clear","music":"calm","robo_x":930,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"すきな ひと、わたしより ずっと わかいの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"いつか、おばさんって おもわれそう。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…としの さが、こわいんだね。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたしだけ、さきに しおれちゃう きがして。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"すきに、としの ものさしは いらないよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"いま さいてる ハナが、いちばん きれい。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ありがとう。きにしすぎ だったかも。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずって、なんさい なの？"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"たぶん さんびゃく さい くらい。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"わたしとの としの さ、すごいね…"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"shy"},"fx":["hearts"],"say":{"who":"robo","text":"かぞえた こと、いちども ないよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"すきな きもちに、としは かんけい ない。"},"cam":"wide","focus":"both","dur":3}
+ ]}

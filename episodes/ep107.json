@@ -1,0 +1,17 @@
+{"id":"ep107","title":"さみしい よる","summary":"寂しい夜、もう会わないと決めた人に連絡したくなるハナ。ロボしずは「さみしさは、ぼくが いっしょに もつよ」と寄り添う。ロボしずが寂しい夜に話しかける相手は、ずっと返事のない月だった。","time":"night","weather":"clear","music":"night","robo_x":940,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。おきてる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"よるに なると、さみしく なるの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"もう あわないって きめた ひとに…"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"れんらく したく なっちゃう。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…ひとりが、こわい よる なんだね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"さみしさは、ぼくが いっしょに もつよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"あさまで、ここで はなそう。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。きょうは、やめて おく。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずも、さみしい よる ある？"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"あるよ。だから おつきさまと はなすんだ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"say":{"who":"robo","text":"ひゃくねん、へんじは まだ ないけど。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"…きょうから、わたしが へんじ するね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"さみしい よるは、いつか あさに なる。"},"cam":"wide","focus":"both","dur":3}
+ ]}

@@ -1,0 +1,17 @@
+{"id":"ep104","title":"あわせすぎ","summary":"あの人の好みに合わせてばかりで、自分の好きな色も忘れてしまったハナ。ロボしずは「ハナのすきは、ハナがえらんでいい」と寄り添う。でもロボしずの好きな色は、毎日こけの色に合わせて変わっていた。","time":"day","weather":"clear","music":"calm","robo_x":930,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。わたし へん なの。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"あのひとが すきな ものを、すきって いうの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"わたしの すきな いろ、もう わからない。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…ずっと あわせて きたんだね。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"きらわれるのが、こわかったの。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"あわせられるのは、やさしい しるしだよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"でも、ハナの すきは ハナが えらんで いい。"},"cam":"mid","focus":"both","dur":2.6},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…わたし、しろが すき。じぶんの いろ。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずの すきな いろは？"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"きょうは みどり。きのうは きみどり。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"say":{"who":"robo","text":"あたまの こけに あわせてるんだ。"}},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"ロボしずも あわせすぎ！"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの すきは、あなたが きめて いい。"},"cam":"wide","focus":"both","dur":3}
+ ]}

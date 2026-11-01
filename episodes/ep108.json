@@ -1,0 +1,17 @@
+{"id":"ep108","title":"ひとり じかん","summary":"ひとりの時間が、なんだか負けたみたいで落ち着かないハナ。ロボしずは「ひとりの じかんは、じぶんと デートする じかん」と伝える。でもロボしずのひとり時間は、こけの数を数えるだけで百年たっていた。","time":"day","weather":"petals","music":"calm","robo_x":920,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きょうは だれも こない。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ひとりで いると、おちつかないの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"なんだか、まけた みたいで。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ひとりは、まけ じゃ ないよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"ひとりの じかんは、じぶんと デートする じかん。"},"cam":"close","focus":"robo","dur":2.8},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"かぜの おとを きいて、ゆっくり しよう。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"closed"},"sfx":["swoosh_up"],"say":{"who":"narr","text":"はなびらが、ふわりと まう。"},"dur":2.4},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…なんだか、きもち いい。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずは、ひとりの とき なに するの？"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"あたまの こけを かぞえるんだ。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"tired"},"fx":["sweat"],"say":{"who":"robo","text":"いま、ひゃくねん めの さんぜん ぽん。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"…それは、ちょっと ながすぎる かも。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"ひとりの じかんも、あなたの たからもの。"},"cam":"wide","focus":"both","dur":3}
+ ]}

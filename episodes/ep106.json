@@ -1,0 +1,17 @@
+{"id":"ep106","title":"とおく なった","summary":"結婚して子どもができた友だちの花と、話が合わなくなってしまったハナ。ロボしずは「とおくても、すきだった じかんは きえない」と寄り添う。ロボしずの幼なじみは、百年前に転がっていった石だった。","time":"sunset","weather":"leaves","music":"calm","robo_x":930,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"なかよしの はな、たねが できたんだって。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"いそがしくて、もう はなしも あわないの。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…すこし、とおく なったんだね。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたしだけ、おいて いかれた みたい。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"とおくても、すきだった じかんは きえないよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"また ちかく なる ひも、きっと くる。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。こんど、おてがみ かこう。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくにも おさななじみが いるよ。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ひゃくねん まえに、さかを ころがって いった。"},"cam":"close","focus":"robo","dur":2.6},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"それ、ただの いし じゃない？"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"shy"},"fx":["hearts"],"say":{"who":"robo","text":"いまも、ころころ げんき かなあ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"はなれても、ともだちは ともだち。"},"cam":"wide","focus":"both","dur":3}
+ ]}

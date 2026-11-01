@@ -1,0 +1,17 @@
+{"id":"ep105","title":"かがみが きらい","summary":"水たまりに映る自分が嫌いで、写真からも隠れてしまうハナ。ロボしずは「ぼくが みてる ハナは、いつも きれい」と伝える。でもロボしずは自分の顔を苔だと思って、毎朝水たまりに挨拶していた。","time":"morning","weather":"clear","music":"calm","robo_x":920,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"narr","text":"あめあがりの あさ。みずたまりが ひかる。"},"cam":"wide","focus":"both","dur":2.6},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"みずたまりに うつる わたし、きらい。"},"cam":"mid"},
+  {"hana":{"eyes":"closed"},"music":"sad","say":{"who":"hana","text":"しゃしんの ときも、つい かくれちゃう。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…じぶんを みるの、つらいんだね。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"はなびらも、ちょっと よれてるし。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"かがみは、かおしか うつさないよ。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ぼくが みてる ハナは、いつも きれい。"},"cam":"mid","focus":"both","dur":2.6},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ありがとう。すこし みて みる。"}},
+  {"robo":{"pose":"joy"},"music":"playful","say":{"who":"robo","text":"ぼくも まいあさ みずたまりを みるよ。"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"こけさん、おはようって あいさつ するんだ。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"それ、ロボしずの かお だよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"sfx":["oops"],"say":{"who":"robo","text":"えっ！ こけさん、ぼく だったの？"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたは、おもうより ずっと すてき。"},"cam":"wide","focus":"both","dur":3}
+ ]}

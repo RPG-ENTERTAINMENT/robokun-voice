@@ -1,0 +1,17 @@
+{"id": "ep100", "title": "おもいって", "summary": "好きな人に「きみは重い」と言われて落ち込むハナ。ロボしずは「おもいのは、それだけあいがつまってるから」と励ます。重いのが自慢のロボしず、風にも飛ばされない…はずが、頭の苔だけ飛んでいった。", "time": "sunset", "weather": "leaves", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、わたしって おもい？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"あのひとに、きみは おもいって いわれたの。"},"music":"sad","cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"すきな きもち、へらした ほうが いいのかな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"おもいのは、それだけ あいが つまってる から。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"へらさなくて いい。うけとめる ひとは いるよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.8},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"ハナの あいは、たからもの だよ。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。わたしの まま で いい。"}},
+  {"robo":{"pose":"win"},"say":{"who":"robo","text":"それに ぼくなんて、もっと おもいよ。"},"music":"playful"},
+  {"robo":{"pose":"joy"},"say":{"who":"robo","text":"おもいと、かぜにも とばされない！"},"fx":["ding"]},
+  {"fx":["puff"],"sfx":["whoosh_small"],"say":{"who":"narr","text":"ひゅう、と かぜが ふきました。"},"cam":"wide"},
+  {"robo":{"pose":"surprise"},"say":{"who":"robo","text":"…あれ？ あたまが すずしい。"},"fx":["sweat"],"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"こけだけ、とんで いったね。"},"sfx":["boing"],"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"その おもさは、あいの おもさ。"},"cam":"wide","focus":"both","dur":3}
+ ]}

@@ -1,0 +1,18 @@
+{"id": "ep098", "title": "よろこべない", "summary": "友だちのうれしい知らせに「おめでとう」と言いながら、胸がちくっとした自分を責めるハナ。ロボしずは「ちくっとするのは、ハナもほしかったしるし」と寄り添う。ロボしずのやきもちの相手は…頭に来るかえる。", "time": "sunset", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、わたし いやな はな かも。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"ともだちに、うれしい しらせが きたの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"おめでとうって いったのに、ちくっと したの。"},"music":"sad","cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"そんな じぶんが、きらい。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ちくっと するのは、ハナも ほしかった から。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"ほしいって きもちは、わるくないよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"それでも おめでとうを いえた ハナは、えらい。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。じぶんを ゆるして みる。"}},
+  {"robo":{"pose":"shy"},"say":{"who":"robo","text":"ぼくも、やきもち やくよ。"},"music":"playful"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"えっ、だれに？"}},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"ハナには ちょうちょが くるでしょ。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"ぼくの あたまには、かえるしか こない。"},"fx":["sweat"],"sfx":["boing"]},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"かえるさんも、すてきだよ。"},"fx":["hearts"],"sfx":["pop"],"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"その ちくっとも、あなたの やさしさ。"},"cam":"wide","focus":"both","dur":3}
+ ]}

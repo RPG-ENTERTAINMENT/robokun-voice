@@ -1,0 +1,18 @@
+{"id": "ep103", "title": "わたしの なのに", "summary": "しごとで自分の考えを他の人の手柄にされ、何も言えなかったハナ。ロボしずは「ちゃんとみてるひとは、いる」と寄り添う。言い返す練習を始めたロボしず、そのどんぐりは…りすさんのだった。", "time": "sunset", "weather": "leaves", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、きょう くやしかったの。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしの かんがえを、ほかの ひとが じぶんのって。"},"music":"sad","cam":"close","focus":"hana"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"なにも、いえなかった。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"いえなかった ハナは、よわく ないよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"ちゃんと みてる ひとは、いるよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ぼくは しってる。ハナが がんばったこと。"}},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"つぎは、ちいさな こえで いって みよう。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。いって みる。"}},
+  {"robo":{"pose":"win","carry":"acorn"},"say":{"who":"robo","text":"ぼくも いう れんしゅう する！"},"music":"playful"},
+  {"robo":{"pose":"win"},"say":{"who":"robo","text":"それは、ぼくの どんぐり！"},"fx":["ding"],"sfx":["tada"],"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"…ロボしず、それ。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"りすさんの どんぐり だよ。"},"sfx":["boing"]},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"ぼくが、とってた…！"},"fx":["sweat"],"sfx":["oops"],"cam":"close","focus":"robo"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの がんばりは、ちゃんと あなたの もの。"},"cam":"wide","focus":"both","dur":3}
+ ]}

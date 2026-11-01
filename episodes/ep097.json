@@ -1,0 +1,18 @@
+{"id": "ep097", "title": "みんな しあわせそう", "summary": "友だちの幸せそうな写真ばかり見て、自分だけ遅れている気がするハナ。ロボしずは「しゃしんにうつらないところに、ハナのきらきらはある」と寄り添う。ロボしずも初めて投稿してみたが…見た人はゼロだった。", "time": "night", "weather": "clear", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"みんなの しゃしん、きらきら してるの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしだけ、おいていかれてる みたい。"},"music":"sad","cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"しゃしんは、いちばん いい ところ だけ だよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"なみだの ひは、だれも とらないもん。"}},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"うつらない ところに、ハナの きらきらが ある。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"ハナは、ハナの はやさで いいんだよ。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。すこし、らくに なった。"}},
+  {"robo":{"pose":"shy","carry":"note"},"say":{"who":"robo","text":"ぼくも はじめて とうこう したよ。"},"music":"playful"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"なにを のせたの？"}},
+  {"robo":{"pose":"win"},"say":{"who":"robo","text":"ぼくの こけの アップ。"},"fx":["ding"],"cam":"close","focus":"robo"},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"…みた ひと、ゼロ。"},"fx":["sweat"],"sfx":["drip"]},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"わたしが みる。いいね、ひとつ。"},"fx":["hearts"],"sfx":["pop"],"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの まいにちも、ちゃんと きらきら。"},"cam":"wide","focus":"both","dur":3}
+ ]}

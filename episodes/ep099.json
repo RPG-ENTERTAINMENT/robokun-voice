@@ -1,0 +1,18 @@
+{"id": "ep099", "title": "むかしの ひと", "summary": "別れた人から突然「げんき？」と届き、心がゆれてしまうハナ。ロボしずは「ゆれても、ハナのねっこはここにある」と寄り添う。ロボしずの会いたい昔の相手は…きのう風で飛んでいった頭の苔。", "time": "night", "weather": "clear", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"むかしの ひとから、てがみが きたの。"},"cam":"mid"},
+  {"robo":{"pose":"surprise"},"say":{"who":"robo","text":"むかしの ひと？"},"fx":["ding"]},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"げんき？ だけ。なのに、こころが ゆれるの。"},"music":"sad","cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ゆれるのは、ちゃんと だいじに してた から。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"ゆれても、ハナの ねっこは ここに あるよ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"へんじは、ハナが きめて いいんだよ。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ゆっくり かんがえる。"}},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"ぼくも、むかしの あいてに あいたいな。"},"music":"playful"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"えっ、だれ？"}},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"きのう かぜで とんでいった、ぼくの こけ。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"げんきかな。もどって くるかな。"},"sfx":["whoosh_small"]},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"それは、もう もどらない かも。"},"fx":["sweat"],"sfx":["boing"],"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"ゆれる よるも、あなたは あなたの まま。"},"cam":"wide","focus":"both","dur":3}
+ ]}

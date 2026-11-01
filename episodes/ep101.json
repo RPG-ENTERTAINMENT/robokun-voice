@@ -1,0 +1,17 @@
+{"id": "ep101", "title": "こんかつ つかれた", "summary": "出会いの場で笑ってばかり、もう疲れてしまったハナ。ロボしずは「えらばれるまえに、ハナがハナをえらんで」と寄り添う。ロボしずも自己紹介を書いたら、来たのは巣を作りたい小鳥だった。", "time": "night", "weather": "clear", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、きょうも であいの ばしょ いったの。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"えらばれる ために、わらって ばかり。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"もう、つかれちゃった。"},"music":"sad","cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"つかれたら、やすんで いいんだよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"えらばれる まえに、ハナが ハナを えらんで。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"わらわない ハナも、すてきだよ。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。きょうは やすむ。"}},
+  {"robo":{"pose":"shy","carry":"note"},"say":{"who":"robo","text":"ぼくも、じこしょうかい かいたよ。"},"music":"playful"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"なんて かいたの？"}},
+  {"robo":{"pose":"win"},"say":{"who":"robo","text":"しゅみ、じっと すること。とくぎ、こけ。"},"fx":["ding"],"cam":"close","focus":"robo"},
+  {"robo":{"pose":"joy"},"say":{"who":"robo","text":"ことりが、すを つくりたいって きた！"},"fx":["hearts"]},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"それ、こんかつ じゃなくて ぶっけん。"},"fx":["sweat"],"sfx":["boing"],"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"つかれた ひは、じぶんを だきしめて。"},"cam":"wide","focus":"both","dur":3}
+ ]}

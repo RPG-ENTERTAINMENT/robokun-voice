@@ -1,0 +1,18 @@
+{"id": "ep102", "title": "うたがっちゃう", "summary": "何もないとわかっているのに、彼を疑ってしまう自分が嫌なハナ。ロボしずは「うたがうのは、うしなうのがこわいから」と寄り添う。ロボしずがずっと疑っている相手は…いつもついてくる自分の影。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"あのひとが、ほかの はなと はなしてたの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"なにも ないって わかってるのに、うたがっちゃう。"},"music":"sad","cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"こんな じぶん、いや。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"うたがうのは、うしなうのが こわい から。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"say":{"who":"robo","text":"こわい きもちごと、ハナは だいじょうぶ。"},"music":"magic","cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"cheer"},"say":{"who":"robo","text":"まずは、ハナの こころを やすませよう。"},"fx":["sparkles"],"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。いきを すって みる。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ぼくも、ずっと うたがってる あいてが いる。"},"music":"playful"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"えっ、だれ？"}},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"ぼくの かげ。どこまでも ついてくる。"},"cam":"close","focus":"robo"},
+  {"robo":{"do":"dash","to":700,"pose":"surprise"},"sfx":["dash"],"fx":["puff"],"say":{"who":"robo","text":"…ほら、やっぱり！"},"cam":"wide"},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"その ひとは、しんじて あげて。"},"fx":["sweat"],"sfx":["boing"],"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"こわがりな あなたも、ちゃんと だいじ。"},"cam":"wide","focus":"both","dur":3}
+ ]}

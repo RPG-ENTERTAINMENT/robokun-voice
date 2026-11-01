@@ -1,6 +1,31 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-done A {'id': 's039', 'video': 'yjCJtnm8zxk', 'at': '12:00'}
-done L {'id': 'l020', 'video': 'y8PtfQMIEXQ', 'at': '16:00'}
-done B {'id': 's040', 'video': 'BrFeNrgbO7A', 'at': '20:00'}
-elapsed 1 s
+Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
+  0%|          | 0/23646843 [00:00<?, ?it/s] 62%|██████▏   | 14.1M/22.6M [00:00<00:00, 148MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 141MB/s]
+Extracting tar file
+short(rank) s041 total 56.6 speed 1.0
+image search failed _openverse cleaning bottles bathroom TimeoutError('The read operation timed out')
+image search failed _openverse cleaning products TimeoutError('The read operation timed out')
+image search failed _openverse sprouting potatoes TimeoutError('The read operation timed out')
+image search failed _openverse chocolate bar TimeoutError('The read operation timed out')
+image search failed _openverse white lily flower TimeoutError('The read operation timed out')
+image search failed _openverse ginkgo nuts TimeoutError('The read operation timed out')
+image search failed _openverse daffodil leaves TimeoutError('The read operation timed out')
+image search failed _openverse button batteries TimeoutError('The read operation timed out')
+image search failed _openverse wild mushrooms forest TimeoutError('The read operation timed out')
+image search failed _openverse oleander flowers TimeoutError('The read operation timed out')
+image search failed _openverse poison bottle dark TimeoutError('The read operation timed out')
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+image download failed <HTTPError 403: 'Forbidden'>
+photos s041 10 / 10 thumb True

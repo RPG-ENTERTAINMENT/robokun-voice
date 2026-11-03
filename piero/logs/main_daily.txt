@@ -1,28 +1,6 @@
-/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 55%|█████▍    | 12.3M/22.6M [00:00<00:00, 129MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 127MB/s]
-Extracting tar file
-short(rank) s043 total 56.8 speed 1.05
-image search failed _openverse japanese cemetery gravestones TimeoutError('The read operation timed out')
-image search failed _openverse gravestone TimeoutError('The read operation timed out')
-image search failed _openverse old burial mound TimeoutError('The read operation timed out')
-image search failed _openverse construction site excavation TimeoutError('The read operation timed out')
-image search failed _openverse old grave TimeoutError('The read operation timed out')
-image search failed _openverse gravestones TimeoutError('The read operation timed out')
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image search failed _openverse ceramic urn dark TimeoutError('The read operation timed out')
-image search failed _openverse cemetery TimeoutError('The read operation timed out')
-photos s043 10 / 10 thumb True
+done A {'id': 's043', 'video': 'ilTIiiIkHkY', 'at': '12:00'}
+done L {'id': 'l022', 'video': 'TZGfdYmNg5o', 'at': '16:00'}
+done B {'id': 's044', 'video': 'e75ZiZSrBVU', 'at': '20:00'}
+elapsed 1 s

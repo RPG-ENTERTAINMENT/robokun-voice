@@ -555,7 +555,7 @@ def task_daily():
     st = load_state(); dd = st['days'].setdefault(day, {})
     yt = yt_client(); F = faces(); thumbs = []
     shorts, longs = units('s'), units('l')
-    for slot, kind, hh in (('A', 's', 12), ('L', 'l', 16), ('B', 's', 20)):
+    for slot, kind, hh in (('A', 's', 12),):   # 1日1本（ショートのみ）
         if dd.get(slot, {}).get('video'): print('done', slot, dd[slot]); continue
         lst = shorts if kind == 's' else longs
         key = 'next_short' if kind == 's' else 'next_long'

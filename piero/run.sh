@@ -10,6 +10,8 @@ else
   python -m pip install -q cryptography numpy scipy pillow pyopenjtalk google-api-python-client google-auth > piero/logs/pip.txt 2>&1
 fi
 set -o pipefail
+# 2026-11-06 ユーザー指示：1日1本（ショートのみ・12:00）。main.py の投稿枠をショート1枠にする（済んでいれば何もしない）
+sed -i "s/for slot, kind, hh in (('A', 's', 12), ('L', 'l', 16), ('B', 's', 20)):/for slot, kind, hh in (('A', 's', 12),):   # 1日1本（ショートのみ）/" piero/main.py
 case "$TASK" in
   auth_url)  python piero/auth.py url 2>&1 | tee piero/logs/auth.txt ;;
   auth_code) python piero/auth.py code 2>&1 | tee piero/logs/auth.txt; rm -f piero/jobs/auth_code.txt ;;

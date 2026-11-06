@@ -1,74 +1,74 @@
 /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-deleted 0 of 12
-channel {'viewCount': '15255', 'subscriberCount': '28', 'hiddenSubscriberCount': False, 'videoCount': '67'}
+{'id': '7O4oCxkPDFU', 'title': '【ゾッとする】知らないとヤバい日本のタブー10選【ピエロの闇知識】', 'views': 2, 'result': 'deleted'}
+{'id': 'la44fdQswro', 'title': '【閲覧注意】人体のやばい知識10選｜ピエロ君 #shorts', 'views': 13, 'result': 'deleted'}
+{'id': 'nDqgg9_KRx8', 'title': '【未解決】今も誰も答えを知らない世界の未解決ミステリー10選【ピエロの闇知識】', 'views': 2, 'result': 'deleted'}
+{'id': '_5BNPtO7bYg', 'title': '【閲覧注意】持ち主が次々と…呪われた物の噂10選【ピエロの闇知識】', 'views': 1, 'result': 'deleted'}
+{'id': 'kO0Z08U0U-U', 'title': '【閲覧注意】動物のやばい知識10選｜ピエロ君 #shorts', 'views': 19, 'result': 'deleted'}
+{'id': 'R2m4RjpvPWg', 'title': '【ゾッとする】子どもたちが本気で怯えた昭和の都市伝説10選【ピエロの闇知識】', 'views': 42, 'result': 'deleted'}
+{'id': 's95KZNIvxwg', 'title': '【要注意】知らないと奪われる…生活にひそむ罠10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'smBtc5LUyA8', 'title': '【閲覧注意】スマホの闇知識10選｜ピエロ君 #shorts', 'views': 9, 'result': 'deleted'}
+{'id': 'OMt0GT2TPwU', 'title': '【閲覧注意】それ、体からのサインかも…体の怖い現象10選【ピエロの闇知識】', 'views': 1, 'result': 'deleted'}
+{'id': 'ZGobtep-shY', 'title': '【ゾッとする】光の届かない世界…深海の怖い生き物10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'd7cMV2ZfBlI', 'title': '【ゾッとする】日本人が知らない世界の奇妙な風習10選【ピエロの闇知識】', 'views': 2, 'result': 'deleted'}
+{'id': '_xSfSdgXfMY', 'title': '【閲覧注意】子どもに読ませられない本当は怖い童話10選【ピエロの闇知識】', 'views': 6, 'result': 'deleted'}
+{'id': 'gmDpeN31qOk', 'title': '【閲覧注意】ネットで生まれた怖い話・都市伝説10選【ピエロの闇知識】', 'views': 59, 'result': 'deleted'}
+{'id': '7cdI7bBjFF4', 'title': '【閲覧注意】会社の闇知識10選｜ピエロ君 #shorts', 'views': 38, 'result': 'deleted'}
+{'id': 'Dwld2qeiX2w', 'title': '【ゾッとする】知らない方がよかった宇宙の怖すぎる事実10選【ピエロの闇知識】', 'views': 64, 'result': 'deleted'}
+{'id': 'NhRiVI9Ds5Y', 'title': '【ゾッとする】本当の意味が怖い昔の日本の言い伝え10選【ピエロの闇知識】', 'views': 23, 'result': 'deleted'}
+{'id': 'u4t8katxXI0', 'title': '【閲覧注意】世界の怖い風習10選｜ピエロ君 #shorts', 'views': 84, 'result': 'deleted'}
+{'id': 'a8wMU6BHjEc', 'title': '【閲覧注意】葬儀屋だけが知っている…死んだ後の裏側ランキング #shorts', 'views': 2, 'result': 'deleted'}
+{'id': 'iosQpcdVnGg', 'title': '【閲覧注意】入ったら二度と戻れない…世界の立入禁止区域10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'JrVPeH3sTzc', 'title': '【閲覧注意】次に買う前に見ろ…自販機の裏知識ランキング #shorts', 'views': 1, 'result': 'deleted'}
+{'id': 'y4KlocIOmsU', 'title': '【閲覧注意】お前の部屋は大丈夫か…事故物件の裏知識ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'lwJ4ecic0NA', 'title': '【閲覧注意】科学者もお手上げ…今も説明できない不思議な現象10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'mSoAou1p-jI', 'title': '【閲覧注意】お前はもう狙われている…詐欺師の手口ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'vmK_wLR1rRE', 'title': '【閲覧注意】閉じ込められる前に…エレベーターの裏知識ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'xznRyC6k1PU', 'title': '【閲覧注意】偶然では片づけられない…世界の不気味すぎる偶然10選【ピエロの闇知識】', 'views': 1, 'result': 'deleted'}
+{'id': 'mkjkBU-nAxo', 'title': '【閲覧注意】毎日乗ってるのに…電車と駅の裏知識ランキング #shorts', 'views': 1, 'result': 'deleted'}
+{'id': 'hIkfDZX1Z_E', 'title': '【閲覧注意】夜中に向きが変わる…人形の怖い噂ランキング #shorts', 'views': 3, 'result': 'deleted'}
+{'id': 'j1hv93O3Wgk', 'title': '【閲覧注意】乗っていた人だけが消えた…海で消えた船の謎10選【ピエロの闇知識】', 'views': 1, 'result': 'deleted'}
+{'id': 'fOEZIxmn7xM', 'title': '【閲覧注意】雨の日に外に出る前に…雷と天気の怖い事実ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'yjCJtnm8zxk', 'title': '【閲覧注意】フタ開けたまま流してないか…トイレの裏知識ランキング #shorts', 'views': 1, 'result': 'deleted'}
+{'id': 'y8PtfQMIEXQ', 'title': '【閲覧注意】知ったら震える…日本の妖怪の本当の正体10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'BrFeNrgbO7A', 'title': '【閲覧注意】生まれる時代が違ったら…昔の刑罰の闇ランキング #shorts', 'views': 3, 'result': 'deleted'}
+{'id': 'RNLDu4PcNBk', 'title': '【閲覧注意】お前の家にもある…身近な毒の話ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'Oj3Vxl-WslA', 'title': '【閲覧注意】なぜ消えた…歴史から葬られた古代の超技術10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'XNgx3Hhl3AY', 'title': '【閲覧注意】教科書が教えない…江戸時代の闇ランキング #shorts', 'views': 3, 'result': 'deleted'}
+{'id': 'ilTIiiIkHkY', 'title': '【閲覧注意】知ったら墓参りが怖くなる…お墓の裏知識ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'TZGfdYmNg5o', 'title': '【閲覧注意】お前も必ず引っかかる…詐欺師が使う心理の罠10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'e75ZiZSrBVU', 'title': '【閲覧注意】知らずに破ってた…神社の怖いルールランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': '11jpD8F5v2M', 'title': '【閲覧注意】今夜眠れなくなる…虫の怖すぎる事実ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'VlGCqeZhxio', 'title': '【閲覧注意】説明できない一枚が残っている…心霊写真の正体10選【ピエロの闇知識】', 'views': 2, 'result': 'deleted'}
+{'id': 'ktaItSoRp70', 'title': '【閲覧注意】地図から消された…廃墟と消えた村ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'GgED2UphV4c', 'title': '【閲覧注意】運転手は知っている…タクシーの怖い噂ランキング #shorts', 'views': 0, 'result': 'deleted'}
+{'id': 'Yja1YB9NIWM', 'title': '【閲覧注意】教科書には載らない…江戸の闇の仕事10選【ピエロの闇知識】', 'views': 0, 'result': 'deleted'}
+{'id': 'HLlpPyV727k', 'title': '【要注意】その投稿、見られてる…SNSの闇ランキング #shorts', 'views': 0, 'result': 'deleted'}
+deleted 44 of 44
+channel {'viewCount': '15257', 'subscriberCount': '28', 'hiddenSubscriberCount': False, 'videoCount': '35'}
 2026-10-09T10:59 1215 9 PT54S 【閲覧注意】生活の闇知識10選｜ピエロ君 #shorts
-2026-10-09T11:27 2 0 PT5M23S 【ゾッとする】知らないとヤバい日本のタブー10選【ピエロの闇知識】
 2026-10-09T11:32 1003 7 PT54S 【閲覧注意】コンビニの裏知識10選｜ピエロ君 #shorts
 2026-10-10T03:00 1141 14 PT57S 【閲覧注意】怖い言い伝え10選｜ピエロ君 #shorts
 2026-10-10T07:00 109 0 PT5M37S 【閲覧注意】お前の脳はもう騙されている…脳がだまされる心理10選【ピエロの闇知識
-2026-10-10T11:00 13 0 PT58S 【閲覧注意】人体のやばい知識10選｜ピエロ君 #shorts
 2026-10-11T03:00 1160 10 PT57S 【閲覧注意】心理学の闇10選｜ピエロ君 #shorts
-2026-10-11T07:00 2 0 PT5M44S 【未解決】今も誰も答えを知らない世界の未解決ミステリー10選【ピエロの闇知識】
 2026-10-11T11:00 964 9 PT54S 【閲覧注意】お金の闇知識10選｜ピエロ君 #shorts
 2026-10-12T03:00 805 7 PT56S 【閲覧注意】歴史の闇雑学10選｜ピエロ君 #shorts
-2026-10-12T07:00 1 0 PT5M57S 【閲覧注意】持ち主が次々と…呪われた物の噂10選【ピエロの闇知識】
-2026-10-12T11:00 19 1 PT52S 【閲覧注意】動物のやばい知識10選｜ピエロ君 #shorts
 2026-10-13T03:00 1086 15 PT53S 【閲覧注意】夜の禁忌10選｜ピエロ君 #shorts
-2026-10-13T07:00 42 0 PT5M38S 【ゾッとする】子どもたちが本気で怯えた昭和の都市伝説10選【ピエロの闇知識】
 2026-10-13T11:00 323 3 PT58S 【閲覧注意】学校の闇10選｜ピエロ君 #shorts
 2026-10-14T03:00 284 3 PT54S 【閲覧注意】ホテルの裏知識10選｜ピエロ君 #shorts
-2026-10-14T07:00 0 0 PT5M40S 【要注意】知らないと奪われる…生活にひそむ罠10選【ピエロの闇知識】
 2026-10-14T11:00 459 12 PT53S 【閲覧注意】食べ物の怖い雑学10選｜ピエロ君 #shorts
-2026-10-15T03:00 9 0 PT56S 【閲覧注意】スマホの闇知識10選｜ピエロ君 #shorts
-2026-10-15T07:00 1 0 PT5M30S 【閲覧注意】それ、体からのサインかも…体の怖い現象10選【ピエロの闇知識】
 2026-10-15T11:00 713 10 PT57S 【閲覧注意】日本の禁足地10選｜ピエロ君 #shorts
 2026-10-16T03:00 866 13 PT57S 【閲覧注意】睡眠と夢の闇10選｜ピエロ君 #shorts
-2026-10-16T07:00 0 0 PT5M25S 【ゾッとする】光の届かない世界…深海の怖い生き物10選【ピエロの闇知識】
 2026-10-16T11:01 822 14 PT56S 【閲覧注意】言葉の由来の闇10選｜ピエロ君 #shorts
 2026-10-17T03:00 917 8 PT55S 【閲覧注意】童謡の闇10選｜ピエロ君 #shorts
-2026-10-17T07:00 2 0 PT5M26S 【ゾッとする】日本人が知らない世界の奇妙な風習10選【ピエロの闇知識】
 2026-10-17T11:00 550 5 PT57S 【閲覧注意】海の怖い知識10選｜ピエロ君 #shorts
 2026-10-18T03:00 476 4 PT57S 【閲覧注意】宇宙の怖い知識10選｜ピエロ君 #shorts
-2026-10-18T07:00 6 0 PT6M1S 【閲覧注意】子どもに読ませられない本当は怖い童話10選【ピエロの闇知識】
 2026-10-18T11:00 378 4 PT57S 【閲覧注意】病院の怖い噂10選｜ピエロ君 #shorts
 2026-10-19T03:00 203 2 PT58S 【閲覧注意】恋愛の闇雑学10選｜ピエロ君 #shorts
-2026-10-19T07:00 59 2 PT6M8S 【閲覧注意】ネットで生まれた怖い話・都市伝説10選【ピエロの闇知識】
-2026-10-19T11:00 38 1 PT59S 【閲覧注意】会社の闇知識10選｜ピエロ君 #shorts
 2026-10-20T03:00 434 1 PT58S 【閲覧注意】鏡と写真の噂10選｜ピエロ君 #shorts
-2026-10-20T07:00 64 0 PT5M47S 【ゾッとする】知らない方がよかった宇宙の怖すぎる事実10選【ピエロの闇知識】
 2026-10-20T11:00 319 2 PT58S 【閲覧注意】数字の怖い意味10選｜ピエロ君 #shorts
 2026-10-21T03:00 493 3 PT57S 【閲覧注意】遊園地の怖い噂10選｜ピエロ君 #shorts
-2026-10-21T07:00 23 0 PT5M43S 【ゾッとする】本当の意味が怖い昔の日本の言い伝え10選【ピエロの闇知識】
-2026-10-21T11:00 84 1 PT59S 【閲覧注意】世界の怖い風習10選｜ピエロ君 #shorts
 2026-10-22T03:00 154 4 PT57S 【閲覧注意】人間関係の闇10選｜ピエロ君 #shorts
-2026-10-28T03:00 2 0 PT58S 【閲覧注意】葬儀屋だけが知っている…死んだ後の裏側ランキング #shorts
-2026-10-28T07:00 0 0 PT6M4S 【閲覧注意】入ったら二度と戻れない…世界の立入禁止区域10選【ピエロの闇知識】
-2026-10-28T11:00 1 0 PT58S 【閲覧注意】次に買う前に見ろ…自販機の裏知識ランキング #shorts
-2026-10-29T03:00 0 0 PT59S 【閲覧注意】お前の部屋は大丈夫か…事故物件の裏知識ランキング #shorts
-2026-10-29T07:00 0 0 PT6M3S 【閲覧注意】科学者もお手上げ…今も説明できない不思議な現象10選【ピエロの闇知識
-2026-10-29T11:00 0 0 PT57S 【閲覧注意】お前はもう狙われている…詐欺師の手口ランキング #shorts
-2026-10-30T03:00 0 0 PT58S 【閲覧注意】閉じ込められる前に…エレベーターの裏知識ランキング #shorts
-2026-10-30T07:00 1 0 PT6M1S 【閲覧注意】偶然では片づけられない…世界の不気味すぎる偶然10選【ピエロの闇知識
-2026-10-30T11:00 1 0 PT59S 【閲覧注意】毎日乗ってるのに…電車と駅の裏知識ランキング #shorts
-2026-10-31T03:00 3 0 PT58S 【閲覧注意】夜中に向きが変わる…人形の怖い噂ランキング #shorts
-2026-10-31T07:00 1 0 PT6M3S 【閲覧注意】乗っていた人だけが消えた…海で消えた船の謎10選【ピエロの闇知識】
-2026-10-31T11:00 0 0 PT58S 【閲覧注意】雨の日に外に出る前に…雷と天気の怖い事実ランキング #shorts
-2026-11-01T03:00 1 0 PT57S 【閲覧注意】フタ開けたまま流してないか…トイレの裏知識ランキング #shorts
-2026-11-01T07:00 0 0 PT5M54S 【閲覧注意】知ったら震える…日本の妖怪の本当の正体10選【ピエロの闇知識】
-2026-11-01T11:00 3 0 PT59S 【閲覧注意】生まれる時代が違ったら…昔の刑罰の闇ランキング #shorts
-2026-11-02T03:00 0 0 PT57S 【閲覧注意】お前の家にもある…身近な毒の話ランキング #shorts
-2026-11-02T07:00 0 0 PT6M9S 【閲覧注意】なぜ消えた…歴史から葬られた古代の超技術10選【ピエロの闇知識】
-2026-11-02T11:00 3 0 PT57S 【閲覧注意】教科書が教えない…江戸時代の闇ランキング #shorts
-2026-11-03T03:00 0 0 PT57S 【閲覧注意】知ったら墓参りが怖くなる…お墓の裏知識ランキング #shorts
-2026-11-03T07:00 0 0 PT7M2S 【閲覧注意】お前も必ず引っかかる…詐欺師が使う心理の罠10選【ピエロの闇知識】
-2026-11-03T11:00 0 0 PT57S 【閲覧注意】知らずに破ってた…神社の怖いルールランキング #shorts
-2026-11-04T03:00 0 0 PT57S 【閲覧注意】今夜眠れなくなる…虫の怖すぎる事実ランキング #shorts
-2026-11-04T07:00 2 0 PT6M46S 【閲覧注意】説明できない一枚が残っている…心霊写真の正体10選【ピエロの闇知識】
-2026-11-04T11:00 0 0 PT56S 【閲覧注意】地図から消された…廃墟と消えた村ランキング #shorts
-2026-11-05T03:00 0 0 PT59S 【閲覧注意】運転手は知っている…タクシーの怖い噂ランキング #shorts
-2026-11-05T07:00 0 0 PT6M34S 【閲覧注意】教科書には載らない…江戸の闇の仕事10選【ピエロの闇知識】
-2026-11-05T11:00 0 0 PT58S 【要注意】その投稿、見られてる…SNSの闇ランキング #shorts
 2026-11-05T22:30 0 0 PT58S 【衝撃】ずっと信じてた…子どもの頃の嘘ランキング #shorts
 2026-11-05T23:09 0 0 PT6M42S 【閲覧注意】最後の瞬間、脳で何が起きるのか…死の前後に起こる不思議10選【ピエロ
 2026-11-05T23:18 0 0 PT57S 【閲覧注意】行ったら帰れない…世界の危険な場所ランキング #shorts

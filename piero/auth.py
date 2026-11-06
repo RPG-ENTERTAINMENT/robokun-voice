@@ -9,7 +9,7 @@ import os, sys, json, base64, hashlib, urllib.parse, urllib.request
 from cryptography.fernet import Fernet
 CID, CSEC = os.environ['YT_CLIENT_ID'], os.environ['YT_CLIENT_SECRET']
 REDIR = 'https://developers.google.com/oauthplayground'
-SCOPES = 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly'
+SCOPES = 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.force-ssl'   # force-ssl: 2026-11-06 動画の削除・公開設定の変更用
 os.makedirs('piero/logs', exist_ok=True)
 def fernet(): return Fernet(base64.urlsafe_b64encode(hashlib.sha256(CSEC.encode()).digest()))
 if sys.argv[1] == 'url':

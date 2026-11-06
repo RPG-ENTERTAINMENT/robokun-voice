@@ -1,10 +1,10 @@
 {
- "at": "2026-10-26T18:08:08.244002",
+ "at": "2026-11-06T02:33:49.576360",
  "channel": {
-  "viewCount": "15249",
+  "viewCount": "15255",
   "subscriberCount": "28",
   "hiddenSubscriberCount": false,
-  "videoCount": "54"
+  "videoCount": "67"
  },
  "videos": [
   {
@@ -53,7 +53,7 @@
    "published": "2026-10-10T07:00:03Z",
    "status": "public",
    "dur": "PT5M37S",
-   "views": 107,
+   "views": 109,
    "likes": 0,
    "comments": 0
   },
@@ -143,7 +143,7 @@
    "published": "2026-10-13T07:00:19Z",
    "status": "public",
    "dur": "PT5M38S",
-   "views": 41,
+   "views": 42,
    "likes": 0,
    "comments": 0
   },
@@ -153,7 +153,7 @@
    "published": "2026-10-13T11:00:01Z",
    "status": "public",
    "dur": "PT58S",
-   "views": 320,
+   "views": 323,
    "likes": 3,
    "comments": 0
   },
@@ -163,7 +163,7 @@
    "published": "2026-10-14T03:00:33Z",
    "status": "public",
    "dur": "PT54S",
-   "views": 283,
+   "views": 284,
    "likes": 3,
    "comments": 0
   },
@@ -293,7 +293,7 @@
    "published": "2026-10-18T07:00:28Z",
    "status": "public",
    "dur": "PT6M1S",
-   "views": 5,
+   "views": 6,
    "likes": 0,
    "comments": 0
   },
@@ -373,7 +373,7 @@
    "published": "2026-10-21T03:00:23Z",
    "status": "public",
    "dur": "PT57S",
-   "views": 492,
+   "views": 493,
    "likes": 3,
    "comments": 0
   },
@@ -383,7 +383,7 @@
    "published": "2026-10-21T07:00:15Z",
    "status": "public",
    "dur": "PT5M43S",
-   "views": 22,
+   "views": 23,
    "likes": 0,
    "comments": 0
   },
@@ -393,7 +393,7 @@
    "published": "2026-10-21T11:00:15Z",
    "status": "public",
    "dur": "PT59S",
-   "views": 82,
+   "views": 84,
    "likes": 1,
    "comments": 0
   },
@@ -408,79 +408,9 @@
    "comments": 0
   },
   {
-   "id": "Z0APtf0L4nE",
-   "title": "【ゾッとする】人を狂わせたお金と欲の闇10選【ピエロの闇知識】",
-   "published": "2026-10-22T07:00:14Z",
-   "status": "public",
-   "dur": "PT6M5S",
-   "views": 0,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "CtiZgPlQdyA",
-   "title": "【閲覧注意】自然の怖い知識10選｜ピエロ君 #shorts",
-   "published": "2026-10-22T11:00:32Z",
-   "status": "public",
-   "dur": "PT58S",
-   "views": 18,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "m2tgKlL57fk",
-   "title": "【閲覧注意】生活の闇知識10選｜ピエロ君 #shorts",
-   "published": "2026-10-23T08:56:27Z",
-   "status": "public",
-   "dur": "PT54S",
-   "views": 1,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "iUMtBW4KJO8",
-   "title": "【ゾッとする】知らないとヤバい日本のタブー10選【ピエロの闇知識】",
-   "published": "2026-10-23T09:14:45Z",
-   "status": "public",
-   "dur": "PT5M23S",
-   "views": 0,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "W7lgx2JCs8g",
-   "title": "【閲覧注意】コンビニの裏知識10選｜ピエロ君 #shorts",
-   "published": "2026-10-23T11:00:05Z",
-   "status": "public",
-   "dur": "PT54S",
-   "views": 0,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "lnxUq3iXIgA",
-   "title": "【閲覧注意】怖い言い伝え10選｜ピエロ君 #shorts",
-   "published": "2026-10-24T03:00:30Z",
-   "status": "public",
-   "dur": "PT57S",
-   "views": 6,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "qlx7ko2O1qg",
-   "title": "【閲覧注意】お前の脳はもう騙されている…脳がだまされる心理10選【ピエロの闇知識】",
-   "published": "2026-10-24T07:00:35Z",
-   "status": "public",
-   "dur": "PT5M37S",
-   "views": 0,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "Oep_aI4uNek",
-   "title": "【閲覧注意】人体のやばい知識10選｜ピエロ君 #shorts",
-   "published": "2026-10-24T11:00:38Z",
+   "id": "a8wMU6BHjEc",
+   "title": "【閲覧注意】葬儀屋だけが知っている…死んだ後の裏側ランキング #shorts",
+   "published": "2026-10-28T03:00:18Z",
    "status": "public",
    "dur": "PT58S",
    "views": 2,
@@ -488,9 +418,119 @@
    "comments": 0
   },
   {
-   "id": "Cqj2Job0m2s",
-   "title": "【閲覧注意】心理学の闇10選｜ピエロ君 #shorts",
-   "published": "2026-10-25T03:00:07Z",
+   "id": "iosQpcdVnGg",
+   "title": "【閲覧注意】入ったら二度と戻れない…世界の立入禁止区域10選【ピエロの闇知識】",
+   "published": "2026-10-28T07:00:29Z",
+   "status": "public",
+   "dur": "PT6M4S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "JrVPeH3sTzc",
+   "title": "【閲覧注意】次に買う前に見ろ…自販機の裏知識ランキング #shorts",
+   "published": "2026-10-28T11:00:30Z",
+   "status": "public",
+   "dur": "PT58S",
+   "views": 1,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "y4KlocIOmsU",
+   "title": "【閲覧注意】お前の部屋は大丈夫か…事故物件の裏知識ランキング #shorts",
+   "published": "2026-10-29T03:00:24Z",
+   "status": "public",
+   "dur": "PT59S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "lwJ4ecic0NA",
+   "title": "【閲覧注意】科学者もお手上げ…今も説明できない不思議な現象10選【ピエロの闇知識】",
+   "published": "2026-10-29T07:00:28Z",
+   "status": "public",
+   "dur": "PT6M3S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "mSoAou1p-jI",
+   "title": "【閲覧注意】お前はもう狙われている…詐欺師の手口ランキング #shorts",
+   "published": "2026-10-29T11:00:06Z",
+   "status": "public",
+   "dur": "PT57S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "vmK_wLR1rRE",
+   "title": "【閲覧注意】閉じ込められる前に…エレベーターの裏知識ランキング #shorts",
+   "published": "2026-10-30T03:00:23Z",
+   "status": "public",
+   "dur": "PT58S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "xznRyC6k1PU",
+   "title": "【閲覧注意】偶然では片づけられない…世界の不気味すぎる偶然10選【ピエロの闇知識】",
+   "published": "2026-10-30T07:00:19Z",
+   "status": "public",
+   "dur": "PT6M1S",
+   "views": 1,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "mkjkBU-nAxo",
+   "title": "【閲覧注意】毎日乗ってるのに…電車と駅の裏知識ランキング #shorts",
+   "published": "2026-10-30T11:00:30Z",
+   "status": "public",
+   "dur": "PT59S",
+   "views": 1,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "hIkfDZX1Z_E",
+   "title": "【閲覧注意】夜中に向きが変わる…人形の怖い噂ランキング #shorts",
+   "published": "2026-10-31T03:00:27Z",
+   "status": "public",
+   "dur": "PT58S",
+   "views": 3,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "j1hv93O3Wgk",
+   "title": "【閲覧注意】乗っていた人だけが消えた…海で消えた船の謎10選【ピエロの闇知識】",
+   "published": "2026-10-31T07:00:25Z",
+   "status": "public",
+   "dur": "PT6M3S",
+   "views": 1,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "fOEZIxmn7xM",
+   "title": "【閲覧注意】雨の日に外に出る前に…雷と天気の怖い事実ランキング #shorts",
+   "published": "2026-10-31T11:00:15Z",
+   "status": "public",
+   "dur": "PT58S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "yjCJtnm8zxk",
+   "title": "【閲覧注意】フタ開けたまま流してないか…トイレの裏知識ランキング #shorts",
+   "published": "2026-11-01T03:00:06Z",
    "status": "public",
    "dur": "PT57S",
    "views": 1,
@@ -498,52 +538,172 @@
    "comments": 0
   },
   {
-   "id": "nZng3Agt9oE",
-   "title": "【未解決】今も誰も答えを知らない世界の未解決ミステリー10選【ピエロの闇知識】",
-   "published": "2026-10-25T07:00:13Z",
+   "id": "y8PtfQMIEXQ",
+   "title": "【閲覧注意】知ったら震える…日本の妖怪の本当の正体10選【ピエロの闇知識】",
+   "published": "2026-11-01T07:00:36Z",
    "status": "public",
-   "dur": "PT5M44S",
-   "views": 2,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "H0UaITPA7RA",
-   "title": "【閲覧注意】お金の闇知識10選｜ピエロ君 #shorts",
-   "published": "2026-10-25T11:00:25Z",
-   "status": "public",
-   "dur": "PT54S",
+   "dur": "PT5M54S",
    "views": 0,
    "likes": 0,
    "comments": 0
   },
   {
-   "id": "UP6VEMkXPEw",
-   "title": "【閲覧注意】歴史の闇雑学10選｜ピエロ君 #shorts",
-   "published": "2026-10-26T03:00:18Z",
+   "id": "BrFeNrgbO7A",
+   "title": "【閲覧注意】生まれる時代が違ったら…昔の刑罰の闇ランキング #shorts",
+   "published": "2026-11-01T11:00:39Z",
+   "status": "public",
+   "dur": "PT59S",
+   "views": 3,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "RNLDu4PcNBk",
+   "title": "【閲覧注意】お前の家にもある…身近な毒の話ランキング #shorts",
+   "published": "2026-11-02T03:00:18Z",
+   "status": "public",
+   "dur": "PT57S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "Oj3Vxl-WslA",
+   "title": "【閲覧注意】なぜ消えた…歴史から葬られた古代の超技術10選【ピエロの闇知識】",
+   "published": "2026-11-02T07:00:26Z",
+   "status": "public",
+   "dur": "PT6M9S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "XNgx3Hhl3AY",
+   "title": "【閲覧注意】教科書が教えない…江戸時代の闇ランキング #shorts",
+   "published": "2026-11-02T11:00:10Z",
+   "status": "public",
+   "dur": "PT57S",
+   "views": 3,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "ilTIiiIkHkY",
+   "title": "【閲覧注意】知ったら墓参りが怖くなる…お墓の裏知識ランキング #shorts",
+   "published": "2026-11-03T03:00:23Z",
+   "status": "public",
+   "dur": "PT57S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "TZGfdYmNg5o",
+   "title": "【閲覧注意】お前も必ず引っかかる…詐欺師が使う心理の罠10選【ピエロの闇知識】",
+   "published": "2026-11-03T07:00:31Z",
+   "status": "public",
+   "dur": "PT7M2S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "e75ZiZSrBVU",
+   "title": "【閲覧注意】知らずに破ってた…神社の怖いルールランキング #shorts",
+   "published": "2026-11-03T11:00:18Z",
+   "status": "public",
+   "dur": "PT57S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "11jpD8F5v2M",
+   "title": "【閲覧注意】今夜眠れなくなる…虫の怖すぎる事実ランキング #shorts",
+   "published": "2026-11-04T03:00:21Z",
+   "status": "public",
+   "dur": "PT57S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "VlGCqeZhxio",
+   "title": "【閲覧注意】説明できない一枚が残っている…心霊写真の正体10選【ピエロの闇知識】",
+   "published": "2026-11-04T07:00:15Z",
+   "status": "public",
+   "dur": "PT6M46S",
+   "views": 2,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "ktaItSoRp70",
+   "title": "【閲覧注意】地図から消された…廃墟と消えた村ランキング #shorts",
+   "published": "2026-11-04T11:00:34Z",
    "status": "public",
    "dur": "PT56S",
-   "views": 4,
-   "likes": 0,
-   "comments": 0
-  },
-  {
-   "id": "bfmDwT1FqtA",
-   "title": "【閲覧注意】持ち主が次々と…呪われた物の噂10選【ピエロの闇知識】",
-   "published": "2026-10-26T07:00:17Z",
-   "status": "public",
-   "dur": "PT5M57S",
    "views": 0,
    "likes": 0,
    "comments": 0
   },
   {
-   "id": "88PNFiLIsFo",
-   "title": "【閲覧注意】動物のやばい知識10選｜ピエロ君 #shorts",
-   "published": "2026-10-26T11:00:11Z",
+   "id": "GgED2UphV4c",
+   "title": "【閲覧注意】運転手は知っている…タクシーの怖い噂ランキング #shorts",
+   "published": "2026-11-05T03:00:00Z",
    "status": "public",
-   "dur": "PT52S",
-   "views": 1,
+   "dur": "PT59S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "Yja1YB9NIWM",
+   "title": "【閲覧注意】教科書には載らない…江戸の闇の仕事10選【ピエロの闇知識】",
+   "published": "2026-11-05T07:00:05Z",
+   "status": "public",
+   "dur": "PT6M34S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "HLlpPyV727k",
+   "title": "【要注意】その投稿、見られてる…SNSの闇ランキング #shorts",
+   "published": "2026-11-05T11:00:10Z",
+   "status": "public",
+   "dur": "PT58S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "04BvSHw74V8",
+   "title": "【衝撃】ずっと信じてた…子どもの頃の嘘ランキング #shorts",
+   "published": "2026-11-05T22:30:42Z",
+   "status": "private",
+   "dur": "PT58S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "iiH7ZlqpVrc",
+   "title": "【閲覧注意】最後の瞬間、脳で何が起きるのか…死の前後に起こる不思議10選【ピエロの闇知識】",
+   "published": "2026-11-05T23:09:17Z",
+   "status": "private",
+   "dur": "PT6M42S",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
+  {
+   "id": "hOCVwzNxiR0",
+   "title": "【閲覧注意】行ったら帰れない…世界の危険な場所ランキング #shorts",
+   "published": "2026-11-05T23:18:31Z",
+   "status": "private",
+   "dur": "PT57S",
+   "views": 0,
    "likes": 0,
    "comments": 0
   }

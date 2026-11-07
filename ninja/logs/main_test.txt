@@ -1,0 +1,5 @@
++ python ninja/engine/render.py ninja/out/ep001.json ninja/out/ninja_test_001.mp4
+seconds 22.299999999999997
+release not found
++ gh release create ninja-test ninja/out/ninja_test_001.mp4 --title ninja test ep001 --notes ep001 --prerelease
+https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/ninja-test

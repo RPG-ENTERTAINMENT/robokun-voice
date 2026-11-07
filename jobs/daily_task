@@ -1,1 +1,1 @@
-make
+ninja:test:1

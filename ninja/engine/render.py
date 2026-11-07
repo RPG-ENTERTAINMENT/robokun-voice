@@ -17,7 +17,7 @@ FONT_B = os.path.join(ROOT, 'assets', 'Poppins-Bold.ttf')
 FONT_N = os.path.join(ROOT, 'assets', 'DejaVuSans-Bold.ttf')
 SPR_IMG = os.path.join(ROOT, 'assets', 'sprites.webp')   # 使うポーズを1枚にまとめた画像（位置は sprites.json）
 URL = 'https://www.rpgtokyo.com/ninjabar/'
-FEET = 1730
+FEET = 1480
 PINK, CYAN, GOLD = (255, 61, 139), (56, 217, 255), (255, 200, 70)
 FXCOL = {'fire': [(255, 220, 90), (255, 120, 30), (255, 50, 30)],
          'ice': [(220, 250, 255), (90, 210, 255), (40, 120, 255)],
@@ -93,7 +93,7 @@ def draw_caption(img, text, k):
     bh = lh * len(lines) + 44
     bw = max(d.textlength(l, font=f) for l in lines) + 80
     s = back_out(k)
-    cx, cy = W / 2, 1000
+    cx, cy = W / 2, 800
     layer = Image.new('RGBA', (int(bw) + 20, int(bh) + 20), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
     ld.rounded_rectangle((10, 10, bw + 10, bh + 10), 34, fill=(255, 255, 255, 245), outline=PINK + (255,), width=7)
@@ -296,7 +296,7 @@ def tophat(img, x, y):
 
 def meter(img, v, label):
     d = ImageDraw.Draw(img)
-    x0, y0, x1, y1 = 240, 380, 840, 820
+    x0, y0, x1, y1 = 240, 330, 840, 730
     d.rounded_rectangle((x0, y0, x1, y1), 34, fill=(10, 5, 30), outline=GOLD, width=8)
     d.text((W / 2, y0 + 70), label, font=font(FONT_T, 70), fill=CYAN, anchor='mm')
     col = (255, 61, 139) if v < 80 else GOLD if v < 100 else (120, 255, 140)
@@ -525,7 +525,7 @@ def render(ep, out):
         draw_caption(img, s.get('cap'), min(1, lt * 4))
         if s.get('big'):
             draw_big(img, s['big'], min(1, max(0, lt - s.get('big_at', 0)) * 2.2) if lt >= s.get('big_at', 0) else 0,
-                     tuple(s.get('big_col', GOLD)), s.get('big_y', 640), s.get('big_size', 150))
+                     tuple(s.get('big_col', GOLD)), min(s.get('big_y', 640), 820), s.get('big_size', 150))
         # タイトル（1コマ目から完成した絵）
         if s.get('title'):
             tt = s['title']

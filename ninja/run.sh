@@ -16,6 +16,7 @@ else
   python -m pip install -q numpy pillow qrcode cryptography google-api-python-client google-auth > ninja/logs/pip.txt 2>&1
   A=ninja/assets
   cat $A/sprites.webp.b64.* | base64 -d > $A/sprites.webp   # 使うポーズを1枚にまとめた画像（テキストに分けて保存してある）
+  [ -e $A/media.tar.b64.10 ] && { cat $A/media.tar.b64.* | base64 -d | tar xf - -C $A || rm -f $A/real.mp4 $A/poster.webp $A/logo.webp; }   # 本物のお店の映像・ポスター・ロゴ（全部そろっている時だけ）
   G=https://raw.githubusercontent.com/google/fonts/main
   [ -s $A/LuckiestGuy.ttf ] || curl -fsSL -o $A/LuckiestGuy.ttf $G/apache/luckiestguy/LuckiestGuy-Regular.ttf
   [ -s $A/Poppins-Bold.ttf ] || curl -fsSL -o $A/Poppins-Bold.ttf $G/ofl/poppins/Poppins-Bold.ttf

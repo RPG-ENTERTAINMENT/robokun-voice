@@ -18,7 +18,7 @@ else
   cat $A/sprites.webp.b64.* | base64 -d > $A/sprites.webp   # 使うポーズを1枚にまとめた画像（テキストに分けて保存してある）
   [ -e $A/media.tar.b64.10 ] && { cat $A/media.tar.b64.* | base64 -d | tar xf - -C $A || rm -f $A/real.mp4 $A/poster.webp $A/logo.webp; }   # 本物のお店の映像・ポスター・ロゴ（全部そろっている時だけ）
   [ -e $A/bgm.tar.b64.15 ] && { cat $A/bgm.tar.b64.* | base64 -d | tar xf - -C $A || rm -f $A/bgm1.ogg $A/bgm2.ogg; }   # 和風BGM 2曲（話数ごとに交互）
-  { python -m pip install -q torch --index-url https://download.pytorch.org/whl/cpu && python -m pip install -q spandrel && curl -fsSL -o /tmp/anime6b.pth https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth && python ninja/engine/upscale.py /tmp/anime6b.pth; } > ninja/logs/upscale.txt 2>&1 || rm -rf $A/sprites_hd   # キャラをAIで高画質化（失敗したら普通の画像）
+  { python -m pip install -q torch torchvision --index-url https://download.pytorch.org/whl/cpu && python -m pip install -q spandrel && curl -fsSL -o /tmp/anime6b.pth https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth && python ninja/engine/upscale.py /tmp/anime6b.pth; } > ninja/logs/upscale.txt 2>&1 || rm -rf $A/sprites_hd   # キャラをAIで高画質化（失敗したら普通の画像）
   G=https://raw.githubusercontent.com/google/fonts/main
   [ -s $A/LuckiestGuy.ttf ] || curl -fsSL -o $A/LuckiestGuy.ttf $G/apache/luckiestguy/LuckiestGuy-Regular.ttf
   [ -s $A/Poppins-Bold.ttf ] || curl -fsSL -o $A/Poppins-Bold.ttf $G/ofl/poppins/Poppins-Bold.ttf

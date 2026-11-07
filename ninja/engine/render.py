@@ -16,6 +16,8 @@ FONT_T = os.path.join(ROOT, 'assets', 'LuckiestGuy.ttf')
 FONT_B = os.path.join(ROOT, 'assets', 'Poppins-Bold.ttf')
 FONT_N = os.path.join(ROOT, 'assets', 'DejaVuSans-Bold.ttf')
 SPR_IMG = os.path.join(ROOT, 'assets', 'sprites.webp')   # 使うポーズを1枚にまとめた画像（位置は sprites.json）
+HD_DIR = os.path.join(ROOT, 'assets', 'sprites_hd')      # AIで4倍に高画質化したポーズ（engine/upscale.py が作る。無ければ普通の画像を使う）
+BGM_FILES = [os.path.join(ROOT, 'assets', f) for f in ('bgm1.ogg', 'bgm2.ogg')]   # 和風BGM（話数ごとに交互）
 URL = 'https://www.rpgtokyo.com/ninjabar/'
 FEET = 1480
 PINK, CYAN, GOLD = (255, 61, 139), (56, 217, 255), (255, 200, 70)
@@ -40,12 +42,16 @@ _sprites = {}
 def sprite(name, scale):
     k = (name, round(scale, 3))
     if k not in _sprites:
-        if 'atlas' not in _sprites:
-            _sprites['atlas'] = (Image.open(SPR_IMG).convert('RGBA'), json.load(open(SPR_IMG.replace('.webp', '.json'))))
-        at, pos = _sprites['atlas']
-        x, y, w, h = pos[name]
-        im = at.crop((x, y, x + w, y + h))
-        _sprites[k] = im.resize((max(1, int(im.width * scale)), max(1, int(im.height * scale))), Image.LANCZOS)
+        hd = os.path.join(HD_DIR, name + '.png')
+        if os.path.exists(hd):
+            im, f = Image.open(hd).convert('RGBA'), scale / 4
+        else:
+            if 'atlas' not in _sprites:
+                _sprites['atlas'] = (Image.open(SPR_IMG).convert('RGBA'), json.load(open(SPR_IMG.replace('.webp', '.json'))))
+            at, pos = _sprites['atlas']
+            x, y, w, h = pos[name]
+            im, f = at.crop((x, y, x + w, y + h)), scale
+        _sprites[k] = im.resize((max(1, int(im.width * f)), max(1, int(im.height * f))), Image.LANCZOS)
     return _sprites[k]
 
 
@@ -353,6 +359,35 @@ def logo_img(size):
     return Image.open(LOGO).convert('RGBA').resize((size, size), Image.LANCZOS) if os.path.exists(LOGO) else None
 
 
+def music_mix(total, events, path, music):
+    """用意したBGM（和風）に効果音を重ねて wav にする"""
+    SR = audio.SR
+    raw = subprocess.run(['ffmpeg', '-loglevel', 'quiet', '-i', music, '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True).stdout
+    m = np.frombuffer(raw, np.float32).astype(np.float64)
+    n = int(total * SR) + 1
+    if len(m) < SR:
+        return False
+    if len(m) < n:
+        m = np.tile(m, n // len(m) + 1)
+    out = m[:n] * 0.55
+    fo = int(1.5 * SR)
+    out[-fo:] *= np.linspace(1, 0, fo)
+    out[:int(0.03 * SR)] *= np.linspace(0, 1, int(0.03 * SR))
+    for at, name in events:
+        s_ = audio.sfx(name) * 0.85
+        st = int(at * SR)
+        if st >= n:
+            continue
+        e = min(n, st + len(s_))
+        out[st:e] += s_[:e - st]
+    out = np.tanh(out * 1.05) * 0.92
+    data = (out * 32767).astype(np.int16)
+    with wave.open(path, 'wb') as w:
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
+        w.writeframes(np.stack([data, data], 1).tobytes())
+    return True
+
+
 def qr_image(url, size):
     import qrcode
     q = qrcode.QRCode(border=2, box_size=10, error_correction=qrcode.constants.ERROR_CORRECT_M)
@@ -619,7 +654,9 @@ def render(ep, out):
     proc.stdin.close()
     proc.wait()
     wav = os.path.join(tmp, 'a.wav')
-    audio.mix(total, sfx, wav, seed=ep.get('seed', 1), bgm=ep.get('bgm', 'cute'))
+    bgms = [b for b in BGM_FILES if os.path.exists(b)]
+    if not (bgms and music_mix(total, sfx, wav, bgms[(ep.get('no', ep.get('seed', 1)) - 1) % len(bgms)])):
+        audio.mix(total, sfx, wav, seed=ep.get('seed', 1), bgm=ep.get('bgm', 'cute'))
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', os.path.join(tmp, 'v.mp4'), '-i', wav, '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', out], check=True)
     return total
 

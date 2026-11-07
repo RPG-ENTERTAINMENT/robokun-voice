@@ -80,7 +80,7 @@ def wrap(text, f, maxw, d):
     return lines
 
 
-def draw_caption(img, text, k):
+def draw_caption(img, text, k, cy=800):
     """下の字幕（白い角丸＋ピンク枠）。k=出現の進み具合"""
     if not text or k <= 0:
         return
@@ -93,7 +93,7 @@ def draw_caption(img, text, k):
     bh = lh * len(lines) + 44
     bw = max(d.textlength(l, font=f) for l in lines) + 80
     s = back_out(k)
-    cx, cy = W / 2, 800
+    cx = W / 2
     layer = Image.new('RGBA', (int(bw) + 20, int(bh) + 20), (0, 0, 0, 0))
     ld = ImageDraw.Draw(layer)
     ld.rounded_rectangle((10, 10, bw + 10, bh + 10), 34, fill=(255, 255, 255, 245), outline=PINK + (255,), width=7)
@@ -307,6 +307,52 @@ def meter(img, v, label):
         d.rounded_rectangle((x0 + 50, y1 - 90, x0 + 50 + fw, y1 - 50), 20, fill=col)
 
 
+# ---------- 本物のお店の映像・写真（assets/real.mp4, poster.webp, logo.webp） ----------
+REAL = os.path.join(ROOT, 'assets', 'real.mp4')
+POSTER = os.path.join(ROOT, 'assets', 'poster.webp')
+LOGO = os.path.join(ROOT, 'assets', 'logo.webp')
+CLIP_CAP = ["This is the REAL\nNINJA DIGITAL BAR!", "Real ninja jutsu\nwith digital art!", "YOUR moves make\nfire, water & thunder!"]
+PHOTO_CAP = ["Ninja cocktails &\nninja cosplay!", "Come visit us\nin Tokyo!", "Be a ninja for\none night!"]
+
+
+def add_promo(ep):
+    """終わりの画面の前に、本物のお店の映像（約4秒）とポスター（約2.6秒）を入れる。素材が無いときは何もしない"""
+    if not ep.get('promo', True) or not (os.path.exists(REAL) and os.path.exists(POSTER)):
+        return
+    r = random.Random(ep.get('seed', 1) * 31)
+    sc = ep['scenes']
+    i = next((j for j, x in enumerate(sc) if x.get('end')), len(sc))
+    sc[i:i] = [{"dur": 4.0, "clip": True, "cap": r.choice(CLIP_CAP), "target": False, "sfx": [[0.0, "whoosh"], [0.3, "sparkle"]]},
+               {"dur": 2.6, "photo": True, "cap": r.choice(PHOTO_CAP), "target": False, "sfx": [[0.0, "pop"], [0.4, "sparkle"]]}]
+
+
+class ClipReader:
+    def __init__(self, path):
+        self.p = subprocess.Popen(['ffmpeg', '-loglevel', 'quiet', '-i', path, '-vf', f'scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS}',
+                                   '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE)
+        self.last = Image.new('RGB', (W, H))
+
+    def frame(self):
+        b = self.p.stdout.read(W * H * 3)
+        if len(b) == W * H * 3:
+            self.last = Image.frombytes('RGB', (W, H), b)
+        return self.last.convert('RGBA')
+
+
+def poster_base():
+    im = Image.open(POSTER).convert('RGB')
+    s = max(W / im.width, H / im.height)
+    back = im.resize((int(im.width * s) + 1, int(im.height * s) + 1), Image.BILINEAR).crop((0, 0, W, H)).filter(ImageFilter.GaussianBlur(30))
+    back = Image.eval(back, lambda v: int(v * 0.45)).convert('RGBA')
+    fw = W - 60
+    fg = im.resize((fw, int(im.height * fw / im.width)), Image.LANCZOS).convert('RGBA')
+    return back, fg
+
+
+def logo_img(size):
+    return Image.open(LOGO).convert('RGBA').resize((size, size), Image.LANCZOS) if os.path.exists(LOGO) else None
+
+
 def qr_image(url, size):
     import qrcode
     q = qrcode.QRCode(border=2, box_size=10, error_correction=qrcode.constants.ERROR_CORRECT_M)
@@ -318,7 +364,9 @@ def qr_image(url, size):
 # ---------- 本体 ----------
 def render(ep, out):
     random.seed(ep.get('seed', 1))
+    add_promo(ep)
     bg = static_bg(FONT_T).convert('RGBA')
+    clip, pbase, logo_s, logo_b = None, None, logo_img(230), logo_img(330)
     wall = Wall()
     btx, bty = ep.get('target', [760, 560])
     mv = ep.get('target_move', 0)
@@ -353,11 +401,26 @@ def render(ep, out):
                 sfx.append((starts[si] + at, name))
             if s.get('reset_hit'):
                 hit_state = False
-        img = bg.copy()
-        wl = wall.frame(t, boost=s.get('wall_boost', 0.0) + flash * 0.8, tint=s.get('tint'))
-        img.paste(wl, (WALL[0], WALL[1]))
+        media = s.get('clip') or s.get('photo')
+        if s.get('clip'):
+            if clip is None:
+                clip = ClipReader(REAL)
+            img = clip.frame()
+        elif s.get('photo'):
+            if pbase is None:
+                pbase = poster_base()
+            img = pbase[0].copy()
+            z = 1 + 0.06 * ease(k)
+            fg = pbase[1].resize((int(pbase[1].width * z), int(pbase[1].height * z)), Image.BILINEAR)
+            img.alpha_composite(fg, (int(W / 2 - fg.width / 2), int(H / 2 + 20 - fg.height / 2)))
+        else:
+            img = bg.copy()
+            wl = wall.frame(t, boost=s.get('wall_boost', 0.0) + flash * 0.8, tint=s.get('tint'))
+            img.paste(wl, (WALL[0], WALL[1]))
+        if media and logo_s is not None:
+            img.alpha_composite(logo_s, (W - logo_s.width - 30, 40))
         # 的
-        if s.get('target', ep.get('show_target', True)) and s.get('end') is None:
+        if not media and s.get('target', ep.get('show_target', True)) and s.get('end') is None:
             target(img, tx, ty, t, hit=hit_state)
         # キャラクター
         pose = s.get('pose', 'stand1')
@@ -387,7 +450,7 @@ def render(ep, out):
         # 足元の影
         sh = Image.new('RGBA', (W, H), 0)
         ImageDraw.Draw(sh).ellipse((cx - 170, FEET - 26, cx + 170, FEET + 26), fill=(0, 0, 0, 110))
-        if not s.get('end'):
+        if not s.get('end') and not media:
             img.alpha_composite(sh.filter(ImageFilter.GaussianBlur(10)))
             img.alpha_composite(spr, (int(cx - spr.width / 2), int(FEET - spr.height + dy)))
         # 効果
@@ -513,6 +576,8 @@ def render(ep, out):
             d.text((W / 2, 1150), 'Scan to visit our website', font=font(FONT_B, 40), fill=(255, 230, 120), anchor='mm')
             d.text((W / 2, 1210), 'rpgtokyo.com/ninjabar', font=font(FONT_B, 46), fill=(255, 255, 255), anchor='mm')
             outlined(d, (W / 2, 1300), e.get('l4', 'NEW CHALLENGE EVERY DAY!'), font(FONT_T, 60), GOLD, sw=8)
+            if logo_b is not None:
+                img.alpha_composite(logo_b, (W - logo_b.width - 20, 1560 - logo_b.height // 2))
             spr2 = sprite(e.get('pose', 'wave'), 2.0)
             img.alpha_composite(spr2, (int(W / 2 - spr2.width / 2), int(1860 - spr2.height - abs(math.sin(t * 5)) * 12)))
         if s.get('hud'):
@@ -522,7 +587,7 @@ def render(ep, out):
             d.rounded_rectangle((W / 2 - tw_ / 2 - 30, 238, W / 2 + tw_ / 2 + 30, 318), 26, fill=(10, 5, 30), outline=CYAN, width=5)
             d.text((W / 2, 280), s['hud'], font=f, fill=(255, 255, 255), anchor='mm')
         # 字幕・大きい文字
-        draw_caption(img, s.get('cap'), min(1, lt * 4))
+        draw_caption(img, s.get('cap'), min(1, lt * 4), 1690 if media else 800)
         if s.get('big'):
             draw_big(img, s['big'], min(1, max(0, lt - s.get('big_at', 0)) * 2.2) if lt >= s.get('big_at', 0) else 0,
                      tuple(s.get('big_col', GOLD)), min(s.get('big_y', 640), 820), s.get('big_size', 150))

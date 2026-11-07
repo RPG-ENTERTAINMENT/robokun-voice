@@ -1,1 +1,1 @@
-written
+channels [('UCadNIkcwskLTTCIXObrJNkQ', 'CRAZY NINJA SHIZUKUしずく社長')] rt True

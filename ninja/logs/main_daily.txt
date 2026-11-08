@@ -1,3 +1,5 @@
 /opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-slot time passed, skip 2026-11-08 0
++ python ninja/engine/render.py ninja/out/ep001.json ninja/out/ninja_2026-11-09_0.mp4
+seconds 28.9
+uploaded 1 y6dMB2Ly88w {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'publishAt': '2026-11-09T03:00:00Z'}

@@ -1,0 +1,18 @@
+{"id":"ep117","title":"ことわれない","summary":"頼まれると断れず、何でも引き受けてくたくたのハナ。ロボしずは「いやって いうのは、じぶんを まもる やさしさ」と寄り添う。断る練習の相手になったロボしずは、本気で断られて落ち込んだ。","time":"sunset","weather":"clear","music":"calm","robo_x":920,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、わたし もう くたくた。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"たのまれると、ぜんぶ「いいよ」って いうの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"ことわったら、きらわれそうで。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…ずっと ひとりで かかえてたんだね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"いや って いうのは、じぶんを まもる やさしさ。"},"cam":"close","focus":"robo","dur":2.8},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ほんとうの なかまは、それで はなれないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ハナの「いいよ」は、ハナの ために とっとこう。"},"cam":"mid","focus":"both","dur":2.6},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。いって みたい。"}},
+  {"robo":{"pose":"win"},"music":"playful","fx":["ding"],"say":{"who":"robo","text":"じゃあ れんしゅう！ ぼくが たのむね。"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"say":{"who":"robo","text":"ハナ、ぼくの こけ なでて くれる？"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"…いや です。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"damage"},"fx":["tears"],"sfx":["bonk"],"say":{"who":"robo","text":"…ほんとに いや？"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"れんしゅう だってば！"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの「いや」も、たいせつな こえ。"},"cam":"wide","focus":"both","dur":3}
+ ]}

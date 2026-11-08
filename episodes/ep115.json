@@ -1,0 +1,18 @@
+{"id":"ep115","title":"かわいくない","summary":"仕事をがんばっていたら「仕事ばかりで可愛くない」と言われたハナ。ロボしずは「がんばる ハナは、かっこよくて かわいい」と励ます。可愛さを見せようとしたロボしずは、葉っぱを頭にのせて転んだ。","time":"morning","weather":"clear","music":"calm","robo_x":880,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、わたし かわいくない？"},"cam":"wide","focus":"both"},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"えっ、どうして？"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"しごと ばかりで かわいくない って。"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"がんばるのって、だめな ことなのかな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"だめじゃ ないよ。ぜんぜん。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"がんばる ハナは、かっこよくて かわいい。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"かわいいの かたちは、ひとつじゃ ないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ハナの すきな ハナで いて。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。わたしの ままで いく。"}},
+  {"robo":{"pose":"shy","carry":"leaf"},"music":"playful","say":{"who":"robo","text":"ぼくも かわいく なって みる。"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"say":{"who":"robo","text":"あたまに はっぱ。どう？ かわいい？"},"cam":"close","focus":"robo"},
+  {"robo":{"do":"trip"},"fx":["puff"],"sfx":["oops"],"say":{"who":"narr","text":"…はっぱで まえが みえませんでした。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"ロボしずは、いつもの ほうが かわいいよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"がんばる あなたは、ちゃんと すてき。"},"cam":"wide","focus":"both","dur":3}
+ ]}

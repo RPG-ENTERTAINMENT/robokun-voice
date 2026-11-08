@@ -1,0 +1,18 @@
+{"id":"ep112","title":"まだなの？","summary":"「子どもはまだ？」と何度も聞かれて、笑ってかわすのに疲れたハナ。ロボしずは「ハナの じかんは、ハナの ペースで いい」と寄り添う。でもロボしずも毎日聞かれていた…「いつ咲くの？」と。","time":"sunset","weather":"leaves","music":"calm","robo_x":900,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ロボしず、ちょっと つかれちゃった。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"みんなに きかれるの。「こどもは まだ？」って。"},"cam":"mid"},
+  {"hana":{"eyes":"closed"},"music":"sad","say":{"who":"hana","text":"わらって かわすけど、ちくっと するの。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…なんかいも きかれたら、つかれるね。"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしの きもちは、だれも きかないの。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"ハナの じかんは、ハナの ペースで いい。"},"cam":"close","focus":"robo","dur":2.6},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"こたえなくて いい しつもんも あるよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"いまの ハナで、もう じゅうぶん すてき。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。すこし、らくに なった。"}},
+  {"robo":{"pose":"trouble"},"music":"playful","say":{"who":"robo","text":"ぼくも まいにち きかれるんだ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"なんて？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"say":{"who":"robo","text":"「その つぼみ、いつ さくの？」って。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"それ、あたまの こけだよね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたの じかんは、あなたの もの。"},"cam":"wide","focus":"both","dur":3}
+ ]}

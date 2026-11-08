@@ -1,0 +1,18 @@
+{"id":"ep116","title":"もう いちど","summary":"前に傷ついてから、また誰かを好きになるのが怖いハナ。ロボしずは「きずを しってる こころは、やさしさも しってる」と寄り添う。昔転んだ水たまりにもう一度入ったロボしずは…やっぱり転んだ。","time":"day","weather":"clear","music":"calm","robo_x":860,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ロボしず、きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"open"},"say":{"who":"hana","text":"ちょっと きになる ひとが できたの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"でも、まえに いっぱい ないたから…"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"また すきに なるのが、こわいの。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…こわいのは、あたりまえ だよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"きずを しってる こころは、やさしさも しってる。"},"cam":"close","focus":"robo","dur":2.8},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ゆっくりで いい。いっぽずつ で いい。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ハナの はるは、また ちゃんと くるよ。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。すこし、ゆうき でた。"}},
+  {"robo":{"pose":"trouble"},"music":"playful","say":{"who":"robo","text":"ぼくも、まえ みずたまりで ころんだの。"}},
+  {"robo":{"pose":"win"},"fx":["ding"],"say":{"who":"robo","text":"でも ハナを みならって、もう いちど！"}},
+  {"robo":{"do":"hop"},"fx":["puff"],"sfx":["splash"],"say":{"who":"narr","text":"…やっぱり、ころびました。"},"cam":"close","focus":"robo"},
+  {"robo":{"pose":"smile"},"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"robo","text":"でも、たのしかった！"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"こわくても、あなたの はるは くる。"},"cam":"wide","focus":"both","dur":3}
+ ]}

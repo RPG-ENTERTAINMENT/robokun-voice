@@ -1,0 +1,18 @@
+{"id":"ep114","title":"となりに いるのに","summary":"となりにいるのに、もう何も話さなくなった二人。さみしいハナに、ロボしずは「はなしたいって きもちが、もう ことばだよ」と寄り添う。でもロボしずも、となりの石と百年だまったままだった。","time":"night","weather":"clear","music":"night","robo_x":940,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"あのひとと、いつも となりに いるの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"でも、もう なにも はなさないの。"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ちかいのに、とおくて さみしい。"}},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…それは、ひとりより さみしいね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"はなしたい って きもちが、もう ことばだよ。"},"cam":"close","focus":"robo","dur":2.8},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"「きょう どうだった？」から で いいんだ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ちいさな ひとことが、はしに なるよ。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。あした、はなしかけて みる。"}},
+  {"robo":{"pose":"think"},"music":"playful","say":{"who":"robo","text":"ぼくも、となりの いしと ひゃくねん むごん。"}},
+  {"robo":{"pose":"win"},"fx":["ding"],"say":{"who":"robo","text":"よし、ぼくも はなしかけて みる！"}},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"こんばんは！ …………。"},"cam":"close","focus":"robo","dur":2.4},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"hana","text":"ロボしず、それは ふつうの いしだよ。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"ひとことから、また はじめられる。"},"cam":"wide","focus":"both","dur":3}
+ ]}

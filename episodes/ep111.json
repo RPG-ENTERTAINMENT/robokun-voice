@@ -1,0 +1,18 @@
+{"id":"ep111","title":"マウント","summary":"会うたびに自慢され、見下されてしまうハナ。ロボしずは「くらべる ひとの ものさしで、はからなくて いい」と寄り添う。でもロボしずも毎日マウントされていた…頭の上の小鳥に。","time":"day","weather":"clear","music":"calm","robo_x":920,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"となりの はなが、あうたび じまんするの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"「わたしの ほうが きれい」って かおで。"},"cam":"close","focus":"hana"},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"それ、マウント って やつ？"},"cam":"mid","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたし、まけてるのかなって おもっちゃう。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ハナ、しょうぶ なんて してないよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"くらべる ひとの ものさしで、はからなくて いい。"},"cam":"close","focus":"robo","dur":2.8},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"ハナは ハナの ままで、まんかいだよ。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。くらべるの、やめて みる。"}},
+  {"robo":{"pose":"trouble"},"music":"playful","say":{"who":"robo","text":"ぼくも まいにち マウント されてるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれに？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"say":{"who":"robo","text":"ことりさん。ぼくの あたまの うえに。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"それ、ほんとうに のってる だけだね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたは、だれとも くらべなくて いい。"},"cam":"wide","focus":"both","dur":3}
+ ]}

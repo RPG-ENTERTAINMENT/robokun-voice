@@ -1,0 +1,18 @@
+{"id":"ep113","title":"つくしすぎ","summary":"好きな人に尽くしすぎて、心がからっぽになってしまったハナ。ロボしずは「あげる まえに、じぶんにも あげて いいんだよ」と寄り添う。でも雨の中、ハナに傘を差し続けたロボしずは…自分がずぶぬれだった。","time":"day","weather":"rain","music":"rainy","robo_x":960,"robo_pose":"idle",
+ "hana":{"x":1200,"bloom":1,"droop":1},
+ "beats":[
+  {"robo":{"carry":"umbrella"},"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ロボしず、かさ ありがとう。"},"cam":"wide","focus":"both"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたしね、あのひとに ぜんぶ あげてたの。"},"cam":"mid"},
+  {"hana":{"eyes":"sad"},"music":"sad","say":{"who":"hana","text":"みつも、じかんも、えがおも。"},"cam":"close","focus":"hana"},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"きづいたら、わたし からっぽ だった。"}},
+  {"robo":{"pose":"sad"},"say":{"who":"robo","text":"…ずっと がんばって たんだね。"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"closed"},"music":"magic","say":{"who":"robo","text":"あげる まえに、じぶんにも あげて いいんだよ。"},"cam":"close","focus":"robo","dur":2.8},
+  {"robo":{"pose":"smile"},"say":{"who":"robo","text":"ハナの みずは、ハナの ぶんも のこそう。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"say":{"who":"robo","text":"たいせつに される ばんだよ、ハナ。"},"cam":"mid","focus":"both"},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。じぶんにも あげて みる。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"…あれ？ ロボしず、ずぶぬれ！"}},
+  {"robo":{"pose":"surprise"},"fx":["sweat"],"sfx":["drip"],"say":{"who":"robo","text":"ほんとだ。かさ、ぜんぶ ハナに むけてた。"},"cam":"close","focus":"robo"},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"いちばん つくしすぎ なのは だれ？"},"cam":"mid","focus":"both"},
+  {"robo":{"pose":"shy"},"say":{"who":"robo","text":"…ぼくの こけは、よろこんでる けど。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","say":{"who":"narr","text":"あなたにも、あなたの かさを。"},"cam":"wide","focus":"both","dur":3}
+ ]}

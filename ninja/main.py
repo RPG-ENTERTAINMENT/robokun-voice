@@ -46,17 +46,27 @@ def youtube():
     if not want or want not in mine: raise SystemExit(f'WRONG CHANNEL: token is for {mine}, expected {want}. Not uploading.')
     return yt
 
+def send(yt, body, path):
+    from googleapiclient.http import MediaFileUpload
+    req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(path, mimetype='video/mp4', resumable=True))
+    resp = None
+    while resp is None: _, resp = req.next_chunk()
+    return resp
+
 def upload(yt, path, ep, when):
     from googleapiclient.http import MediaFileUpload
-    status = {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}
+    status = {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False}
     now = datetime.datetime.now(datetime.timezone.utc)
     if when > now + datetime.timedelta(minutes=10): status['publishAt'] = when.astimezone(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     else: status['privacyStatus'] = 'public'
     body = {'snippet': {'title': title(ep), 'description': description(ep)[:4900], 'tags': TAGS,
-                        'categoryId': '24', 'defaultLanguage': 'en', 'defaultAudioLanguage': 'zxx'}, 'status': status}
-    req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(path, mimetype='video/mp4', resumable=True))
-    resp = None
-    while resp is None: _, resp = req.next_chunk()
+                        'categoryId': '24', 'defaultLanguage': 'en'}, 'status': status}
+    try:
+        resp = send(yt, body, path)
+    except Exception as e:   # 細かい項目で弾かれたら、タイトル・説明・カテゴリだけで送り直す
+        print('upload retry with minimal metadata:', e, flush=True)
+        body['snippet'] = {'title': title(ep), 'description': description(ep)[:4900], 'categoryId': '24'}
+        resp = send(yt, body, path)
     print('uploaded', ep['no'], resp['id'], status, flush=True); return resp['id']
 
 def daily():

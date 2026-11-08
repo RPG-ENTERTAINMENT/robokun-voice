@@ -1,0 +1,18 @@
+{"id": "ep122", "title": "ネットの ことば", "summary": "知らない誰かにネットで意地悪なことを書かれ、何度も読み返してしまうハナ。ロボしずは「ハナをしらないひとのことばは、ハナじゃない」と寄り添う。ロボしずも毎朝ネットにひっかかる…くもの巣のことだった。", "time": "night", "weather": "rain", "music": "rainy", "robo_x": 930, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。みちゃったの。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"ネットに、わたしの わるくち。"}},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"ネットに？"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"しらない ひとが、いじわるに かいてたの。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"なんども、よみかえしちゃう。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"かおの みえない ことばは、いたいよね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"ハナを しらない ひとの ことばは、ハナじゃない。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"weather":"clear","cam":"mid","focus":"both","say":{"who":"robo","text":"きょうは とじて、ぼくの かおを みて。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ロボしずの かお、みてる。"}},
+  {"robo":{"pose":"think"},"music":"playful","say":{"who":"robo","text":"ぼくも まいあさ、ネットに ひっかかるよ。"}},
+  {"hana":{"eyes":"open"},"fx":["ding"],"say":{"who":"hana","text":"えっ、ロボしずも？"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"くもさんの ネット。あたまに からまるの。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"…そっちの ネットじゃ ないよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたを しってる ひとを、しんじてね。"}}
+ ]}

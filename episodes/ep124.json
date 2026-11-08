@@ -1,0 +1,18 @@
+{"id": "ep124", "title": "おとうさんの はっぱ", "summary": "電話で話した父の声が小さくなり、葉も細くなっていたと心配するハナ。ロボしずは「だいすきは、いまのうちになんどもいおう」と寄り添う。ロボしずの年齢は苔に聞いてみたが、苔もわからなかった。", "time": "morning", "weather": "clear", "music": "calm", "robo_x": 930, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"cam":"wide","focus":"both","say":{"who":"hana","text":"きのう、おとうさんと はなしたの。"}},
+  {"hana":{"eyes":"open"},"cam":"mid","say":{"who":"hana","text":"こえが、すこし ちいさく なってた。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…おとうさん、げんき だった？"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"うん。でも、はっぱが ほそく なってたの。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"いつまで、いっしょに いられるかな。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"しんぱい なのは、だいすき だからだね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"だいすきは、いまの うちに なんども いおう。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"おとうさんの ハナは、ずっと たからもの。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…あした、また でんわ して みる。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずは、なんさい なの？"}},
+  {"robo":{"pose":"think"},"cam":"close","focus":"robo","say":{"who":"robo","text":"わからない。こけに きいて みる。"}},
+  {"robo":{"pose":"closed"},"sfx":["wobble"],"say":{"who":"robo","text":"…ふむ、ふむ。"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"robo","text":"こけも、わからないって。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"たいせつな ひとに、きょうも ありがとう。"}}
+ ]}

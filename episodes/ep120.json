@@ -1,0 +1,18 @@
+{"id": "ep120", "title": "ほめられると", "summary": "ほめられるとつい「そんなことない」と言ってしまうハナ。ロボしずは「ほめことばは、うけとっていいおくりもの」と励ます。ところがロボしずも素直に受けとれない…頭の苔をほめられた時だけは即答だった。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。わたし へん かな。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"ほめられると、すぐ ちがうって いっちゃう。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ちがうって いっちゃうの？"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"かわいいねって いわれても、ちがうって。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"ほんとは、うれしいのに。"}},
+  {"robo":{"pose":"smile"},"cam":"mid","focus":"both","say":{"who":"robo","text":"うれしいって きもち、ちゃんと あるんだね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"ほめことばは、うけとって いい おくりもの。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ありがとうって、いう だけで いいんだよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…れんしゅう して みる。ありがとう。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしず、いつも かっこいいね。"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"そ、そんな こと ないです…。"}},
+  {"hana":{"eyes":"happy"},"cam":"mid","focus":"both","say":{"who":"hana","text":"あたまの こけも、すてきだね。"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"sfx":["pop"],"cam":"close","focus":"robo","say":{"who":"robo","text":"ありがとう！ ぼくも そう おもう！"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"その うれしいは、うけとって いいんだよ。"}}
+ ]}

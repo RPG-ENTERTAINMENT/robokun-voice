@@ -1,0 +1,18 @@
+{"id": "ep119", "title": "けっこん したって", "summary": "昔の彼が結婚したと聞いて、自分だけ止まっている気がするハナ。ロボしずは「ハナのじかんは、ハナのはやさですすむ」と寄り添う。ロボしずにも別れた相手がいる…かたつむりで、三年たってもまだ隣の葉っぱにいた。", "time": "sunset", "weather": "leaves", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"cam":"wide","focus":"both","say":{"who":"hana","text":"むかしの かれ、けっこん したんだって。"}},
+  {"hana":{"eyes":"open"},"cam":"mid","say":{"who":"hana","text":"もう かんけい ない はず なのに。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"…むねが、ざわざわ する？"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"うん。わたしだけ、とまってる みたい。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"おめでとうって、おもえなくて いいよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"ハナの じかんは、ハナの はやさで すすむ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"とまって みえる ひも、つぼみは そだつよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…そっか。ゆっくりで いいんだね。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくも、むかし わかれた ひと いるよ。"}},
+  {"hana":{"eyes":"open"},"fx":["ding"],"say":{"who":"hana","text":"えっ、どんな ひと？"}},
+  {"robo":{"pose":"sad"},"cam":"close","focus":"robo","say":{"who":"robo","text":"かたつむりさん。とおくへ いっちゃった。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"…となりの はっぱに、まだ いるよ。"}},
+  {"robo":{"pose":"surprise"},"fx":["sweat"],"say":{"who":"robo","text":"さんねん かけて、そこまで…！"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたも、あなたの はやさで いい。"}}
+ ]}

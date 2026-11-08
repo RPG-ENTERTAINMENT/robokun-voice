@@ -1,0 +1,18 @@
+{"id": "ep118", "title": "ひとり たんじょうび", "summary": "誰からも連絡がない、ひとりきりの誕生日にさみしくなるハナ。ロボしずは「うまれてきてくれて、ありがとう」と伝える。ロボしずも今日が誕生日…自分の誕生日を知らないので、毎日お祝いしていた。", "time": "night", "weather": "clear", "music": "night", "robo_x": 930, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"cam":"wide","focus":"both","say":{"who":"hana","text":"きょうは、わたしの たんじょうび。"}},
+  {"hana":{"eyes":"sad"},"cam":"mid","say":{"who":"hana","text":"でも、だれからも れんらく ないの。"}},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"えっ、きょう だったの！"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"ひとりで としを とるの、さみしいな。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしって、そんな もの なのかな。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"…きょうまで、よく がんばって きたね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"うまれて きて くれて、ありがとう。"}},
+  {"robo":{"pose":"cheer","carry":"star"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナが さいた ひは、ぼくの たからもの。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。いちばん ほしかった ことば。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"じつは きょう、ぼくの たんじょうびでも ある。"}},
+  {"hana":{"eyes":"open"},"fx":["ding"],"say":{"who":"hana","text":"ほんとに？ おなじ ひ なの？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"うん。きのうも、おとといも そう。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"…しらないから、まいにち いわってるの？"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたが うまれた ひに、おめでとう。"}}
+ ]}

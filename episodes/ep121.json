@@ -1,0 +1,18 @@
+{"id": "ep121", "title": "おねえちゃんと", "summary": "小さい頃から姉と比べられ、今も自分を比べてしまうハナ。ロボしずは「はなに、いちばんもにばんもない」と寄り添う。比べられたことのないロボしずは比べてとせがむが、どんぐりに負けてしまう。", "time": "morning", "weather": "petals", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ちいさい ころから、ずっと いわれてたの。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"おねえちゃんは、もっと きれいに さいたって。"}},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"ハナの、おねえちゃん？"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"いまでも、じぶんで くらべちゃうの。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしは、にばんめの はな だって。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"…ずっと、ひとりで がまん してたんだね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"はなに、いちばんも にばんも ないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナは、せかいで ひとつの さきかた。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。わたしの さきかた、すきに なりたい。"}},
+  {"robo":{"pose":"joy","do":"hop"},"sfx":["boing"],"music":"playful","say":{"who":"robo","text":"ぼくも くらべて みて！ なにかと！"}},
+  {"hana":{"eyes":"open"},"cam":"close","focus":"hana","say":{"who":"hana","text":"じゃあ…あの どんぐりと。"}},
+  {"hana":{"eyes":"happy"},"sfx":["ding"],"cam":"mid","focus":"both","say":{"who":"hana","text":"どんぐりの ほうが、まるいね。"}},
+  {"robo":{"pose":"damage"},"fx":["shake"],"sfx":["bonk"],"cam":"close","focus":"robo","say":{"who":"robo","text":"…まけた。くらべるって、つらい。"}},
+  {"robo":{"pose":"trouble"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたは、だれとも くらべなくて いい。"}}
+ ]}

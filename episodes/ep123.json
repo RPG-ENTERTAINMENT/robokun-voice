@@ -1,0 +1,18 @@
+{"id": "ep123", "title": "しっぱいした ひ", "summary": "仕事でミスをして、自分は役に立たないと落ち込むハナ。ロボしずは「やくにたつから、ハナがすきなんじゃない」と寄り添う。今日三つ失敗したと話すロボしず…話しながら四つ目をやらかす。", "time": "day", "weather": "rain", "music": "rainy", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"きょう、しごとで しっぱい しちゃった。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"みんなに、めいわく かけたの。"}},
+  {"robo":{"pose":"trouble"},"say":{"who":"robo","text":"…そっか。たいへん だったね。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"わたしって、やくに たたないな。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"しっぱいは、ちゃんと やってた しるしだよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"やくに たつから、ハナが すきなんじゃ ないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"weather":"clear","cam":"mid","focus":"both","say":{"who":"robo","text":"きょうの ハナも、いて くれて うれしい。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ありがとう。すこし、らくに なった。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくなんて、きょう みっつ しっぱい した。"}},
+  {"hana":{"eyes":"open"},"fx":["ding"],"say":{"who":"hana","text":"えっ、なにを？"}},
+  {"robo":{"pose":"think"},"cam":"close","focus":"robo","say":{"who":"robo","text":"ねぼう して、ころんで、かさを わすれた。"}},
+  {"robo":{"do":"trip"},"fx":["puff"],"sfx":["oops"],"cam":"mid","focus":"both","say":{"who":"narr","text":"…そして いま、よっつめ。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"しっぱい しても、ロボしずは すてきだよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"しっぱいした ひも、あなたは たいせつ。"}}
+ ]}

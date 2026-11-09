@@ -1,0 +1,25 @@
++ /home/runner/hvenv/bin/python hatena/engine/build_hakota.py
+/home/runner/work/robokun-voice/robokun-voice/hatena/engine/build_hakota.py:84: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+Info: Saved as "hakota_character.blend"
+BUILD OK
++ /home/runner/hvenv/bin/python hatena/engine/build_chars.py
+/home/runner/work/robokun-voice/robokun-voice/hatena/engine/build_chars.py:28: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True
+Info: Saved as "robot_and_ol.blend"
+BUILD2 OK
++ /home/runner/hvenv/bin/python hatena/engine/world.py
+/home/runner/work/robokun-voice/robokun-voice/hatena/engine/world.py:46: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True
+/home/runner/work/robokun-voice/robokun-voice/hatena/engine/world.py:175: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('W'); sc.world = w; w.use_nodes = True
+Info: Saved as "world.blend"
+WORLD OK
++ /home/runner/hvenv/bin/python hatena/engine/tts.py hatena/episodes/ep001.json /tmp/hatena_ep001
+TTS OK 51.54 s
++ /home/runner/hvenv/bin/python hatena/engine/plan.py /tmp/hatena_ep001/timing.json /tmp/hatena_ep001/plan.json 1
+PLAN 18 cuts ['introA', 'introB', 'walkin', 'two', 'point', 'low', 'rings', 'orbit', 'surprised', 'eq', 'side', 'phone', 'think', 'crowd', 'shock', 'close', 'endA', 'endB']
++ /home/runner/hvenv/bin/python hatena/engine/compose.py hatena/episodes/ep001.json /tmp/hatena_ep001/timing.json /tmp/hatena_ep001/plan.json /tmp/hatena_ep001/frames /tmp/hatena_ep001/voice.wav hatena/out/hatena_2026-11-10_0.mp4
+COMPOSE OK hatena/out/hatena_2026-11-10_0.mp4
+BUILD 1 40.4 min
+uploaded rMFcWg2DkZo {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'publishAt': '2026-11-10T09:00:00Z'}

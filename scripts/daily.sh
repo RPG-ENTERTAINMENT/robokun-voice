@@ -22,6 +22,8 @@ if [ "${TASK%%:*}" = piero ]; then bash piero/run.sh "${TASK#piero:}"; exit $?; 
 if [ "${TASK%%:*}" = sugo ]; then bash sugo/run.sh "${TASK#sugo:}"; exit $?; fi
 # --- 大道芸専門アカデミー channel (@daidogeisenmon): jobs/daily_task = daido:<task>  (test / test:<id> / auth_url / auth_code / daily)
 if [ "${TASK%%:*}" = daido ]; then bash daido/run.sh "${TASK#daido:}"; exit $?; fi
+# --- あなたのハテナを解決してみる OLゆりとロボしず (@hatenayurirobo): jobs/daily_task = hatena:<task>  (envtest / test:<n> / auth_url / auth_code / daily)
+if [ "${TASK%%:*}" = hatena ]; then bash hatena/run.sh "${TASK#hatena:}"; exit $?; fi
 # --- CRAZY NINJA SHIZUKU channel (@crazyninjajapan): jobs/daily_task = ninja:<task>  (test / test:<n> / auth_url / auth_code / daily)
 if [ "${TASK%%:*}" = ninja ]; then bash ninja/run.sh "${TASK#ninja:}"; exit $?; fi
 # --- move lesson videos to @sugowazaschool: jobs/daily_task = tosugo:igc,aud,idl
@@ -132,4 +134,6 @@ case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash piero/run.sh daily || true;; e
 case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash daido/run.sh daily || true;; esac
 # --- CRAZY NINJA SHIZUKU: render today's 1 short and schedule it (12:00 JST). 12:30 run = retry if missed.
 case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash ninja/run.sh daily || true;; esac
+# --- あなたのハテナ (@hatenayurirobo): render today's 1 short (Blender) and schedule it (18:00 JST). 12:30 run = retry if missed.
+case "$SCHED" in "40 16 * * *"|"30 3 * * *") bash hatena/run.sh daily || true;; esac
 exit $rc

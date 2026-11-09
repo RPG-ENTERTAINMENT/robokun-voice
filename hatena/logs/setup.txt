@@ -1,0 +1,28 @@
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart hosted-compute-agent.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+downloading uv 0.13.7 x86_64-unknown-linux-gnu
+installing to /home/runner/.local/bin
+  uv
+  uvx
+everything's installed!
+Downloading cpython-3.13.18-linux-x86_64-gnu (download) (33.8MiB)
+ Downloaded cpython-3.13.18-linux-x86_64-gnu (download)
+Installed Python 3.13.18 in 624ms
+ + cpython-3.13.18-linux-x86_64-gnu (python3.13)
+Using CPython 3.13.18
+Creating virtual environment at: /home/runner/hvenv
+Activate with: /home/runner/hvenv/bin/activate
+/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc: Noto Sans CJK HK,Noto Sans CJK HK Black:style=Black,Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc: Noto Sans CJK JP:style=Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc: Noto Sans CJK HK:style=Regular

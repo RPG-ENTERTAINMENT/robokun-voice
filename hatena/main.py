@@ -1,6 +1,7 @@
 """あなたのハテナを解決してみる OLゆりとロボしず（YouTube @hatenayurirobo）— Blenderのブロック世界の雑学ショートを毎日1本（18:00 JST 予約公開）
   python hatena/main.py test [n]  -> 第n話を1本作って GitHub release「hatena-test」に置く（投稿しない）
-  python hatena/main.py daily     -> 今日の1本を作って予約投稿
+  python hatena/main.py batch 2,3,4 -> 複数話を作って GitHub release「hatena-batch」に置く（投稿しない）
+  python hatena/main.py daily     -> 今日の1本を作って予約投稿（hatena/PAUSED があれば何もしない）
 リポジトリのルートで ~/hvenv/bin/python から実行（hatena/main.sh）。台本は hatena/episodes/epNNN.json。"""
 import os, sys, json, subprocess, datetime, base64, hashlib, glob, time
 D = 'hatena'; E = os.path.join(D, 'engine')
@@ -85,6 +86,7 @@ def upload(yt, path, ep, when):
     print('uploaded', resp['id'], status, flush=True); return resp['id']
 
 def daily():
+    if os.path.exists(f'{D}/PAUSED'): print('hatena: auto-post PAUSED (delete hatena/PAUSED to resume) - skipping'); return
     if not os.path.exists(f'{D}/rt.enc'): print('YouTube not connected yet (hatena:auth_url / auth_code) - skipping'); return
     now = datetime.datetime.now(JST); day = (now + datetime.timedelta(hours=3)).date()
     st_path = f'{D}/state/state.json'; os.makedirs(f'{D}/state', exist_ok=True)
@@ -106,7 +108,19 @@ def test(n=None):
     subprocess.run(['gh', 'release', 'delete', 'hatena-test', '-y', '--cleanup-tag'])
     sh('gh', 'release', 'create', 'hatena-test', out, '--title', f'hatena test ep{n:03d}', '--notes', f'ep{n:03d}', '--prerelease')
 
+def batch(ns):
+    # build several episodes and put them all in GitHub release "hatena-batch" (no posting)
+    ns = [int(x) for x in ns.split(',') if x.strip()]
+    subprocess.run(['gh', 'release', 'delete', 'hatena-batch', '-y', '--cleanup-tag'])
+    sh('gh', 'release', 'create', 'hatena-batch', '--title', 'hatena batch', '--notes', ','.join(f'ep{n:03d}' for n in ns), '--prerelease')
+    for n in ns:
+        out = f'{D}/out/hatena_ep{n:03d}.mp4'
+        try:
+            build(n, out); sh('gh', 'release', 'upload', 'hatena-batch', out, '--clobber')
+        except BaseException as e: print('BATCH FAIL', n, e, flush=True)
+
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'test'
     if cmd == 'daily': daily()
+    elif cmd == 'batch': batch(sys.argv[2] if len(sys.argv) > 2 else '2,3,4')
     elif cmd == 'test': test(sys.argv[2] if len(sys.argv) > 2 else None)

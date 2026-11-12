@@ -9,7 +9,7 @@ Set seed to 42
 Bucket Processing Mode Enabled
 Actual Input Reference Text: ぼくのからだはいしでできているけど、こころはやわらかいよ。
 Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 46%|████▋     | 10.5M/22.6M [00:00<00:00, 110MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 159MB/s]
+  0%|          | 0/23646843 [00:00<?, ?it/s] 63%|██████▎   | 14.1M/22.6M [00:00<00:00, 148MB/s]100%|██████████| 22.6M/22.6M [00:00<00:00, 154MB/s]
 Extracting tar file
 ############ Segment Text ############
 Actual Input Target Text:

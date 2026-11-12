@@ -18,7 +18,7 @@ installing to /home/runner/.local/bin
 everything's installed!
 Downloading cpython-3.13.18-linux-x86_64-gnu (download) (33.8MiB)
  Downloaded cpython-3.13.18-linux-x86_64-gnu (download)
-Installed Python 3.13.18 in 871ms
+Installed Python 3.13.18 in 628ms
  + cpython-3.13.18-linux-x86_64-gnu (python3.13)
 Using CPython 3.13.18
 Creating virtual environment at: /home/runner/hvenv

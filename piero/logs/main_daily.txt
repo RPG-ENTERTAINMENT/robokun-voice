@@ -1,78 +1,4 @@
-/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-Downloading: "https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz"
-  0%|          | 0/23646843 [00:00<?, ?it/s] 13%|█▎        | 2.92M/22.6M [00:00<00:00, 30.0MB/s] 77%|███████▋  | 17.4M/22.6M [00:00<00:00, 101MB/s] 100%|██████████| 22.6M/22.6M [00:00<00:00, 98.0MB/s]
-Extracting tar file
-short(rank) s056 total 58.1 speed 1.1
-image search failed _openverse underground pillars <HTTPError 504: 'Gateway Timeout'>
-image search failed _openverse underground river tunnel <HTTPError 504: 'Gateway Timeout'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image search failed _openverse secret tunnel corridor <HTTPError 504: 'Gateway Timeout'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-image download failed <HTTPError 403: 'Forbidden'>
-photos s056 10 / 10 thumb True
+done A {'id': 's056', 'video': 'pIyVmNTPKhU', 'at': '12:00'}
+elapsed 1 s

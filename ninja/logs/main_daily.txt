@@ -1,3 +1,5 @@
-/opt/hostedtoolcache/Python/3.10.22/x64/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
+/home/runner/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:212: FutureWarning: You are using a non-supported Python version (3.10.22). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.11, and then update google.api_core.
   warnings.warn(message, FutureWarning)
-slot already posted 2026-11-13 0
++ python ninja/engine/render.py ninja/out/ep006.json ninja/out/ninja_2026-11-14_0.mp4
+seconds 33.0
+uploaded 6 OntS5HI5aBM {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False, 'publishAt': '2026-11-14T03:00:00Z'}

@@ -6,9 +6,10 @@ MAXCUT = 4.6
 
 def make(tm, no):
     I, END, L = tm['intro'], tm['end'], tm['lines']
-    cuts = [{'t0': 0.0, 't1': round(I / 2, 3), 'shot': 'introA', 'set': 'park'},
-            {'t0': round(I / 2, 3), 't1': I, 'shot': 'introB', 'set': 'park'}]
     sets = tm.get('sets') or ['office', 'park', 'sunset']
+    first = (L[0].get('set') if L else None) or sets[0]   # the opening happens where the story starts
+    cuts = [{'t0': 0.0, 't1': round(I / 2, 3), 'shot': 'introA', 'set': first},
+            {'t0': round(I / 2, 3), 't1': I, 'shot': 'introB', 'set': first}]
     gi = {'ol': no % 3, 'robo': (no + 1) % 3}; prev = None
     def generic(sp):
         nonlocal prev

@@ -198,7 +198,7 @@ def big_clock(c, speed=0.5):
         e = empty(c + Vector((0, -0.08, 0))); mk('hand', (0, 0, L / 2), (w, 0.04, L), 'black', parent=e)
         for f in range(1, N + 1):
             e.rotation_euler = (0, f * sp, 0); e.keyframe_insert('rotation_euler', frame=f)
-def night():
+def _night_out():
     world_bg.inputs['Color'].default_value = (0.03, 0.04, 0.12, 1); world_bg.inputs['Strength'].default_value = 0.6
     sun.data.energy = 0.8; sun.data.color = (0.6, 0.7, 1.0)
     mk('moon', (6, 22, 9), (1.2, 1.2, 1.2), 'moon')
@@ -257,9 +257,22 @@ def phone_in_hand():
 for c in CROWD: c.location = (400, 0, 0)
 OL.location = (500, 500, 0); RO.location = (500, 500, 0)
 SETS = {'park': Vector((0, 0, 0)), 'office': Vector((OX, 0.8, 0)), 'sunset': Vector((0, 0, 0)), 'night': Vector((0, 0, 0))}
+# indoor rooms built by engine/rooms.py on the row y = -100: name -> (x, background colour, sun energy)
+ROOMS = {'home': (0, (0.93, 0.88, 0.78), 0.6), 'bedroom': (100, (0.12, 0.13, 0.22), 0.0), 'toilet': (200, (0.9, 0.92, 0.93), 0.4),
+         'bath': (300, (0.85, 0.9, 0.93), 0.4), 'school': (400, (0.93, 0.88, 0.78), 0.6), 'train': (500, (0.88, 0.87, 0.84), 0.6),
+         'kitchen': (600, (0.93, 0.88, 0.78), 0.6)}
+for _k, (_x, _bg, _e) in ROOMS.items(): SETS[_k] = Vector((_x, -100.6, 0))
 SETNAME = CUT.get('set', 'park'); C = SETS.get(SETNAME, SETS['park'])
+def night():   # inside a room "night" only dims the room instead of building the outdoor night sky
+    if SETNAME in ROOMS:
+        world_bg.inputs['Strength'].default_value = 0.2; sun.data.energy = 0.0
+    else: _night_out()
 if SETNAME == 'sunset': sunset()
 if SETNAME == 'night': night()
+if SETNAME in ROOMS:
+    _x, _bg, _e = ROOMS[SETNAME]
+    world_bg.inputs['Color'].default_value = _bg + (1,); world_bg.inputs['Strength'].default_value = 0.55 if SETNAME != 'bedroom' else 0.25
+    sun.data.energy = _e
 POS = {'ol': C + Vector((-0.9, 0, 0)), 'robo': C + Vector((0.9, 0, 0))}
 RIG = {'ol': OL, 'robo': RO}
 SP = CUT.get('sp', 'robo'); LS = 'ol' if SP == 'robo' else 'robo'

@@ -37,6 +37,8 @@ def px_img(name, base, var=14, seed=0, top=None, pattern=None):
             if top and y < 4 + (r.random() < .5): c = top
             if pattern == 'brick' and (y % 4 == 3 or (x + (8 if (y // 4) % 2 else 0)) % 8 == 7): c = tuple(v - 40 for v in c)
             if pattern == 'plank' and (y % 4 == 3 or (y // 4 % 2 == 0 and x == 11) or (y // 4 % 2 == 1 and x == 4)): c = tuple(v - 35 for v in c)
+            if pattern == 'tile' and (x % 8 == 7 or y % 8 == 7): c = tuple(min(255, v + 25) if sum(c) < 600 else v - 30 for v in c)
+            if pattern == 'checker' and ((x // 8) + (y // 8)) % 2: c = tuple(v - 70 for v in c)
             if pattern == 'window' and 2 <= x <= 13 and 2 <= y <= 13 and x not in (7, 8) and y != 7: c = (150, 200, 235)
             d = r.randint(-var, var)
             p += [max(0, min(255, c[i] + d)) / 255 for i in range(3)] + [1]
@@ -160,6 +162,9 @@ spot = bpy.data.objects.new('Spot', bpy.data.lights.new('Spot', 'SPOT'))
 spot.data.energy = 2500; spot.data.spot_size = math.radians(40); spot.data.color = (1, 0.9, 0.7)
 spot.location = (SX, -3, 6); stage.objects.link(spot)
 spot.rotation_euler = (math.radians(30), 0, 0)
+
+# ---------- INDOOR ROOMS (engine/rooms.py) ----------
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rooms.py')).read())
 
 # ---------- PROPS ----------
 props = bpy.data.collections.new('Props'); sc.collection.children.link(props)

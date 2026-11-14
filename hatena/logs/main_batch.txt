@@ -1,4 +1,4 @@
-+ gh release create hatena-batch --title hatena batch --notes ep005,ep006,ep007 --prerelease
++ gh release create hatena-batch --title hatena batch --notes ep008,ep009,ep010 --prerelease
 https://github.com/RPG-ENTERTAINMENT/robokun-voice/releases/tag/hatena-batch
 + /home/runner/hvenv/bin/python hatena/engine/build_hakota.py
 /home/runner/work/robokun-voice/robokun-voice/hatena/engine/build_hakota.py:84: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
@@ -11,33 +11,33 @@ BUILD OK
 Info: Saved as "robot_and_ol.blend"
 BUILD2 OK
 + /home/runner/hvenv/bin/python hatena/engine/world.py
-/home/runner/work/robokun-voice/robokun-voice/hatena/engine/world.py:46: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+/home/runner/work/robokun-voice/robokun-voice/hatena/engine/world.py:48: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m = bpy.data.materials.new(name); m.use_nodes = True
-/home/runner/work/robokun-voice/robokun-voice/hatena/engine/world.py:175: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+/home/runner/work/robokun-voice/robokun-voice/hatena/engine/world.py:180: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
   w = bpy.data.worlds.new('W'); sc.world = w; w.use_nodes = True
 Info: Saved as "world.blend"
 WORLD OK
-+ /home/runner/hvenv/bin/python hatena/engine/tts.py hatena/episodes/ep005.json /tmp/hatena_ep005
-TTS OK 49.8 s
-+ /home/runner/hvenv/bin/python hatena/engine/plan.py /tmp/hatena_ep005/timing.json /tmp/hatena_ep005/plan.json 5
-PLAN 16 cuts ['introA', 'introB', 'think', 'low', 'point', 'close', 'ots', 'side', 'orbit', 'two', 'brain', 'low', 'surprised', 'side', 'endA', 'endB']
-+ /home/runner/hvenv/bin/python hatena/engine/compose.py hatena/episodes/ep005.json /tmp/hatena_ep005/timing.json /tmp/hatena_ep005/plan.json /tmp/hatena_ep005/frames /tmp/hatena_ep005/voice.wav hatena/out/hatena_ep005.mp4
-COMPOSE OK hatena/out/hatena_ep005.mp4
-BUILD 5 30.1 min
-+ gh release upload hatena-batch hatena/out/hatena_ep005.mp4 --clobber
-+ /home/runner/hvenv/bin/python hatena/engine/tts.py hatena/episodes/ep006.json /tmp/hatena_ep006
-TTS OK 42.2 s
-+ /home/runner/hvenv/bin/python hatena/engine/plan.py /tmp/hatena_ep006/timing.json /tmp/hatena_ep006/plan.json 6
-PLAN 13 cuts ['introA', 'introB', 'think', 'brain', 'orbit', 'surprised', 'brain_red', 'ots', 'space', 'stage', 'two', 'endA', 'endB']
-+ /home/runner/hvenv/bin/python hatena/engine/compose.py hatena/episodes/ep006.json /tmp/hatena_ep006/timing.json /tmp/hatena_ep006/plan.json /tmp/hatena_ep006/frames /tmp/hatena_ep006/voice.wav hatena/out/hatena_ep006.mp4
-COMPOSE OK hatena/out/hatena_ep006.mp4
-BUILD 6 24.3 min
-+ gh release upload hatena-batch hatena/out/hatena_ep006.mp4 --clobber
-+ /home/runner/hvenv/bin/python hatena/engine/tts.py hatena/episodes/ep007.json /tmp/hatena_ep007
-TTS OK 39.07 s
-+ /home/runner/hvenv/bin/python hatena/engine/plan.py /tmp/hatena_ep007/timing.json /tmp/hatena_ep007/plan.json 7
-PLAN 13 cuts ['introA', 'introB', 'think', 'brain', 'orbit', 'two', 'low', 'night', 'stage', 'low', 'ots', 'endA', 'endB']
-+ /home/runner/hvenv/bin/python hatena/engine/compose.py hatena/episodes/ep007.json /tmp/hatena_ep007/timing.json /tmp/hatena_ep007/plan.json /tmp/hatena_ep007/frames /tmp/hatena_ep007/voice.wav hatena/out/hatena_ep007.mp4
-COMPOSE OK hatena/out/hatena_ep007.mp4
-BUILD 7 22.2 min
-+ gh release upload hatena-batch hatena/out/hatena_ep007.mp4 --clobber
++ /home/runner/hvenv/bin/python hatena/engine/tts.py hatena/episodes/ep008.json /tmp/hatena_ep008
+TTS OK 37.53 s
++ /home/runner/hvenv/bin/python hatena/engine/plan.py /tmp/hatena_ep008/timing.json /tmp/hatena_ep008/plan.json 8
+PLAN 13 cuts ['introA', 'introB', 'think', 'low', 'brain', 'close', 'signal', 'surprised', 'clock', 'phone', 'ots', 'endA', 'endB']
++ /home/runner/hvenv/bin/python hatena/engine/compose.py hatena/episodes/ep008.json /tmp/hatena_ep008/timing.json /tmp/hatena_ep008/plan.json /tmp/hatena_ep008/frames /tmp/hatena_ep008/voice.wav hatena/out/hatena_ep008.mp4
+COMPOSE OK hatena/out/hatena_ep008.mp4
+BUILD 8 55.5 min
++ gh release upload hatena-batch hatena/out/hatena_ep008.mp4 --clobber
++ /home/runner/hvenv/bin/python hatena/engine/tts.py hatena/episodes/ep009.json /tmp/hatena_ep009
+TTS OK 37.92 s
++ /home/runner/hvenv/bin/python hatena/engine/plan.py /tmp/hatena_ep009/timing.json /tmp/hatena_ep009/plan.json 9
+PLAN 14 cuts ['introA', 'introB', 'surprised', 'crowd', 'ots', 'brain', 'two', 'orbit', 'low', 'think', 'clock', 'close', 'endA', 'endB']
++ /home/runner/hvenv/bin/python hatena/engine/compose.py hatena/episodes/ep009.json /tmp/hatena_ep009/timing.json /tmp/hatena_ep009/plan.json /tmp/hatena_ep009/frames /tmp/hatena_ep009/voice.wav hatena/out/hatena_ep009.mp4
+COMPOSE OK hatena/out/hatena_ep009.mp4
+BUILD 9 56.7 min
++ gh release upload hatena-batch hatena/out/hatena_ep009.mp4 --clobber
++ /home/runner/hvenv/bin/python hatena/engine/tts.py hatena/episodes/ep010.json /tmp/hatena_ep010
+TTS OK 40.56 s
++ /home/runner/hvenv/bin/python hatena/engine/plan.py /tmp/hatena_ep010/timing.json /tmp/hatena_ep010/plan.json 10
+PLAN 13 cuts ['introA', 'introB', 'ghost', 'point', 'two', 'brain', 'surprised', 'night', 'ghost', 'think', 'shock', 'endA', 'endB']
++ /home/runner/hvenv/bin/python hatena/engine/compose.py hatena/episodes/ep010.json /tmp/hatena_ep010/timing.json /tmp/hatena_ep010/plan.json /tmp/hatena_ep010/frames /tmp/hatena_ep010/voice.wav hatena/out/hatena_ep010.mp4
+COMPOSE OK hatena/out/hatena_ep010.mp4
+BUILD 10 60.9 min
++ gh release upload hatena-batch hatena/out/hatena_ep010.mp4 --clobber

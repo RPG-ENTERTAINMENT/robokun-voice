@@ -273,6 +273,9 @@ if SETNAME in ROOMS:
     _x, _bg, _e = ROOMS[SETNAME]
     world_bg.inputs['Color'].default_value = _bg + (1,); world_bg.inputs['Strength'].default_value = 0.55 if SETNAME != 'bedroom' else 0.25
     sun.data.energy = _e
+for _k in ROOMS:   # only the room in use is rendered (all rooms' lamps would otherwise slow every frame down)
+    _c = bpy.data.collections.get(_k.capitalize())
+    if _c and _k != SETNAME: _c.hide_render = True
 POS = {'ol': C + Vector((-0.9, 0, 0)), 'robo': C + Vector((0.9, 0, 0))}
 RIG = {'ol': OL, 'robo': RO}
 SP = CUT.get('sp', 'robo'); LS = 'ol' if SP == 'robo' else 'robo'

@@ -3,6 +3,12 @@
 TASK="$1"
 export PATH="$HOME/.local/bin:$PATH"
 set -o pipefail
+# one-time migrations: hatena/migrate_*.py run once, are committed with their result, then removed (run.sh pushes the commit)
+for m in hatena/migrate_*.py; do
+  [ -f "$m" ] || continue
+  python3 "$m" && git rm -q "$m" && git add hatena/engine hatena/episodes && \
+    git -c user.name=hatena-bot -c user.email=bot@users.noreply.github.com commit -qm "hatena: $(basename "$m" .py) [skip ci]" || exit 1
+done
 if [ "${TASK%%_*}" = auth ]; then
   python3 -m pip install -q cryptography > hatena/logs/pip.txt 2>&1
   case "$TASK" in

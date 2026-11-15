@@ -1,0 +1,17 @@
+{"id": "ep137", "title": "なにも してない", "summary": "年の瀬になり、今年は何もできなかったと落ち込むハナ。ロボしずは「さいていただけで、じゅうぶんがんばった」と寄り添う。ロボしずの今年の成果は…頭の苔が一センチのびたこと。", "time": "night", "weather": "snow", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。もう ことしも おわるね。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"ふりかえったら、なにも して ないの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"みんな、いろいろ できた みたい なのに。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたし、ずっと とまってた きが する。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"あめの ひも かぜの ひも、ハナは さいてた。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"まいにちを こえて きた だけで、えらいよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ことしの ハナに、おつかれさまって いおう。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。わたし、がんばってたね。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼくは ことし、すごい せいか が あるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、なに なに？"}},
+  {"robo":{"pose":"joy"},"fx":["sparkles"],"cam":"close","focus":"robo","say":{"who":"robo","text":"あたまの こけが、いっせんち のびた！"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、かってに のびた だけ だよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"ことしの あなたも、よく がんばりました。"}}
+ ]}

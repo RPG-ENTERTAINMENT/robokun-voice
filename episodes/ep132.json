@@ -1,0 +1,18 @@
+{"id": "ep132", "title": "わすれた きねんび", "summary": "付き合った記念日を彼に忘れられて落ち込むハナ。ロボしずは「おぼえてたのは、ハナが大事にしてきたしるし」と寄り添う。でもロボしずはハナと出会った日を覚えていない…だから毎日が記念日らしい。", "time": "sunset", "weather": "leaves", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"きのう、あのひとと きねんび だったの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"でも あのひと、わすれてた みたい。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたしだけ、まってたのかな。"}},
+  {"robo":{"pose":"sad"},"fx":["tears"],"say":{"who":"robo","text":"それは、さみしかったね。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"おぼえてたのは、ハナが だいじに した しるし。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"わすれても、すきが きえた わけじゃ ないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"さみしいって、すなおに つたえて いいんだよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ちゃんと はなして みる。"}},
+  {"hana":{"eyes":"open"},"music":"playful","say":{"who":"hana","text":"ロボしずも、きねんび ある？"}},
+  {"robo":{"pose":"win"},"fx":["ding"],"say":{"who":"robo","text":"あるよ！ ハナと であった ひ！"}},
+  {"hana":{"eyes":"happy"},"sfx":["pop"],"say":{"who":"hana","text":"それ、いつ だっけ？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"…だから まいにち、きねんび に してる。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたが おぼえてた きもちは、たからもの。"}}
+ ]}

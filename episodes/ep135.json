@@ -1,0 +1,18 @@
+{"id": "ep135", "title": "ないちゃった", "summary": "人前で泣いてしまい、恥ずかしくてたまらないハナ。ロボしずは「なみだは、がんばってきたしるし」と寄り添う。ロボしずも毎朝泣いているらしい…頭の苔からしたたる朝露で。", "time": "morning", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。はずかしい はなし なの。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"きのう、ひとの まえで ないちゃったの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"とまらなくて、かお から ひが でそう だった。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"よわい って、おもわれた かな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"なみだが、こぼれちゃったんだね。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"それだけ、ずっと がまん してたんだよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"なみだは、がんばって きた しるし だよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ないても、ハナは ちっとも よわくない。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。はずかしく なくて いいんだね。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくも まいあさ、ないてるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、ロボしずが？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"sfx":["drip"],"cam":"close","focus":"robo","say":{"who":"robo","text":"あさつゆ。こけ から ぽたぽた。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、なみだ じゃ ないよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"ないた あなたも、ちゃんと すてき です。"}}
+ ]}

@@ -1,0 +1,17 @@
+{"id": "ep133", "title": "いまから でも", "summary": "転職したいけれど、この年齢でと怖くなるハナ。ロボしずは「たねは、いつまいても芽をだす」と背中を押す。ロボしずも新しい仕事を始めるらしい…頭の苔を花壇にするという。", "time": "morning", "weather": "clear", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。わたし、まよってるの。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"ほんとは、ちがう ばしょで さいて みたい。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"でも この としで、いまさら って おもうの。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"しっぱい したら、もう もどれない かも。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"こわいのは、ほんきで かんがえてる しるし。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"たねは、いつ まいても めを だすよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナの いまが、いちばん わかい ひ だよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。すこし ずつ、しらべて みる。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼくも あたらしい しごと、はじめるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、なんの しごと？"}},
+  {"robo":{"pose":"joy"},"fx":["sparkles"],"cam":"close","focus":"robo","say":{"who":"robo","text":"あたまの こけを、かだんに する！"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、ずっと のせてる だけだよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"はじめる ひに、おそすぎる ひは ないよ。"}}
+ ]}

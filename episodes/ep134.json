@@ -1,0 +1,17 @@
+{"id": "ep134", "title": "ひとりだけ", "summary": "同窓会で自分だけ独り身で、居心地が悪かったハナ。ロボしずは「しあわせの形は、ひとつじゃない」と寄り添う。ロボしずも同窓会に行った…でも同級生はみんなただの石で、ずっと一人でしゃべっていた。", "time": "night", "weather": "clear", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きょう どうそうかい だったの。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"みんな けっこん してて、こども も いて。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"ひとりなの、わたし だけ だった。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"なんだか、おいて いかれた きが したの。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"でも ハナは、ちゃんと じぶんで さいてる。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"しあわせの かたちは、ひとつ じゃ ないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ひとりの ハナも、まんかい だよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。わたしの はやさで いいよね。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくも どうそうかい、いったよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、どう だった？"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"みんな いし だった。だれも しゃべらない。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"ずっと ひとりで しゃべってたの？"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの しあわせは、あなたが きめて いい。"}}
+ ]}

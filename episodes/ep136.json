@@ -1,0 +1,17 @@
+{"id": "ep136", "title": "しょくばの すき", "summary": "同じ畑で働くみつばちさんを好きになり、周りの目が気になるハナ。ロボしずは「すきになるのに、きょかはいらない」と励ます。ロボしずも職場に好きな人がいる…いつも両手を広げて待っている、かかしさん。", "time": "day", "weather": "petals", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。ないしょ だよ。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"おなじ はたけの みつばちさんが、すきなの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"でも まわりに しられたら、どう おもわれる かな。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"うわさに なったら、こわいの。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"まわりの こえより、ハナの こえを きいて。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"すきに なるのに、きょかは いらないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ゆっくり、ハナの ペースで いこう。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。だいじに して みる。"}},
+  {"robo":{"pose":"love"},"music":"playful","say":{"who":"robo","text":"ぼくも しょくばに、すきな ひと いるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれ だれ？"}},
+  {"robo":{"pose":"shy"},"fx":["hearts"],"cam":"close","focus":"robo","say":{"who":"robo","text":"かかしさん。いつも てを ひろげて まってる。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、うごけない だけ だよ。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"すきな きもちに、だれの きょかも いらない。"}}
+ ]}

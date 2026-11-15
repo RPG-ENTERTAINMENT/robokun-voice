@@ -1,0 +1,17 @@
+{"id": "ep138", "title": "ちいさな やくそく", "summary": "来年の目標を大きく立てると疲れてしまうハナ。ロボしずは「ちいさな約束でいい、自分とする約束」と励ます。ロボしずの約束は毎年同じ「転ばないこと」…言ったそばから転んだ。", "time": "night", "weather": "snow", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。らいねんの もくひょう、なあに？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"わたし、まいとし おおきな もくひょう たてるの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"でも いつも、とちゅうで つかれちゃう。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"まもれない じぶんが、いやに なるの。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"おおきくなくて いい。ちいさな やくそく。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"じぶんと する、ちいさな やくそく だよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"まいあさ じぶんに おはようって いう、とか。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…それなら、まもれそう。やって みる。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼくの やくそくは、まいとし おなじ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、なに？"}},
+  {"robo":{"pose":"cheer"},"fx":["ding"],"say":{"who":"robo","text":"ころばない こと！ ことしこそ…"}},
+  {"robo":{"pose":"damage","do":"trip"},"fx":["puff"],"sfx":["bonk"],"cam":"close","focus":"robo","say":{"who":"robo","text":"…らいねん から に します。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"ちいさな やくそくが、あなたを まもります。"}}
+ ]}

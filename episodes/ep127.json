@@ -1,0 +1,18 @@
+{"id": "ep127", "title": "おひるで くたくた", "summary": "まだお昼なのにもうくたくたで、休むと怠けている気がするハナ。ロボしずは「やすむのも、さくための じかん」と寄り添う。休むのが得意と言ったロボしずは話の途中で眠ってしまい…起きたら頭の苔が伸びていた。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、まだ おひる だよね。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"なのに もう、くたくた なの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"やすむと、なまけてる きが しちゃう。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"つかれるのは、がんばってた しるし だよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"やすむのも、さく ための じかん だよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナは、やすんで いいんだよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。すこし、めを とじて みる。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼく、やすむの とくい なんだ。みてて…"}},
+  {"robo":{"pose":"sleep"},"sfx":["yawn_zz"],"cam":"wide","say":{"who":"narr","text":"ロボしずは、すぐに ねむって しまいました。"}},
+  {"hana":{"eyes":"happy"},"cam":"mid","focus":"both","say":{"who":"hana","text":"…はやいね。"}},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"sfx":["pop"],"cam":"close","focus":"robo","say":{"who":"robo","text":"…はっ！ いま なんじ？"}},
+  {"hana":{"eyes":"open"},"cam":"mid","focus":"both","say":{"who":"hana","text":"ロボしず、こけが のびてるよ。"}},
+  {"robo":{"pose":"joy"},"fx":["sweat"],"sfx":["boing"],"say":{"who":"robo","text":"ほらね！ やすむと、そだつ！"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"やすんだ ぶんだけ、また さけるよ。"}}
+ ]}

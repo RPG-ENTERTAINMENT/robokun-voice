@@ -1,0 +1,19 @@
+{"id": "ep125", "title": "ありがとう ほしい", "summary": "何をしてもあの人から「ありがとう」が返ってこず、さみしくなるハナ。ロボしずは「ハナのやさしさは、あたりまえじゃない」と寄り添う。ロボしずは毎朝、頭の苔にありがとうと言っている…返事は、ちょっと伸びること。", "time": "morning", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"あのひと、ありがとうって いわないの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"ごはんも そうじも、あたりまえ みたい。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"それは さみしいね。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ほしがる わたしが、わがまま なのかな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ちがうよ。ほしくて あたりまえ だよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ハナの やさしさは、あたりまえ じゃない。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"だから ぼくが いうね。ありがとう、ハナ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。すこし、あったかく なった。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくね、まいあさ ありがとうって いうよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれに？"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"cam":"close","focus":"robo","say":{"who":"robo","text":"あたまの こけ。いつも ありがとうって。"}},
+  {"hana":{"eyes":"happy"},"cam":"mid","focus":"both","say":{"who":"hana","text":"こけ、へんじ して くれた？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"sfx":["boing"],"cam":"close","focus":"robo","say":{"who":"robo","text":"…ちょっとだけ、のびた。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの やさしさに、ありがとう。"}}
+ ]}

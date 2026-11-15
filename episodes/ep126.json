@@ -1,0 +1,18 @@
+{"id": "ep126", "title": "こどもの はなし", "summary": "友だちが集まると子どもの話ばかりで、うまく入れずに笑っているだけのハナ。ロボしずは「はいれない時間も、ハナはそこにいていい」と寄り添う。ロボしずにも子どもの話がある…頭の苔から生えた、小さなきのこ。", "time": "sunset", "weather": "leaves", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、すこし はなして いい？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"ともだちと あうと、こどもの はなし なの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"わたし、はいれなくて わらってる だけ。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"みんなは わるくないの。だから こまる。"}},
+  {"robo":{"pose":"smile"},"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナは、ちゃんと きいて あげてるんだね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"はいれない じかんも、そこに いて いいよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナには ハナの はなしが、ちゃんと ある。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。こんど、わたしの はなしも する。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼくにも、こどもの はなし あるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"fx":["ding"],"say":{"who":"hana","text":"えっ、ロボしずに？"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"cam":"close","focus":"robo","say":{"who":"robo","text":"あたまの こけに、きのこが うまれたの。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、こども なのかな…。"}},
+  {"robo":{"pose":"joy"},"fx":["sweat"],"say":{"who":"robo","text":"まいにち、だいじに そだててる！"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの はなしも、きかせてね。"}}
+ ]}

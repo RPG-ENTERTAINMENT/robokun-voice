@@ -1,0 +1,17 @@
+{"id": "ep130", "title": "ごめんねが くせ", "summary": "何もしていないのに、つい「ごめんね」と言ってしまうハナ。ロボしずは「ハナは、あやまるためにいるんじゃない」と寄り添う。そのロボしずは転んで地面に「ごめんね」…すぐに「うけとめてくれて、ありがとう」と言い直した。", "time": "morning", "weather": "clear", "music": "calm", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、ごめんね。じかん ある？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"…ほら、また ごめんねって いっちゃった。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"なにも してないのに、すぐ あやまるの。"}},
+  {"robo":{"pose":"smile"},"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナは、みんなを きづかってるんだね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"でも ハナは、あやまる ために いない。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ごめんねを、ありがとうに かえて みよう。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ロボしず、きいて くれて ありがとう。"}},
+  {"robo":{"pose":"joy","do":"hop"},"music":"playful","sfx":["boing"],"say":{"who":"robo","text":"そう！ じょうず！"}},
+  {"robo":{"pose":"damage","do":"trip"},"sfx":["bonk"],"fx":["shake"],"cam":"wide","say":{"who":"narr","text":"ロボしずは、はりきって ころびました。"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"いたた…じめんさん、ごめんね！"}},
+  {"hana":{"eyes":"happy"},"cam":"mid","focus":"both","say":{"who":"hana","text":"ロボしず、いま なんて いうの？"}},
+  {"robo":{"pose":"shy"},"sfx":["ding"],"say":{"who":"robo","text":"…うけとめて くれて、ありがとう！"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの ありがとうは、ちからに なる。"}}
+ ]}

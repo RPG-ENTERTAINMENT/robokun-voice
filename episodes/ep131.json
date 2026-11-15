@@ -1,0 +1,17 @@
+{"id": "ep131", "title": "ひとりの クリスマス", "summary": "雪のクリスマスの夜、みんな誰かと一緒なのに自分だけひとりのハナ。ロボしずは「ことしのクリスマスは、ぼくがとなりにいる」と寄り添う。ツリーも用意したと言うロボしず…それは雪の積もった自分の苔の頭に、星をのせただけだった。", "time": "night", "weather": "snow", "music": "night", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"きょうは、クリスマスの よる だね。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"みんな、だれかと いっしょ なのかな。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"わたしだけ、ひとりみたい。"}},
+  {"robo":{"pose":"sad","do":"walk","to":930},"sfx":["step"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナ、ゆきが つめたかったね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ことしの クリスマスは、ぼくが となりに いる。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナは、ひとりじゃ ないよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ゆきも、きれいに みえてきた。"}},
+  {"robo":{"pose":"win","carry":"star"},"music":"playful","sfx":["sparkle"],"say":{"who":"robo","text":"ツリーも、ちゃんと よういしたよ！"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、どこに？"}},
+  {"robo":{"pose":"joy","carry":"none"},"fx":["ding"],"sfx":["tada"],"cam":"close","focus":"robo","say":{"who":"robo","text":"ここ。ほしを のせて…できた！"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、ゆきの つもった あたま だね。"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"say":{"who":"robo","text":"こけの ツリー。メリー クリスマス！"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"ひとりの よるにも、ひかりは ふります。"}}
+ ]}

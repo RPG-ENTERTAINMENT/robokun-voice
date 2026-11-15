@@ -1,0 +1,18 @@
+{"id": "ep129", "title": "かぞくの はんたい", "summary": "好きな人のことを家族に反対され、どちらも大切で苦しいハナ。ロボしずは「ハナのきもちは、ハナがまもっていい」と寄り添う。ロボしずの家族はみんな賛成してくれる…と言う頭の苔たちは、風でうなずいているだけだった。", "time": "sunset", "weather": "petals", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"すきな ひとの こと、かぞくが はんたい なの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"「あのひとは やめなさい」って。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"かぞくも すき。だから くるしいの。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"どっちも すきなのは、ハナが やさしい から。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","say":{"who":"robo","text":"いそがなくて いい。ハナの きもちは、"}},
+  {"robo":{"pose":"closed"},"dur":2.6,"say":{"who":"robo","text":"ハナが まもって いいんだよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ゆっくり、わかりあえる ひも くるよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。あせらないで みる。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼくの かぞくは、みんな さんせい だよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、かぞく いるの？"}},
+  {"robo":{"pose":"love"},"fx":["hearts"],"cam":"close","focus":"robo","say":{"who":"robo","text":"あたまの こけたち。ほら、うなずいてる。"}},
+  {"hana":{"eyes":"happy"},"fx":["puff"],"sfx":["whoosh_small","boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、かぜで ゆれてる だけ だね。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの きもちも、たいせつな かぞく。"}}
+ ]}

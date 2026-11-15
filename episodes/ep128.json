@@ -1,0 +1,18 @@
+{"id": "ep128", "title": "ちくちく ともだち", "summary": "いつも「ハナには無理だよ」と笑う友だちに、何も言えないハナ。ロボしずは「ハナを小さくすることばは、ともだちのことばじゃない」と寄り添う。ロボしずをいつも大きく見てくれる友だちは…足もとのありさんだった。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"ともだちが、いつも わたしを わらうの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"「ハナには むりだよ」って。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ともだち だから、なにも いえなくて。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナ、それは いたかったね。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ハナを ちいさく する ことばは、"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.6,"say":{"who":"robo","text":"ともだちの ことば じゃ ないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"おおきく みてくれる ひとの そばに いよう。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。わたしを、だいじに する。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくの ともだちも、おおきく みてくれるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれ？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"ありさん。いつも ぼくを みあげてる。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"ありさん からは、みんな おおきいね。"}},
+  {"robo":{"pose":"joy"},"hana":{"eyes":"happy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたを おおきく みる ひとは、きっと いる。"}}
+ ]}

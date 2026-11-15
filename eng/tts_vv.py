@@ -18,7 +18,15 @@ for i, b in enumerate(ep['beats']):
     if not sp or (sp['who'] == 'robo' and g.skip_robo): continue
     sid, spd, pit, inton, pf = VOICE[sp['who']]
     text = sp['text'].replace(' ', '').replace('　', '')
-    q = s.create_audio_query(text, sid); q.speed_scale = spd; q.pitch_scale = pit; q.intonation_scale = inton
+    try:
+        q = s.create_audio_query(text, sid)
+    except Exception as e:  # e.g. a line that is only "……" -> a short silence instead of stopping the whole episode
+        print(f'tts: beat {i} {text!r} not speakable ({type(e).__name__}) -> silence', flush=True)
+        import wave
+        with wave.open(f'{g.out}/{i:02d}.wav', 'wb') as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(48000); w.writeframes(b'\0\0' * int(48000 * 0.8))
+        continue
+    q.speed_scale = spd; q.pitch_scale = pit; q.intonation_scale = inton
     q.output_sampling_rate = 48000; q.pre_phoneme_length = 0.05; q.post_phoneme_length = 0.1
     for a in q.accent_phrases:
         pm = a.pause_mora

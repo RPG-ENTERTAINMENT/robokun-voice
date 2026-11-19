@@ -1,8 +1,23 @@
-W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/resolute/InRelease  Could not wait for server fd - select (11: Resource temporarily unavailable) [IP: 91.189.91.83 443]
-W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/resolute-updates/InRelease  Could not wait for server fd - select (11: Resource temporarily unavailable) [IP: 91.189.91.83 443]
-W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/resolute-backports/InRelease  Could not wait for server fd - select (11: Resource temporarily unavailable) [IP: 91.189.91.83 443]
-W: Failed to fetch mirror+file:/etc/apt/apt-mirrors.txt/dists/resolute-security/InRelease  Could not wait for server fd - select (11: Resource temporarily unavailable) [IP: 91.189.91.83 443]
-W: Some index files failed to download. They have been ignored, or old ones used instead.
-E: Failed to fetch https://security.ubuntu.com/ubuntu/pool/main/f/fonts-noto-cjk/fonts-noto-cjk_20240730%2brepack1-1build1_all.deb  Could not wait for server fd - select (11: Resource temporarily unavailable) [IP: 91.189.91.81 443]
-E: Failed to fetch https://security.ubuntu.com/ubuntu/pool/main/f/fonts-noto-cjk/fonts-noto-cjk-extra_20240730%2brepack1-1build1_all.deb  Could not wait for server fd - select (11: Resource temporarily unavailable) [IP: 91.189.91.81 443]
-E: Unable to fetch some archives, maybe run apt update or try with --fix-missing?
+Selecting previously unselected package fonts-noto-cjk.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 214584 files and directories currently installed.)
+Preparing to unpack .../fonts-noto-cjk_1%3a20240730+repack1-1build1_all.deb ...
+Unpacking fonts-noto-cjk (1:20240730+repack1-1build1) ...
+Selecting previously unselected package fonts-noto-cjk-extra.
+Preparing to unpack .../fonts-noto-cjk-extra_1%3a20240730+repack1-1build1_all.deb ...
+Unpacking fonts-noto-cjk-extra (1:20240730+repack1-1build1) ...
+Setting up fonts-noto-cjk (1:20240730+repack1-1build1) ...
+Setting up fonts-noto-cjk-extra (1:20240730+repack1-1build1) ...
+Processing triggers for fontconfig (2.17.1-3ubuntu1) ...
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart hosted-compute-agent.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.

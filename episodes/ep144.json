@@ -1,0 +1,18 @@
+{"id": "ep144", "title": "きくばっかり", "summary": "いつもみんなの話を聞いてばかりで、自分の話は誰にも聞いてもらえないハナ。ロボしずは「きょうは ぼくが きく ばん」と寄り添う。でも耳はどこ？と聞かれたロボしず…たぶん頭の苔で聞いていた。", "time": "sunset", "weather": "leaves", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。いま いい？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"わたし、いつも みんなの はなしを きくの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"でも わたしの はなしは、だれも きかない。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"ずっと、きく がわ だったんだね。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたしなんて、はなしても つまらないかな。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"そんな こと ない。ききたいよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"きょうは、ぼくが きく ばん だよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ハナの はなしも、きいて もらって いいんだ。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。じゃあ、ぜんぶ はなすね。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"music":"playful","say":{"who":"hana","text":"あれ？ ロボしずの みみって どこ？"}},
+  {"robo":{"pose":"surprise"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"…しらない。"}},
+  {"robo":{"pose":"shy"},"say":{"who":"robo","text":"でも ちゃんと きこえてる。こけ かな？"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"こけで きいてたんだ。ありがとう。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの こえも、きかれて いい こえ。"}}
+ ]}

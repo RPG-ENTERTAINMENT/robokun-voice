@@ -1,0 +1,18 @@
+{"id": "ep145", "title": "はつひの やくそく", "summary": "元日の朝、去年の願いが叶わなかったと沈むハナ。ロボしずは「おひさまは まいあさ くる。ハナの はじまりも まいあさ」と寄り添い、来年も一緒に見ようと小さく約束する。でも初日の出に手を合わせるロボしずは…ずっと反対を向いていた。", "time": "morning", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"open"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、あけまして おめでとう。"}},
+  {"hana":{"eyes":"sad"},"cam":"mid","say":{"who":"hana","text":"でも きょねんの ねがい、かなわなかった。"}},
+  {"hana":{"eyes":"closed"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"ことしも、おなじ かもって おもっちゃう。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"がっかり したんだね。"}},
+  {"robo":{"pose":"think"},"fx":["ding"],"say":{"who":"robo","text":"でも ハナ、みて。おひさまが のぼるよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"おひさまは まいあさ くる。ハナの はじまりも。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"らいねんも ここで、いっしょに みよう。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ちいさな やくそく、だね。"}},
+  {"robo":{"pose":"closed"},"sfx":["sparkle"],"music":"playful","say":{"who":"robo","text":"じゃあ、はつひので に おねがい！"}},
+  {"hana":{"eyes":"happy"},"say":{"who":"hana","text":"ふふ。ロボしず、あのね。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"おひさま、うしろ だよ。"}},
+  {"robo":{"pose":"surprise"},"fx":["sweat"],"sfx":["oops"],"cam":"close","focus":"robo","say":{"who":"robo","text":"えっ！ ずっと はんたい むいてた！"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"せなかの こけが、ぽかぽか だね。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あたらしい あさは、まいにち くるよ。"}}
+ ]}

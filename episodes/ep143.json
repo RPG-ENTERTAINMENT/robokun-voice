@@ -1,0 +1,18 @@
+{"id": "ep143", "title": "えんきょり", "summary": "遠くはなれたあの人と、会えない日が続いて不安になるハナ。ロボしずは「とおくても、おなじ そらの したに いる」と寄り添う。ロボしずにも一度も会えない相手がいる…それは自分の背中で、本当はずっと一緒だった。", "time": "night", "weather": "clear", "music": "night", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、あのひと いま なに してるかな。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"おかの むこうの、ずっと とおくに いるの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"あえないと、こころも はなれそうで こわい。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"あいたい きもち、いっぱい なんだね。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わたしの こと、わすれて ないかな。"}},
+  {"robo":{"pose":"think"},"fx":["ding"],"say":{"who":"robo","text":"ハナ、うえを みて。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"とおくても、おなじ そらの したに いるよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"あえない じかんも、すきは そだって る。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。おなじ おほしさま、みてるね。"}},
+  {"robo":{"pose":"trouble"},"music":"playful","say":{"who":"robo","text":"ぼくも ずっと えんきょり なんだ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれと？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"ぼくの せなか。いちども あえない。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、ずっと いっしょ だよ。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"はなれていても、きもちは ちかくに。"}}
+ ]}

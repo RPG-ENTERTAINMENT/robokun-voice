@@ -1,0 +1,18 @@
+{"id": "ep141", "title": "わかい はなへ", "summary": "あの人が、もっと若い花のところへ行ってしまったハナ。ロボしずは「かさねた じかんが、ハナの いろ」とそっと寄り添う。ぼくも人気者だよと照れるロボしず…ちょうちょが夢中なのは、頭の苔だった。", "time": "sunset", "weather": "petals", "music": "calm", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"あのひと、わかい はなの ところへ いったの。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"…そっか。かなしかったね。"}},
+  {"hana":{"eyes":"sad"},"cam":"close","focus":"hana","say":{"who":"hana","text":"わたし、もう きれいじゃ ないのかな。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"そんな こと、ぜったい ないよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"かさねた じかんが、ハナの いろ なんだよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"その いろを すきな ひとが、きっと いる。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。わたしの いろ、だいじに する。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼくも としを とるほど、にんきもの！"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれに？"}},
+  {"robo":{"pose":"shy"},"fx":["hearts"],"cam":"close","focus":"robo","say":{"who":"robo","text":"ちょうちょさん。ぼくに むちゅう なんだ。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、こけに とまってる だけ だよ。"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"say":{"who":"robo","text":"…こけの ほうが、もてる みたい。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの いろは、としを かさねて きれい。"}}
+ ]}

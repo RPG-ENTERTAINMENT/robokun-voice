@@ -1,0 +1,18 @@
+{"id": "ep142", "title": "えがおの しゃしん", "summary": "SNSでは笑顔の写真ばかりなのに、本当はさみしいハナ。ロボしずは「ここでは、むりに わらわなくて いい」と寄り添う。ロボしずの写真にも「いいね」がついた…押したのは、苔を食べに来たかたつむりだった。", "time": "night", "weather": "clear", "music": "night", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。おきてる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"わたし、いつも わらった しゃしん のせてるの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"いいね は いっぱい。でも、さみしいの。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"えがおの うらで、ないてたんだね。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"ほんとの わたし、だれも しらない。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ぼくは、いまの ハナを みてるよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ここでは、むりに わらわなくて いい。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"わらって ない ハナも、ぼくは すきだよ。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ちょっと、かるく なった。"}},
+  {"robo":{"pose":"joy"},"music":"playful","say":{"who":"robo","text":"ぼくも しゃしん のせて みたんだ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"いいね、ついた？"}},
+  {"robo":{"pose":"win"},"fx":["ding"],"cam":"close","focus":"robo","say":{"who":"robo","text":"ひとつ！ かたつむりさん から！"}},
+  {"hana":{"eyes":"happy"},"fx":["sweat"],"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、こけを たべに きた だけ かもね。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"わらえない よるも、あなたは あなた。"}}
+ ]}

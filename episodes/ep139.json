@@ -1,0 +1,18 @@
+{"id": "ep139", "title": "わたしばっかり", "summary": "あの人が休んでいる間に、家のことを全部ひとりでやってしまうハナ。ロボしずは「ひとりで ぜんぶ、せおわなくて いい」と寄り添う。いつも手伝うよと胸をはるロボしずだったが…今日一日、ハナのとなりで寝ていただけだった。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。ちょっと つかれちゃった。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"あのひとが ねてる あいだに、ぜんぶ やるの。"}},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"ぜんぶ、ハナ ひとりで？"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"おかたづけも ぜんぶ、わたしばっかり。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"てつだって って、いえないの。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"ずっと、がんばって きたんだね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ひとりで ぜんぶ、せおわなくて いいんだよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"てつだってって いうのは、まけじゃ ないよ。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。こんど、いって みる。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"それに ぼくは、いつでも てつだうよ！"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"ふふ。きょうは なにを してたの？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"sfx":["yawn_zz"],"cam":"close","focus":"robo","say":{"who":"robo","text":"ハナの となりで…いちにち ねてた。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"やすんでる ひと、ここにも いたね。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"がんばる あなたも、やすんで いいんだよ。"}}
+ ]}

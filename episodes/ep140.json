@@ -1,0 +1,18 @@
+{"id": "ep140", "title": "しんせきの こえ", "summary": "お正月の集まりで、親せきに「いい人はいないの？」と何度も聞かれてしまうハナ。ロボしずは「ハナの しあわせは、ハナが きめて いい」と寄り添う。でもロボしずも毎年、石の親せきに聞かれていた…「いつ丸くなるの？」と。", "time": "day", "weather": "snow", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、おしょうがつ って にがて。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"しんせきの はなが、みんな あつまるでしょ。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"いい ひと いないの？ って、なんども きかれるの。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"なんども？ それは つかれるね。"}},
+  {"hana":{"eyes":"closed"},"say":{"who":"hana","text":"わらって ごまかすの、もう くたくた。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ハナは、ちゃんと さいてるよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ハナの しあわせは、ハナが きめて いい。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"だれかの こたえに、あわせなくて いいよ。"}},
+  {"hana":{"droop":0,"eyes":"happy"},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ことしは、にっこり かわす。"}},
+  {"robo":{"pose":"trouble"},"music":"playful","say":{"who":"robo","text":"ぼくも まいとし きかれるんだ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、なにを？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"いしの しんせきに。いつ まるく なるのって。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"いしの せかいも、たいへん なんだね。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"narr","text":"あなたの じかんは、あなたの もの。"}}
+ ]}

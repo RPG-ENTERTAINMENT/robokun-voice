@@ -2,7 +2,7 @@
 import os, sys, json, subprocess, argparse
 ap = argparse.ArgumentParser(); ap.add_argument('eps', nargs='+'); g = ap.parse_args()
 root = os.getcwd(); os.chdir('gsv'); sys.path.insert(0, os.getcwd()); sys.path.insert(0, os.path.join(os.getcwd(), 'GPT_SoVITS'))
-import soundfile as sf
+import soundfile as sf, re, numpy as np
 from GPT_SoVITS.TTS_infer_pack.TTS import TTS, TTS_Config
 cfg = json.load(open(f'{root}/config/voice.json'))
 tts = TTS(TTS_Config(f'{root}/scripts/tts_infer.yaml'))
@@ -13,6 +13,9 @@ for epid in g.eps:
     for i, b in enumerate(ep['beats']):
         sp = b.get('say')
         if not sp or sp['who'] != 'robo': continue
+        if not re.search(r'[ぁ-んァ-ヶ一-龯A-Za-z0-9]', sp['text']):  # e.g. "……" only -> short silence (GPT-SoVITS rejects it)
+            sf.write(f'{out}/{i:02d}.wav', np.zeros(int(48000 * 0.8), dtype='float32'), 48000)
+            print('robo', epid, i, 'silence for', repr(sp['text']), flush=True); continue
         best = None
         for seed in (42, 7, 123):
             req = dict(text=sp['text'], text_lang='all_ja', ref_audio_path=REF, prompt_text=REF_T, prompt_lang='all_ja', aux_ref_audio_paths=aux,

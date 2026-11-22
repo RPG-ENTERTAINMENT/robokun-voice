@@ -1,0 +1,18 @@
+{"id": "ep151", "title": "しょうしん", "summary": "同期の花が昇進して、自分だけ選ばれなかったハナ。ロボしずは「ハナのがんばりは、ちゃんとねっこになってる」と寄り添う。ロボしずも昇進したと胸をはるが、それは頭の苔が肩までのびただけだった。", "time": "sunset", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"いっしょに はいった こが、しょうしん したの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"わたしは、えらばれなかった。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"おめでとうって いえたけど、くやしくて。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"くやしいのは、ほんきで がんばった から。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ハナの がんばりは、ちゃんと ねっこに なってる。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"みえない ところで、ちゃんと のびてるよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。くやしいの、だいじに する。"}},
+  {"robo":{"pose":"win"},"fx":["ding"],"music":"playful","say":{"who":"robo","text":"じつは ぼくも、しょうしん したんだ！"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、すごい！ なにに？"}},
+  {"robo":{"pose":"joy"},"fx":["sparkles"],"cam":"close","focus":"robo","say":{"who":"robo","text":"こけが、あたまから かたまで のびた。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、しょうしん じゃ ないよね。"}},
+  {"robo":{"pose":"surprise"},"fx":["sweat"],"sfx":["oops"],"cam":"close","focus":"robo","say":{"who":"robo","text":"え、ちがうの？"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"hana","text":"あなたの がんばりは、ちゃんと そだってる。"}}
+ ]}

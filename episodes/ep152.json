@@ -1,0 +1,17 @@
+{"id": "ep152", "title": "しんゆう", "summary": "さみしい夜、気軽に話せる親友がいないと落ち込むハナ。ロボしずは「ハナのいちばんのしんゆうに、ハナがなってもいい」と寄り添う。ロボしずも自分と親友になったが、昨日は自分とけんかして両方泣いた。", "time": "night", "weather": "snow", "music": "night", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"さみしい よる、でんわ できる ひとが いないの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"みんな いそがしそうで、えんりょ しちゃう。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたしには、しんゆうって いないのかな。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ハナの いちばんの しんゆうに、ハナが なっていい。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"きょうも えらいねって、じぶんに いって あげて。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…きょうも えらかったね、わたし。"}},
+  {"robo":{"pose":"smile"},"music":"playful","say":{"who":"robo","text":"ぼくも、じぶんと しんゆう なんだ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"へえ、なかよし なの？"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"うん。でも きのう、じぶんと けんか した。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"えっ、どっちが かったの？"}},
+  {"robo":{"pose":"shy"},"fx":["tears"],"cam":"close","focus":"robo","say":{"who":"robo","text":"どっちも ないて、どっちも ゆるした。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"hana","text":"いちばんの みかたは、じぶんの なかに いる。"}}
+ ]}

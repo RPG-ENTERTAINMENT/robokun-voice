@@ -1,0 +1,17 @@
+{"id": "ep150", "title": "つよいね って", "summary": "「ハナはいつも強いね」と言われるたび、泣きたい気持ちを飲みこんでしまうハナ。ロボしずは「ぼくのまえでは、よわくていいよ」と寄り添う。強さを見せようと胸をはったロボしずは、小石につまずいてすぐ泣いた。", "time": "sunset", "weather": "leaves", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"みんな わたしに、いつも つよいねって いうの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"ほんとは、なきたい ひも あるのに。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"つよいねって いわれると、なけなく なる。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"つよい ひとにも、なきたい ひは あるよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ぼくの まえでは、よわくて いいよ。"}},
+  {"hana":{"eyes":"closed"},"fx":["tears"],"cam":"close","focus":"hana","say":{"who":"hana","text":"…ほんとは ね、すこし つかれてた。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","cam":"mid","focus":"both","say":{"who":"hana","text":"ありがとう。ないたら、すっきり した。"}},
+  {"robo":{"pose":"win"},"fx":["ding"],"music":"playful","say":{"who":"robo","text":"よし。ぼくは かわりに、つよく なる！"}},
+  {"robo":{"pose":"cheer","do":"walk","to":960},"sfx":["step"],"say":{"who":"robo","text":"みてて。ぼくは なにが あっても なかない！"}},
+  {"robo":{"pose":"damage","do":"trip"},"fx":["tears"],"sfx":["bonk"],"cam":"close","focus":"robo","say":{"who":"robo","text":"いたっ！ こいしに つまずいた…。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"ロボしず、なくの はやいね。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"hana","text":"つよくても よわくても、あなたは あなた。"}}
+ ]}

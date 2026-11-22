@@ -1,0 +1,17 @@
+{"id": "ep146", "title": "ぼうねんかい", "summary": "忘年会でだれにも話しかけられず、透明人間みたいだったハナ。ロボしずは「ぼくのせかいでは、ハナがいちばんめだってる」と寄り添う。ロボしずも忘年会にいたけれど、みんなに椅子だと思われて座られていた。", "time": "night", "weather": "snow", "music": "night", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。きいて くれる？"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"きのうね、ぼうねんかいに いったの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"でも だれも、はなしかけて くれなくて。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたし、みえて ないみたい だった。"}},
+  {"robo":{"pose":"think"},"say":{"who":"robo","text":"ハナは、とうめい なんかじゃ ないよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ぼくの せかいでは、ハナが いちばん めだってる。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"ゆきの なかでも、ちゃんと しろく ひかってる。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。ありがとう。すこし あったかい。"}},
+  {"robo":{"pose":"trouble"},"music":"playful","say":{"who":"robo","text":"じつは ぼくも、ぼうねんかい いったよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、ロボしずも？ どうだった？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"みんな、ぼくを いすだと おもって すわってた。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"それ、いちばん にんきもの だったね。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"robo","text":"あなたは、だれかの いちばんの ひかりだよ。"}}
+ ]}

@@ -1,0 +1,17 @@
+{"id": "ep147", "title": "しょうかい して", "summary": "付き合って長いのに、彼が一度も友だちに紹介してくれないハナ。ロボしずは「ハナは、かくされるようなひとじゃない」と寄り添う。ロボしずは毎日ハナを紹介しているけれど、相手はいつも空の雲だった。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 920, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。わたし へん かな。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"あのひと、ともだちに あわせて くれないの。"}},
+  {"robo":{"pose":"surprise"},"fx":["ding"],"say":{"who":"robo","text":"いちども？"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"うん。つきあって もう ながいのに。"}},
+  {"hana":{"eyes":"sad"},"say":{"who":"hana","text":"わたし、じまん できない かのじょ なのかな。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"ハナは、かくされる ような ひとじゃ ないよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"さみしいって、あのひとに いっても いいんだよ。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。こんど、ちゃんと きいて みる。"}},
+  {"robo":{"pose":"win"},"music":"playful","say":{"who":"robo","text":"ぼくは まいにち、ハナを しょうかい してるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"えっ、だれに？"}},
+  {"robo":{"pose":"shy"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"くもさん。きょうも とおりすぎて いった。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"へんじ、いちども ないよね。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"robo","text":"あなたは、むねを はって しょうかい される ひと。"}}
+ ]}

@@ -1,0 +1,17 @@
+{"id": "ep148", "title": "つめたい て", "summary": "雪の夜、冷えた葉っぱに、あの人の手のぬくもりを思い出してしまうハナ。ロボしずは「さむいよるは、あいたいがおおきくなるよる」と寄り添い手を差しだす。でも石の手はハナよりずっと冷たかった。", "time": "night", "weather": "snow", "music": "night", "robo_x": 940, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"closed"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ロボしず、きょうは さむいね。"}},
+  {"hana":{"eyes":"sad"},"cam":"mid","say":{"who":"hana","text":"はっぱが つめたくて、ねむれないの。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"まえは、あのひとが てを つないで くれた。"}},
+  {"hana":{"eyes":"closed"},"fx":["tears"],"say":{"who":"hana","text":"つめたい てほど、おもいだしちゃう。"}},
+  {"robo":{"pose":"sad"},"cam":"mid","focus":"both","say":{"who":"robo","text":"あいたく なっちゃったんだね。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"さむい よるは、あいたいが おおきく なる よる。"}},
+  {"robo":{"pose":"cheer","do":"walk","to":960},"fx":["sparkles"],"sfx":["step"],"say":{"who":"robo","text":"こんやは ぼくの て、かして あげる。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…ありがとう。ロボしず、やさしいね。"}},
+  {"hana":{"eyes":"open"},"fx":["shake"],"sfx":["oops"],"music":"playful","cam":"close","focus":"hana","say":{"who":"hana","text":"ひゃっ！ ロボしずの て、つめたい！"}},
+  {"robo":{"pose":"trouble"},"fx":["sweat"],"cam":"close","focus":"robo","say":{"who":"robo","text":"しまった。ぼく、いし だった。"}},
+  {"robo":{"pose":"shy"},"sfx":["pop"],"cam":"mid","focus":"both","say":{"who":"robo","text":"かわりに、あたまの こけ どうぞ。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"say":{"who":"hana","text":"あ、こっちは ふかふかで あったかい。"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy"},"fx":["hearts"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"robo","text":"さむい よるも、ぬくもりは すぐ そばに ある。"}}
+ ]}

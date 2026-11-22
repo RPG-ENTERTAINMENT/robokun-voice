@@ -1,0 +1,17 @@
+{"id": "ep149", "title": "すてられない", "summary": "年末の大掃除で、別れた人からもらった贈り物をどうしても捨てられないハナ。ロボしずは「すてるひは、ハナがきめていい」と寄り添う。でもロボしずも捨てられない…三年持っていたどんぐりから芽が出ていた。", "time": "day", "weather": "clear", "music": "calm", "robo_x": 900, "robo_pose": "idle",
+ "hana":{"x": 1200, "bloom": 1, "droop": 1},
+ "beats":[
+  {"hana":{"eyes":"sad"},"cam":"wide","focus":"both","say":{"who":"hana","text":"ねえ、ロボしず。おおそうじ してたの。"}},
+  {"hana":{"eyes":"closed"},"cam":"mid","say":{"who":"hana","text":"そしたら、まえの ひとの プレゼントが でてきて。"}},
+  {"hana":{"eyes":"sad"},"music":"sad","cam":"close","focus":"hana","say":{"who":"hana","text":"もう おわったのに、すてられないの。"}},
+  {"robo":{"pose":"think"},"cam":"mid","focus":"both","say":{"who":"robo","text":"すてられないのは、だいじに した しるしだよ。"}},
+  {"robo":{"pose":"closed"},"music":"magic","cam":"close","focus":"robo","dur":2.8,"say":{"who":"robo","text":"すてる ひは、ハナが きめて いいんだよ。"}},
+  {"robo":{"pose":"cheer"},"fx":["sparkles"],"cam":"mid","focus":"both","say":{"who":"robo","text":"すきだった じぶんも、ぎゅっと して あげよう。"}},
+  {"hana":{"eyes":"happy","droop":0},"fx":["glow_hana"],"music":"lullaby","say":{"who":"hana","text":"…うん。もうすこし、はこに しまっとく。"}},
+  {"robo":{"pose":"shy","carry":"acorn"},"music":"playful","say":{"who":"robo","text":"ぼくも すてられない もの、あるよ。"}},
+  {"hana":{"eyes":"open"},"sfx":["pop"],"say":{"who":"hana","text":"それ、どんぐり？"}},
+  {"robo":{"pose":"love","carry":"acorn"},"fx":["hearts"],"cam":"close","focus":"robo","say":{"who":"robo","text":"さんねん ずっと もってる、たからもの。"}},
+  {"hana":{"eyes":"happy"},"sfx":["boing"],"cam":"mid","focus":"both","say":{"who":"hana","text":"ロボしず…それ、めが でてるよ。"}},
+  {"robo":{"pose":"surprise","carry":"acorn"},"fx":["sweat"],"sfx":["oops"],"cam":"close","focus":"robo","say":{"who":"robo","text":"えっ！ いつのまに！"}},
+  {"hana":{"eyes":"happy"},"robo":{"pose":"joy","carry":"acorn"},"fx":["confetti"],"music":"happy","cam":"wide","focus":"both","dur":3,"say":{"who":"hana","text":"だいじな ものは、あたらしい めに なるんだね。"}}
+ ]}

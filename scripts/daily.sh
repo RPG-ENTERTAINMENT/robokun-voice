@@ -26,6 +26,14 @@ if [ "${TASK%%:*}" = daido ]; then bash daido/run.sh "${TASK#daido:}"; exit $?; 
 if [ "${TASK%%:*}" = hatena ]; then bash hatena/run.sh "${TASK#hatena:}"; exit $?; fi
 # --- CRAZY NINJA SHIZUKU channel (@crazyninjajapan): jobs/daily_task = ninja:<task>  (test / test:<n> / auth_url / auth_code / daily)
 if [ "${TASK%%:*}" = ninja ]; then bash ninja/run.sh "${TASK#ninja:}"; exit $?; fi
+# --- ロボしず: 3日たって100回未満の動画を非公開にする: jobs/daily_task = prune:<dry|run|auth_url|auth_code>
+if [ "${TASK%%:*}" = prune ]; then
+  pip install -q google-api-python-client google-auth cryptography; mkdir -p logs state
+  M=${TASK#prune}; M=${M#:}; [ -z "$M" ] && M=dry
+  python scripts/prune.py $M 2>&1 | tee logs/prune_$M.txt; rc=${PIPESTATUS[0]}
+  echo make > jobs/daily_task; rm -f jobs/prune_code.txt; git add -A jobs
+  bash scripts/save.sh; exit $rc
+fi
 # --- move lesson videos to @sugowazaschool: jobs/daily_task = tosugo:igc,aud,idl
 if [ "${TASK%%:*}" = tosugo ]; then bash scripts/tosugo.sh "${TASK#tosugo:}"; exit $?; fi
 # --- OLあいか channel: on-demand tasks via jobs/daily_task = aika:<task>
@@ -126,6 +134,8 @@ else
   bash scripts/save.sh   # save posted state right away
   # daily landscape episode (skips itself if today's is already uploaded)
   bash scripts/long_run.sh
+  # 19:00の投稿のあと、3日たって100回未満の動画を非公開にする（config/prune.json）
+  if [ "$TASK" = postB ]; then pip install -q cryptography; python scripts/prune.py run 2>&1 | tee logs/prune_run.txt; bash scripts/save.sh; fi
 fi
 rc=$?
 # --- piero channel: render today's 3 videos and schedule them (12:00 / 16:00 / 20:00 JST). 12:30 run = retry if missed.
